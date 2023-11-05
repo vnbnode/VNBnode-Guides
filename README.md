@@ -9,6 +9,8 @@ VNBnode là nhóm các nhà xác thực và nhà nghiên cứu chuyên nghiệp 
 Với kinh nghiệm hơn 10 năm trong lĩnh vực công nghệ thông tin, tham gia vào blockchain từ năm 2019. Chúng tôi đã xây dựng trung tâm dữ liệu của riêng mình với các máy chủ và dịch vụ đám mây mạnh để hỗ trợ chạy nodes.
 VNBnode sẵn sàng hỗ trợ cho các dự án qua các giai đoạn (từ test dev nội bộ, mạng thử nghiệm và  mạng chính thức). Các lập trình viên của chúng tôi có thể tạo ra các dapps để hỗ trợ dự án trong quá trình thử nghiệm.
 VNBnode là đối tác đáng tin cậy cho các dự án blockchain.
+# CN
+VNBnode是一群区块链领域的专业验证者/研究人员。 我们的成员来自世界各地。 拥有10多年的IT技术经验，从2019年开始涉足区块链。我们拥有自己的数据中心，拥有本地服务器以及强大的云服务来支持运行节点。 VNBnode 愿意支持各个阶段的项目（从开发测试、测试网到主网）。 我们的开发人员可以构建 dapp 以在测试网期间提供支持。 VNBnode是区块链项目值得信赖的合作伙伴。
 Telegram Chat: https://VNBnodechat
 Telegram Channel: https://VNBnode_news
 Website: https://VNBnode.com 
