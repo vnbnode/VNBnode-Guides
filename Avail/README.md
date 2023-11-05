@@ -6,4 +6,6 @@
 ![image](https://github.com/vnbnode/Running-Nodes/assets/128967122/5f43fa88-fd00-4ec1-97d6-2535929801bf)
 
 **Step 1: Update system**
-"sudo apt update && sudo apt upgrade -y"
+'
+sudo apt update && sudo apt upgrade -y
+'
