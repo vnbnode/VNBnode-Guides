@@ -1,10 +1,10 @@
 <p style="font-size:14px" align="right">
 <a href="https://t.me/VNBnodegroup" target="_blank">Join our telegram <img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/></a>
-<a href="https://VNBnode.com" target="_blank">Visit our website <img src="image/vnbnode.jpg" width="30"/></a>
-<a href="https:/explorer.vnbnode.com" target="_blank">Explorer <img src="image/vnbnode.jpg" width="30"/></a>
+<a href="https://VNBnode.com" target="_blank">Visit our website  <img src="VNBnode.jpg" width="30"/></a>
+<a href="https:/explorer.vnbnode.com" target="_blank">Explorer <img src="VNBnode.jpg" width="30"/></a>
 </p>
 <p align="center">
-  <img height="100" height="auto" src="image/vnbnode.jpg?raw=true">
+  <img height="100" height="auto" src="VNBnode.jpg?raw=true">
 </p>
 
 # EN
