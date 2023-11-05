@@ -44,5 +44,70 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 ```
 ![image](https://github.com/vnbnode/Running-Nodes/assets/128967122/a9683eb9-2f02-49b7-8fe0-605cf4f5af2a)
 
+**Step 7: Clone avail.git**
+```php
+git clone https://github.com/availproject/avail.git
+```
+![image](https://github.com/vnbnode/Running-Nodes/assets/128967122/b06318f0-00b8-4e41-8caf-7c568d1d2924)
+
+**Step 8: Access Avail folder**
+```php
+cd avail
+```
+
+**Step 9: Build data**
+```php
+cargo build --release -p data-avail
+```
+![image](https://github.com/vnbnode/Running-Nodes/assets/128967122/96390bb0-df57-4d5f-83df-63241a57b704)
+*This step takes long time to finish, be patient!*
+
+**Step 10: Make output folder**
+```php
+mkdir -p output
+```
+![image](https://github.com/vnbnode/Running-Nodes/assets/128967122/6ee1e07b-1162-4696-bb78-8a4beb77bd73)
+
+**Step 11: Switch git**
+```php
+git checkout v1.7.2
+```
+![image](https://github.com/vnbnode/Running-Nodes/assets/128967122/b7556554-51f9-443c-9b34-5585336a6a5d)
+
+**Step 12: Run**
+```php
+cargo run --locked --release -- --chain kate -d ./output
+```
+*This step also takes time, be patient! Once it finished, you will see this screen:*
+![image](https://github.com/vnbnode/Running-Nodes/assets/128967122/122cc330-0234-4ed2-8f2e-cafe1caa75e1)
+*Then you can escape by ctrl + c*
+
+**Step 13: Create service file**
+![image](https://github.com/vnbnode/Running-Nodes/assets/128967122/e1e88af4-f8de-4d16-a16b-4469bc3c1e62)
+
+**Step 14: Edit service file**
+```php
+sudo nano /etc/systemd/system/availd.service
+```
+*you will see this screen*
+![image](https://github.com/vnbnode/Running-Nodes/assets/128967122/d27ebd0c-d3f5-4064-bd24-9f940488aa07)
+*Copy and Paste the content of service file as:*
+```php
+[Unit]
+Description=Avail Validator
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+User=root
+ExecStart= /root/avail/target/release/data-avail --base-path `pwd`/data --chain kate --name "VNBnode_Founder"
+Restart=always
+RestartSec=120
+[Install]
+WantedBy=multi-user.target
+```
+
+
+
+
 
 
