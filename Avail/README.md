@@ -92,6 +92,7 @@ sudo nano /etc/systemd/system/availd.service
 *you will see this screen*
 ![image](https://github.com/vnbnode/Running-Nodes/assets/128967122/d27ebd0c-d3f5-4064-bd24-9f940488aa07)
 *Copy and Paste the content of service file as:*
+*Replace “VNBnode” by “Yourname_VNBnode”.*
 ```php
 [Unit]
 Description=Avail Validator
@@ -106,8 +107,35 @@ RestartSec=120
 WantedBy=multi-user.target
 ```
 
+**Step 15: Enable the service file**
+```php
+sudo systemctl enable availd.service
+```
+![image](https://github.com/vnbnode/Running-Nodes/assets/128967122/e0653656-1542-4f56-9ef2-10d187c19131)
 
+**Step 16: Start service file**
+```php
+sudo systemctl start availd.service
+```
+![image](https://github.com/vnbnode/Running-Nodes/assets/128967122/fad7b4e6-5ae4-4c92-bc76-6f33c82a1ce3)
 
+**Step 17: Check status of service**
+```php
+sudo systemctl status availd.service
+```
+![image](https://github.com/vnbnode/Running-Nodes/assets/128967122/9cc1f7a1-69e8-4e0c-b813-34450ed81b99)
+
+**Step 18: Check logs**
+```php
+journalctl -f -u availd
+```
+![image](https://github.com/vnbnode/Running-Nodes/assets/128967122/087883e8-65f8-44a8-80b7-69207cb596cd)
+
+**Step 19: Stake as validator**
+*Follow the instruction from project:* [Link](https://docs.availproject.org/operate/validator/staking/)
+
+**Step 20: Check your node name here** [Here](https://telemetry.avail.tools/#list/0xd12003ac837853b062aaccca5ce87ac4838c48447e41db4a3dcfb5bf312350c6)
+![image](https://github.com/vnbnode/Running-Nodes/assets/128967122/7b35733a-20fc-47a8-a600-5a9a08d2dbda)
 
 
 
