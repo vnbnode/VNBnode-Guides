@@ -108,6 +108,7 @@ echo -ne "\nEnter your voi address: " && read addr &&\
 goal account export -a $addr
 ```
 - Fill Address
+
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/401f8fa0-8eca-4c49-a30c-d637bc36d475)
 - Save Exported key
 ### 14/ Generate your participation keys:
@@ -129,6 +130,7 @@ dilution=$(echo "sqrt($end - $start)" | bc) &&\
 goal account addpartkey -a $addr --roundFirstValid $start --roundLastValid $end --keyDilution $dilution
 ```
 - Fill: 8000000
+
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/4d1815d1-d2c6-49ed-b37c-03b980acd439)
 - Wait Create Key Your Participation
 ### 15/ Check your participation status
