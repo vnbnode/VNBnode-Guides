@@ -102,7 +102,7 @@ goal account new
 ```
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/f3e82408-1206-4164-be25-f04e2bea5c13)
 - Save Address
-### 13/ Save
+### 13/ Goal account export
 ```
 echo -ne "\nEnter your voi address: " && read addr &&\
 goal account export -a $addr
