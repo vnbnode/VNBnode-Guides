@@ -12,11 +12,11 @@
 ```
 docker pull pactus/pactus
 ```
-### 2/ Create wallet new
+### 2/ Create new wallet
 ```
 docker run -it --rm -v ~/pactus/testnet:/pactus pactus/pactus init -w /pactus --testnet
 ```
-### 3/ Or Recovery wallet
+### 3/ If you already have a seed wallet, Recovery wallet
 ```
 docker run -it --rm -v /root/pactus/testnet:/pactus pactus/pactus init -w /pactus --testnet --restore "Fill 12 seed word of you"
 ```
