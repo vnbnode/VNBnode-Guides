@@ -1,4 +1,4 @@
-# Erbie
+# Erbie (END TESTNET)
 - Guide erbie official
 
 https://www.erbie.io/docs/install/run/index.html
