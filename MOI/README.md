@@ -41,7 +41,7 @@
 *   Chọn `Become a Guardian` để tiến hành tạo Krama ID.
 
     ![Become a Guardian](https://docs.moi.technology/assets/images/become-guardian-967292760efe12da6192719e6d026f00.gif)![Waitlist Guardians](https://docs.moi.technology/assets/images/waitlist-guardian-1d0e291d54f2d86b5f251d01fa2496aa.png)![Approved Guardian](https://docs.moi.technology/assets/images/approved-guardian-f8552b6581b5ff581cce49c9db50e097.png)
-* Truy cập [Discord](https://discord.gg/XdyRNHrE) để nhờ MOD Approved Krama ID.
+* Truy cập [Discord](https://discord.gg/XdyRNHrE](https://discord.gg/x4SnJwHk7A) để nhờ MOD Approved Krama ID.
 *   Tải xuống `Keystore`, điền `password` vào và `download`.
 
     ![Download Keystore](https://docs.moi.technology/assets/images/download-keystore-9e17e6ca9121b7a76d6bf3d363eb75ad.gif)
