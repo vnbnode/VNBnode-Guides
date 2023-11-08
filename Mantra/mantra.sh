@@ -25,25 +25,21 @@ go version
 # Install Cosmovisor
 go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
 
-# Install CosmWasm Library
-sudo wget -P /usr/lib https://github.com/CosmWasm/wasmvm/releases/download/v1.3.0/libwasmvm.x86_64.so
-
-# Download and install binary
+# Setup Cosmovisor Symlinks
 cd $HOME
-wget https://testnet-files.itrocket.net/mantra/mantrachaind-linux-amd64.zip
-unzip mantrachaind-linux-amd64.zip
-rm mantrachaind-linux-amd64.zip
-mv mantrachaind $HOME/go/bin
+wget https://snapshots.indonode.net/mantra/mantrachaind
+sudo chmod +x mantrachaind
 # Setup Cosmovisor Symlinks
 mkdir -p $HOME/.mantrachain/cosmovisor/genesis/bin
 mv mantrachaind $HOME/.mantrachain/cosmovisor/genesis/bin/
+
 sudo ln -s $HOME/.mantrachain/cosmovisor/genesis $HOME/.mantrachain/cosmovisor/current
 sudo ln -s $HOME/.mantrachain/cosmovisor/current/bin/mantrachaind /usr/local/bin/mantrachaind
 
 # Set Configuration for your node
 mantrachaind config node tcp://localhost:11157
 mantrachaind config chain-id mantrachain-testnet-1
-mantrachaind config keyring-backend file
+mantrachaind config keyring-backend test
 
 # Init your node
 mantrachaind init $MONIKER --chain-id mantrachain-testnet-1
