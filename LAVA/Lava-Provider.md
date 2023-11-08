@@ -17,6 +17,7 @@ sudo apt install certbot net-tools nginx python3-certbot-nginx -y
 sudo certbot certonly -d yourdomain.com -d LAVA.yourdomain.com
 ```
 ***Select 1 for Nginx Web Server Plugin***
+
 ***Enter your valid email***
 ### Step 4: Validate Certificate
 ```php
