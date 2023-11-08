@@ -26,7 +26,7 @@ docker run --network host -it --name pactus -v /root/pactus/testnet:/pactus -d -
 ```
 ### 5/ Check version
 ```
-docker exec -it pactus-testnet pactus-daemon version
+docker exec -it pactus pactus-daemon version
 ```
 ### 6/ Check log node
 ```
@@ -53,7 +53,7 @@ docker run --network host -it --name pactus -v /root/pactus/testnet:/pactus -d -
 ```
 ### 5/ Check version
 ```
-docker exec -it pactus-testnet pactus-daemon version
+docker exec -it pactus pactus-daemon version
 ```
 ### 6/ Check log node
 ```
