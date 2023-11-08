@@ -9,7 +9,6 @@ docker pull availj/avail:v1.8.0.0
 ### 2/ Run node
 ```
 sudo docker run -v $(pwd)/state:/da/state:rw -v $(pwd)/keystore:/da/keystore:rw -e DA_CHAIN=goldberg --name avail -e DA_NAME=<Fill Node name of you> -p 0.0.0.0:30333:30333 -p 9615:9615 -p 9944:9944 -d --restart unless-stopped availj/avail:v1.8.0.0
-
 ```
 ### 3/ Check log node
 ```
