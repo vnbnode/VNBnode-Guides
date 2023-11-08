@@ -55,7 +55,7 @@ sudo ln -s /etc/nginx/sites-available/lava_server /etc/nginx/sites-enabled/lava_
 sudo nginx -t
 ```
 ***Expected result***
-```php
+```
 nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
 nginx: configuration file /etc/nginx/nginx.conf test is successful
 ```
