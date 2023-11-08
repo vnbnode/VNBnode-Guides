@@ -2,29 +2,29 @@
 * Your own domain (If yet buy one: [namecheap](https://www.namecheap.com/)
 * Lava node running
 * Lavap binaries installed
-### Step 1: Setup A record for your domain
+#### Step 1: Setup A record for your domain
 
-#### Go to DNS setting:
+##### Go to DNS setting:
 * Create A record: Host = LAVA; Value = Your server public IP.
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/128967122/91f04293-70d9-4b87-9f8b-66808ce1940a)
-### Step 2: Install Required Dependencies
+#### Step 2: Install Required Dependencies
 ```php
 sudo apt update
 sudo apt install certbot net-tools nginx python3-certbot-nginx -y
 ```
-### Step 3: Generate Certificate
+#### Step 3: Generate Certificate
 ```php
 sudo certbot certonly -d yourdomain.com -d LAVA.yourdomain.com
 ```
 ***Select 1 for Nginx Web Server Plugin***
 
 ***Enter your valid email***
-### Step 4: Validate Certificate
+#### Step 4: Validate Certificate
 ```php
 sudo certbot certificates
 ```
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/128967122/daaf691f-8ed4-46f2-b22d-563176743bee)
-### Step 5: Create Nginx server
+#### Step 5: Create Nginx server
 ```php
 cd /etc/nginx/sites-available/
 ```
@@ -47,24 +47,24 @@ server {
     }
 }
 ```
-### Step 6: Create a link
+#### Step 6: Create a link
 ```php
 sudo ln -s /etc/nginx/sites-available/lava_server /etc/nginx/sites-enabled/lava_server
 ```
-### Step 7: Test Nginx Configuration
+#### Step 7: Test Nginx Configuration
 ```php
 sudo nginx -t
 ```
 ***Expected result***
-`
+```php
 nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
 nginx: configuration file /etc/nginx/nginx.conf test is successful
-`
-### Step 8: Run Nginx
+```
+#### Step 8: Run Nginx
 ```php
 sudo systemctl restart nginx
 ```
-### Step 9: Create Docker file
+#### Step 9: Create Docker file
 ```php
 cd ~/lava/config
 nano lava-provider.yml
@@ -95,7 +95,7 @@ endpoints:
       node-urls: 
         url: http://127.0.0.1:1317
 ```
-### Step 10: Create reward storage
+#### Step 10: Create reward storage
 ```php
 mkdir /root/.lava/config/reward/ 
 ```
@@ -108,22 +108,22 @@ lavap rpcprovider lava-provider.yml --from Adam_VNBnode  --geolocation 1 --chain
 ```
 ***Expected result***
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/128967122/8f853a72-4520-41ff-829c-692c47731c81)
-### Step 11: Test RPC provider
+#### Step 11: Test RPC provider
 ```php
 lavap test rpcprovider --from $MONIKER  --endpoints "lava.your-domain.com:443,LAV1"
 ```
 ***Expected result***
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/128967122/756bfec8-d9ca-43f2-8ba3-3e518478c49a)
-### Step 12: Stake the Provider on Chain
+#### Step 12: Stake the Provider on Chain
 ***Make sure your wallet have enough token lava***
 ```php
 lavap tx pairing stake-provider LAV1 "50000000000ulava" "lava.your-domain.com:443,1" 1 --from $MONIKER --provider-moniker $MONIKER --keyring-backend "test" --chain-id "lava-testnet-2" --gas="auto" --gas-adjustment "1.5" --gas "auto" --gas-prices "0.0001ulava"
 ```
-### Step 13: Test RPC provider again
+#### Step 13: Test RPC provider again
 ```php
 lavap test rpcprovider --from $MONIKER  --endpoints "lava.your-domain.com:443,LAV1"
 ```
-### Step 14: Check the status of RPC provider
+#### Step 14: Check the status of RPC provider
 [https://info.lavanet.xyz/provider/](https://info.lavanet.xyz/provider/)
 ***Enter your wallet address & Enjoy***
 ## Thank to support VNBnode.
