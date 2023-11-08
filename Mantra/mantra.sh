@@ -25,7 +25,7 @@ go version
 # Install Cosmovisor
 go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
 
-# Setup Cosmovisor Symlinks
+# Dowload binary
 cd $HOME
 wget https://snapshots.indonode.net/mantra/mantrachaind
 sudo chmod +x mantrachaind
