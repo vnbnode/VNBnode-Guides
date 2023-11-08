@@ -29,27 +29,27 @@ mantrachaind keys import wallet wallet.backup
 ```
 Withdraw all rewards
 ```
-mantrachaind tx distribution withdraw-all-rewards --from wallet --chain-id mantrachain-1 --gas auto --gas-adjustment 1.5
+mantrachaind tx distribution withdraw-all-rewards --from wallet --chain-id mantrachain-testnet-1 --gas auto --gas-adjustment 1.5
 ```
 Withdraw rewards and commission from your validator
 ```
-mantrachaind tx distribution withdraw-rewards $(mantrachaind keys show wallet --bech val -a) --commission --from wallet --chain-id mantrachain-1 --gas-prices=0uaum --gas-adjustment 1.5 --gas "auto" -y 
+mantrachaind tx distribution withdraw-rewards $(mantrachaind keys show wallet --bech val -a) --commission --from wallet --chain-id mantrachain-testnet-1 --gas-prices=0uaum --gas-adjustment 1.5 --gas "auto" -y 
 ```
 Delegate to Yourself
 ```
-mantrachaind tx staking delegate $(mantrachaind keys show wallet --bech val -a) 1000000uaum --from wallet --chain-id mantrachain-1 --gas auto --gas-adjustment 1.5 -y
+mantrachaind tx staking delegate $(mantrachaind keys show wallet --bech val -a) 1000000uaum --from wallet --chain-id mantrachain-testnet-1 --gas auto --gas-adjustment 1.5 -y
 ```
 Delegate
 ```
-mantrachaind tx staking delegate <TO_VALOPER_ADDRESS> 1000000uaum --from wallet --chain-id mantrachain-1 --gas auto --gas-adjustment 1.5 -y
+mantrachaind tx staking delegate <TO_VALOPER_ADDRESS> 1000000uaum --from wallet --chain-id mantrachain-testnet-1 --gas auto --gas-adjustment 1.5 -y
 ```
 Redelegate Stake to Another Validator
 ```
-mantrachaind tx staking redelegate $VALOPER_ADDRESS <TO_VALOPER_ADDRESS> 1000000uaum --from wallet --chain-id mantrachain-1 --gas auto --gas-adjustment 1.5 -y
+mantrachaind tx staking redelegate $VALOPER_ADDRESS <TO_VALOPER_ADDRESS> 1000000uaum --from wallet --chain-id mantrachain-testnet-1 --gas auto --gas-adjustment 1.5 -y
 ```
 Unbond
 ```
-mantrachaind tx staking unbond $(mantrachaind keys show wallet --bech val -a) 1000000uaum --from wallet --chain-id mantrachain-1 --gas auto --gas-adjustment 1.5 -y
+mantrachaind tx staking unbond $(mantrachaind keys show wallet --bech val -a) 1000000uaum --from wallet --chain-id mantrachain-testnet-1 --gas auto --gas-adjustment 1.5 -y
 ```
 Transfer Funds
 ```
@@ -64,7 +64,7 @@ mantrachaind tx staking create-validator \
   --identity "KEYBASE_ID" \
   --details "YOUR DETAILS" \
   --website "YOUR WEBSITE" \
-  --chain-id mantrachain-1 \
+  --chain-id mantrachain-testnet-1 \
   --commission-rate "0.05" \
   --commission-max-rate "0.20" \
   --commission-max-change-rate "0.01" \
@@ -83,7 +83,7 @@ mantrachaind tx staking edit-validator \
 --identity "" \
 --details "" \
 --from wallet \
---chain-id mantrachain-1 \
+--chain-id mantrachain-testnet-1 \
 --gas auto --gas-adjustment 1.5 \
 -y
 ```
@@ -101,7 +101,7 @@ mantrachaind q slashing signing-info $(mantrachaind tendermint show-validator)
 ```
 Unjail validator
 ```
-mantrachaind tx slashing unjail --from wallet --chain-id mantrachain-1 --gas auto --gas-adjustment 1.5 -y
+mantrachaind tx slashing unjail --from wallet --chain-id mantrachain-testnet-1 --gas auto --gas-adjustment 1.5 -y
 ```
 Active Validators List
 ```
@@ -136,19 +136,19 @@ mantrachaind query gov proposal 1
 ```
 Vote 'Yes'
 ```
-mantrachaind tx gov vote 78 yes --from wallet --chain-id mantrachain-1 --gas auto --gas-adjustment 1.5 -y
+mantrachaind tx gov vote 78 yes --from wallet --chain-id mantrachain-testnet-1 --gas auto --gas-adjustment 1.5 -y
 ```
 Vote 'No'
 ```
-mantrachaind tx gov vote 1 no --from wallet --chain-id mantrachain-1 --gas auto --gas-adjustment 1.5 -y
+mantrachaind tx gov vote 1 no --from wallet --chain-id mantrachain-testnet-1 --gas auto --gas-adjustment 1.5 -y
 ```
 Vote 'Abstain'
 ```
-mantrachaind tx gov vote 1 abstain --from wallet --chain-id mantrachain-1 --gas auto --gas-adjustment 1.5 -y
+mantrachaind tx gov vote 1 abstain --from wallet --chain-id mantrachain-testnet-1 --gas auto --gas-adjustment 1.5 -y
 ```
 Vote 'NoWithVeto'
 ```
-mantrachaind tx gov vote 1 nowithveto --from wallet --chain-id mantrachain-1 --gas auto --gas-adjustment 1.5 -y
+mantrachaind tx gov vote 1 nowithveto --from wallet --chain-id mantrachain-testnet-1 --gas auto --gas-adjustment 1.5 -y
 ```
 Remove node
 ```
