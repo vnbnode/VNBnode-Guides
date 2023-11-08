@@ -3,7 +3,7 @@ port 111, chain id: mantrachain-testnet-1
 
 # Automatic:
 ```
-wget -O mantra.sh https://raw.githubusercontent.com/johnt9x/Mantra/main/mantra.sh && chmod +x mantra.sh && ./mantra.sh
+wget -O mantra.sh https://raw.githubusercontent.com/johnt9x/VNBnode-Guides/main/Mantra/mantra.sh && chmod +x mantra.sh && ./mantra.sh
 ```
 # Snapshot:
 ```
