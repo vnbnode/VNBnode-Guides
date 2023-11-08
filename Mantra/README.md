@@ -44,24 +44,14 @@ go version
 ```
 go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
 ```
-# Install CosmWasm Library
-```
-sudo wget -P /usr/lib https://github.com/CosmWasm/wasmvm/releases/download/v1.3.0/libwasmvm.x86_64.so
-```
-# Download and install binary
+# Dowload binary
 ```
 cd $HOME
-wget https://testnet-files.itrocket.net/mantra/mantrachaind-linux-amd64.zip
-unzip mantrachaind-linux-amd64.zip
-rm mantrachaind-linux-amd64.zip
-mv mantrachaind $HOME/go/bin
-```
-# Setup Cosmovisor Symlinks
-```
+wget https://snapshots.indonode.net/mantra/mantrachaind
+sudo chmod +x mantrachaind
 mkdir -p $HOME/.mantrachain/cosmovisor/genesis/bin
 mv mantrachaind $HOME/.mantrachain/cosmovisor/genesis/bin/
-```
-```
+
 sudo ln -s $HOME/.mantrachain/cosmovisor/genesis $HOME/.mantrachain/cosmovisor/current
 sudo ln -s $HOME/.mantrachain/cosmovisor/current/bin/mantrachaind /usr/local/bin/mantrachaind
 ```
