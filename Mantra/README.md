@@ -1,9 +1,9 @@
 # MANTRACHAIN
-port 111, chain id: mantrachain-1
+port 111, chain id: mantrachain-testnet-1
 
 # Automatic:
 ```
-wget -O mantra.sh https://raw.githubusercontent.com/johnt9x/Mantra/main/mantra.sh && chmod +x mantra.sh && ./mantra.sh
+wget -O mantra.sh https://raw.githubusercontent.com/johnt9x/VNBnode-Guides/main/Mantra/mantra.sh && chmod +x mantra.sh && ./mantra.sh
 ```
 # Snapshot:
 ```
@@ -16,7 +16,7 @@ curl https://testnet-files.itrocket.net/mantra/snap_mantra.tar.lz4 | lz4 -dc - |
 
 mv $HOME/.mantrachain/priv_validator_state.json.backup $HOME/.mantrachain/data/priv_validator_state.json
 
-sudo systemctl restart mantrachaind && sudo journalctl -fu mantrachaind -o cat
+sudo systemctl restart mantrachaind && sudo journalctl -u mantrachaind -f
 ```
 # Manual:
 # Moniker
@@ -44,34 +44,26 @@ go version
 ```
 go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
 ```
-# Install CosmWasm Library
-```
-sudo wget -P /usr/lib https://github.com/CosmWasm/wasmvm/releases/download/v1.3.0/libwasmvm.x86_64.so
-```
-# Download and install binary
+# Dowload binary
 ```
 cd $HOME
-wget https://github.com/MANTRA-Finance/public/raw/main/mantrachain-testnet/mantrachaind-linux-amd64.zip
-unzip mantrachaind-linux-amd64.zip
-```
-# Setup Cosmovisor Symlinks
-```
+wget https://snapshots.indonode.net/mantra/mantrachaind
+sudo chmod +x mantrachaind
 mkdir -p $HOME/.mantrachain/cosmovisor/genesis/bin
 mv mantrachaind $HOME/.mantrachain/cosmovisor/genesis/bin/
-```
-```
+
 sudo ln -s $HOME/.mantrachain/cosmovisor/genesis $HOME/.mantrachain/cosmovisor/current
 sudo ln -s $HOME/.mantrachain/cosmovisor/current/bin/mantrachaind /usr/local/bin/mantrachaind
 ```
 # Set Configuration for your node
 ```
 mantrachaind config node tcp://localhost:11157
-mantrachaind config chain-id mantrachain-1
-mantrachaind config keyring-backend file
+mantrachaind config chain-id mantrachain-testnet-1
+mantrachaind config keyring-backend test
 ```
 # Init your node
 ```
-mantrachaind init $MONIKER --chain-id mantrachain-1
+mantrachaind init $MONIKER --chain-id mantrachain-testnet-1
 ```
 # Add Genesis File and Addrbook
 ```
@@ -82,7 +74,7 @@ wget -O $HOME/.mantrachain/config/addrbook.json https://testnet-files.itrocket.n
 # Configure Seeds and Peers
 ```
 SEEDS="a9a71700397ce950a9396421877196ac19e7cde0@mantra-testnet-seed.itrocket.net:22656"
-PEERS="1a46b1db53d1ff3dbec56ec93269f6a0d15faeb4@mantra-testnet-peer.itrocket.net:22656,9c1c4e34e90273f9e99f4c0ea319efd08f872510@167.235.14.83:32656,c533d7ee2037ee6d382f773be04c5bbf27da7a29@34.70.189.2:26656,a435339f38ce3f973739a08afc3c3c7feb862dc5@35.192.223.187:26656,114988f9a053f594ab9592beb79b924430d355ba@34.123.40.240:26656,0e687ef17922361c1aa8927df542482c67fb7571@35.222.198.102:26656,a9a71700397ce950a9396421877196ac19e7cde0@65.108.231.124:22656,a2130910e8f8a04888b9b01a372fa1e74ab50b3a@62.171.130.196:11156"
+PEERS="1a46b1db53d1ff3dbec56ec93269f6a0d15faeb4@mantra-testnet-peer.itrocket.net:22656,63763bfb78d296187754c367a9740e24730a7fc4@167.235.14.83:32656,64691a4202c1ad29a416b21ce21bfc9659783406@34.136.169.18:26656,d44eb6a1ea69263eb0a61bab354fb267396b27e1@34.70.189.2:26656,62cadc3da28e1a4785a2abf76c40f1c4e0eaeebd@34.123.40.240:26656,c4bec34390d2ab1004b9a25580c75e4743e033a1@65.108.72.253:22656,e6921a8a228e12ebab0ab70d9bcdb5364c5dece5@65.108.200.40:47656,2d2f8b62feee6b0fcbdec78d51d4ba9959e33c87@65.108.124.219:34656,4a22a9cbabe4313674d2058a964aef2863af9213@185.197.251.195:26656,c0828205f0dea4ef6feb61ee7a9e8f376be210f4@161.97.149.123:29656,30235fa097d100a14d2b534fdbf67e34e8d5f6cf@65.21.133.86:21656"
 sed -i -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.mantrachain/config/config.toml
 ```
 # Set Pruning, Enable Prometheus, Gas Price, and Indexer
