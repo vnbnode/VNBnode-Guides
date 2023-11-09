@@ -43,3 +43,4 @@ As default is EVM or custom (RDK).
 One you finished, it will return to you 3 address as below:
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/91002010/e748b897-1d89-425a-9102-947b33e65638)
 
+#### Copy 3 addresses and go to Discord to claim faucets as below:
