@@ -26,7 +26,6 @@ go version
 go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
 
 # Dowload binary
-```
 cd $HOME
 sudo wget -O /usr/lib/libwasmvm.x86_64.so https://github.com/CosmWasm/wasmvm/releases/download/v1.3.0/libwasmvm.x86_64.so
 wget https://testnet-files.itrocket.net/mantra/mantrachaind-linux-amd64.zip
