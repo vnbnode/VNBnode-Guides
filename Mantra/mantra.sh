@@ -47,8 +47,8 @@ mantrachaind config keyring-backend test
 mantrachaind init $MONIKER --chain-id mantrachain-testnet-1
 
 # Add Genesis File and Addrbook
-curl -Ls https://snapshots.indonode.net/mantra/genesis.json > $HOME/.mantrachain/config/genesis.json
-curl -Ls https://snapshots.indonode.net/mantra/addrbook.json > $HOME/.mantrachain/config/addrbook.json
+wget -O $HOME/.mantrachain/config/genesis.json https://testnet-files.itrocket.net/mantra/genesis.json
+wget -O $HOME/.mantrachain/config/addrbook.json https://testnet-files.itrocket.net/mantra/addrbook.json
 
 # Configure Seeds and Peers
 SEEDS="a9a71700397ce950a9396421877196ac19e7cde0@mantra-testnet-seed.itrocket.net:22656"
