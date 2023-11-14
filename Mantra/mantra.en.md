@@ -47,8 +47,8 @@ go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
 # Dowload binary
 ```
 cd $HOME
-wget https://snapshots.indonode.net/mantra/mantrachaind
-sudo chmod +x mantrachaind
+wget https://github.com/MANTRA-Finance/public/raw/main/mantrachain-testnet/mantrachaind-linux-amd64.zip
+unzip mantrachaind-linux-amd64.zip
 
 # Setup Cosmovisor Symlinks
 mkdir -p $HOME/.mantrachain/cosmovisor/genesis/bin
@@ -69,8 +69,8 @@ mantrachaind init $MONIKER --chain-id mantrachain-testnet-1
 ```
 # Add Genesis File and Addrbook
 ```
-curl -Ls https://snapshots.indonode.net/mantra/genesis.json > $HOME/.mantrachain/config/genesis.json
-curl -Ls https://snapshots.indonode.net/mantra/addrbook.json > $HOME/.mantrachain/config/addrbook.json
+wget -O $HOME/.mantrachain/config/genesis.json https://testnet-files.itrocket.net/mantra/genesis.json
+wget -O $HOME/.mantrachain/config/addrbook.json https://testnet-files.itrocket.net/mantra/addrbook.json
 ```
 
 # Configure Seeds and Peers
