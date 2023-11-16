@@ -15,7 +15,7 @@ sudo docker run -v $(pwd)/state:/da/state:rw -v $(pwd)/keystore:/da/keystore:rw 
 docker logs avail -f
 ```
 
-## Update Pactus
+## Update new version
 
 ### 1/ Stop node
 ```
