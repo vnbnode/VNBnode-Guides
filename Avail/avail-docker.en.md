@@ -27,7 +27,7 @@ docker rm avail
 ```
 ### 3/ Update new version
 ```
-docker pull ............
+docker pull availj/avail:v1.8.0.0
 ```
 ### 4/ Run node
 ```
