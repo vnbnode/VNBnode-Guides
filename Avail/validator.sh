@@ -11,6 +11,7 @@ sleep 3
 
 # Download new entrypoint.sh
 CONTAINER_ID=`docker ps | egrep 'availj/avail' | awk '{print $1}'`
+wget -O entrypoint.sh https://github.com/vnbnode/VNBnode-Guides/blob/main/Avail/entrypoint.sh
 
 # Grant permissions to new entrypoint.sh
 chmod +x entrypoint.sh
