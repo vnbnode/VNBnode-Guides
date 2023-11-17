@@ -11,6 +11,8 @@ fi
 
 sleep 1 && curl -s https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/logo.sh | bash && sleep 1
 # Download new entrypoint.sh
+mkdir /root/avail
+cd /root/avail
 echo -e "\e[1m\e[32m1. Download new entrypoint.sh... \e[0m" && sleep 1
 wget -q -O entrypoint.sh https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Avail/entrypoint.sh
 chmod +x entrypoint.sh
