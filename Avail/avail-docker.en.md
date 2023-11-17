@@ -1,5 +1,7 @@
 # Run Avail Docker v1.8.0.2 (Goldberg)
-
+<p align="center">
+  <img height="100" height="auto" src="/Avail/avail.png?raw=true">
+</p>
 ## Recommended Hardware Requirements 
 Minimum
 >- 4GB RAM
