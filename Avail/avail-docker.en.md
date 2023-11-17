@@ -12,7 +12,7 @@ sudo docker run -v $(pwd)/state:/da/state:rw -v $(pwd)/keystore:/da/keystore:rw 
 ```
 ### 3/ Run validator on Docker
 ```
-wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Avail/validator.sh && bash validator.sh
+cd /root/avail && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Avail/validator.sh && bash validator.sh
 ```
 ### 4/ Check log node
 ```
