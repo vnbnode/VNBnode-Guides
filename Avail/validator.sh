@@ -14,6 +14,7 @@ echo -e "\e[0m"
 
 sleep 3
 
+echo -e "\e[1m\e[32m1. Download new entrypoint.sh... \e[0m" && sleep 1
 # Download new entrypoint.sh
 CONTAINER_ID=`docker ps | egrep 'availj/avail' | awk '{print $1}'`
 wget -O entrypoint.sh https://github.com/vnbnode/VNBnode-Guides/blob/main/Avail/entrypoint.sh
