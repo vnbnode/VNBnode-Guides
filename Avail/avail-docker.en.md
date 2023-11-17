@@ -1,7 +1,21 @@
-# Run Avail Docker
+# Run Avail Docker v1.8.0.2 (Goldberg)
 
-## Version 1.8.0.2 (Goldberg)
+## Recommended Hardware Requirements 
+Minimum
+>- 4GB RAM
+>- 2core CPU (amd64/x86 architecture)
+>- 20-40 GB Storage (SSD)
 
+Recommended
+>- 8GB RAM
+>- 4core CPU (amd64/x86 architecture)
+>- 200-300 GB Storage (SSD)
+
+## Option 1 (Automatic)
+```
+wget -O avail-light.sh https://raw.githubusercontent.com/thenhthang/vinnodes/main/Avail/avail-light.sh && chmod +x avail-light.sh && ./avail-light.sh
+```
+## Option 2 (Manual)
 ### 1/ Pull image new 
 ```
 docker pull availj/avail:v1.8.0.2
