@@ -30,6 +30,7 @@ ${da_bin} \
 	--enable-offchain-indexing=true \
 	--execution native-else-wasm \
 	--name=${DA_NAME} \
+        --validator \
 	--chain=${DA_CHAIN} \
 	--port=${DA_P2P_PORT} \
 	"$@"
