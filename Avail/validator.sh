@@ -14,9 +14,8 @@ echo -e "\e[0m"
 
 sleep 3
 
-echo -e "\e[1m\e[32m1. Download new entrypoint.sh... \e[0m" && sleep 1
-
 # Download new entrypoint.sh
+echo -e "\e[1m\e[32m1. Download new entrypoint.sh... \e[0m" && sleep 1
 CONTAINER_ID=`docker ps | egrep 'availj/avail' | awk '{print $1}'`
 wget -O entrypoint.sh https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Avail/entrypoint.sh
 
@@ -24,7 +23,7 @@ wget -O entrypoint.sh https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/m
 chmod +x entrypoint.sh
 
 # Insert new entrypoint
-docker  cp entrypoint.sh ${CONTAINER_ID}:/entrypoint.sh
+docker cp entrypoint.sh ${CONTAINER_ID}:/entrypoint.sh
 
 # Restart avail container
 echo -e "\e[1m\e[32m1. Restart avail container... \e[0m" && sleep 1
@@ -33,7 +32,7 @@ sleep 1
 
 # Command check
 echo '=============== SETUP FINISHED ==================='
-echo -e 'View the logs from the running: sudo docker logs -f ${CONTAINER_ID}'
+echo -e "View the logs from the running: sudo docker logs -f ${CONTAINER_ID}"
 echo -e "Check the list container: sudo docker ps -a"
 echo -e "Stop your avail node: sudo docker stop ${CONTAINER_ID}"
 echo -e "Start your avail node: sudo docker start ${CONTAINER_ID}"
