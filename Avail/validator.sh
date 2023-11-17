@@ -1,26 +1,26 @@
 #!/bin/bash
+exists()
+{
+  command -v "$1" >/dev/null 2>&1
+}
+if exists curl; then
+echo ''
+else
+  sudo apt update && sudo apt install curl -y < "/dev/null"
+fi
+bash_profile=$HOME/.bash_profile
+if [ -f "$bash_profile" ]; then
+    . $HOME/.bash_profile
+fi
+sleep 1 && curl -s https://github.com/vnbnode/VNBnode-Guides/blob/main/logo.sh | bash && sleep 1
 
-echo -e "\033[0;35m"
-echo "/========================================================\";
-echo "||                                                      ||";
-echo "|| __     ___   _ ____  _   _  ___  ____  _____ ____    ||";
-echo "|| \ \   / / \ | | __ )| \ | |/ _ \|  _ \| ____/ ___|   ||";
-echo "||  \ \ / /|  \| |  _ \|  \| | | | | | | |  _| \___ \   ||";
-echo "||   \ V / | |\  | |_) | |\  | |_| | |_| | |___ ___) |  ||";
-echo "||    \_/  |_| \_|____/|_| \_|\___/|____/|_____|____/   ||";
-echo "||                                                      ||";
-echo "\========================================================/";
-echo -e "\e[0m"
 
 sleep 3
 
 # Download new entrypoint.sh
 echo -e "\e[1m\e[32m1. Download new entrypoint.sh... \e[0m" && sleep 1
 CONTAINER_ID=`docker ps | egrep 'availj/avail' | awk '{print $1}'`
-wget -O entrypoint.sh https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Avail/entrypoint.sh
-
-# Grant permissions to new entrypoint.sh
-chmod +x entrypoint.sh
+curl -s  https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Avail/entrypoint.sh bash && sleep 1
 
 # Insert new entrypoint
 docker cp entrypoint.sh ${CONTAINER_ID}:/entrypoint.sh
