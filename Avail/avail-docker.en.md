@@ -16,7 +16,7 @@ Recommended
 
 ## Option 1 (Automatic)
 ```
-
+wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Avail/Technology/avail-auto.sh && bash avail-auto.sh
 ```
 ## Option 2 (Manual)
 ### 1/ Pull image new 
