@@ -4,15 +4,8 @@
 </p>
 
 ## Recommended Hardware Requirements 
-Minimum
->- 4GB RAM
->- 2core CPU (amd64/x86 architecture)
->- 20-40 GB Storage (SSD)
+![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/7449170a-c03a-4502-8ffb-26455e413e33)
 
-Recommended
->- 8GB RAM
->- 4core CPU (amd64/x86 architecture)
->- 200-300 GB Storage (SSD)
 
 ## Option 1 (Automatic)
 ```
