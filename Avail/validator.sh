@@ -20,7 +20,7 @@ CONTAINER_ID=`docker ps | egrep 'availj/avail' | awk '{print $1}'`
 curl -s  https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Avail/entrypoint.sh bash && sleep 1
 
 # Insert new entrypoint
-docker cp entrypoint.sh ${CONTAINER_ID}:/entrypoint.sh
+docker cp /root/avail/entrypoint.sh ${CONTAINER_ID}:/entrypoint.sh
 
 # Restart avail container
 echo -e "\e[1m\e[32m2. Restart avail container... \e[0m" && sleep 1
