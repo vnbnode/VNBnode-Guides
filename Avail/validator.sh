@@ -8,19 +8,6 @@ echo ''
 else
   sudo apt update && sudo apt install curl -y < "/dev/null"
 fi
-bash_profile=$HOME/.bash_profile
-if [ -f "$bash_profile" ]; then
-    . $HOME/.bash_profile
-fi
-
-if [ ! $VALIDATOR ]; then
-    read -p "Enter validator name: " VALIDATOR
-    echo 'export VALIDATOR='\"${VALIDATOR}\" >> $HOME/.bash_profile
-fi
-echo 'source $HOME/.bashrc' >> $HOME/.bash_profile
-source $HOME/.bash_profile
-sleep 1
-cd $HOME
 
 sleep 1 && curl -s https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/logo.sh | bash && sleep 1
 # Download new entrypoint.sh
