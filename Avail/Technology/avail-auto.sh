@@ -69,7 +69,6 @@ NAMES=`docker ps | egrep 'availj/avail' | awk '{print $10}'`
 # Insert new entrypoint
 docker cp /root/avail/entrypoint.sh ${NAMES}:/entrypoint.sh
 sleep 1
-rm /root/avail/validator.sh
 rm /root/avail/entrypoint.sh
 cd $HOME
 rm avail-auto.sh
