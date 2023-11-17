@@ -69,6 +69,8 @@ NAMES=`docker ps | egrep 'availj/avail' | awk '{print $10}'`
 docker cp /root/avail/entrypoint.sh ${NAMES}:/entrypoint.sh
 rm /root/avail/validator.sh
 rm /root/avail/entrypoint.sh
+cd $HOME
+rm avail-auto.sh
 
 # Restart avail container
 echo -e "\e[1m\e[32m2. Restart avail container... \e[0m" && sleep 1
