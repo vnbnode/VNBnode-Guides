@@ -15,7 +15,7 @@ sleep 1 && curl -s https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main
 echo -e "\e[1m\e[32m1. Download new entrypoint.sh... \e[0m" && sleep 1
 wget -q -O entrypoint.sh https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Avail/entrypoint.sh
 chmod +x entrypoint.sh
-NAMES=`docker ps | egrep 'availj/avail' | awk '{print $1}'`
+NAMES=`docker ps | egrep 'availj/avail' | awk '{print $7}'`
 
 # Insert new entrypoint
 docker cp /root/avail/entrypoint.sh ${NAMES}:/entrypoint.sh
