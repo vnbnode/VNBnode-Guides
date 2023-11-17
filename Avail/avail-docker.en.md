@@ -13,7 +13,7 @@ Recommended
 
 ## Option 1 (Automatic)
 ```
-wget -O avail-light.sh https://raw.githubusercontent.com/thenhthang/vinnodes/main/Avail/avail-light.sh && chmod +x avail-light.sh && ./avail-light.sh
+
 ```
 ## Option 2 (Manual)
 ### 1/ Pull image new 
