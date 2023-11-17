@@ -29,7 +29,7 @@ sleep 1
 
 # Command check
 echo '=============== SETUP FINISHED ==================='
-echo -e "View the logs from the running: sudo docker logs -f ${CONTAINER_ID}"
+echo -e 'View the logs from the running: sudo docker logs -f ${CONTAINER_ID}'
 echo -e "Check the list container: sudo docker ps -a"
 echo -e "Stop your avail node: sudo docker stop ${CONTAINER_ID}"
 echo -e "Start your avail node: sudo docker start ${CONTAINER_ID}"
