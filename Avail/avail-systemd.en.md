@@ -70,13 +70,13 @@ mkdir -p output
 
 **Step 11: Switch git**
 ```php
-git checkout v1.7.2
+git checkout v1.8.0.2
 ```
 ![image](https://github.com/vnbnode/Running-Nodes/assets/128967122/b7556554-51f9-443c-9b34-5585336a6a5d)
 
 **Step 12: Run**
 ```php
-cargo run --locked --release -- --chain kate -d ./output
+cargo run --locked --release -- --chain goldberg -d ./output
 ```
 *This step also takes time, be patient! Once it finished, you will see this screen:*
 ![image](https://github.com/vnbnode/Running-Nodes/assets/128967122/122cc330-0234-4ed2-8f2e-cafe1caa75e1)
@@ -100,7 +100,7 @@ After=network.target
 StartLimitIntervalSec=0
 [Service]
 User=root
-ExecStart= /root/avail/target/release/data-avail --base-path `pwd`/data --chain kate --name "VNBnode_Founder"
+ExecStart= /root/avail/target/release/data-avail --base-path `pwd`/data --chain goldberg --validator --name "VNBnode_Founder"
 Restart=always
 RestartSec=120
 [Install]
