@@ -27,7 +27,9 @@ chmod +x entrypoint.sh
 docker  cp entrypoint.sh ${CONTAINER_ID}:/entrypoint.sh
 
 # Restart avail container
+echo -e "\e[1m\e[32m1. Restart avail container... \e[0m" && sleep 1
 docker restart ${CONTAINER_ID}
+sleep 1
 
 # Command check
 echo '=============== SETUP FINISHED ==================='
