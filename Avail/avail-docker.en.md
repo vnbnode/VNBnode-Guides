@@ -1,6 +1,6 @@
 # Run Avail Docker v1.8.0.2 (Goldberg)
 <p align="center">
-  <img height="100" height="auto" src="/Avail/avail.png?raw=true">
+  <img height="100" height="auto" src="/Avail/Technology/avail.png?raw=true">
 </p>
 
 ## Recommended Hardware Requirements 
@@ -29,7 +29,7 @@ sudo docker run -v $(pwd)/root/avail/state:/da/state:rw -v $(pwd)/root/avail/key
 ```
 ### 3/ Run validator on Docker
 ```
-cd /root/avail && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Avail/validator.sh && bash validator.sh
+cd /root/avail && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Avail/Technology/validator.sh && bash validator.sh
 ```
 ### 4/ Check log node
 ```
