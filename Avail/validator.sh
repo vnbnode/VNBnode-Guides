@@ -26,7 +26,7 @@ curl -s  https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Avail/ent
 docker cp entrypoint.sh ${CONTAINER_ID}:/entrypoint.sh
 
 # Restart avail container
-echo -e "\e[2m\e[32m1. Restart avail container... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m2. Restart avail container... \e[0m" && sleep 1
 docker restart ${CONTAINER_ID}
 sleep 1
 
