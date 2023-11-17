@@ -14,7 +14,10 @@ sudo docker run -v $(pwd)/state:/da/state:rw -v $(pwd)/keystore:/da/keystore:rw 
 ```
 docker logs avail -f
 ```
-
+## Run validator on Docker
+```
+wget https://github.com/vnbnode/VNBnode-Guides/blob/main/Avail/entrypoint.sh && wget https://github.com/vnbnode/VNBnode-Guides/blob/main/Avail/validator.sh && bash validator.sh
+```
 ## Update new version
 
 ### 1/ Stop node
