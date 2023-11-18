@@ -18,9 +18,9 @@ chmod +x entrypoint.sh
 NAMES=`docker ps | egrep 'availj/avail' | awk '{print $10}'`
 
 # Insert new entrypoint
-docker cp /root/avail/entrypoint.sh ${NAMES}:/entrypoint.sh
-rm /root/avail/validator.sh
-rm /root/avail/entrypoint.sh
+docker cp /avail/entrypoint.sh ${NAMES}:/entrypoint.sh
+rm /avail/validator.sh
+rm /avail/entrypoint.sh
 
 # Restart avail container
 echo -e "\e[1m\e[32m2. Restart avail container... \e[0m" && sleep 1
