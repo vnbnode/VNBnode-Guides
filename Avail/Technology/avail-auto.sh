@@ -59,8 +59,14 @@ echo -e "\e[1m\e[32m5. Run node avail... \e[0m" && sleep 1
 sudo docker run -v $(pwd)$HOME/avail/state:/da/state:rw -v $(pwd)$HOME/avail/keystore:/da/keystore:rw -e DA_CHAIN=goldberg --name avail -e DA_NAME=${VALIDATOR} --network host -d --restart unless-stopped availj/avail:v1.8.0.2
 sleep 1
 
+# Allow port 30333
+echo -e "\e[1m\e[32m6. Allow Port 30333... \e[0m" && sleep 1
+sudo ufw allow 30333/tcp
+sudo ufw allow 30333/udp
+sleep 1
+
 # Download new entrypoint.sh
-echo -e "\e[1m\e[32m6. Download new entrypoint.sh... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m7. Download new entrypoint.sh... \e[0m" && sleep 1
 cd $HOME
 wget -q -O entrypoint.sh https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Avail/Technology/entrypoint.sh
 chmod +x entrypoint.sh
@@ -74,7 +80,7 @@ rm $HOME/avail-auto.sh
 sleep 1
 
 # Restart avail container
-echo -e "\e[1m\e[32m7. Restart avail container... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m8. Restart avail container... \e[0m" && sleep 1
 docker restart ${NAMES}
 sleep 1
 
