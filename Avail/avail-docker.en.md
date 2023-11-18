@@ -6,7 +6,6 @@
 ## Recommended Hardware Requirements 
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/7449170a-c03a-4502-8ffb-26455e413e33)
 
-
 ## Option 1 (Automatic)
 ```
 cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Avail/Technology/avail-auto.sh && bash avail-auto.sh
