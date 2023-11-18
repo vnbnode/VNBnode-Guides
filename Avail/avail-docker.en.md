@@ -41,7 +41,7 @@ sudo docker run -v $(pwd)$HOME/avail/state:/da/state:rw -v $(pwd)$HOME/avail/key
 ```
 ### 3/ Run validator on Docker
 ```
-cd avail && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Avail/Technology/validator.sh && bash validator.sh
+cd $HOME/avail && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Avail/Technology/validator.sh && bash validator.sh
 ```
 ### 4/ Check log node
 ```
