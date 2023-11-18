@@ -100,7 +100,7 @@ After=network.target
 StartLimitIntervalSec=0
 [Service]
 User=root
-ExecStart= /root/avail/target/release/data-avail --base-path `pwd`/data --chain goldberg --validator --name "VNBnode_Founder"
+ExecStart= /root/avail/target/release/data-avail --base-path `pwd`/data --chain goldberg --validator --name "VNBnode"
 Restart=always
 RestartSec=120
 [Install]
