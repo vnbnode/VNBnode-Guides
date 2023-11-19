@@ -48,6 +48,10 @@
 
 ## Option 1: Automatic
 ```
+cd $HOME && mkdir moi && cd moi
+```
+- Download keystore.json --> $HOME/moi/keystore.json
+```
 cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/Moi/Technology/moi-auto.sh && bash moi-auto.sh
 ```
 ## Option 2: Manual
