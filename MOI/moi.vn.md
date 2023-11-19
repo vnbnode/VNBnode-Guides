@@ -46,6 +46,11 @@
 
     ![Download Keystore](https://docs.moi.technology/assets/images/download-keystore-9e17e6ca9121b7a76d6bf3d363eb75ad.gif)
 
+## Option 1: Automatic
+```
+cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/Moi/Technology/moi-auto.sh && bash moi-auto.sh
+```
+## Option 2: Manual
 ## Cài đặt Docker
 
 1\. Cập nhật hệ thống:
