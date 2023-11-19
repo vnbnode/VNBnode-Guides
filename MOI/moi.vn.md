@@ -54,7 +54,7 @@ cd $HOME && mkdir moi && cd moi
 ```
 cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/MOI/Technology/moi-auto.sh && bash moi-auto.sh
 ```
-- Need to change entered information:
+- Cần thay đổi thông tin đã nhập:
 ```
 nano $HOME/.bash_profile
 ```
