@@ -12,34 +12,6 @@ fi
 # Logo
 sleep 1 && curl -s https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/logo.sh | bash && sleep 1
 
-# Update
-echo -e "\e[1m\e[32m1. Update... \e[0m" && sleep 1
-sudo apt update && sudo apt upgrade -y
-sleep 1
-
-# Package
-echo -e "\e[1m\e[32m2. Installing package... \e[0m" && sleep 1
-sudo apt install curl tar wget clang pkg-config protobuf-compiler libssl-dev jq build-essential protobuf-compiler bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
-sleep 1
-
-# Install Docker
-echo -e "\e[1m\e[32m3. Installing docker... \e[0m" && sleep 1
-sudo apt-get update
-sudo apt-get install \
-ca-certificates \
-curl \
-gnupg
-sudo install -m 0755 -d /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-sudo chmod a+r /etc/apt/keyrings/docker.gpg
-echo \
-"deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-"$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
-sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-sleep 1
-
 # Pull image new
 echo -e "\e[1m\e[32m4. Pull image... \e[0m" && sleep 1
 SelectVersion="Please choose: \n 1. CPU from 2015 or later\n 2. CPU from 2015 or earlier"
@@ -134,9 +106,9 @@ SelectVersion="Please choose: \n 1. CPU from 2015 or later\n 2. CPU from 2015 or
 echo -e "${SelectVersion}"
 read -p "Enter index: " version;
 if [ "$version" != "2" ];then
-	sudo docker run -p 1600:1600 -p 6000:6000/tcp -p 6000:6000/udp -it -d -w /data -v $(pwd):/data sarvalabs/moipod:latest server --babylon --data-dir $moi_dirpath --log-level DEBUG --node-password $moi_passwd 
+	sudo docker run --name moi -p 1600:1600 -p 6000:6000/tcp -p 6000:6000/udp -it -d -w /data -v $(pwd):/data sarvalabs/moipod:latest server --babylon --data-dir $moi_dirpath --log-level DEBUG --node-password $moi_passwd 
 else
-	sudo docker run -p 1600:1600 -p 6000:6000/tcp -p 6000:6000/udp -it -d -w /data -v $(pwd):/data sarvalabs/moipod:v0.3.0-port server --babylon --data-dir $moi_dirpath --log-level DEBUG --node-password $moi_passwd
+	sudo docker run --name moi -p 1600:1600 -p 6000:6000/tcp -p 6000:6000/udp -it -d -w /data -v $(pwd):/data sarvalabs/moipod:v0.3.0-port server --babylon --data-dir $moi_dirpath --log-level DEBUG --node-password $moi_passwd
 fi
 sleep 1
 
