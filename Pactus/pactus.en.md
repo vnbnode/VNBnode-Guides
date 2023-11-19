@@ -10,7 +10,7 @@
 
 ### Option 1: Automatic
 ```
-cd $HOME && https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/Pactus/Technology/pactus-auto.sh && bash pactus-auto.sh
+cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Pactus/Technology/pactus-auto.sh && bash pactus-auto.sh
 ```
 ### Option 2: Manual
 ### 1/ Pull image Pactus
