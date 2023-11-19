@@ -118,9 +118,9 @@ docker pull sarvalabs/moipod:latest
 sudo docker run --network host --rm -it -w /data -v $(pwd):/data sarvalabs/moipod:latest register --data-dir {DIRPATH} --mnemonic-keystore-path {KEYSTORE_PATH} --watchdog-url https://babylon-watchdog.moi.technology/add --node-password {NODE_PWD} --network-rpc-url https://voyage-rpc.moi.technology/babylon --wallet-address {ADDRESS} --node-index {NODE_IDX} --local-rpc-url http://{IP_or_Domain}:1600
 ```
 
-`{DIRPATH}`: đường dẫn thư mục bạn tạo để lưu trữ node, ví dụ `moi
+`{DIRPATH}`: đường dẫn thư mục bạn tạo để lưu trữ node, ví dụ `moi`
 
-`{KEYSTORE_PATH}`: đường dẫn file keystore mà bạn đã tải lúc tạo Krama ID, ví dụ nếu bạn cho keystore vào trong thư mục moi thì đường dẫn sẽ là `moi/keystore.json
+`{KEYSTORE_PATH}`: đường dẫn file keystore mà bạn đã tải lúc tạo Krama ID, ví dụ nếu bạn cho keystore vào trong thư mục moi thì đường dẫn sẽ là `moi/keystore.json`
 
 `{NODE_PWD}`: password lúc bạn điền vào để download file keystore.json về
 
