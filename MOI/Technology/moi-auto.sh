@@ -55,7 +55,7 @@ sleep 1
 ## PASSWD
 if [ ! $moi_passwd  ]; then
     read -p "PASSWORD KEYSTORE DOWNLOADED: " moi_passwd 
-    echo 'export moi_passwd ='\"${moi_passwd }\" >> $HOME/.bash_profile
+    echo 'export moi_passwd ='\"${moi_passwd}\" >> $HOME/.bash_profile
 fi
 echo 'source $HOME/.bashrc' >> $HOME/.bash_profile
 source $HOME/.bash_profile
