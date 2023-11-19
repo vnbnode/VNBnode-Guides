@@ -8,11 +8,11 @@
 
 ## Ubuntu (Docker)
 
-### Option 1: Automatic
+## Option 1: Automatic
 ```
 cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Pactus/Technology/pactus-auto.sh && bash pactus-auto.sh
 ```
-### Option 2: Manual
+## Option 2: Manual
 ### 1/ Pull image Pactus
 ```
 docker pull pactus/pactus
