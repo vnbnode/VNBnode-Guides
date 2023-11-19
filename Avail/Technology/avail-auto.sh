@@ -14,7 +14,7 @@ sleep 1 && curl -s https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main
 
 # Set name validator
 if [ ! $VALIDATOR ]; then
-    read -p "Enter validator name: " VALIDATOR
+    read -p "Enter passwd wallet: " VALIDATOR
     echo 'export VALIDATOR='\"${VALIDATOR}\" >> $HOME/.bash_profile
 fi
 echo 'source $HOME/.bashrc' >> $HOME/.bash_profile
