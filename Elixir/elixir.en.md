@@ -9,6 +9,12 @@
 |   **SSD**   |        30-100 GB          |
 | **NETWORK** |        100 Mbps           |
 
+## Option 1: Automatic
+```
+cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Elixir/Technology/elixir-auto.sh && bash elixir-auto.sh
+```
+## Option 2: Manual
+
 ### 1/ Edit Dockerfile
 ```
 cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Elixir/Technology/set-env.sh && bash set-env.sh
