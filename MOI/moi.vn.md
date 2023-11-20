@@ -115,7 +115,7 @@ docker pull sarvalabs/moipod:latest
 ### Register the Guardian Node <a href="#register-the-guardian-node" id="register-the-guardian-node"></a>
 
 ```
-sudo docker run --network host --rm -it -w /data -v $(pwd):/data sarvalabs/moipod:latest register --data-dir {DIRPATH} --mnemonic-keystore-path {KEYSTORE_PATH} --watchdog-url https://babylon-watchdog.moi.technology/add --node-password {NODE_PWD} --network-rpc-url https://voyage-rpc.moi.technology/babylon --wallet-address {ADDRESS} --node-index {NODE_IDX} --local-rpc-url http://{IP_or_Domain}:1600
+sudo docker run -p 1600:1600/tcp -p 6000:6000/tcp -p 6000:6000/udp --rm -it -w /data -v $(pwd):/data sarvalabs/moipod:latest register --data-dir {DIRPATH} --mnemonic-keystore-path {KEYSTORE_PATH} --watchdog-url https://babylon-watchdog.moi.technology/add --node-password {NODE_PWD} --network-rpc-url https://voyage-rpc.moi.technology/babylon --wallet-address {ADDRESS} --node-index {NODE_IDX} --local-rpc-url http://{IP_or_Domain}:1600
 ```
 
 `{DIRPATH}`: đường dẫn thư mục bạn tạo để lưu trữ node, ví dụ `moi`
@@ -135,7 +135,7 @@ sudo docker run --network host --rm -it -w /data -v $(pwd):/data sarvalabs/moipo
 ### Start the Guardian Node <a href="#start-the-guardian-node" id="start-the-guardian-node"></a>
 
 ```
-sudo docker run --network host -it -d -w /data -v $(pwd):/data sarvalabs/moipod:latest server --babylon --data-dir {DIRPATH} --log-level DEBUG --node-password {NODE_PWD}
+sudo docker run -p 1600:1600/tcp -p 6000:6000/tcp -p 6000:6000/udp -it -d -w /data -v $(pwd):/data sarvalabs/moipod:latest server --babylon --data-dir {DIRPATH} --log-level DEBUG --node-password {NODE_PWD}
 ```
 
 `{DIRPATH}`: đường dẫn thư mục bạn tạo để lưu trữ node, ví dụ `moi`
@@ -204,5 +204,5 @@ docker container prune
 * Chạy lại node
 
 ```
-sudo docker run --network host -it -d -w /data -v $(pwd):/data sarvalabs/moipod:latest server --babylon --data-dir {DIRPATH} --log-level DEBUG --node-password {NODE_PWD}
+sudo docker run -p 1600:1600/tcp -p 6000:6000/tcp -p 6000:6000/udp -it -d -w /data -v $(pwd):/data sarvalabs/moipod:latest server --babylon --data-dir {DIRPATH} --log-level DEBUG --node-password {NODE_PWD}
 ```
