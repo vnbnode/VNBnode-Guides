@@ -45,7 +45,7 @@ mkdir ev && cd ev
 sleep 1
 wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Elixir/Technology/Dockerfile
 sleep 1
-docker run -it --name ev elixir-validator
+docker build . -f Dockerfile -t elixir-validator
 sleep 1
 
 cd $HOME 

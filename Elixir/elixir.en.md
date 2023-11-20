@@ -19,7 +19,7 @@ nano $HOME/.bash_profile
 ```
 ### 2/ Build Dockerfile
 ```
-docker run -it --name ev elixir-validator
+docker build . -f Dockerfile -t elixir-validator
 ```
 ### 3/ Run Node
 ```

@@ -76,7 +76,7 @@ mkdir ev && cd ev
 sleep 1
 wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Elixir/Technology/Dockerfile
 sleep 1
-docker run -it --name ev elixir-validator
+docker build . -f Dockerfile -t elixir-validator
 sleep 1
 
 # Run Node
@@ -84,8 +84,9 @@ echo -e "\e[1m\e[32m5. Run Node... \e[0m" && sleep 1
 docker run -d --restart unless-stopped --name ev elixir-validator
 sleep 1
 
-NAMES=`docker ps | egrep 'elixir-validator' | awk '{print $13}'`
+cd $HOME
 rm $HOME/elixir-auto.sh
+NAMES=`docker ps | egrep 'elixir-validator' | awk '{print $13}'`
 
 # Command check
 echo '====================== SETUP FINISHED ======================'
