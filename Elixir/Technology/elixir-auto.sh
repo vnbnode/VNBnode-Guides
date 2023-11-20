@@ -12,6 +12,36 @@ fi
 # Logo
 sleep 1 && curl -s https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/logo.sh | bash && sleep 1
 
+# Set ENV ADDRESS
+if [ ! $ENVADDRESS ]; then
+    read -p "Enter ADDRESS: " ENVADDRESS
+    echo 'export ENVADDRESS='\"${ENVADDRESS}\" >> $HOME/.bash_profile
+fi
+echo 'source $HOME/.bashrc' >> $HOME/.bash_profile
+source $HOME/.bash_profile
+sleep 1
+
+# Set ENV PRIVATE_KEY
+if [ ! $ENVPRIVATE_KEY ]; then
+    read -p "Enter PRIVATE_KEY: " ENVPRIVATE_KEY
+    echo 'export ENVPRIVATE_KEY='\"${ENVPRIVATE_KEY}\" >> $HOME/.bash_profile
+fi
+echo 'source $HOME/.bashrc' >> $HOME/.bash_profile
+source $HOME/.bash_profile
+sleep 1
+
+# Set ENV VALIDATOR_NAME
+if [ ! $ENVVALIDATOR_NAME ]; then
+    read -p "Enter VALIDATOR_NAME: " ENVVALIDATOR_NAME
+    echo 'export ENVVALIDATOR_NAME='\"${ENVADDRESS}\" >> $HOME/.bash_profile
+fi
+echo 'source $HOME/.bashrc' >> $HOME/.bash_profile
+source $HOME/.bash_profile
+sleep 1
+
+rm $HOME/set-env.sh
+echo -e "\e[1;32mDONE\e[0m"
+
 # Update
 echo -e "\e[1m\e[32m1. Update... \e[0m" && sleep 1
 sudo apt update && sudo apt upgrade -y
@@ -40,32 +70,22 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sleep 1
 
-# Pull image new
-echo -e "\e[1m\e[32m4. Pull image... \e[0m" && sleep 1
-docker pull pactus/pactus
+# Build Dockerfile
+echo -e "\e[1m\e[32m4. Build Dockerfile... \e[0m" && sleep 1
+mkdir ev && cd ev
 sleep 1
-
-# Create wallet
-echo -e "\e[1m\e[32m5. Create wallet... \e[0m" && sleep 1
-docker run -it --rm -v ~/pactus/testnet:/pactus pactus/pactus init -w /pactus --testnet
+wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Elixir/Technology/Dockerfile
 sleep 1
-
-# Fill in wallet password
-if [ ! $passpactus ]; then
-    read -p "Fill in wallet password: " passpactus
-    echo 'export passpactus='\"${passpactus}\" >> $HOME/.bash_profile
-fi
-echo 'source $HOME/.bashrc' >> $HOME/.bash_profile
-source $HOME/.bash_profile
+docker run -it --name ev elixir-validator
 sleep 1
 
 # Run Node
-echo -e "\e[1m\e[32m6. Run node pactus... \e[0m" && sleep 1
-docker run --network host -it --name pactus -v $HOME/pactus/testnet:/pactus -d --name pactus pactus/pactus start -w /pactus -p $passpactus
+echo -e "\e[1m\e[32m5. Run Node... \e[0m" && sleep 1
+docker run -d --restart unless-stopped --name ev elixir-validator
 sleep 1
 
-NAMES=`docker ps | egrep 'pactus/pactus' | awk '{print $13}'`
-rm $HOME/pactus-auto.sh
+NAMES=`docker ps | egrep 'elixir-validator' | awk '{print $13}'`
+rm $HOME/elixir-auto.sh
 
 # Command check
 echo '====================== SETUP FINISHED ======================'
