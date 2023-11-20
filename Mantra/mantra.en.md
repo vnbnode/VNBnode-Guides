@@ -1,4 +1,4 @@
-# MANTRACHAIN
+# MANTRACHAIN ( Stop Support )
 port 111, chain id: mantrachain-testnet-1
 
 # Automatic:
