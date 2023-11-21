@@ -42,6 +42,8 @@ sleep 1
 
 # Build Dockerfile
 echo -e "\e[1m\e[32m4. Build Dockerfile... \e[0m" && sleep 1
+cd $HOME
+cd ev
 docker build . -f Dockerfile -t elixir-validator
 sleep 1
 
