@@ -47,18 +47,19 @@
     ![Download Keystore](https://docs.moi.technology/assets/images/download-keystore-9e17e6ca9121b7a76d6bf3d363eb75ad.gif)
 
 ## Option 1: Automatic
-```
+```ph 
 cd $HOME && mkdir moi && cd moi
 ```
 - Download keystore.json --> $HOME/moi/keystore.json
 ```
 cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/MOI/Technology/moi-auto.sh && bash moi-auto.sh
 ```
-- Cần thay đổi thông tin đã nhập:
 ```
+# Cần thay đổi thông tin đã nhập:
 nano $HOME/.bash_profile
-```## Option 2: Manual
-## Cài đặt Docker
+```
+## Option 2: Manual
+### Cài đặt Docker
 
 1\. Cập nhật hệ thống:
 
