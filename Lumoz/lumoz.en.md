@@ -48,7 +48,18 @@ You don't need deposit again if you use an exsiting validator key you have depos
 
 ![Alt text](image/image-7.png)
 
-### 5/ Check logs node
+### 5/ Start or Restart Lumoz Node
+```
+# Start BeaconChain
+testnet-auto-install-v3/opside-chain/start-beaconChain.sh
+
+# Start Geth
+testnet-auto-install-v3/opside-chain/start-geth.sh
+
+# Start Validator
+testnet-auto-install-v3/opside-chain/start-validator.sh
+```
+### 6/ Check logs node
 ```
 # show the execution client logs
 testnet-auto-install-v3/opside-chain/show-geth-log.sh
