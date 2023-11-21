@@ -9,29 +9,31 @@
 |   **SSD**   |        30-100 GB          |
 | **NETWORK** |        100 Mbps           |
 
-## Option 1: Automatic
-```
-cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Elixir/Technology/elixir-auto.sh && bash elixir-auto.sh
-```
-## Option 2: Manual
 
 ### 1/ Edit Dockerfile
 ```
-cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Elixir/Technology/set-env.sh && bash set-env.sh
+cd $HOME && mkdir ev && cd ev && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Elixir/Technology/Dockerfile && nano Dockerfile
 ```
-- If you want to change the information you just entered
 ```
-nano $HOME/.bash_profile
+FROM elixirprotocol/validator:testnet-2
+
+ENV ADDRESS=
+ENV PRIVATE_KEY=
+ENV VALIDATOR_NAME=
 ```
-### 2/ Run Node
+### 2/ Build Dockerfile
+```
+docker build . -f Dockerfile -t elixir-validator
+```
+### 3/ Run Node
 ```
 docker run -d --restart unless-stopped --name ev elixir-validator
 ```
-### 3/ Check log
+### 4/ Check log
 ```
 sudo docker logs -f ev
 ```
-### 4/ Stop and Remove Node
+### 5/ Stop and Remove Node
 ```
 sudo docker stop ev
 ```
