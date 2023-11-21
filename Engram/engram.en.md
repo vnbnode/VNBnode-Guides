@@ -138,9 +138,9 @@ Verifying your deposits:          [####################################]  1/1
 Success!
 Your keys can be found at: validator_keys/validator_keys
 ```
-![Alt text](image.png)
-![Alt text](image-1.png)
-![Alt text](image-2.png)
+![Alt text](image/image.png)
+![Alt text](image/image-1.png)
+![Alt text](image/image-2.png)
 
 ## IV\. Running Validator Node
 ```
@@ -156,6 +156,6 @@ Copy the IPAddress of the `lighthouse_cl` container and change the docker-compos
 ```
 docker compose -f docker-compose-validator.yml up -d
 ```
-![Alt text](image-3.png)
+![Alt text](image/image-3.png)
 
 ! Making a deposit takes time for the protocol to receive and validate your deposit data and keystore, it takes at least 18-46 hours (estimation only) for the protocol to completely validate your data.
