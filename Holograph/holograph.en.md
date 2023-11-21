@@ -1,4 +1,4 @@
-# Run Node Subspace
+# Run Node Holograph
 
 ## Recommended Hardware Requirements 
 

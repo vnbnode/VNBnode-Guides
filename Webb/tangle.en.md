@@ -1,4 +1,4 @@
-# Run Node Subspace
+# Run Node Tangle
 
 ## Recommended Hardware Requirements 
 
