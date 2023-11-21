@@ -1,4 +1,7 @@
-# Run Node Lumoz
+# <p align="center"> Run Node Lumoz </p>
+<p align="center">
+  <img height="100" height="auto" src="/Lumoz/image/lumoz.jpg?raw=true">
+</p>
 
 ## Recommended Hardware Requirements 
 ![Alt text](image/image-5.png)
