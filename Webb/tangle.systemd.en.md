@@ -54,7 +54,7 @@ RestartSec=3
 LimitNOFILE=65535
 ExecStart=/usr/bin/tangle \
   --base-path $HOME/.tangle/data/ \
-  --name '$MONIKER' \
+  --name $MONIKER \
   --chain $HOME/.tangle/tangle-standalone.json \
   --node-key-file "$HOME/.tangle/node-key" \
   --port 30333 \
