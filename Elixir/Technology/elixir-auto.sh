@@ -86,7 +86,7 @@ sleep 1
 
 cd $HOME
 rm $HOME/elixir-auto.sh
-NAMES=`docker ps | egrep 'elixir-validator' | awk '{print $13}'`
+NAMES=`docker ps | egrep 'elixir-validator' | awk '{print $14}'`
 
 # Command check
 echo '====================== SETUP FINISHED ======================'
