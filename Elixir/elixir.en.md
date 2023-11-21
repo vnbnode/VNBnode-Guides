@@ -23,19 +23,15 @@ cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/E
 ```
 nano $HOME/.bash_profile
 ```
-### 2/ Build Dockerfile
-```
-docker build . -f Dockerfile -t elixir-validator
-```
-### 3/ Run Node
+### 2/ Run Node
 ```
 docker run -d --restart unless-stopped --name ev elixir-validator
 ```
-### 4/ Check log
+### 3/ Check log
 ```
 sudo docker logs -f ev
 ```
-### 5/ Stop and Remove Node
+### 4/ Stop and Remove Node
 ```
 sudo docker stop ev
 ```
