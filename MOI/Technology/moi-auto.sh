@@ -145,6 +145,7 @@ rm $HOME/moi-auto.sh
 
 # Command check
 echo '====================== SETUP FINISHED ======================'
+echo -e "\e[1;32mView the logs from the running: \e[0m\e[1;36mtail -f moi/log/3*\e[0m"
 echo -e "\e[1;32mView the logs from the running: \e[0m\e[1;36msudo docker logs -f ${NAMES}\e[0m"
 echo -e "\e[1;32mCheck the list of containers: \e[0m\e[1;36msudo docker ps -a\e[0m"
 echo -e "\e[1;32mStart your avail node: \e[0m\e[1;36msudo docker start ${NAMES}\e[0m"
