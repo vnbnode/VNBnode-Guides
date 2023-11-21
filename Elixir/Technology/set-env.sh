@@ -33,7 +33,7 @@ sleep 1
 # Set ENV VALIDATOR_NAME
 if [ ! $ENVVALIDATOR_NAME ]; then
     read -p "Enter VALIDATOR_NAME: " ENVVALIDATOR_NAME
-    echo 'export ENVVALIDATOR_NAME='\"${ENVADDRESS}\" >> $HOME/.bash_profile
+    echo 'export ENVVALIDATOR_NAME='\"${ENVVALIDATOR_NAME}\" >> $HOME/.bash_profile
 fi
 echo 'source $HOME/.bashrc' >> $HOME/.bash_profile
 source $HOME/.bash_profile
