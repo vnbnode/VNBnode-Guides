@@ -1,7 +1,7 @@
 # Run Node Lumoz
 
 ## Recommended Hardware Requirements 
-![Alt text](image-5.png)
+![Alt text](image/image-5.png)
 ## Create wallet & Setup Node
 ### 1/ Install and run the program
 ```
@@ -42,13 +42,13 @@ If you ever generated keys from the mnemonic, assuming 5 validator keys，their 
 You don't need deposit again if you use an exsiting validator key you have deposited to. 
 - [BECOME A VALIDATOR HERE](https://lumoz.org/validator)
 
-![Alt text](image.png)
-![Alt text](image-1.png)
-![Alt text](image-3.png)
-![Alt text](image-6.png)
+![Alt text](image/image.png)
+![Alt text](image/image-1.png)
+![Alt text](image/image-3.png)
+![Alt text](image/image-6.png)
 - Upload the deposit data file you just generated. The deposit_data-[timestamp].json is located in your `testnet-auto-install/validator_keys directory`
 
-![Alt text](image-7.png)
+![Alt text](image/image-7.png)
 
 ### 5/ Check logs node
 ```
