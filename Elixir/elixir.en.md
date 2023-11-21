@@ -21,19 +21,15 @@ ENV ADDRESS=
 ENV PRIVATE_KEY=
 ENV VALIDATOR_NAME=
 ```
-### 2/ Build Dockerfile
+### 2/ Build Dockerfile and Run Node (Automatic)
 ```
-docker build . -f Dockerfile -t elixir-validator
+wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Elixir/Technology/elixir-auto.sh && bash elixir-auto.sh
 ```
-### 3/ Run Node
-```
-docker run -d --restart unless-stopped --name ev elixir-validator
-```
-### 4/ Check log
+### 3/ Check log
 ```
 sudo docker logs -f ev
 ```
-### 5/ Stop and Remove Node
+### 4/ Stop and Remove Node
 ```
 sudo docker stop ev
 ```
