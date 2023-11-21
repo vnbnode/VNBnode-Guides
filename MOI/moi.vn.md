@@ -57,8 +57,7 @@ cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/M
 - Cần thay đổi thông tin đã nhập:
 ```
 nano $HOME/.bash_profile
-```
-## Option 2: Manual
+```## Option 2: Manual
 ## Cài đặt Docker
 
 1\. Cập nhật hệ thống:
