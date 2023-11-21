@@ -54,8 +54,8 @@ cd $HOME && mkdir moi && cd moi
 ```
 cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/MOI/Technology/moi-auto.sh && bash moi-auto.sh
 ```
+### Cần thay đổi thông tin đã nhập:
 ```
-# Cần thay đổi thông tin đã nhập:
 nano $HOME/.bash_profile
 ```
 ## Option 2: Manual
