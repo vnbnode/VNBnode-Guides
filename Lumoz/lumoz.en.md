@@ -41,7 +41,7 @@ You don't need deposit again if you use an exsiting validator key you have depos
 ![Alt text](image/image-1.png)
 ![Alt text](image/image-3.png)
 ![Alt text](image/image-6.png)
-- Upload the deposit data file you just generated. The deposit_data-[timestamp].json is located in your `testnet-auto-install/validator_keys directory`
+- Upload the deposit data file you just generated. The deposit_data-[timestamp].json is located in your `testnet-auto-install-v3/validator_keys directory`
 
 ![Alt text](image/image-7.png)
 
