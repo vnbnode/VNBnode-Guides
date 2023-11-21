@@ -25,11 +25,6 @@ Enter index[1]:
 //Enter index to choose the mnemonic import type, "Create a new mnemonic" is default
 ```
 ### Create a new mnemonic
-Follow the CLI prompts to generate your keys.
-### Import an existing mnemonic
-Follow the CLI prompts to generate your keys. 
-
-When you come to
 ```
 Please enter your mnemonic separated by spaces (" "). Note: you only need to enter the first 4 letters of each word if you'd prefer.:
 ```
