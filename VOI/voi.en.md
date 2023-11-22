@@ -3,6 +3,11 @@
   <img height="100" height="auto" src="/VOI/voi.jpg?raw=true">
 </p>
 
+### Hardware Requirements
+CPU with 8 threads (4 core / 8 thread is fine)
+16 GB RAM
+100 GB NVMe SSD or equivalent
+
 ### 1/ Need install software and its updates
 ```
 sudo apt install -y jq bc gnupg2 curl software-properties-common
