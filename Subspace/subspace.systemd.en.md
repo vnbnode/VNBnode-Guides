@@ -12,7 +12,7 @@
 ## Option 1: Pulsar
 - Create Folder `sub`
 ```
-cd $HOME && mkdir sub && mkdir farm && cd sub 
+cd $HOME && mkdir sub && mkdir farm && chmod +x -R farm && cd sub 
 ```
 ### [Download the latest Releases here](https://github.com/subspace/pulsar/releases)
 #### NOTE:
