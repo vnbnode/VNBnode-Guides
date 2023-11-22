@@ -26,7 +26,7 @@ wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technolog
 
 ### STEP 3
 ```
-curl -sO https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technology/register-active-auto.sh && bash register-active-auto.sh
+wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technology/register-active-auto.sh && bash register-active-auto.sh
 ```
 ## Option 2: Manual
 
