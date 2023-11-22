@@ -13,7 +13,7 @@
 | **NETWORK** |        100 Mbps           |
 
 ## Option 1: Automatic
-### STEP 1
+### STEP 1: Install
 ```
 wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technology/voi-auto.sh && bash voi-auto.sh
 ```
@@ -24,7 +24,7 @@ wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technolog
 - Use /faucet
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/e76d238a-e35f-495f-aacd-5685409d40ee)
 
-### STEP 3
+### STEP 3: Register and Active
 ```
 wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technology/register-active-auto.sh && bash register-active-auto.sh
 ```
