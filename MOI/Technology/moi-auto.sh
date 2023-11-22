@@ -71,7 +71,7 @@ echo 'source $HOME/.bashrc' >> $HOME/.bash_profile
 source $HOME/.bash_profile
 sleep 1
 
-#$ KEYSTORE_PATH
+## KEYSTORE_PATH
 if [ ! $moi_keystore ]; then
     read -p "KEYSTORE_PATH: " moi_keystore
     echo 'export moi_keystore='\"${moi_keystore}\" >> $HOME/.bash_profile

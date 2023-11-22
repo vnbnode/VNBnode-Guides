@@ -1,12 +1,32 @@
 # <p align="center"> VOI Network </p>
 <p align="center">
-  <img height="100" height="auto" src="/VOI/voi.jpg?raw=true">
+  <img height="100" height="auto" src="/VOI/image/voi.jpg?raw=true">
 </p>
 
-### Hardware Requirements
-CPU with 8 threads (4 core / 8 thread is fine)
-16 GB RAM
-100 GB NVMe SSD or equivalent
+### Recommended Hardware Requirements
+
+|   SPEC      |        Recommend          |
+| :---------: | :-----------------------: |
+|   **CPU**   | 4 Cores 8 threads (ARM64 or x86-64)                                   |
+|   **RAM**   |        16 GB (DDR4)       |
+|   **SSD**   |    100 GB SSD or NVME     |
+| **NETWORK** |        100 Mbps           |
+
+## Option 1: Automatic
+```
+sudo apt install curl -y && curl -sO https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technology/voi-auto.sh && bash voi-auto.sh
+```
+### Faucet
+- [Faucet Here](https://discord.gg/voinetwork)
+- Get Role
+![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/16166601-63da-4b0b-8e62-1f725ee11cf4)
+- Use /faucet
+![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/e76d238a-e35f-495f-aacd-5685409d40ee)
+
+```
+curl -sO https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technology/register-active-auto.sh && bash register-active-auto.sh
+```
+## Option 2: Manual
 
 ### 1/ Need install software and its updates
 ```
