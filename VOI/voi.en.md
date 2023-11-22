@@ -15,7 +15,7 @@
 ## Option 1: Automatic
 ### STEP 1
 ```
-sudo apt install curl -y && curl -sO https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technology/voi-auto.sh && bash voi-auto.sh
+wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technology/voi-auto.sh && bash voi-auto.sh
 ```
 ### STEP 2: Faucet
 - [Faucet Here](https://discord.gg/voinetwork)
