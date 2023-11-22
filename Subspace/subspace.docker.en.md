@@ -10,6 +10,23 @@
 | **NETWORK** |        100 Mbps           |
 
 
+
+### Monitor
+```
+cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Subspace/Monitor/monitor.sh && bash monitor.sh
+```
+- Login
+```
+IP:3000
+```
+- User | Password
+```
+user: admin
+pass: MFL123123
+```
+![Alt text](image/image4.png)
+![Alt text](image/image5.png)
+
 ## Thank to support VNBnode.
 ### Visit us at:
 

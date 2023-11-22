@@ -120,6 +120,8 @@ ExecStart=/bin/bash -c 'exec ${NODE_BIN} \
     --rpc-cors all \
     --rpc-methods unsafe \
     --rpc-external \
+    --prometheus-external \
+    --prometheus-port 9615 \
     --validator \
     --name ${NAME_PREFIX}'
 KillSignal=SIGINT
@@ -172,6 +174,22 @@ journalctl -fu node -o cat
 ```
 journalctl -fu farm -o cat
 ```
+### Monitor
+```
+cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Subspace/Monitor/monitor.sh && bash monitor.sh
+```
+- Login
+```
+IP:3000
+```
+- User | Password
+```
+user: admin
+pass: MFL123123
+```
+![Alt text](image/image4.png)
+![Alt text](image/image5.png)
+
 ## Thank to support VNBnode.
 ### Visit us at:
 

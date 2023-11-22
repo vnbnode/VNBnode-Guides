@@ -40,28 +40,25 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sleep 1
 
-# Build Dockerfile
-echo -e "\e[1m\e[32m4. Build Dockerfile... \e[0m" && sleep 1
-cd $HOME
-cd ev
-docker build . -f Dockerfile -t elixir-validator
+# Download monitor
+echo -e "\e[1m\e[32m4. Download monitor... \e[0m" && sleep 1
+wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Subspace/Monitor/docker-compose.yml
 sleep 1
 
-# Run Node
-echo -e "\e[1m\e[32m5. Run Node... \e[0m" && sleep 1
-docker run -d --restart unless-stopped --name ev elixir-validator
-sleep 1
+# Build monitor
+echo -e "\e[1m\e[32m5. Build monitor... \e[0m" && sleep 1
+docker compose up -d
 
 cd $HOME
-rm $HOME/elixir-auto.sh
-# NAMES=`docker ps | egrep 'elixir-validator' | awk '{print $16}'`
+rm $HOME/monitor.sh
+rm $HOME/docker-compose.yml
 
 # Command check
 echo '====================== SETUP FINISHED ======================'
-echo -e "\e[1;32mView the logs from the running: \e[0m\e[1;36msudo docker logs -f ev\e[0m"
+echo -e "\e[1;32mView the logs from the running: \e[0m\e[1;36msudo docker logs -f grafana\e[0m"
+echo -e "\e[1;32mView the logs from the running: \e[0m\e[1;36msudo docker logs -f prometheus\e[0m"
+echo -e "\e[1;32mView the logs from the running: \e[0m\e[1;36msudo docker logs -f node-exporter\e[0m"
 echo -e "\e[1;32mCheck the list of containers: \e[0m\e[1;36msudo docker ps -a\e[0m"
-echo -e "\e[1;32mStart your node: \e[0m\e[1;36msudo docker start ev\e[0m"
-echo -e "\e[1;32mRestart your node: \e[0m\e[1;36msudo docker restart ev\e[0m"
-echo -e "\e[1;32mStop your node: \e[0m\e[1;36msudo docker stop ev\e[0m"
-echo -e "\e[1;32mRemove: \e[0m\e[1;36msudo docker rm ev\e[0m"
+echo -e "\e[1;32mStop your node: \e[0m\e[1;36msudo docker stop grafana\e[0m"
+echo -e "\e[1;32mRemove: \e[0m\e[1;36msudo docker rm grafana\e[0m"
 echo '============================================================='
