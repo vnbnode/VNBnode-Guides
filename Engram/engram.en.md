@@ -159,3 +159,12 @@ docker compose -f docker-compose-validator.yml up -d
 ![Alt text](image/image-3.png)
 
 ! Making a deposit takes time for the protocol to receive and validate your deposit data and keystore, it takes at least 18-46 hours (estimation only) for the protocol to completely validate your data.
+
+## Thank to support VNBnode.
+### Visit us at:
+
+<img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/> <a href="https://t.me/VNBnodegroup" target="_blank">VNBnodegroup</a>
+
+<img src="VNBnode.jpg" width="30"/> <a href="https://t.me/Vnbnode" target="_blank">VNBnode News</a>
+
+<img src="VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>
