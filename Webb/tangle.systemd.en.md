@@ -84,7 +84,7 @@ systemctl restart tangle && journalctl -u tangle -f -o cat
 ### 7.Validator setup
 ```php
 # get your session key
-curl -H "Content-Type: application / json" -d '{ "id": 1, "jsonrpc": "2.0", "method": "author_rotateKeys", "params": [] }' http://localhost:9933
+curl -H "Content-Type: application/json" -d '{ "id": 1, "jsonrpc": "2.0", "method": "author_rotateKeys", "params": [] }' http://localhost:9933
 ```
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/91002010/6204657b-6406-471c-920b-f23696a49082)
 ***insert session key***
