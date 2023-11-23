@@ -32,6 +32,11 @@ sudo ALGORAND_DATA=/var/lib/algorand diagcfg telemetry name -n Nodename
 sudo ALGORAND_DATA=/var/lib/algorand diagcfg telemetry enable &&\
 sudo systemctl restart voi
 ```
+
+### STEP 3: Create Participation
+```
+cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technology/participation.sh && bash participation.sh
+```
 ### STEP 4: Faucet
 - [Faucet Here](https://discord.gg/voinetwork)
 
