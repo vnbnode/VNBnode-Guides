@@ -9,7 +9,10 @@
 |   **SSD**   |        100 GB             |
 | **NETWORK** |        100 Mbps           |
 
+### 1\. Download docker-compose.yml
+```
 
+```
 
 ### Monitor
 ```

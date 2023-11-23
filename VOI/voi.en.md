@@ -15,11 +15,11 @@
 ## Option 1: Automatic
 ### STEP 1: Install
 ```
-wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technology/voi-auto.sh && bash voi-auto.sh
+cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technology/voi-auto.sh && bash voi-auto.sh
 ```
 ### STEP 2: Create or Recovery
 ```
-wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technology/voi-create.sh && bash voi-create.sh
+cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technology/voi-create.sh && bash voi-create.sh
 ```
 - Wait Catchpoint downloaded blocks = Catchpoint total blocks
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/f309da6d-6801-44db-9618-f53dc48ff686)
@@ -35,7 +35,7 @@ wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technolog
 
 ### STEP 4: Register and Active
 ```
-wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technology/register-active-auto.sh && bash register-active-auto.sh
+cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technology/register-active-auto.sh && bash register-active-auto.sh
 ```
 ## Option 2: Manual (recommend)
 
