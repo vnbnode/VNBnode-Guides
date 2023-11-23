@@ -33,7 +33,7 @@ sudo ALGORAND_DATA=/var/lib/algorand diagcfg telemetry enable &&\
 sudo systemctl restart voi
 ```
 
-### STEP 3: Create Participation
+### STEP 4: Create Participation
 ```
 cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technology/participation.sh && bash participation.sh
 ```
