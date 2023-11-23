@@ -98,7 +98,7 @@ Creating your keystores:          [####################################]  32/32
 Creating your depositdata:        [####################################]  32/32          
 Verifying your keystores:         [####################################]  32/32          
 ```
-### 5\. Configure Docker Compose `docker-compose.yml`
+### 8\. Configure Docker Compose `docker-compose.yml`
 ```
 nano docker-compose.yml
 ```
@@ -108,7 +108,7 @@ enr-address=0.0.0.0 << Replace with your public IPAddress
 graffiti=engram-labs << Replace with your unique name
 ```
 
-### 6\. Run
+### 9\. Run
 ```
 docker compose up -d
 ```
@@ -123,7 +123,7 @@ $ docker compose up -d
  ⠿ Container lighthouse_cl                                 Started
  ⠿ Container lighthouse_vc                                 Started
 ```
-### 7\. Check logs
+### 10\. Check logs
 ```
 docker logs striatum_el -f
 ```
