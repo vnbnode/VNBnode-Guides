@@ -17,14 +17,18 @@
 ```
 wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technology/voi-auto.sh && bash voi-auto.sh
 ```
-### STEP 2: Faucet
+### STEP 2: Create or Recovery
+```
+wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technology/voi-create.sh && bash voi-create.sh
+```
+### STEP 3: Faucet
 - [Faucet Here](https://discord.gg/voinetwork)
 - Get Role
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/16166601-63da-4b0b-8e62-1f725ee11cf4)
 - Use /faucet
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/e76d238a-e35f-495f-aacd-5685409d40ee)
 
-### STEP 3: Register and Active
+### STEP 4: Register and Active
 ```
 wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technology/register-active-auto.sh && bash register-active-auto.sh
 ```
