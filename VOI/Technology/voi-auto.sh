@@ -26,15 +26,6 @@ echo 'source $HOME/.bashrc' >> $HOME/.bash_profile
 source $HOME/.bash_profile
 sleep 1
 
-## Wallet name
-if [ ! $walletname ]; then
-    read -p "Wallet name: " walletname
-    echo 'export walletname='\"${walletname}\" >> $HOME/.bash_profile
-fi
-echo 'source $HOME/.bashrc' >> $HOME/.bash_profile
-source $HOME/.bash_profile
-sleep 1
-
 # Need install software and its updates
 echo -e "\e[1m\e[32m2. Install software and its updates... \e[0m" && sleep 1
 sudo apt install -y jq bc gnupg2 curl software-properties-common
@@ -73,12 +64,3 @@ sudo systemctl start voi && sudo systemctl enable voi
 goal node catchup $(curl -s https://testnet-api.voi.nodly.io/v2/status|jq -r '.["last-catchpoint"]')
 sleep 1
 goal node status -w 1000
-sleep 3600
-sudo ALGORAND_DATA=/var/lib/algorand diagcfg telemetry name -n $Nodename
-sleep 1
-sudo ALGORAND_DATA=/var/lib/algorand diagcfg telemetry enable &&\
-sudo systemctl restart voi
-sleep 1
-
-cd $HOME
-rm $HOME/voi-auto.sh

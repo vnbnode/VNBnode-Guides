@@ -25,7 +25,14 @@ cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/V
 
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/f309da6d-6801-44db-9618-f53dc48ff686)
 
-### STEP 3: Faucet
+### STEP 3: Set Node Name
+```
+sudo ALGORAND_DATA=/var/lib/algorand diagcfg telemetry name -n Nodename
+
+sudo ALGORAND_DATA=/var/lib/algorand diagcfg telemetry enable &&\
+sudo systemctl restart voi
+```
+### STEP 4: Faucet
 - [Faucet Here](https://discord.gg/voinetwork)
 
 - Get Role
@@ -36,7 +43,7 @@ cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/V
 
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/e76d238a-e35f-495f-aacd-5685409d40ee)
 
-### STEP 4: Register and Active
+### STEP 5: Register and Active
 ```
 cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technology/register-active-auto.sh && bash register-active-auto.sh
 ```

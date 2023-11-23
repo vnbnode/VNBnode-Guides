@@ -18,10 +18,10 @@ SelectVersion="Please choose: \n 1. Create wallet (Gives you 60 seconds to save 
 echo -e "${SelectVersion}"
 read -p "Enter index: " version;
 if [ "$version" != "2" ];then
-	goal wallet new $walletname
+	goal wallet new voi
     sleep 60
 else
-	goal wallet new -r $walletname
+	goal wallet new -r voi
 fi
 sleep 1
 
@@ -34,7 +34,7 @@ if [ "$version" != "2" ];then
 	goal account new
     sleep 60
 else
-	goal wallet import
+	goal account import
 fi
 sleep 1
 
@@ -77,6 +77,7 @@ getaddress &&\
 goal account dump -a $addr | jq -r 'if (.onl == 1) then "You are online!" else "You are offline." end'
 
 cd $HOME
+rm $HOME/voi-auto.sh
 rm $HOME/voi-create.sh
 
 # Please Faucet
