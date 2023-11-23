@@ -103,9 +103,10 @@ Verifying your keystores:         [####################################]  32/32
 nano docker-compose.yml
 ```
 ```
-identity=avenbreaks << Replace with your discord username (e.g: avenbreaks. don't add your hastag discord user)
+identity=VNBnode << Replace with your discord username (e.g: avenbreaks. don't add your hastag discord user)
 enr-address=0.0.0.0 << Replace with your public IPAddress
-graffiti=engram-labs << Replace with your unique name
+graffiti=VNBnode << Replace with your unique name
+ethstats=Adam | VNBnode:engramstats@nodewatch.engram.tech
 ```
 
 ### 9\. Run
