@@ -28,7 +28,7 @@ wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technolog
 ```
 wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technology/register-active-auto.sh && bash register-active-auto.sh
 ```
-## Option 2: Manual
+## Option 2: Manual (recommend)
 
 ### 1/ Need install software and its updates
 ```
