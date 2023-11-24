@@ -13,7 +13,7 @@ fi
 sleep 1 && curl -s https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/logo.sh | bash && sleep 1
 
 # Register and Active Participating
-echo -e "\e[1m\e[32m9. Register and Active Participating... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m11. Register and Active Participating... \e[0m" && sleep 1
 cd $HOME
 getaddress() {
   if [ "$addr" == "" ]; then echo -ne "\nNote: Completing this will remember your address until you log out. "; else echo -ne "\nNote: Using previously entered address. "; fi; echo -e "To forget the address, press Ctrl+C and enter the command:\n\tunset addr\n";
