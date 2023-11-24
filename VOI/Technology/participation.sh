@@ -15,7 +15,7 @@ sleep 1 && curl -s https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main
 cd $HOME
 
 # Generate your participation keys
-echo -e "\e[1m\e[32m7. Generate your participation keys... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m9. Generate your participation keys... \e[0m" && sleep 1
 getaddress() {
   if [ "$addr" == "" ]; then echo -ne "\nNote: Completing this will remember your address until you log out. "; else echo -ne "\nNote: Using previously entered address. "; fi; echo -e "To forget the address, press Ctrl+C and enter the command:\n\tunset addr\n";
   count=0; while ! (echo "$addr" | grep -E "^[A-Z2-7]{58}$" > /dev/null); do
@@ -34,7 +34,7 @@ goal account addpartkey -a $addr --roundFirstValid $start --roundLastValid $end 
 sleep 1
 
 # Check your participation status
-echo -e "\e[1m\e[32m8. Check your participation status... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m10. Check your participation status... \e[0m" && sleep 1
 getaddress() {
   if [ "$addr" == "" ]; then echo -ne "\nNote: Completing this will remember your address until you log out. "; else echo -ne "\nNote: Using previously entered address. "; fi; echo -e "To forget the address, press Ctrl+C and enter the command:\n\tunset addr\n";
   count=0; while ! (echo "$addr" | grep -E "^[A-Z2-7]{58}$" > /dev/null); do
