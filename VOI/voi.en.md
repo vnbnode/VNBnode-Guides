@@ -21,7 +21,7 @@ cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/V
 
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/f309da6d-6801-44db-9618-f53dc48ff686)
 
-### STEP 2: Create or Recovery
+### STEP 2: Create or Recovery Wallet
 ```
 cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technology/voi-create.sh && bash voi-create.sh
 ```
