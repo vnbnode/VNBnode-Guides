@@ -17,14 +17,14 @@
 ```
 cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technology/voi-auto.sh && bash voi-auto.sh
 ```
-### STEP 2: Create or Recovery
-```
-cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technology/voi-create.sh && bash voi-create.sh
-```
 - Wait Catchpoint downloaded blocks = Catchpoint total blocks
 
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/f309da6d-6801-44db-9618-f53dc48ff686)
 
+### STEP 2: Create or Recovery
+```
+cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technology/voi-create.sh && bash voi-create.sh
+```
 ### STEP 3: Set Node Name
 ```
 sudo ALGORAND_DATA=/var/lib/algorand diagcfg telemetry name -n Nodename
