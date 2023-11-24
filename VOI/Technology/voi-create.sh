@@ -26,7 +26,7 @@ fi
 sleep 1
 
 # To create a new account or Recovery account
-echo -e "\e[1m\e[32m7. Create wallet or Recovery wallet... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m8. Create wallet or Recovery wallet... \e[0m" && sleep 1
 SelectVersion="Please choose: \n 1. Create account (Gives you 60 seconds to save the address wallet)\n 2. Recovery account"
 echo -e "${SelectVersion}"
 read -p "Enter index: " version;
