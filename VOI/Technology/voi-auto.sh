@@ -14,18 +14,6 @@ sleep 1 && curl -s https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main
 
 cd $HOME
 
-# Fill data
-echo -e "\e[1m\e[32m1. Fill data... \e[0m" && sleep 1
-
-## Node name
-if [ ! $Nodename ]; then
-    read -p "Node Name: " Nodename
-    echo 'export Nodename='\"${Nodename}\" >> $HOME/.bash_profile
-fi
-echo 'source $HOME/.bashrc' >> $HOME/.bash_profile
-source $HOME/.bash_profile
-sleep 1
-
 # Need install software and its updates
 echo -e "\e[1m\e[32m2. Install software and its updates... \e[0m" && sleep 1
 sudo apt install -y jq bc gnupg2 curl software-properties-common
