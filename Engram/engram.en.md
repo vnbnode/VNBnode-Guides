@@ -56,7 +56,6 @@ privatekey: your privatekey address that has funds from the faucet.
 - Run the following command to generate final the deposit data.
 ```
 bash ./scripts/validator-deposit-data.sh
-
 ```
 ### 8\. Generate Public Keys
 ```
