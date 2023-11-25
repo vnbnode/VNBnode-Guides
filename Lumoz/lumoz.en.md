@@ -4,7 +4,7 @@
 </p>
 
 ## Recommended Hardware Requirements 
-![Alt text](https://github.com/vnbnode/binaries/blob/main/Project/Lumoz/lumoz5.png)
+![Alt text](https://github.com/vnbnode/binaries/blob/main/Projects/Lumoz/lumoz5.png)
 ## Create wallet & Setup Node
 ### 1/ Install and run the program
 ```
@@ -40,13 +40,13 @@ If you ever generated keys from the mnemonic, assuming 5 validator keys，their 
 You don't need deposit again if you use an exsiting validator key you have deposited to. 
 - [BECOME A VALIDATOR HERE](https://lumoz.org/validator)
 
-![Alt text](https://github.com/vnbnode/binaries/blob/main/Project/Lumoz/lumoz.png)
-![Alt text](https://github.com/vnbnode/binaries/blob/main/Project/Lumoz/lumoz1.png)
-![Alt text](https://github.com/vnbnode/binaries/blob/main/Project/Lumoz/lumoz3.png)
-![Alt text](https://github.com/vnbnode/binaries/blob/main/Project/Lumoz/lumoz6.png)
+![Alt text](https://github.com/vnbnode/binaries/blob/main/Projects/Lumoz/lumoz.png)
+![Alt text](https://github.com/vnbnode/binaries/blob/main/Projects/Lumoz/lumoz1.png)
+![Alt text](https://github.com/vnbnode/binaries/blob/main/Projects/Lumoz/lumoz3.png)
+![Alt text](https://github.com/vnbnode/binaries/blob/main/Projects/Lumoz/lumoz6.png)
 - Upload the deposit data file you just generated. The deposit_data-[timestamp].json is located in your `testnet-auto-install-v3/validator_keys directory`
 
-![Alt text](https://github.com/vnbnode/binaries/blob/main/Project/Lumoz/lumoz7.png)
+![Alt text](https://github.com/vnbnode/binaries/blob/main/Projects/Lumoz/lumoz7.png)
 
 ### 5/ Start or Restart Lumoz Node
 ```
