@@ -1,6 +1,6 @@
 # <p align="center"> VOI Network </p>
 <p align="center">
-  <img height="100" height="auto" src="https://github.com/vnbnode/binaries/blob/845ed4658afe2221e2e0b235ac1315c85a2b73e9/Projects/VOI/voi.jpg?raw=true">
+  <img height="100" height="auto" src="https://github.com/vnbnode/binaries/blob/main/Projects/VOI/voi.jpg?raw=true">
 </p>
 
 ### Recommended Hardware Requirements
@@ -237,4 +237,4 @@ tail -f /var/lib/algorand/node.log
 
 <img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/> <a href="https://t.me/Vnbnode" target="_blank">VNBnode News</a>
 
-<img src="binaries/Logo/VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>
+<img src="https://github.com/vnbnode/binaries/blob/main/Logo/VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>

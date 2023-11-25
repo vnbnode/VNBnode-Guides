@@ -19,7 +19,7 @@ cd $HOME && mkdir sub && mkdir farm && chmod +x -R farm && cd sub
 - CPU from 2015 or later: `skylake`
 - CPU from 2015 or earlier: `v2`
 
-![Alt text](binaries/Projects/Subspace/subspace.png)
+![Alt text](https://github.com/vnbnode/binaries/blob/main/Projects/Subspace/subspace.png)
 
 - Example CPU from 2015 or later: `skylake` 
 ```
@@ -45,7 +45,7 @@ mv $HOME/sub/pulsar-ubuntu-x86_64-v2-v0.6.14-alpha pulsar
 ```
 ./pulsar
 ```
-![Alt text](binaries/Projects/Subspace/subspace1.png)
+![Alt text](https://github.com/vnbnode/binaries/blob/main/Projects/Subspace/subspace1.png)
 
 #### Step 1: Select init
 
@@ -62,10 +62,10 @@ cd $HOME && mkdir sub && cd sub
 - CPU from 2015 or earlier: `v2`
 ### `Node`
 
-![Alt text](binaries/Projects/Subspace/subspace2.png)
+![Alt text](https://github.com/vnbnode/binaries/blob/main/Projects/Subspace/subspace2.png)
 ### `Farm`
 
-![Alt text](binaries/Projects/Subspace/subspace3.png)
+![Alt text](https://github.com/vnbnode/binaries/blob/main/Projects/Subspace/subspace3.png)
 
 
 - Example CPU from 2015 or later: `skylake` 
@@ -187,8 +187,8 @@ IP:3000
 user: admin
 pass: MFL123123
 ```
-![Alt text](binaries/Projects/Subspace/subspace4.png)
-![Alt text](binaries/Projects/Subspace/subspace5.png)
+![Alt text](https://github.com/vnbnode/binaries/blob/main/Projects/Subspace/subspace4.png)
+![Alt text](https://github.com/vnbnode/binaries/blob/main/Projects/Subspace/subspace5.png)
 
 ## Thank to support VNBnode.
 ### Visit us at:
@@ -197,4 +197,4 @@ pass: MFL123123
 
 <img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/> <a href="https://t.me/Vnbnode" target="_blank">VNBnode News</a>
 
-<img src="binaries/Logo/VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>
+<img src="https://github.com/vnbnode/binaries/blob/main/Logo/VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>
