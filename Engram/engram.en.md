@@ -36,7 +36,7 @@ git clone --recursive https://github.com/engram-network/tokio-docker.git && cd t
 
 ### 5\. Create a mnemonic phrase to prepare the deposit data
 ```
-$ eth2-val-tools mnemonic 
+eth2-val-tools mnemonic 
 ```
 - Keep your mnemonic
 
