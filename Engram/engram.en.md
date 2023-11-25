@@ -39,7 +39,9 @@ git clone --recursive https://github.com/engram-network/tokio-docker.git && cd t
 $ eth2-val-tools mnemonic 
 ```
 - Keep your mnemonic
-### 6\. Obtain the following parameters in validator-deposit-data.sh
+
+### 6\. [Faucet Token Here](https://faucet-tokio.engram.tech/)
+### 7\. Obtain the following parameters in validator-deposit-data.sh
 ```
 nano ./scripts/validator-deposit-data.sh
 ```
@@ -57,7 +59,7 @@ privatekey: your privatekey address that has funds from the faucet.
 bash ./scripts/validator-deposit-data.sh
 
 ```
-### 7\. Generate Public Keys
+### 8\. Generate Public Keys
 ```
 ./scripts/validator-build.sh
 ```
@@ -98,7 +100,7 @@ Creating your keystores:          [####################################]  32/32
 Creating your depositdata:        [####################################]  32/32          
 Verifying your keystores:         [####################################]  32/32          
 ```
-### 8\. Configure Docker Compose `docker-compose.yml`
+### 9\. Configure Docker Compose `docker-compose.yml`
 ```
 nano docker-compose.yml
 ```
@@ -109,7 +111,7 @@ graffiti=VNBnode << Replace with your unique name
 ethstats=Adam | VNBnode:engramstats@nodewatch.engram.tech
 ```
 
-### 9\. Run
+### 10\. Run
 ```
 docker compose up -d
 ```
@@ -124,7 +126,7 @@ $ docker compose up -d
  ⠿ Container lighthouse_cl                                 Started
  ⠿ Container lighthouse_vc                                 Started
 ```
-### 10\. Check logs
+### 11\. Check logs
 ```
 docker logs striatum_el -f
 ```
@@ -156,6 +158,8 @@ INFO Connected to beacon node(s)             synced: 1, available: 1, total: 1,
 INFO Validator exists in beacon chain        fee_recipient: 0x617b…063d,
 INFO Awaiting activation                     slot: 17409, epoch: 544, validators: 32, service: notifier
 ```
+### 12\. [Check Nodewatch Here](https://nodewatch.engram.tech/)
+
 
 ## Thank to support VNBnode.
 ### Visit us at:
