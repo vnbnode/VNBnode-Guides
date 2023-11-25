@@ -40,15 +40,14 @@ $ eth2-val-tools mnemonic
 ```
 - Keep your mnemonic
 
+### NOTE: Or use Metamask wallet
+
 ### 6\. [Faucet Token Here](https://faucet-tokio.engram.tech/)
 ### 7\. Obtain the following parameters in validator-deposit-data.sh
 ```
 nano ./scripts/validator-deposit-data.sh
 ```
 ```
-amount: The amount of tGRAM to deposit (e.g., 32000000000)
-smin: source min value (e.g., 0)
-smax: source max value (e.g., 1)
 withdrawals-mnemonic: your mnemonic phrase from generate eth2-val-tools.
 validators-mnemonic: your mnemonic phrase from generate eth2-val-tools.
 from: address that was already funded from the faucet.
