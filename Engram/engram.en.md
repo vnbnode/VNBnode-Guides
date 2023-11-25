@@ -103,10 +103,10 @@ Verifying your keystores:         [####################################]  32/32
 nano docker-compose.yml
 ```
 ```
-identity=VNBnode << Replace with your discord username (e.g: avenbreaks. don't add your hastag discord user)
+identity=username Discord << Replace with your discord username (e.g: avenbreaks. don't add your hastag discord user)
 enr-address=0.0.0.0 << Replace with your public IPAddress
 graffiti=VNBnode << Replace with your unique name
-ethstats=Adam | VNBnode:engramstats@nodewatch.engram.tech
+ethstats=VNBnode:engramstats@nodewatch.engram.tech
 ```
 
 ### 10\. Run
