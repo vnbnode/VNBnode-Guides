@@ -12,7 +12,7 @@
 
 ### 1/ Edit Dockerfile
 ```
-cd $HOME && mkdir ev && cd ev && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Elixir/Technology/Dockerfile && nano Dockerfile
+cd $HOME && mkdir ev && cd ev && curl -o Dockerfile https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Elixir/Dockerfile && nano Dockerfile
 ```
 ```
 FROM elixirprotocol/validator:testnet-2
@@ -23,7 +23,7 @@ ENV VALIDATOR_NAME=
 ```
 ### 2/ Build Dockerfile and Run Node (Automatic)
 ```
-wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Elixir/Technology/elixir-auto.sh && bash elixir-auto.sh
+curl -o elixir-auto.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Elixir/elixir-auto.sh && bash elixir-auto.sh
 ```
 ### 3/ Check log
 ```
@@ -46,4 +46,4 @@ sudo docker rm ev
 
 <img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/> <a href="https://t.me/Vnbnode" target="_blank">VNBnode News</a>
 
-<img src="https://github.com/vnbnode/VNBnode-Guides/blob/main/VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>
+<img src="binaries/Logo/VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>

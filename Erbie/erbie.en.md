@@ -7,11 +7,11 @@ Port: 30303,8544
 
 # Automatic:
 ```
-wget -O erbie.sh https://raw.githubusercontent.com/johnt9x/erbie/main/erbie.sh && chmod +x erbie.sh && ./erbie.sh
+curl -o erbie.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Erbie/erbie.sh && chmod +x erbie.sh && ./erbie.sh
 ```
 # Monitoring:
 ```
-wget -O monitor.sh https://raw.githubusercontent.com/johnt9x/erbie/main/monitor.sh && chmod +x monitor.sh && ./monitor.sh
+curl -o monitor.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Erbie/monitor.sh && chmod +x monitor.sh && ./monitor.sh
 ```
 # Manual: 
 # Update system and install build tools
@@ -106,6 +106,18 @@ rm -rf monitor.sh
 rm -rf .erbie
 
 ```
+# Update
+```
+sudo systemctl stop erbied
+cd && rm -rf erbie
+git clone https://github.com/erbieio/erbie
+cd erbie
+git checkout v0.15.0
+go build -o erbie cmd/erbie/main.go
+mv erbie /usr/local/bin
+sudo systemctl restart erbied
+journalctl -fu erbied -o cat
+```
 
 ## Thank to support VNBnode.
 ### Visit us at:
@@ -114,4 +126,4 @@ rm -rf .erbie
 
 <img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/> <a href="https://t.me/Vnbnode" target="_blank">VNBnode News</a>
 
-<img src="https://github.com/vnbnode/VNBnode-Guides/blob/main/VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>
+<img src="binaries/Logo/VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>

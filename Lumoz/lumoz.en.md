@@ -1,10 +1,10 @@
 # <p align="center"> Run Node Lumoz </p>
 <p align="center">
-  <img height="100" height="auto" src="/Lumoz/image/lumoz.jpg?raw=true">
+  <img height="100" height="auto" src="binaries/Projects/Lumoz/lumoz.jpg?raw=true">
 </p>
 
 ## Recommended Hardware Requirements 
-![Alt text](image/image-5.png)
+![Alt text](binaries/Project/Lumoz/lumoz5.png)
 ## Create wallet & Setup Node
 ### 1/ Install and run the program
 ```
@@ -40,13 +40,13 @@ If you ever generated keys from the mnemonic, assuming 5 validator keys，their 
 You don't need deposit again if you use an exsiting validator key you have deposited to. 
 - [BECOME A VALIDATOR HERE](https://lumoz.org/validator)
 
-![Alt text](image/image.png)
-![Alt text](image/image-1.png)
-![Alt text](image/image-3.png)
-![Alt text](image/image-6.png)
+![Alt text](binaries/Project/Lumoz/lumoz.png)
+![Alt text](binaries/Project/Lumoz/lumoz1.png)
+![Alt text](binaries/Project/Lumoz/lumoz3.png)
+![Alt text](binaries/Project/Lumoz/lumoz6.png)
 - Upload the deposit data file you just generated. The deposit_data-[timestamp].json is located in your `testnet-auto-install-v3/validator_keys directory`
 
-![Alt text](image/image-7.png)
+![Alt text](binaries/Project/Lumoz/lumoz7.png)
 
 ### 5/ Start or Restart Lumoz Node
 ```
@@ -77,4 +77,4 @@ testnet-auto-install-v3/opside-chain/show-validator-log.sh
 
 <img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/> <a href="https://t.me/Vnbnode" target="_blank">VNBnode News</a>
 
-<img src="https://github.com/vnbnode/VNBnode-Guides/blob/main/VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>
+<img src="binaries/Logo/VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>

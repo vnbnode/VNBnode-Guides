@@ -91,6 +91,7 @@ curl -H "Content-Type: application/json" -d '{ "id": 1, "jsonrpc": "2.0", "metho
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/91002010/a33c0009-14ee-471e-a2e7-4beb3847868a)
 ### 8.Fill the form
 [Apply form](https://forms.gle/amtHuDQP1rbnXg7V9)
+
 ## Thank to support VNBnode.
 ### Visit us at:
 
@@ -98,4 +99,4 @@ curl -H "Content-Type: application/json" -d '{ "id": 1, "jsonrpc": "2.0", "metho
 
 <img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/> <a href="https://t.me/Vnbnode" target="_blank">VNBnode News</a>
 
-<img src="https://github.com/vnbnode/VNBnode-Guides/blob/main/VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>
+<img src="binaries/Logo/VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>

@@ -10,7 +10,7 @@
 
 ## Option 1: Automatic
 ```
-cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Pactus/Technology/pactus-auto.sh && bash pactus-auto.sh
+cd $HOME && curl -o pactus-auto.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Pactus/pactus-auto.sh && bash pactus-auto.sh
 ```
 ## Option 2: Manual
 ### Install Docker
@@ -106,4 +106,4 @@ docker logs pactus -f
 
 <img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/> <a href="https://t.me/Vnbnode" target="_blank">VNBnode News</a>
 
-<img src="https://github.com/vnbnode/VNBnode-Guides/blob/main/VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>
+<img src="binaries/Logo/VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>

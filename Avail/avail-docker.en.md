@@ -1,6 +1,6 @@
 # Run Avail Docker v1.8.0.2
 <p align="center">
-  <img height="100" height="auto" src="/Avail/Technology/avail.png?raw=true">
+  <img height="100" height="auto" src="binaries/Avail/avail.png?raw=true">
 </p>
 
 ## Recommended Hardware Requirements 
@@ -8,7 +8,7 @@
 
 ## Option 1 (Automatic)
 ```
-cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Avail/Technology/avail-auto.sh && bash avail-auto.sh
+cd $HOME && curl -o avail-auto.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Avail/avail-auto.sh && bash avail-auto.sh
 ```
 ## Option 2 (Manual)
 
@@ -40,7 +40,7 @@ sudo docker run -v $(pwd)$HOME/avail/state:/da/state:rw -v $(pwd)$HOME/avail/key
 ```
 ### 3/ Run validator on Docker
 ```
-cd $HOME/avail && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Avail/Technology/validator.sh && bash validator.sh
+cd $HOME && curl -o validator.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Avail/validator.sh && bash validator.sh
 ```
 ### 4/ Check log node
 ```
@@ -75,4 +75,4 @@ docker logs avail -f
 
 <img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/> <a href="https://t.me/Vnbnode" target="_blank">VNBnode News</a>
 
-<img src="https://github.com/vnbnode/VNBnode-Guides/blob/main/VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>
+<img src="binaries/Logo/VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>

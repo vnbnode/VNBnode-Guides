@@ -19,15 +19,15 @@ cd $HOME && mkdir sub && mkdir farm && chmod +x -R farm && cd sub
 - CPU from 2015 or later: `skylake`
 - CPU from 2015 or earlier: `v2`
 
-![Alt text](image/image.png)
+![Alt text](binaries/Projects/Subspace/subspace.png)
 
 - Example CPU from 2015 or later: `skylake` 
 ```
-wget https://github.com/subspace/pulsar/releases/download/v0.6.14-alpha/pulsar-ubuntu-x86_64-skylake-v0.6.14-alpha
+curl -o pulsar https://github.com/subspace/pulsar/releases/download/v0.6.14-alpha/pulsar-ubuntu-x86_64-skylake-v0.6.14-alpha
 ```
 - Example CPU from 2015 or earlier: `v2`
 ```
-wget https://github.com/subspace/pulsar/releases/download/v0.6.14-alpha/pulsar-ubuntu-x86_64-v2-v0.6.14-alpha
+wget -o pulsar https://github.com/subspace/pulsar/releases/download/v0.6.14-alpha/pulsar-ubuntu-x86_64-v2-v0.6.14-alpha
 ```
 - Grant permission to open the file
 ```
@@ -45,7 +45,7 @@ mv $HOME/sub/pulsar-ubuntu-x86_64-v2-v0.6.14-alpha pulsar
 ```
 ./pulsar
 ```
-![Alt text](image/image1.png)
+![Alt text](binaries/Projects/Subspace/subspace1.png)
 
 #### Step 1: Select init
 
@@ -62,23 +62,23 @@ cd $HOME && mkdir sub && cd sub
 - CPU from 2015 or earlier: `v2`
 ### `Node`
 
-![Alt text](image/image2.png)
+![Alt text](binaries/Projects/Subspace/subspace2.png)
 ### `Farm`
 
-![Alt text](image/image3.png)
+![Alt text](binaries/Projects/Subspace/subspace3.png)
 
 
 - Example CPU from 2015 or later: `skylake` 
 ```
-wget https://github.com/subspace/subspace/releases/download/gemini-3g-2023-nov-21/subspace-node-ubuntu-x86_64-skylake-gemini-3g-2023-nov-21
+curl -o node https://github.com/subspace/subspace/releases/download/gemini-3g-2023-nov-21/subspace-node-ubuntu-x86_64-skylake-gemini-3g-2023-nov-21
 
-wget https://github.com/subspace/subspace/releases/download/gemini-3g-2023-nov-21/subspace-farmer-ubuntu-x86_64-skylake-gemini-3g-2023-nov-21
+curl -o farm https://github.com/subspace/subspace/releases/download/gemini-3g-2023-nov-21/subspace-farmer-ubuntu-x86_64-skylake-gemini-3g-2023-nov-21
 ```
 - Example CPU from 2015 or earlier: `v2`
 ```
-wget https://github.com/subspace/subspace/releases/download/gemini-3g-2023-nov-21/subspace-node-ubuntu-x86_64-v2-gemini-3g-2023-nov-21
+curl -o node https://github.com/subspace/subspace/releases/download/gemini-3g-2023-nov-21/subspace-node-ubuntu-x86_64-v2-gemini-3g-2023-nov-21
 
-wget https://github.com/subspace/subspace/releases/download/gemini-3g-2023-nov-21/subspace-farmer-ubuntu-x86_64-v2-gemini-3g-2023-nov-21
+curl -o farm https://github.com/subspace/subspace/releases/download/gemini-3g-2023-nov-21/subspace-farmer-ubuntu-x86_64-v2-gemini-3g-2023-nov-21
 ```
 - Grant permission to open the file
 ```
@@ -176,7 +176,7 @@ journalctl -fu farm -o cat
 ```
 ### Monitor
 ```
-cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Subspace/Monitor/monitor.sh && bash monitor.sh
+cd $HOME && curl -o monitor.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Subspace/Technology/monitor.sh && bash monitor.sh
 ```
 - Login
 ```
@@ -187,8 +187,8 @@ IP:3000
 user: admin
 pass: MFL123123
 ```
-![Alt text](image/image4.png)
-![Alt text](image/image5.png)
+![Alt text](binaries/Projects/Subspace/subspace4.png)
+![Alt text](binaries/Projects/Subspace/subspace5.png)
 
 ## Thank to support VNBnode.
 ### Visit us at:
@@ -197,4 +197,4 @@ pass: MFL123123
 
 <img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/> <a href="https://t.me/Vnbnode" target="_blank">VNBnode News</a>
 
-<img src="https://github.com/vnbnode/VNBnode-Guides/blob/main/VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>
+<img src="binaries/Logo/VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>

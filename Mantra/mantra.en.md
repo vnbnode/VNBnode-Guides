@@ -3,7 +3,7 @@ port 111, chain id: mantrachain-testnet-1
 
 # Automatic:
 ```
-wget -O mantra.sh https://raw.githubusercontent.com/johnt9x/VNBnode-Guides/main/Mantra/mantra.sh && chmod +x mantra.sh && ./mantra.sh
+curl -o mantra.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Mantra/mantra.sh && chmod +x mantra.sh && ./mantra.sh
 ```
 # Snapshot:
 ```
@@ -137,4 +137,4 @@ sudo journalctl -fu mantrachaind -o cat
 
 <img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/> <a href="https://t.me/Vnbnode" target="_blank">VNBnode News</a>
 
-<img src="https://github.com/vnbnode/VNBnode-Guides/blob/main/VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>
+<img src="binaries/Logo/VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>
