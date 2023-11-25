@@ -1,6 +1,6 @@
 # <p align="center"> VOI Network </p>
 <p align="center">
-  <img height="100" height="auto" src="binaries/Projects/VOI/voi.jpg?raw=true">
+  <img height="100" height="auto" src="vnbnode/binaries/blob/main/Projects/VOI/voi.jpg?raw=true">
 </p>
 
 ### Recommended Hardware Requirements
