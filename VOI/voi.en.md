@@ -15,7 +15,7 @@
 ## Option 1: Automatic
 ### STEP 1: Install
 ```
-cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technology/voi-auto.sh && bash voi-auto.sh
+cd $HOME && wget https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/VOI/voi-auto.sh && bash voi-auto.sh
 ```
 - Wait Catchpoint downloaded blocks = Catchpoint total blocks
 
