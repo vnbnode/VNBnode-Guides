@@ -15,7 +15,7 @@
 ## Option 1: Automatic
 ### STEP 1: Install
 ```
-cd $HOME && wget https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/VOI/voi-auto.sh && bash voi-auto.sh
+cd $HOME && curl -o voi-auto.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/VOI/voi-auto.sh && bash voi-auto.sh
 ```
 - Wait Catchpoint downloaded blocks = Catchpoint total blocks
 
@@ -23,7 +23,7 @@ cd $HOME && wget https://raw.githubusercontent.com/vnbnode/binaries/main/Project
 
 ### STEP 2: Create or Recovery Wallet
 ```
-cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technology/voi-create.sh && bash voi-create.sh
+cd $HOME && curl -o voi-create.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/VOI/voi-create.sh && bash voi-create.sh
 ```
 ### STEP 3: Set Node Name
 ```
@@ -35,7 +35,7 @@ sudo systemctl restart voi
 
 ### STEP 4: Create Participation
 ```
-cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technology/participation.sh && bash participation.sh
+cd $HOME && curl -o participation.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/VOI/participation.sh && bash participation.sh
 ```
 ### STEP 4: Faucet
 - [Faucet Here](https://discord.gg/voinetwork)
@@ -50,7 +50,7 @@ cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/V
 
 ### STEP 5: Register and Active
 ```
-cd $HOME && wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/VOI/Technology/register-active-auto.sh && bash register-active-auto.sh
+cd $HOME && curl -o register-active-auto.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/VOI/register-active-auto.sh && bash register-active-auto.sh
 ```
 ## Option 2: Manual (recommend)
 
