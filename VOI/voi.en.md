@@ -24,7 +24,7 @@ cd $HOME && curl -o voi-auto.sh https://raw.githubusercontent.com/vnbnode/binari
 
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/f309da6d-6801-44db-9618-f53dc48ff686)
 
-### STEP 2: Create or Recovery Wallet, Account Wallet
+### STEP 2: Create or Recovery Wallet, Account
 ```
 cd $HOME && curl -o voi-create.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/VOI/voi-create.sh && bash voi-create.sh
 ```
