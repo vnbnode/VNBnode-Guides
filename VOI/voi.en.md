@@ -35,6 +35,7 @@ sudo ALGORAND_DATA=/var/lib/algorand diagcfg telemetry name -n Nodename
 sudo ALGORAND_DATA=/var/lib/algorand diagcfg telemetry enable &&\
 sudo systemctl restart voi
 ```
+- Save GUID
 
 ### STEP 4: Create Participation
 ```
@@ -138,6 +139,7 @@ sudo ALGORAND_DATA=/var/lib/algorand diagcfg telemetry name -n Nodename
 ```
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/e7200b6c-edf9-4b9a-991c-ace43e3b8068)
 
+- Save GUID
 ```
 sudo ALGORAND_DATA=/var/lib/algorand diagcfg telemetry enable &&\
 sudo systemctl restart voi
