@@ -138,14 +138,12 @@ goal node status -w 1000
 sudo ALGORAND_DATA=/var/lib/algorand diagcfg telemetry name -n Nodename
 ```
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/e7200b6c-edf9-4b9a-991c-ace43e3b8068)
-
-- Save GUID
 ```
 sudo ALGORAND_DATA=/var/lib/algorand diagcfg telemetry enable &&\
 sudo systemctl restart voi
 ```
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/2146fb6a-a1f0-4d3d-a40c-75ce471b33eb)
-
+- Save GUID
 ### 11/ Create Wallet
 ```
 goal wallet new voi
