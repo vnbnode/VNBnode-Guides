@@ -15,6 +15,9 @@
 ## Option 1: Automatic
 ### STEP 1: Install
 ```
+echo "export ALGORAND_DATA=/var/lib/algorand/" >> $HOME/.bashrc && source $HOME/.bashrc
+```
+```
 cd $HOME && curl -o voi-auto.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/VOI/voi-auto.sh && bash voi-auto.sh
 ```
 - Wait Catchpoint downloaded blocks = Catchpoint total blocks
