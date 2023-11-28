@@ -40,7 +40,7 @@ sudo systemctl restart voi
 ```
 cd $HOME && curl -o participation.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/VOI/participation.sh && bash participation.sh
 ```
-### STEP 4: Faucet
+### STEP 5: Faucet
 - [Faucet Here](https://discord.gg/voinetwork)
 
 - Get Role
@@ -51,7 +51,7 @@ cd $HOME && curl -o participation.sh https://raw.githubusercontent.com/vnbnode/b
 
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/e76d238a-e35f-495f-aacd-5685409d40ee)
 
-### STEP 5: Register and Active
+### STEP 6: Register and Active
 ```
 cd $HOME && curl -o register-active-auto.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/VOI/register-active-auto.sh && bash register-active-auto.sh
 ```
