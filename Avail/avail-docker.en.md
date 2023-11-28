@@ -1,4 +1,4 @@
-# Run Avail Docker v1.8.0.2
+# Run Full Node and Validator Avail Docker v1.8.0.2
 <p align="center">
   <img height="100" height="auto" src="https://github.com/vnbnode/binaries/blob/main/Projects/Avail/avail.png?raw=true">
 </p>
