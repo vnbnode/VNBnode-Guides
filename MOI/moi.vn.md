@@ -185,9 +185,13 @@ docker container prune
 ```
 
 * Chạy lại node
-
+#### 1\. CPU from 2015 or later
 ```
 sudo docker run -p 1600:1600/tcp -p 6000:6000/tcp -p 6000:6000/udp -it -d -w /data -v $(pwd):/data sarvalabs/moipod:latest server --babylon --data-dir {DIRPATH} --log-level DEBUG --node-password {NODE_PWD}
+```
+#### 2\. CPU from 2015 or earlier
+```
+sudo docker run -p 1600:1600/tcp -p 6000:6000/tcp -p 6000:6000/udp -it -d -w /data -v $(pwd):/data sarvalabs/moipod:v0.4.0-port server --babylon --data-dir {DIRPATH} --log-level DEBUG --node-password {NODE_PWD}
 ```
 
 ## Thank to support VNBnode.
