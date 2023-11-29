@@ -56,7 +56,7 @@ cd $HOME && curl -o participation.sh https://raw.githubusercontent.com/vnbnode/b
 ```
 cd $HOME && curl -o register-active-auto.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/VOI/register-active-auto.sh && bash register-active-auto.sh
 ```
-## Option 2: Manual (recommend)
+## Option 2: Manual
 
 ### 1/ Need install software and its updates
 ```
