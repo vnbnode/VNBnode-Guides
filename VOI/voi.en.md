@@ -226,14 +226,15 @@ sleep 1 &&\
 goal account dump -a $addr | jq -r 'if (.onl == 1) then "You are online!" else "You are offline." end'
 ```
 ### 18/ Faucet again
-### 19/ Check
-- Explorer: https://voi.observer/explorer/home    
-- https://cswenor.github.io/voi-proposer-data/health.html
-- https://voi-node-info.boeieruurd.com/
-### 20/ Check logs
+### 19/ Check logs
 ```
 tail -f /var/lib/algorand/node.log
 ```
+### 20/ Check
+- Explorer: https://voi.observer/explorer/home    
+- https://cswenor.github.io/voi-proposer-data/health.html
+- https://voi-node-info.boeieruurd.com/
+
 
 ## Thank to support VNBnode.
 ### Visit us at:
