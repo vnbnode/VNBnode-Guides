@@ -1,4 +1,4 @@
-# MOI (Guardian Node)
+# MOI (Guardian Node latest version v0.4.0)
 
 ## Cấu hình khuyến nghị
 
