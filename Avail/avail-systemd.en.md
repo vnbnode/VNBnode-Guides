@@ -101,7 +101,7 @@ After=network.target
 StartLimitIntervalSec=0
 [Service]
 User=root
-ExecStart= /root/avail/target/release/data-avail --base-path `pwd`/data --chain goldberg --validator --name "VNBnode"
+ExecStart= /root/avail/target/release/data-avail -d ./output --chain goldberg --validator --name "✅ Your-Name|VNBnode ✅"
 Restart=always
 RestartSec=120
 [Install]
@@ -110,6 +110,7 @@ WantedBy=multi-user.target
 
 **Step 15: Enable the service file**
 ```php
+sudo systemctl daemon-reload
 sudo systemctl enable availd.service
 ```
 ![image](https://github.com/vnbnode/Running-Nodes/assets/128967122/e0653656-1542-4f56-9ef2-10d187c19131)
