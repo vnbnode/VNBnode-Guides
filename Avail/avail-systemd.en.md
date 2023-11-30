@@ -71,7 +71,7 @@ mkdir -p output
 
 **Step 11: Switch git**
 ```php
-git checkout v1.8.0.2
+git checkout v1.8.0.3
 ```
 ![image](https://github.com/vnbnode/Running-Nodes/assets/128967122/b7556554-51f9-443c-9b34-5585336a6a5d)
 
