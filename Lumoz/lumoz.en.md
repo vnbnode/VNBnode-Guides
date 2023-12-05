@@ -44,7 +44,7 @@ You don't need deposit again if you use an exsiting validator key you have depos
 ![Alt text](https://github.com/vnbnode/binaries/blob/main/Projects/Lumoz/lumoz1.png)
 ![Alt text](https://github.com/vnbnode/binaries/blob/main/Projects/Lumoz/lumoz3.png)
 ![Alt text](https://github.com/vnbnode/binaries/blob/main/Projects/Lumoz/lumoz6.png)
-- Upload the deposit data file you just generated. The deposit_data-[timestamp].json is located in your `testnet-auto-install-v3/validator_keys directory`
+- Upload the deposit data file you just generated. The deposit_data-[timestamp].json is located in your `testnet-auto-install-v3/validator_keys` directory and save this folder to your personal computer
 
 ![Alt text](https://github.com/vnbnode/binaries/blob/main/Projects/Lumoz/lumoz7.png)
 
