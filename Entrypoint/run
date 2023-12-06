@@ -62,8 +62,8 @@ entrypointd config keyring-backend test
 entrypointd init "$NODE_MONIKER" --chain-id $CHAIN_ID
 
 # Add Genesis File and Addrbook
-wget -O $HOME/.entrypoint/config/genesis.json "https://raw.githubusercontent.com/NodeValidatorVN/GuideNode/main/Entrypoint/genesis.json"
-wget -O $HOME/.entrypoint/config/addrbook.json "https://raw.githubusercontent.com/NodeValidatorVN/GuideNode/main/Entrypoint/addrbook.json"
+wget -O $HOME/.entrypoint/config/genesis.json "https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/blob/main/Entrypoint/Entrypoint/genesis.json"
+wget -O $HOME/.entrypoint/config/addrbook.json "https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/blob/main/Entrypoint/addrbook.json"
 
 #Configure Seeds and Peers
 peers="81bf2ade773a30eccdfee58a041974461f1838d8@185.107.68.148:26656,d57c7572d58cb3043770f2c0ba412b35035233ad@80.64.208.169:26656"
