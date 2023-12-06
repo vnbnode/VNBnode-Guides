@@ -1,7 +1,7 @@
 # Automatic install by VNBnode
 
 ```php
-wget -O ent https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/blob/main/Entrypoint/run.sh && chmod +x run.sh && ./run.sh
+wget https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/blob/main/Entrypoint/run.sh && chmod +x run.sh && ./run.sh
 ```
 
 ## Useful commands
