@@ -1,5 +1,5 @@
 # Automatic install by VNBnode
 
 ```php
-wget -O ent https://raw.githubusercontent.com/NodeValidatorVN/GuideNode/main/Entrypoint/ent && chmod +x ent && ./ent
+wget -O ent https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/blob/main/Entrypoint/run && chmod +x run && ./run
 ```
