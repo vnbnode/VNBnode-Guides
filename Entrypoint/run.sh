@@ -52,7 +52,7 @@ source $HOME/.bash_profile
 echo -e "\e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 
 cd $HOME
-wget https://github.com/entrypoint-zone/testnets/releases/download/v1.3.0/entrypointd-1.3.0-linux-amd64 -O entrypointd
+wget https://github.com/entrypoint-zone/testnets/releases/download/v1.3.0/entrypointd-1.3.0-linux-amd64
 sudo chmod +x entrypointd
 sudo mv entrypointd /usr/local/bin
 entrypointd version
@@ -62,7 +62,7 @@ entrypointd config keyring-backend test
 entrypointd init "$NODE_MONIKER" --chain-id $CHAIN_ID
 
 # Add Genesis File and Addrbook
-wget -O $HOME/.entrypoint/config/genesis.json "https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/blob/main/Entrypoint/Entrypoint/genesis.json"
+wget -O $HOME/.entrypoint/config/genesis.json "https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/blob/main/Entrypoint/genesis.json"
 wget -O $HOME/.entrypoint/config/addrbook.json "https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/blob/main/Entrypoint/addrbook.json"
 
 #Configure Seeds and Peers
