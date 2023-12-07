@@ -22,7 +22,7 @@ CHAIN_ID="entrypoint-pubtest-2"
 CHAIN_DENOM="uentry"
 BINARY_NAME="entrypointd"
 GITHUB="https://github.com/vnbnode/VNBnode-Guides"
-BINARY_VERSION_TAG="v1.3.0"
+BINARY_VERSION_TAG="v1.2.0"
 
 echo -e "Node Name: ${CYAN}$NODE_MONIKER${NC}"
 echo -e "Chain id:     ${CYAN}$CHAIN_ID${NC}"
@@ -52,7 +52,7 @@ source $HOME/.bash_profile
 echo -e "\e[1m\e[32m3. Downloading and building binaries--> \e[0m" && sleep 1
 
 cd $HOME
-wget https://github.com/entrypoint-zone/testnets/releases/download/v1.3.0/entrypointd-1.3.0-linux-amd64
+wget https://github.com/entrypoint-zone/testnets/releases/download/v1.2.0/entrypointd-1.2.0-linux-amd64
 sudo chmod +x entrypointd
 sudo mv entrypointd /usr/local/bin
 entrypointd version
