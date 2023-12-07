@@ -21,7 +21,7 @@ read -r -p "Enter node moniker: " NODE_MONIKER
 CHAIN_ID="entrypoint-pubtest-2"
 CHAIN_DENOM="uentry"
 BINARY_NAME="entrypointd"
-GITHUB="https://github.com/NodeValidatorVN"
+GITHUB="https://github.com/vnbnode/VNBnode-Guides"
 BINARY_VERSION_TAG="v1.3.0"
 
 echo -e "Node Name: ${CYAN}$NODE_MONIKER${NC}"
