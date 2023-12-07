@@ -4,8 +4,8 @@
 wget -O run.sh https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/main/Entrypoint/run.sh && chmod +x run.sh && ./run.sh
 ```
 
-### Useful commands
-#Add new key
+## Useful commands
+### Add new key
 ```php
 entrypointd keys add wallet
 ```
