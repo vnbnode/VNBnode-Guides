@@ -1,6 +1,8 @@
 # Running Uniond
 ## Option 1: Automactic
+```
 cd $HOME && curl -o union-auto.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Union/union-auto.sh && bash union-auto.sh
+```
 ## Option 2: Manual
 ### Export Binary
 ```
