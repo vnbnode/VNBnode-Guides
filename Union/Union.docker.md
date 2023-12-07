@@ -1,4 +1,4 @@
-# Running uniond
+# Running Uniond
 ## Option 1: Automactic
 
 ## Option 2: Manual
