@@ -38,7 +38,11 @@ docker pull availj/avail:v1.8.0.3
 ```
 sudo docker run -v $(pwd)$HOME/avail/state:/da/state:rw -v $(pwd)$HOME/avail/keystore:/da/keystore:rw -e DA_CHAIN=goldberg --name avail -e DA_NAME=<Fill Node name of you> --network host --validator -d --restart unless-stopped availj/avail:v1.8.0.3
 ```
-### 3/ Check log node
+### 3/ Add --validator
+```
+cd $HOME && curl -o validator.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Avail/validator.sh && bash validator.sh
+```
+### 4/ Check log node
 ```
 docker logs avail -f
 ```
