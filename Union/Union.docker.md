@@ -30,11 +30,9 @@ docker run -u $(id -u):$(id -g) -v ~/.union:/.union -it ghcr.io/unionlabs/uniond
 alias uniond='docker run -v ~/.union:/.union --network host -it ghcr.io/unionlabs/uniond:$UNIOND_VERSION --home /.union'
 ```
 ### Seeds
-Edit ~/.union/config/config.toml. We'll set the seeds to ensure your node can connect to the peer-to-peer network.
-
-For `union-testnet-4` replace seeds = "" with:
 ```
-seeds = "a069a341154484298156a56ace42b6e6a71e7b9d@blazingbit.io:27656,8a07752a234bb16471dbb577180de7805ba6b5d9@union.testnet.4.seed.poisonphang.com:26656"
+SEEDS="a069a341154484298156a56ace42b6e6a71e7b9d@blazingbit.io:27656,8a07752a234bb16471dbb577180de7805ba6b5d9@union.testnet.4.seed.poisonphang.com:26656"
+sed -i -e "s/^seeds *=.*/seeds = \"$SEEDS\"/" $HOME/.union/config/config.toml
 ```
 ### Run Node Uniond
 ```
@@ -56,24 +54,24 @@ services:
 ```
 docker compose up -d
 ```
-## Create a New Account
+### Create a New Account
 ```
 uniond keys add $KEY_NAME
 ```
-## Recover an Existing Account
+### Recover an Existing Account
 ```
 uniond keys add $KEY_NAME --recover
 ```
-## [Receiving Testnet Tokens](https://7xv16fh3twz.typeform.com/to/eYTMvi11)
+### [Receiving Testnet Tokens](https://7xv16fh3twz.typeform.com/to/eYTMvi11)
 ## Finding your Union Address
 ```
 uniond keys show $KEY_NAME --address
 ```
-## Finding your Validator Address
+### Finding your Validator Address
 ```
 uniond keys show $KEY_NAME --bech=val --address
 ```
-## Creating your validator
+### Creating your validator
 ```
 uniond tx staking create-validator \
   --amount 1000000muno \
