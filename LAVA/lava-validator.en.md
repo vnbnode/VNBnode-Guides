@@ -191,7 +191,36 @@ $current_lavad_binary tx staking create-validator \
     --home="$HOME/.lava/" \
     --from=$ACCOUNT_NAME
 ```
+### Useful commands for manage your node
+```php
+#Account info
+lavap query pairing account-info $(lavad keys show wallet -a)
+```
+```php
+# Test provider 
+lavap test rpcprovider --from your-wallet-name
+```
+```php
+# Unjail validator
+lavad tx slashing unjail --from wallet --chain-id lava-testnet-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.0001ulava -y
+```
+```php
+# Jail reason
+lavad query slashing signing-info $(lavad tendermint show-validator)
+```
+```php
+# Delegate to yourself
+lavad tx staking delegate $(lavad keys show wallet --bech val -a) 1000000ulava --from wallet --chain-id lava-testnet-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.0001ulava -y
+```
 
+```php
+# Withdraw commission and rewards from your validator
+lavad tx distribution withdraw-rewards $(lavad keys show wallet --bech val -a) --commission --from wallet --chain-id lava-testnet-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.0001ulava -y
+```
+```php
+# Unfreeze
+lavap tx pairing unfreeze LAV1,ETH1 --from your-wallet-name --gas-prices 0.1ulava --gas-adjustment 1.5 --gas auto -y
+```
 ### Upgradable Lava binaries
 ```php
 cd $HOME
