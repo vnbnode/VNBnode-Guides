@@ -6,7 +6,7 @@
 curl -o auto-run.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/LAVA/auto-run.sh && bash auto-run.sh
 ```
 # Setup Manual
-## 2.Set Validator nam
+## 2.Set Validator name
 ```php
 MONIKER="Your-name_VNBnode"
 ```
