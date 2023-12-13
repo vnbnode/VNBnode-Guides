@@ -1,6 +1,10 @@
 # LAVA Validator setup
 ## 1.Hardware required
 ![image](https://github.com/Adamtruong6868/LAVA/assets/91002010/26a6b8b2-10be-4991-b84d-a2edb4e4619c)
+## Setup Auto
+```php
+curl -o auto-run.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/LAVA/auto-run.sh && bash auto-run.sh
+```
 
 ## 2.Set Validator nam
 ```php
