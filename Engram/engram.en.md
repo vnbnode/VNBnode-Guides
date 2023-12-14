@@ -139,7 +139,7 @@ INFO [09-26|19:29:33.046] Forkchoice requested sync to new head    number=30733 
 ```
 docker logs lighthouse_cl -f
 ```
-- see on lighthouse_cl:
+### see on lighthouse_cl:
 ```
 INFO Subscribed to topics
 INFO Sync state updated                      new_state: Evaluating known peers, old_state: Syncing Finalized Chain, service: sync
@@ -148,7 +148,10 @@ INFO Sync state updated                      new_state: Synced, old_state: Synci
 INFO Subscribed to topics                    topics: ["/eth2/9c4e948f/bls_to_execution_change/ssz_snappy"]
 INFO Successfully finalized deposit tree     finalized deposit count: 1, service: deposit_contract_rpc
 ```
-- see on lighthouse_vc:
+```
+docker logs lighthouse_vc -f
+```
+### see on lighthouse_vc:
 ```
 INFO Connected to beacon node(s)             synced: 1, available: 1, total: 1, service: notifier
 INFO All validators active                   slot: 32836, epoch: 1026, total_validators: 32, active_validators: 32
