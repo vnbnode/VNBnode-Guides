@@ -238,7 +238,7 @@ git checkout v0.30.x
 ```
 ```php
 export LAVA_BINARY=lavad
-make build
+make install-all
 ```
 ```php
 # choose the correct version
