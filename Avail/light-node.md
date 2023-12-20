@@ -1,4 +1,4 @@
-# Run Light client Avail Goldberg
+# Guide to run Light Client Avail Goldberg
 <p align="center">
   <img height="100" height="auto" src="https://github.com/vnbnode/binaries/blob/main/Projects/Avail/avail.png?raw=true">
 </p>
