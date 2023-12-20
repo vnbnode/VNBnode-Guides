@@ -32,7 +32,7 @@ namada client balance --token NAM --owner shielded-key
 ### Create Validator
 ```
 namada client init-validator \
-  --alias "YOUR_VALIDATOR_ALIAS" \
+  --alias $MONIKER \
   --identity "KEYBASE_ID" \
   --details "YOUR DETAILS" \
   --website "YOUR WEBSITE" \
