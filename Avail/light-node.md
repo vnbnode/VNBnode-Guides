@@ -6,10 +6,15 @@
 ## Recommended Hardware Requirements 
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/7449170a-c03a-4502-8ffb-26455e413e33)
 
-## Automatic installation
+## oPTION 1: Automatic installation from binaries
 ```
 cd $HOME && curl -o lightnode-autorun.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Avail/lightnode-autorun.sh  && bash lightnode-autorun.sh
 ```
+## oPTION 2: Automatic installation from Avail releases
+```
+cd $HOME && curl -o lightclient-pre-auto.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Avail/lightclient-pre-auto.sh  && bash lightclient-pre-auto.sh
+```
+
 
 ## Thank to support VNBnode.
 ### Visit us at:
