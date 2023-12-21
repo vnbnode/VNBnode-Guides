@@ -36,11 +36,11 @@ docker pull availj/avail:v1.8.0.4
 ```
 ### 2/ Run node
 ```
-sudo docker run -v $(pwd)$HOME/avail/state:/da/state:rw -v $(pwd)$HOME/avail/keystore:/da/keystore:rw -e DA_CHAIN=goldberg --name avail -e DA_NAME=<Fill Node name of you> --network host --validator -d --restart unless-stopped availj/avail:v1.8.0.4
+docker run -v ./node-data/:/da/node-data availj/avail:v1.8.0.4 --chain goldberg --name <Fill name Validator> --validator -d /da/node-data
 ```
-### 3/ Add --validator
+### 3/ Rename container
 ```
-cd $HOME && curl -o validator.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Avail/validator.sh && bash validator.sh
+docker rename name_old avail
 ```
 ### 4/ Check log node
 ```
@@ -62,9 +62,13 @@ docker pull availj/avail:v1.8.0.4
 ```
 ### 4/ Run node
 ```
-sudo docker run -v $(pwd)$HOME/avail/state:/da/state:rw -v $(pwd)$HOME/avail/keystore:/da/keystore:rw -e DA_CHAIN=goldberg --name avail -e DA_NAME=<Fill Node name of you> --network host --validator -d --restart unless-stopped availj/avail:v1.8.0.4
+docker run -v ./node-data/:/da/node-data availj/avail:v1.8.0.4 --chain goldberg --name <Fill name Validator> --validator -d /da/node-data
 ```
-### 5/ Check log node
+### 5/ Rename container
+```
+docker rename name_old avail
+```
+### 6/ Check log node
 ```
 docker logs avail -f
 ```
