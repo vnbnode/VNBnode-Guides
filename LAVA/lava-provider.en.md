@@ -6,7 +6,7 @@
 
 ##### Go to DNS setting:
 * Create A record: Host = LAVA; Value = Your server public IP.
-![image](https://github.com/vnbnode/VNBnode-Guides/assets/128967122/91f04293-70d9-4b87-9f8b-66808ce1940a)
+
 #### Step 2: Install Required Dependencies
 ```php
 sudo apt update
