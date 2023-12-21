@@ -1,4 +1,4 @@
-# Run Full Node and Validator Avail Docker v1.8.0.3
+# Run Full Node and Validator Avail Docker v1.8.0.4
 <p align="center">
   <img height="100" height="auto" src="https://github.com/vnbnode/binaries/blob/main/Projects/Avail/avail.png?raw=true">
 </p>
@@ -32,11 +32,11 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 
 ### 1/ Pull image new 
 ```
-docker pull availj/avail:v1.8.0.3
+docker pull availj/avail:v1.8.0.4
 ```
 ### 2/ Run node
 ```
-sudo docker run -v $(pwd)$HOME/avail/state:/da/state:rw -v $(pwd)$HOME/avail/keystore:/da/keystore:rw -e DA_CHAIN=goldberg --name avail -e DA_NAME=<Fill Node name of you> --network host --validator -d --restart unless-stopped availj/avail:v1.8.0.3
+sudo docker run -v $(pwd)$HOME/avail/state:/da/state:rw -v $(pwd)$HOME/avail/keystore:/da/keystore:rw -e DA_CHAIN=goldberg --name avail -e DA_NAME=<Fill Node name of you> --network host --validator -d --restart unless-stopped availj/avail:v1.8.0.4
 ```
 ### 3/ Add --validator
 ```
@@ -58,11 +58,11 @@ docker rm avail
 ```
 ### 3/ Update new version
 ```
-docker pull availj/avail:v1.8.0.3
+docker pull availj/avail:v1.8.0.4
 ```
 ### 4/ Run node
 ```
-sudo docker run -v $(pwd)$HOME/avail/state:/da/state:rw -v $(pwd)$HOME/avail/keystore:/da/keystore:rw -e DA_CHAIN=goldberg --name avail -e DA_NAME=<Fill Node name of you> --network host --validator -d --restart unless-stopped availj/avail:v1.8.0.3
+sudo docker run -v $(pwd)$HOME/avail/state:/da/state:rw -v $(pwd)$HOME/avail/keystore:/da/keystore:rw -e DA_CHAIN=goldberg --name avail -e DA_NAME=<Fill Node name of you> --network host --validator -d --restart unless-stopped availj/avail:v1.8.0.4
 ```
 ### 5/ Check log node
 ```
