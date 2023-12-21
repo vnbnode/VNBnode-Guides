@@ -139,13 +139,7 @@ git checkout v0.30.x
 ```
 ```php
 export LAVA_BINARY=lavad
-make build
-```
-```php
-# choose the correct version
-mkdir -p $HOME/.lava/cosmovisor/upgrades/v0.30.x/bin
-mv build/lavad $HOME/.lava/cosmovisor/upgrades/v0.30.x/bin/
-rm -rf build
+make install-all
 ```
 ```php
 # check version
