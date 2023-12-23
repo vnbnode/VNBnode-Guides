@@ -1,4 +1,4 @@
-# MOI (Guardian Node latest version v0.4.0)
+# MOI (Guardian Node)
 
 ## Cấu hình khuyến nghị
 
@@ -96,7 +96,7 @@ sudo docker run --network host --rm -it -w /data -v $(pwd):/data sarvalabs/moipo
 ```
 #### 2\. CPU from 2015 or earlier
 ```
-sudo docker run --network host --rm -it -w /data -v $(pwd):/data sarvalabs/moipod:v0.4.0-port register --data-dir {DIRPATH} --mnemonic-keystore-path {KEYSTORE_PATH} --watchdog-url https://babylon-watchdog.moi.technology/add --node-password {NODE_PWD} --network-rpc-url https://voyage-rpc.moi.technology/babylon --wallet-address {ADDRESS} --node-index {NODE_IDX} --local-rpc-url http://{IP_or_Domain}:1600
+sudo docker run --network host --rm -it -w /data -v $(pwd):/data sarvalabs/moipod:v0.5.0-port register --data-dir {DIRPATH} --mnemonic-keystore-path {KEYSTORE_PATH} --watchdog-url https://babylon-watchdog.moi.technology/add --node-password {NODE_PWD} --network-rpc-url https://voyage-rpc.moi.technology/babylon --wallet-address {ADDRESS} --node-index {NODE_IDX} --local-rpc-url http://{IP_or_Domain}:1600
 ```
 `{DIRPATH}`: đường dẫn thư mục bạn tạo để lưu trữ node, ví dụ `moi`
 
@@ -119,7 +119,7 @@ sudo docker run --network host -it -d -w /data -v $(pwd):/data sarvalabs/moipod:
 ```
 #### 2\. CPU from 2015 or earlier
 ```
-sudo docker run --network host -it -d -w /data -v $(pwd):/data sarvalabs/moipod:v0.4.0-port server --babylon --data-dir {DIRPATH} --log-level DEBUG --node-password {NODE_PWD}
+sudo docker run --network host -it -d -w /data -v $(pwd):/data sarvalabs/moipod:v0.5.0-port server --babylon --data-dir {DIRPATH} --log-level DEBUG --node-password {NODE_PWD}
 ```
 `{DIRPATH}`: đường dẫn thư mục bạn tạo để lưu trữ node, ví dụ `moi`
 
@@ -191,7 +191,7 @@ sudo docker run --network host -it -d -w /data -v $(pwd):/data sarvalabs/moipod:
 ```
 #### 2\. CPU from 2015 or earlier
 ```
-sudo docker run --network host -it -d -w /data -v $(pwd):/data sarvalabs/moipod:v0.4.0-port server --babylon --data-dir {DIRPATH} --log-level DEBUG --node-password {NODE_PWD}
+sudo docker run --network host -it -d -w /data -v $(pwd):/data sarvalabs/moipod:v0.5.0-port server --babylon --data-dir {DIRPATH} --log-level DEBUG --node-password {NODE_PWD}
 ```
 
 ## Thank to support VNBnode.
