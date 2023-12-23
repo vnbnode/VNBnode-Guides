@@ -79,13 +79,7 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
-## Pull the MOIPod Docker Image
-
-```
-docker pull sarvalabs/moipod:latest
-```
-
-* Tiến hành mở các cổng trên Router
+### Tiến hành mở các cổng trên Router
 
 <table><thead><tr><th width="130">Transport</th><th width="76" align="center">Port</th><th width="179">Reachability</th><th>Purpose</th></tr></thead><tbody><tr><td>TCP/UDP</td><td align="center">6000</td><td>Inbound/Outbound</td><td>Protocol P2P Interface</td></tr><tr><td>TCP</td><td align="center">1600</td><td>Inbound</td><td>JSON RPC Interface</td></tr></tbody></table>
 
