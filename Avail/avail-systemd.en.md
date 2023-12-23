@@ -66,18 +66,19 @@ cargo build --release -p data-avail
 **Step 10: Make output folder**
 ```php
 mkdir -p output
+mkdir -p data
 ```
 ![image](https://github.com/vnbnode/Running-Nodes/assets/128967122/6ee1e07b-1162-4696-bb78-8a4beb77bd73)
 
 **Step 11: Switch git**
 ```php
-git checkout v1.8.0.3
+git checkout v1.8.0.4
 ```
 ![image](https://github.com/vnbnode/Running-Nodes/assets/128967122/b7556554-51f9-443c-9b34-5585336a6a5d)
 
 **Step 12: Run**
 ```php
-cargo run --locked --release -- --chain goldberg -d ./output
+cargo run --locked --release -- --chain goldberg --validator -d ./output
 ```
 *This step also takes time, be patient! Once it finished, you will see this screen:*
 ![image](https://github.com/vnbnode/Running-Nodes/assets/128967122/122cc330-0234-4ed2-8f2e-cafe1caa75e1)
