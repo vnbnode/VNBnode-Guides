@@ -53,10 +53,6 @@ make build-all
 # Download the installation setup configuration
 git clone https://github.com/lavanet/lava-config.git
 cd lava-config/testnet-2
-```
-```php
-# Read the configuration from the file
-# Note: you can take a look at the config file and verify configurations
 source setup_config/setup_config.sh
 ```
 * Set app configurations Copy lavad default config files to config Lava config folder
