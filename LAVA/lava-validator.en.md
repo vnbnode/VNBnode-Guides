@@ -13,7 +13,7 @@ MONIKER="Your-name_VNBnode"
 ## 3.Update system
 ```php
 sudo apt -q update
-sudo apt -qy install curl git jq lz4 build-essential
+sudo apt install -y unzip logrotate git jq sed wget curl coreutils systemd
 sudo apt -qy upgrade
 temp_folder=$(mktemp -d) && cd $temp_folder
 ```
