@@ -1,5 +1,5 @@
 ### Before start install Lava provider, you must ensure you have:
-* Your own domain (If yet buy one: [namecheap](https://www.namecheap.com/)
+* Your own domain (If you do not have yet, consider to buy one: [namecheap](https://www.namecheap.com/)
 * Lava node running
 * Lavap binaries installed
 #### Step 1: Setup A record for your domain
