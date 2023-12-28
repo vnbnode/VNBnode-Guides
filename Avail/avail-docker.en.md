@@ -36,7 +36,7 @@ docker pull availj/avail:v1.8.0.4
 ```
 ### 2/ Run node
 ```
-docker run -v ./node-data/:/da/node-data availj/avail:v1.8.0.4 --chain goldberg --name <Fill name Validator> --validator -d /da/node-data
+docker run --network host -v ./node-data/:/da/node-data availj/avail:v1.8.0.4 --chain goldberg --name <Fill name Validator> --validator -d /da/node-data
 ```
 ### 3/ Rename container
 ```
@@ -62,7 +62,7 @@ docker pull availj/avail:v1.8.0.4
 ```
 ### 4/ Run node
 ```
-docker run -v ./node-data/:/da/node-data availj/avail:v1.8.0.4 --chain goldberg --name <Fill name Validator> --validator -d /da/node-data
+docker run --network host -v ./node-data/:/da/node-data availj/avail:v1.8.0.4 --chain goldberg --name <Fill name Validator> --validator -d /da/node-data
 ```
 ### 5/ Rename container
 ```
