@@ -14,5 +14,5 @@ cat ./logs/rbbcLogs
 ```
 or
 ```
-tail -f $HOME/root/logs/rbbcLogs
+tail -f $HOME/logs/rbbcLogs
 ```
