@@ -99,7 +99,7 @@ cd lava
 ```
 ```php
 # choose the correct version
-git checkout v0.30.x
+git checkout v0.32.x
 ```
 ```php
 export LAVA_BINARY=lavad
@@ -107,8 +107,8 @@ make install-all
 ```
 ```php
 # choose the correct version
-mkdir -p $HOME/.lava/cosmovisor/upgrades/v0.30.x/bin
-mv build/lavad $HOME/.lava/cosmovisor/upgrades/v0.30.x/bin/
+mkdir -p $HOME/.lava/cosmovisor/upgrades/v0.32.x/bin
+mv build/lavad $HOME/.lava/cosmovisor/upgrades/v0.32.x/bin/
 rm -rf build
 ```
 ```php
