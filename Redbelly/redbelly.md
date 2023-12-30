@@ -1,3 +1,8 @@
+## WARNING:
+### This guide is just used for testnet purpose.
+### Do not send any private key wallet - with your fund.
+### Just use a fresh new wallet to testnet.
+
 ## Part 1: Automatic Install Redbelly node
 ```
 cd $HOME && curl -o auto-run.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Redbelly/auto-run.sh && bash auto-run.sh
