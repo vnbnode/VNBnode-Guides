@@ -46,6 +46,42 @@ docker rename name_old avail
 ```
 docker logs avail -f
 ```
+## Create Validator
+1. Navigate to the Goldberg network explorer at http://goldberg.avail.tools.
+* Note: `Need 1000 AVL to create Validator`
+2. Navigate to the `Staking` tab in the Explorer
+
+![Alt text](image.png)
+
+3. Fill in the bonding preferences:
+- Value bonded: `1000`
+- Payment destination: `Stash account` 
+- Select `Bond`
+
+![Alt text](image-1.png)
+- Select: `Sign and Submit`
+
+![Alt text](image-2.png)
+
+4. Add Sessions Keys
+
+Using Binaries:
+```
+curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http://localhost:9944
+```
+5. Navigate back to the Staking tab click on `Set Session Key` and enter the hex-encoded result
+
+![Alt text](image-3.png)
+
+6. Click `Validate` on the `Staking` tab
+
+![Alt text](image-4.png)
+- Set your validator commission percentage
+- Click `Validate`
+7. DONE
+
+![Alt text](image-5.png)
+
 ## Update new version
 
 ### 1/ Stop node
