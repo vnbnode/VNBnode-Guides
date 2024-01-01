@@ -10,7 +10,7 @@ export CHAIN_ID=union-testnet-4
 export MONIKER="Name-VNBnode"
 export KEY_NAME=union
 export GENESIS_URL="https://rpc.cryptware.io/genesis"
-export UNIOND_VERSION='v0.14.0'
+export UNIOND_VERSION='v0.17.0'
 ```
 ### Download Docker Image
 ```
