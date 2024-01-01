@@ -82,6 +82,8 @@ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method":
 
 ![Alt text](image-5.png)
 
+### *Follow the instruction from project:* [Guide](https://docs.availproject.org/operate/validator/staking/)
+
 ## Update new version
 
 ### 1/ Stop node
