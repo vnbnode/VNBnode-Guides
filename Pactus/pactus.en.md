@@ -37,7 +37,7 @@ docker pull pactus/pactus
 ```
 ### 2/ Create new wallet
 ```
-docker run -it --rm -v ~/pactus/testnet:/pactus pactus/pactus init -w /pactus --testnet
+docker run -it --rm -v ~/pactus:/root/pactus pactus/pactus pactus-daemon init
 ```
 - Select: Y
 - Save wallet seed
@@ -52,11 +52,11 @@ docker run -it --rm -v ~/pactus/testnet:/pactus pactus/pactus init -w /pactus --
 
 ### 3/ If you already have a seed wallet, Recovery wallet
 ```
-docker run -it --rm -v $HOME/pactus/testnet:/pactus pactus/pactus init -w /pactus --testnet --restore "Fill 12 seed word of you"
+docker run -it --rm -v ~/pactus:/root/pactus pactus/pactus pactus-daemon init --restore "Fill 12 seed word of you"
 ```
 ### 4/ Run node
 ```
-docker run --network host -it --name pactus -v $HOME/pactus/testnet:/pactus -d --name pactus pactus/pactus start -w /pactus -p <Fill in the wallet password>
+docker run -it -d -v ~/pactus:/root/pactus --network host --name pactus pactus/pactus pactus-daemon start --password <WALLET_PASSWORD>
 ```
 ## 5/ [Faucet Here](https://discord.gg/pactus-795592769300987944)
 - Wait synced
@@ -89,7 +89,7 @@ docker pull pactus/pactus
 ```
 ### 4/ Run node
 ```
-docker run --network host -it --name pactus -v /root/pactus/testnet:/pactus -d --name pactus pactus/pactus start -w /pactus -p <Fill in the wallet password>
+docker run -it -d -v ~/pactus:/root/pactus --network host --name pactus pactus/pactus pactus-daemon start --password <WALLET_PASSWORD>
 ```
 ### 5/ Check version
 ```
