@@ -128,6 +128,10 @@ lavap test rpcprovider --from $MONIKER  --endpoints "lava.your-domain.com:443,LA
 ***Enter your wallet address & Enjoy***
 ### Upgradable Lava binaries
 ```php
+sudo systemctl stop cosmovisor
+sudo systemctl stop lavap
+```
+```php
 cd $HOME
 rm -rf lava
 git clone https://github.com/lavanet/lava.git
