@@ -138,8 +138,8 @@ git clone https://github.com/lavanet/lava.git
 cd lava
 ```
 ```php
-# choose the correct version
-git checkout v0.30.x
+# Change to the correct version
+git checkout v0.32.x
 ```
 ```php
 export LAVA_BINARY=lavad
