@@ -138,7 +138,7 @@ git clone https://github.com/lavanet/lava.git
 cd lava
 ```
 ```php
-# Change to the correct version
+# This is just sample command, Please change to the correct version
 git checkout v0.32.x
 ```
 ```php
