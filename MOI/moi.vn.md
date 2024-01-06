@@ -86,15 +86,17 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 ### Register the Guardian Node <a href="#register-the-guardian-node" id="register-the-guardian-node"></a>
 #### 1\. CPU from 2015 or later
 ```
-sudo docker run --network host --rm -it -w /data -v $(pwd):/data sarvalabs/moipod:latest register --data-dir {DIRPATH} --mnemonic-keystore-path {KEYSTORE_PATH} --watchdog-url https://babylon-watchdog.moi.technology/add --node-password {NODE_PWD} --network-rpc-url https://voyage-rpc.moi.technology/babylon --wallet-address {ADDRESS} --node-index {NODE_IDX} --local-rpc-url http://{IP_or_Domain}:1600
+sudo docker run --network host --rm -it -w /data -v $(pwd):/data sarvalabs/moipod:latest register --data-dir {DIRPATH} --mnemonic-keystore-path {KEYSTORE_PATH} --mnemonic-keystore-password {MNEMONIC_KEYSTORE_PASSWORD} --watchdog-url https://babylon-watchdog.moi.technology/add --node-password {NODE_PWD} --network-rpc-url https://voyage-rpc.moi.technology/babylon --wallet-address {ADDRESS} --node-index {NODE_IDX} --local-rpc-url http://{IP_or_Domain}:1600
 ```
 #### 2\. CPU from 2015 or earlier
 ```
-sudo docker run --network host --rm -it -w /data -v $(pwd):/data sarvalabs/moipod:v0.5.0-port register --data-dir {DIRPATH} --mnemonic-keystore-path {KEYSTORE_PATH} --watchdog-url https://babylon-watchdog.moi.technology/add --node-password {NODE_PWD} --network-rpc-url https://voyage-rpc.moi.technology/babylon --wallet-address {ADDRESS} --node-index {NODE_IDX} --local-rpc-url http://{IP_or_Domain}:1600
+sudo docker run --network host --rm -it -w /data -v $(pwd):/data sarvalabs/moipod:v0.5.0-port register --data-dir {DIRPATH} --mnemonic-keystore-path {KEYSTORE_PATH} --mnemonic-keystore-password {MNEMONIC_KEYSTORE_PASSWORD} --watchdog-url https://babylon-watchdog.moi.technology/add --node-password {NODE_PWD} --network-rpc-url https://voyage-rpc.moi.technology/babylon --wallet-address {ADDRESS} --node-index {NODE_IDX} --local-rpc-url http://{IP_or_Domain}:1600
 ```
 `{DIRPATH}`: đường dẫn thư mục bạn tạo để lưu trữ node, ví dụ `moi`
 
 `{KEYSTORE_PATH}`: đường dẫn file keystore mà bạn đã tải lúc tạo Krama ID, ví dụ nếu bạn cho keystore vào trong thư mục moi thì đường dẫn sẽ là `moi/keystore.json`
+
+`{MNEMONIC_KEYSTORE_PASSWORD}`: password lúc bạn điền vào để download file keystore.json về
 
 `{NODE_PWD}`: password lúc bạn điền vào để download file keystore.json về
 
