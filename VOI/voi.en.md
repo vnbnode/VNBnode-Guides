@@ -60,7 +60,7 @@ cd $HOME && curl -o register-active-auto.sh https://raw.githubusercontent.com/vn
 
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/2d667095-ecc9-45d8-9904-b1468ee37682)
 
-- Fill the GUID you saved in Step 10
+- Fill the GUID you saved in Step 3
 - `NOTE`: Node must run for more than 4-6 hours to be able to faucet
 ## Option 2: Manual
 
