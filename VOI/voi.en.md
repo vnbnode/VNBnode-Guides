@@ -48,7 +48,7 @@ cd $HOME && curl -o participation.sh https://raw.githubusercontent.com/vnbnode/b
 
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/16166601-63da-4b0b-8e62-1f725ee11cf4)
 
-- Use /faucet
+- Use /voi-testnet-faucet
 
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/e76d238a-e35f-495f-aacd-5685409d40ee)
 
@@ -213,7 +213,7 @@ goal account dump -a $addr | jq -r 'if (.onl == 1) then "You are online!" else "
 - Get Role
 
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/16166601-63da-4b0b-8e62-1f725ee11cf4)
-- Use /faucet
+- Use /voi-testnet-faucet
 
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/e76d238a-e35f-495f-aacd-5685409d40ee)
 ### 17/ Register and Active Participating
