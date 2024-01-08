@@ -226,6 +226,11 @@ sleep 1 &&\
 goal account dump -a $addr | jq -r 'if (.onl == 1) then "You are online!" else "You are offline." end'
 ```
 ### 18/ Faucet again
+
+![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/2d667095-ecc9-45d8-9904-b1468ee37682)
+
+- Fill the GUID you saved in Step 10
+- `NOTE`: Node must run for more than 4-6 hours to be able to faucet
 ### 19/ Check logs
 ```
 tail -f /var/lib/algorand/node.log
