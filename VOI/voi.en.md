@@ -56,6 +56,12 @@ cd $HOME && curl -o participation.sh https://raw.githubusercontent.com/vnbnode/b
 ```
 cd $HOME && curl -o register-active-auto.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/VOI/register-active-auto.sh && bash register-active-auto.sh
 ```
+### STEP 7: Faucet again
+
+![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/2d667095-ecc9-45d8-9904-b1468ee37682)
+
+- Fill the GUID you saved in Step 10
+- `NOTE`: Node must run for more than 4-6 hours to be able to faucet
 ## Option 2: Manual
 
 ### 1/ Need install software and its updates
