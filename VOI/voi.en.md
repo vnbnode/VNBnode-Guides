@@ -234,7 +234,7 @@ tail -f /var/lib/algorand/node.log
 - Explorer: https://voi.observer/explorer/home    
 - https://cswenor.github.io/voi-proposer-data/health.html
 - https://voi-node-info.boeieruurd.com/
-
+- https://voirewards.com/
 
 ## Thank to support VNBnode.
 ### Visit us at:
