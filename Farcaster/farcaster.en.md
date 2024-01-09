@@ -27,7 +27,7 @@ Step 3: Get the FID in the About section as shown below.
 
 ## Set up RPC in Alchemy
 ### Create an account on Alchemy
-Use your Gmail to register an account here: https://www.alchemy.com/
+Use your Gmail to register an account here: [https://www.alchemy.com/](https://alchemy.com/?r=d9e42f283d9e2fbe)
 ### Create Farcaster Hubble app
 Create the Farcaster Hubble app on the Ethereum mainnet
 
