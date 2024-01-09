@@ -27,7 +27,7 @@ I/O size (minimum/optimal): 512 bytes / 512 bytes
 Disklabel type: dos
 Disk identifier: 0x331195d1
 ```
-The unmounted disk is /dev/sdb in the demonstration above. We will be using /dev/vdb to demonstrate the mounting operation.
+The unmounted disk is /dev/sdb in the demonstration above. We will be using /dev/sdb to demonstrate the mounting operation.
 Allocate the /dev/sdb disk：
 ```
 fdisk /dev/sdb
