@@ -1,4 +1,4 @@
-# <p align="center"> Run Node Lumoz </p>
+# Lumoz (END TESTNET)
 <p align="center">
   <img height="100" height="auto" src="https://github.com/vnbnode/binaries/blob/main/Projects/Lumoz/lumoz.jpg?raw=true">
 </p>
