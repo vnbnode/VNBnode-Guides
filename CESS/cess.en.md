@@ -129,10 +129,10 @@ Update the cess-nodeadm
 ```
 wget https://github.com/CESSProject/cess-nodeadm/archive/v0.5.2.tar.gz
 tar -xvf v0.5.2.tar.gz
-cd cess-nodeadm-0.4.4/
+cd cess-nodeadm-0.5.2/
 ./install.sh --skip-dep --retain-config
 ```
-Please make sure the cess-nodeadm version v0.4.4 is correct, check the [most updated version.](https://github.com/CESSProject/cess-nodeadm/tags)
+Please make sure the cess-nodeadm version v0.5.2 is correct, check the [most updated version.](https://github.com/CESSProject/cess-nodeadm/tags)
 Pull images
 ```
 cess pullimg
