@@ -141,6 +141,7 @@ Start CESS
 ```
 cess start
 ```
+## [Check Stat](https://substats.cess.cloud/)
 ## Thank to support VNBnode.
 ### Visit us at:
 
