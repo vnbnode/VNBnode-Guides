@@ -22,7 +22,7 @@ apt install curl iptables build-essential git wget jq make gcc nano tmux htop nv
 mkdir -p $HOME/.tangle && cd $HOME/.tangle
 ```
 ```php
-wget -O tangle https://github.com/webb-tools/tangle/releases/download/v5.0.0/tangle-standalone-linux-amd64
+wget -O tangle https://github.com/webb-tools/tangle/releases/download/v0.6.1/tangle-testnet-linux-amd64
 chmod 744 tangle
 mv tangle /usr/bin/
 tangle --version
@@ -32,7 +32,7 @@ tangle --version
 ```
 ### 4. Download json file
 ```php
-wget -O $HOME/.tangle/tangle-standalone.json "https://raw.githubusercontent.com/webb-tools/tangle/main/chainspecs/testnet/tangle-standalone.json"
+wget -O $HOME/.tangle/tangle-standalone.json "https://raw.githubusercontent.com/webb-tools/tangle/main/chainspecs/testnet/tangle-testnet.json"
 ```
 ```php
 chmod 744 ~/.tangle/tangle-standalone.json
