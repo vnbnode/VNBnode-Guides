@@ -1,3 +1,5 @@
+# Tangle
+[Discord](https://discord.gg/J4M6QaMQau)
 ### 1. Server Requirements
 | Component   |  Requirements  |
 |-------------|----------------|
