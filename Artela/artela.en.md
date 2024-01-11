@@ -1,7 +1,7 @@
 # Artela
-[Discord](https://discord.gg/artela)
+<img src="https://github.com/vnbnode/VNBnode-Guides/assets/76662222/7724db8a-a28e-452b-8431-ed5a748ba9bd" width="30"/> <a href="https://discord.gg/artela" target="_blank">Discord</a>
 
-[Fill Form](https://atkty6pceir.typeform.com/to/o4359Rsd)
+<img src="https://github.com/vnbnode/VNBnode-Guides/assets/76662222/4b23c7fc-4ffb-4126-a0a8-92caa02acb51" width="30"/> <a href="https://atkty6pceir.typeform.com/to/o4359Rsd" target="_blank">Fill Form</a>
 ## Hardware requirements
 
 |   Thông số  |        Khuyến nghị        |
