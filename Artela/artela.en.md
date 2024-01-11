@@ -21,7 +21,107 @@ curl -o auto-run.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Proj
 ```
 sudo journalctl -fu artelad -o cat
 ```
-
+## Create Wallet
+```
+artelad keys add wallet
+```
+## Create Validator
+```
+artelad tx staking create-validator \
+--amount="1000000art" \
+--pubkey=$(artelad tendermint show-validator) \
+--moniker="Name-VNBnode" \
+--identity "06F5F34BD54AA6C7" \
+--website "https://vnbnode.com" \
+--commission-rate="0.10" \
+--commission-max-rate="0.20" \
+--commission-max-change-rate="0.01" \
+--min-self-delegation="1" \
+--gas="200000" \
+--chain-id=artela_11822-1 \
+--from=wallet
+```
+## Edit Validator
+```
+artelad tx staking edit-validator \
+--new-moniker "NewName-VNBnode" \
+--identity "06F5F34BD54AA6C7" \
+--commission-rate="0.01" \
+--website "https://vnbnode.com" \
+--chain-id=artela_11822-1 \
+--from=wallet
+```
+## [Explorer](https://test.explorer.ist/artela/staking)
+## Remove Node
+```
+cd $HOME
+sudo systemctl stop artela
+sudo systemctl disable artela
+sudo rm /etc/systemd/system/artela.service
+sudo systemctl daemon-reload
+sudo rm -f $(which artela)
+sudo rm -rf $HOME/.artelad
+sudo rm -rf $HOME/artela
+sudo rm -rf $HOME/go
+```
+## Command
+Sync info
+```
+artelad status 2>&1 | jq .SyncInfo
+```
+Validator info
+```
+artelad status 2>&1 | jq .ValidatorInfo
+```
+Node info
+```
+artelad status 2>&1 | jq .NodeInfo
+```
+Show node id
+```
+artelad tendermint show-node-id
+```
+List of wallets
+```
+artelad keys list
+```
+Recover wallet
+```
+artelad keys add wallet --recover
+```
+Delete wallet
+```
+artelad keys delete wallet
+```
+Get wallet balance
+```
+artelad query bank balances $ARTELA_WALLET_ADDRESS
+```
+Transfer funds
+```
+artelad tx bank send $ARTELA_WALLET_ADDRESS <TO_ARTELA_WALLET_ADDRESS> 10000000uart
+```
+Voting
+```
+artelad tx gov vote 1 yes --from wallet --chain-id=$ARTELA_CHAIN_ID
+```
+Staking, Delegation and Rewards
+Delegate stake
+```
+artelad tx staking delegate $ARTELA_VALOPER_ADDRESS 10000000uart --from=wallet --chain-id=$ARTELA_CHAIN_ID --gas=auto
+```
+Redelegate stake from validator to another validator
+```
+artelad tx staking redelegate <srcValidatorAddress> <destValidatorAddress> 10000000uart --from=wallet --chain-id=$ARTELA_CHAIN_ID --gas=auto
+```
+Withdraw all rewards
+```
+artelad tx distribution withdraw-all-rewards --from=wallet --chain-id=$ARTELA_CHAIN_ID --gas=auto
+```
+Withdraw rewards with commision
+```
+artelad tx distribution withdraw-rewards $ARTELA_VALOPER_ADDRESS --from=wallet --commission --chain-id=$ARTELA_CHAIN_ID
+```
 ## Thank to support VNBnode.
 ### Visit us at:
 
