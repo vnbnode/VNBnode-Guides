@@ -28,7 +28,7 @@ mv tangle /usr/bin/
 tangle --version
 ```
 ```php
-# **Result should be**: 0.5.0-e892e17-x86_64-linux-gnu
+# **Result should be**: 0.x.x-e892e17-x86_64-linux-gnu
 ```
 ### 4. Download json file
 ```php
