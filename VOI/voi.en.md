@@ -42,7 +42,7 @@ sudo systemctl restart voi
 cd $HOME && curl -o participation.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/VOI/participation.sh && bash participation.sh
 ```
 ### STEP 5: Faucet
-- [Faucet Here](https://discord.gg/voinetwork)
+- [Faucet Here]([https://discord.gg/voinetwork](https://discord.gg/voi-network-1055863853633785857))
 
 - Get Role
 
@@ -209,7 +209,7 @@ goal account dump -a $addr | jq -r 'if (.onl == 1) then "You are online!" else "
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/1ee723fd-da78-449e-bfb2-c083e5d55ba8)
 
 ### 16/ Faucet
-- [Faucet Here](https://discord.gg/voinetwork)
+- [Faucet Here]([https://discord.gg/voinetwork](https://discord.gg/voi-network-1055863853633785857))
 - Get Role
 
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/16166601-63da-4b0b-8e62-1f725ee11cf4)
