@@ -1,4 +1,6 @@
 # Artela
+## Info
+[Discord](https://discord.gg/artela)
 ## Hardware requirements
 
 |   Thông số  |        Khuyến nghị        |
