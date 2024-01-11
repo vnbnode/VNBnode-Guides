@@ -82,6 +82,7 @@ systemctl restart tangle && journalctl -u tangle -f -o cat
 [Click here](https://telemetry.polkadot.io/#list/0xea63e6ac7da8699520af7fb540470d63e48eccb33f7273d2e21a935685bf1320) 
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/91002010/e32d14b6-2548-4f67-99e1-c90ef50c515d)
 ### 7.Validator setup
+[Click here](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ftestnet-rpc.tangle.tools#/staking/targets)
 ```php
 # get your session key
 curl -H "Content-Type: application/json" -d '{ "id": 1, "jsonrpc": "2.0", "method": "author_rotateKeys", "params": [] }' http://localhost:9933
@@ -91,7 +92,7 @@ curl -H "Content-Type: application/json" -d '{ "id": 1, "jsonrpc": "2.0", "metho
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/91002010/a33c0009-14ee-471e-a2e7-4beb3847868a)
 ### 8.Fill the form
 [Apply form](https://forms.gle/amtHuDQP1rbnXg7V9)
-
+### 9. [Leaderboard](https://leaderboard.tangle.tools/)
 ## Thank to support VNBnode.
 ### Visit us at:
 
