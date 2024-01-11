@@ -15,7 +15,7 @@
 ```
 curl -o auto-run.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Artela/auto-run.sh && bash auto-run.sh
 ```
-```
+
 ## Check logs
 ```
 sudo journalctl -fu artelad -o cat
