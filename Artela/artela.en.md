@@ -1,5 +1,6 @@
 # Artela
 [Discord](https://discord.gg/artela)
+[Fill Form](https://atkty6pceir.typeform.com/to/o4359Rsd)
 ## Hardware requirements
 
 |   Thông số  |        Khuyến nghị        |
