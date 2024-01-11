@@ -8,7 +8,8 @@
 | :---------: | :-----------------------: |
 |   **CPU**   |          8 Cores          |
 |   **RAM**   |          16 GB            |
-|   **SSD**   |          1 TB             |
+|   **SSD**   |          400 GB           | VNBnode's experience
+|   **SSD**   |          1 TB             | Project's recommend
 | **NETWORK** |          200 Mbps         |
 
 ## Auto Installation
