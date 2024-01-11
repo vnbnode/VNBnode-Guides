@@ -3,10 +3,10 @@
 
 |   Thông số  |        Khuyến nghị        |
 | :---------: | :-----------------------: |
-|   **CPU**   | 4 Cores (ARM64 or x86-64) |
-|   **RAM**   |        16 GB (DDR4)       |
-|   **SSD**   |           512 GB          |
-| **NETWORK** |          500 Mbps         |
+|   **CPU**   |          8 Cores          |
+|   **RAM**   |          16 GB            |
+|   **SSD**   |          1 TB             |
+| **NETWORK** |          200 Mbps         |
 
 ## Manual Installation
 **Server Preparation**
