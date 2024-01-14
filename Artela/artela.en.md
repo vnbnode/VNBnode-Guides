@@ -6,7 +6,7 @@
 
 |   Thông số  |        Khuyến nghị        |
 | :---------: | :-----------------------: |
-|   **CPU**   |          8 Cores          |
+|   **CPU**   |          8 Cores (Intel / AMD)        |
 |   **RAM**   |          16 GB            |
 |   **SSD**   |          400 GB (VNBnode's experience)          | 
 |   **SSD**   |          1 TB  (Project's recommend)           | 
