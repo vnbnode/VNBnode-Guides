@@ -33,8 +33,6 @@ artelad tx staking create-validator \
 --amount="1000000art" \
 --pubkey=$(artelad tendermint show-validator) \
 --moniker="Name-VNBnode" \
---identity "06F5F34BD54AA6C7" \
---website "https://vnbnode.com" \
 --commission-rate="0.10" \
 --commission-max-rate="0.20" \
 --commission-max-change-rate="0.01" \
@@ -48,8 +46,8 @@ artelad tx staking create-validator \
 artelad tx staking edit-validator \
 --new-moniker "NewName-VNBnode" \
 --identity "06F5F34BD54AA6C7" \
---commission-rate="0.01" \
 --website "https://vnbnode.com" \
+--commission-rate="0.01" \
 --chain-id=artela_11822-1 \
 --from=wallet
 ```
