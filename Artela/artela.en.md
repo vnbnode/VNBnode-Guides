@@ -25,6 +25,8 @@ sudo journalctl -fu artelad -o cat
 ```
 artelad keys add wallet
 ```
+### Please enter 24 characters into C98 wallet to get the wallet address from the ETH chain
+### Use that ETH wallet address to go to the project's Discord to faucet
 ## Create Validator
 ```
 artelad tx staking create-validator \
