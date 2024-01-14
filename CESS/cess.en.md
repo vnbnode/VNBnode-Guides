@@ -117,28 +117,29 @@ cess bucket stat
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/9774b7c6-5adf-4836-9d21-191532853604)
 
 ## New version upgrade
-Stop and remove all service
+### Stop and remove all service
 ```
 cess stop
 cess down
 ```
-Remove all program data
+### Remove all program data
 ```
 cess purge
 ```
-Update the cess-nodeadm
+### Update the cess-nodeadm
 ```
 wget https://github.com/CESSProject/cess-nodeadm/archive/v0.5.2.tar.gz
 tar -xvf v0.5.2.tar.gz
 cd cess-nodeadm-0.5.2/
 ./install.sh --skip-dep --retain-config
 ```
-Please make sure the cess-nodeadm version v0.5.2 is correct, check the [most updated version.](https://github.com/CESSProject/cess-nodeadm/tags)
-Pull images
+* Please make sure the cess-nodeadm version v0.5.2 is correct, check the [most updated version.](https://github.com/CESSProject/cess-nodeadm/tags)
+
+### Pull images
 ```
 cess pullimg
 ```
-Start CESS
+### Start CESS
 ```
 cess start
 ```
