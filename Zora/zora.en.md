@@ -1,6 +1,7 @@
+# Zora
+
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/6b929509-36ce-4a08-95cc-664555bafce5)
 
-# Zora
 ## Hardware requirements
 
 |   Thông số  |        Khuyến nghị        |
@@ -22,6 +23,8 @@ Create the Zora app on the Ethereum mainnet
 Get API keys information for both Ethereum and Optimism.
 
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/5b09e0a2-3651-4bd3-9e05-44c80d8f3239)
+
+![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/88c369ad-5bc6-48bd-91ed-8363970fe293)
 
 - Please copy both the Ethereum mainnet APIs to prepare for the next step
 ## Run Zora Node
