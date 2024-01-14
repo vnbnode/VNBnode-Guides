@@ -43,6 +43,12 @@ cp .env.example .env
 nano .env
 ```
 
+![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/14852f3c-3a5d-492a-836a-186844460fb0)
+
+![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/1e8a1366-b585-4553-9854-19e5f886c05b)
+
+Ctrl + X : Save
+
 ### 4. Run Node
 ```
 docker compose up --build
