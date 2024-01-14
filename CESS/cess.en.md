@@ -5,7 +5,8 @@ The OS requirement of the Storage server is as following:
 | :---------: | :-----------------------: |
 |   **CPU**   |        ≥ 4 Cores          |
 |   **RAM**   |        ≥ 8 GB             |
-| **NETWORK** |        ≥ 5 Mbps           |
+|   **SSD**   |        ≥ 1 TB             |
+| **NETWORK** |        ≥ 50 Mbps          |
 ## Firewall configuration
 ```
 ufw allow 4001
