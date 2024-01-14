@@ -43,7 +43,7 @@ cp .env.example .env
 nano .env
 ```
 
-4. Run Node
+### 4. Run Node
 ```
 docker compose up --build
 ```
