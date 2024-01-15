@@ -54,7 +54,10 @@ docker logs -f bevm
 
 ## Remove Node
 ```
-
+cd $HOME
+docker stop bevm
+docker rm bevm
+rm -r /var/lib/node_bevm_test_storage
 ```
 
 ## Thank to support VNBnode.
