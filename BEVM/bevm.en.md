@@ -33,23 +33,23 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 cd /var/lib
 mkdir node_bevm_test_storage
 ```
-### 1/ Pull image new 
+### 2/ Pull image new 
 ```
 sudo docker pull btclayer2/bevm:v0.1.1
 ```
-### 2/ Run node
+### 3/ Run node
 ```
 sudo docker run -d -v /var/lib/node_bevm_test_storage:/root/.local/share/bevm btclayer2/bevm:v0.1.1 bevm "--chain=testnet" "--name=Nodename-VNBnode" "--pruning=archive" --telemetry-url "wss://telemetry.bevm.io/submit 0"
 ```
-### 3/ Rename container
+### 4/ Rename container
 ```
 docker rename name_old bevm
 ```
-### 4/ Check log node
+### 5/ Check log node
 ```
 docker logs -f bevm 
 ```
-
+### [Check Telemetry](https://telemetry.bevm.io/#/0x41cfeafc7177775a0e838b3725a0178b89ebf5dde1b5f766becbf975a24e297b)
 ### *Follow the instruction from project:* [Guide](https://documents.bevm.io/)
 
 ## Remove Node
