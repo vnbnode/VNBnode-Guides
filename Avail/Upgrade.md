@@ -7,6 +7,7 @@ cd avail
 ```php
 sudo systemctl stop availd.service
 ```
+### Download
 ```php
 git pull
 git checkout v1.9.0.0
