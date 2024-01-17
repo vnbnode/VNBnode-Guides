@@ -13,9 +13,9 @@
 > ports 30333 and 30334 need to be opened for incoming traffic at the Firewall. Collator nodes should not expose WS and RPC ports to the public.
 ### 2. Update & install the necessary utilities
 
-#Change Your-evm-wallet
+#Change Your-evm-address
 ```php
-MONIKER=<Your-evm-wallet>
+MONIKER=<Your-evm-address>
 ```
 ```php
 apt update && apt upgrade -y
