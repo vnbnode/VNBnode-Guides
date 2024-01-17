@@ -10,6 +10,8 @@ sudo systemctl stop availd.service
 ### Download
 ```php
 git pull
+```
+```php
 git checkout v1.9.0.0
 ```
 ### Install
