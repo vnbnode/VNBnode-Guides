@@ -9,7 +9,7 @@
 | Port        | 20222 - P2P    |
 |             | 8086 - RPC     |
 |             | 8087 - Prometh |
-| OS          | Ubuntu 22.04   |
+| OS          | Ubuntu 20.04+  |
 ### 2. Update & install the necessary utilities
 ```php
 # Change Your-address-wallet
