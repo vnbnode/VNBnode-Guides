@@ -21,6 +21,8 @@ cargo run --locked --release -- --chain goldberg  --validator -d ./output
 sudo service availd restart
 systemctl status availd.service
 ```
+![image](https://github.com/vnbnode/VNBnode-Guides/assets/128967122/90da0394-f17b-4ddf-9064-e73729e6cad7)
+
 ## Thank to support VNBnode.
 ### Visit us at:
 
