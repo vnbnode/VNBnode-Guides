@@ -13,6 +13,7 @@
 ### 2. Update & install the necessary utilities
 ```php
 # Change Your-address-wallet
+```php
 MONIKER=<Your-address-wallet>
 ```
 ```php
