@@ -1,10 +1,25 @@
 ### Guide to upgrade Avail binaries from V1.8.0.3 to V1.9.0.0
-
+```php
 cd $Home
 cd avail
-
-
-
+```
+### Stop Service
+```php
+sudo systemctl stop availd.service
+```
+```php
+git pull
+git checkout v1.9.0.0
+```
+### Install
+```php
+cargo run --locked --release -- --chain goldberg  --validator -d ./output
+```
+### Restart and Check status
+```php
+sudo service availd restart
+systemctl status availd.service
+```
 ## Thank to support VNBnode.
 ### Visit us at:
 
