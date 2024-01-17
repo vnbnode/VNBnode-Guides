@@ -1,4 +1,4 @@
-# Run Full Node and Validator Avail Docker v1.8.0.4
+# Run Full Node and Validator Avail Docker v1.9.0.0
 <p align="center">
   <img height="100" height="auto" src="https://github.com/vnbnode/binaries/blob/main/Projects/Avail/avail.png?raw=true">
 </p>
@@ -32,11 +32,11 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 
 ### 1/ Pull image new 
 ```
-docker pull availj/avail:v1.8.0.4
+docker pull availj/avail:v1.9.0.0
 ```
 ### 2/ Run node
 ```
-sudo docker run -v $(pwd)/avail/:/da/avail:rw --network host -d --restart unless-stopped availj/avail:v1.8.0.4 --chain goldberg --name "VNBnode" --validator -d /da/avail
+sudo docker run -v $(pwd)/avail/:/da/avail:rw --network host -d --restart unless-stopped availj/avail:v1.9.0.0 --chain goldberg --name "VNBnode" --validator -d /da/avail
 ```
 ### 3/ Rename container
 ```
@@ -63,11 +63,11 @@ docker rm avail
 ```
 ### 3/ Update new version
 ```
-docker pull availj/avail:v1.8.0.4
+docker pull availj/avail:v1.9.0.0
 ```
 ### 4/ Run node
 ```
-sudo docker run -v $(pwd)/avail/:/da/avail:rw --network host -d --restart unless-stopped availj/avail:v1.8.0.4 --chain goldberg --name "VNBnode" --validator -d /da/avail
+sudo docker run -v $(pwd)/avail/:/da/avail:rw --network host -d --restart unless-stopped availj/avail:v1.9.0.0 --chain goldberg --name "VNBnode" --validator -d /da/avail
 ```
 ### 5/ Rename container
 ```
