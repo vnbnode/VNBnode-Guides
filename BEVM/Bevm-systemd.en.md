@@ -1,4 +1,4 @@
-# Tangle
+# Bevm
 <img src="https://github.com/vnbnode/VNBnode-Guides/assets/76662222/7724db8a-a28e-452b-8431-ed5a748ba9bd" width="30"/> <a href="https://discord.gg/uBnrqrHBhD" target="_blank">Discord</a>
 ### 1. Server Requirements
 | Component   |  Requirements  |
