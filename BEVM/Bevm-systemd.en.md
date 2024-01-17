@@ -12,7 +12,7 @@
 | OS          | Ubuntu 20.04+  |
 ### 2. Update & install the necessary utilities
 
-# Change Your-address-wallet
+Change Your-address-wallet
 ```php
 MONIKER=<Your-address-wallet>
 ```
