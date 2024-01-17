@@ -3,7 +3,7 @@
 ### Do not send any private key wallet - with your fund.
 ### Just use a fresh new wallet to testnet.
 
-### 1st Step buy a domain & setting DNS
+### 1st Step buy a domain & setting DNS follow this example:
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/128967122/c71485f4-4dfc-4873-b390-ba48ca2f7045)
 
 ## Part 1: Automatic Install Redbelly node
