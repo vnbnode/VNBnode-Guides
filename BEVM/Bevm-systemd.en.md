@@ -8,7 +8,7 @@
 | Ram         | 2 GB           |
 | Port        | 20222 - P2P    |
 |             | 8086 - RPC     |
-|             | 8087 - Prometh |
+|             | 8087 - WS      |
 | OS          | Ubuntu 20.04+  |
 ### 2. Update & install the necessary utilities
 ```php
