@@ -100,7 +100,7 @@ sudo docker run --network host --rm -it -w /data -v $(pwd):/data sarvalabs/moipo
 
 `{NODE_PWD}`: password lúc bạn điền vào để download file keystore.json về
 
-`{ADDRESS}`: Chọn 1 trong 3 địa chỉ ví của bạn tại đây [MOI Voyage](https://voyage.moi.technology/)
+`{ADDRESS}`: Chọn ví đầu tiên trong 3 địa chỉ ví của bạn tại đây [MOI Voyage](https://voyage.moi.technology/)
 &#x20;![](<../.gitbook/assets/image (41).png>) 
 
 `{NODE_IDX}`: muốn khởi chạy Krama ID số bao nhiêu thì nhập số đó vào
