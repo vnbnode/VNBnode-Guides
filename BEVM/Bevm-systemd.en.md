@@ -45,7 +45,7 @@ User=$USER
 Restart=always
 RestartSec=3
 LimitNOFILE=65535
-ExecStart=/usr/bin/bevm --name $MONIKER --chain testnet --pruning archive --telemetry-url "wss://telemetry.polkadot.io/submit 0"
+ExecStart=/usr/bin/bevm --chain testnet --name $MONIKER --pruning archive --telemetry-url "wss://telemetry.bevm.io/submit 0"
 [Install]
 WantedBy=multi-user.target
 EOF
