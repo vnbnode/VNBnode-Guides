@@ -52,7 +52,7 @@ cd $HOME && mkdir moi && cd moi
 ```
 - Download keystore.json --> $HOME/moi/keystore.json
 ```
-cd $HOME && curl -o moi-auto.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/MOI/moi-auto.sh && bash moi-auto.sh
+cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/MOI/moi-auto.sh)
 ```
 ### Cần thay đổi thông tin đã nhập nếu nhập sai hoặc gõ tiếng việt:
 ```
