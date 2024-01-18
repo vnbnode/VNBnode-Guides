@@ -38,8 +38,9 @@ mkdir node_bevm_test_storage
 sudo docker pull btclayer2/bevm:v0.1.1
 ```
 ### 3/ Run node
+- Fill Address BEVM on Metamask
 ```
-sudo docker run -d -v /var/lib/node_bevm_test_storage:/root/.local/share/bevm btclayer2/bevm:v0.1.1 bevm "--chain=testnet" "--name=Nodename-VNBnode" "--pruning=archive" --telemetry-url "wss://telemetry.bevm.io/submit 0"
+sudo docker run -d -v /var/lib/node_bevm_test_storage:/root/.local/share/bevm btclayer2/bevm:v0.1.1 bevm "--chain=testnet" "--name=<Fill Address BEVM>" "--pruning=archive" --telemetry-url "wss://telemetry.bevm.io/submit 0"
 ```
 ### 4/ Rename container
 ```
