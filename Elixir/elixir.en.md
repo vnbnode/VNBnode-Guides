@@ -10,31 +10,19 @@
 | **NETWORK** |        100 Mbps           |
 
 
-### 1/ Edit Dockerfile
+## Automatic Install
 ```
-cd $HOME && mkdir ev && cd ev && curl -o Dockerfile https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Elixir/Dockerfile && nano Dockerfile
+cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Elixir/elixir-auto.sh)
 ```
-```
-FROM elixirprotocol/validator:testnet-2
-
-ENV ADDRESS=
-ENV PRIVATE_KEY=
-ENV VALIDATOR_NAME=
-```
-### 2/ Build Dockerfile and Run Node (Automatic)
-```
-curl -o elixir-auto.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Elixir/elixir-auto.sh && bash elixir-auto.sh
-```
-### 3/ Check log
+### Check log
 ```
 sudo docker logs -f ev
 ```
-### 4/ Stop and Remove Node
+### Stop and Remove Node
 ```
 sudo docker stop ev
-```
-```
 sudo docker rm ev
+rm -r $HOME/ev
 ```
 
 ### Dashboard: https://dashboard.elixir.finance/
