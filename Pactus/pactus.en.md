@@ -10,7 +10,7 @@
 
 ## Option 1: Automatic
 ```
-cd $HOME && curl -o pactus-auto.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Pactus/pactus-auto.sh && bash pactus-auto.sh
+cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Pactus/pactus-auto.sh)
 ```
 ## Option 2: Manual
 ### Install Docker
