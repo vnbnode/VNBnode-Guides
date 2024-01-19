@@ -8,7 +8,7 @@
 
 ## Option 1 (Automatic)
 ```
-cd $HOME && curl -o avail-auto.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Avail/avail-auto.sh && bash avail-auto.sh
+cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Avail/avail-auto.sh)
 ```
 ## Option 2 (Manual)
 
