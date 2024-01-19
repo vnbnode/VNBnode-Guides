@@ -38,7 +38,12 @@ docker pull availj/avail:v1.9.0.0
 ```
 sudo docker run --name avail -v $(pwd)/avail/:/da/avail:rw --network host -d --restart unless-stopped availj/avail:v1.9.0.0 --chain goldberg --name "VNBnode" --validator -d /da/avail
 ```
-### 3/ Check log node
+### 3/ Open Port 30333
+```
+sudo ufw allow 30333/tcp
+sudo ufw allow 30333/udp
+```
+### 4/ Check log node
 ```
 docker logs -f avail
 ```
@@ -66,7 +71,12 @@ docker pull availj/avail:v1.9.0.0
 ```
 sudo docker run --name avail -v $(pwd)/avail/:/da/avail:rw --network host -d --restart unless-stopped availj/avail:v1.9.0.0 --chain goldberg --name "VNBnode" --validator -d /da/avail
 ```
-### 5/ Check log node
+### 5/ Open Port 30333
+```
+sudo ufw allow 30333/tcp
+sudo ufw allow 30333/udp
+```
+### 6/ Check log node
 ```
 docker logs -f avail
 ```
