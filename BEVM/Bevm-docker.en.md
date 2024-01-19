@@ -6,7 +6,7 @@
 
 ## Option 1 (Automatic)
 ```
-cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/BEVM/run-auto.sh)
+cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/BEVM/bevm-auto.sh)
 ```
 ## Option 2 (Manual)
 
