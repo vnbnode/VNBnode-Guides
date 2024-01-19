@@ -36,16 +36,13 @@ docker pull availj/avail:v1.9.0.0
 ```
 ### 2/ Run node
 ```
-sudo docker run -v $(pwd)/avail/:/da/avail:rw --network host -d --restart unless-stopped availj/avail:v1.9.0.0 --chain goldberg --name "VNBnode" --validator -d /da/avail
+sudo docker run --name avail -v $(pwd)/avail/:/da/avail:rw --network host -d --restart unless-stopped availj/avail:v1.9.0.0 --chain goldberg --name "VNBnode" --validator -d /da/avail
 ```
-### 3/ Rename container
+### 3/ Check log node
 ```
-docker rename name_old avail
+docker logs -f avail
 ```
-### 4/ Check log node
-```
-docker logs avail -f
-```
+
 ## Create Validator
 Navigate to the Goldberg network explorer at http://goldberg.avail.tools.
 * Note: `Need 1000 AVL to create Validator`
@@ -67,16 +64,13 @@ docker pull availj/avail:v1.9.0.0
 ```
 ### 4/ Run node
 ```
-sudo docker run -v $(pwd)/avail/:/da/avail:rw --network host -d --restart unless-stopped availj/avail:v1.9.0.0 --chain goldberg --name "VNBnode" --validator -d /da/avail
+sudo docker run --name avail -v $(pwd)/avail/:/da/avail:rw --network host -d --restart unless-stopped availj/avail:v1.9.0.0 --chain goldberg --name "VNBnode" --validator -d /da/avail
 ```
-### 5/ Rename container
+### 5/ Check log node
 ```
-docker rename name_old avail
+docker logs -f avail
 ```
-### 6/ Check log node
-```
-docker logs avail -f
-```
+
 ## Thank to support VNBnode.
 ### Visit us at:
 
