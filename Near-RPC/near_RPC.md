@@ -10,7 +10,7 @@
 ```php
 lscpu | grep -oh avx
 ```
-### If result returns nothing, that means CPU does not support AVX.
+##### If result returns nothing, that means CPU does not support AVX.
 
 ### Get Rust
 ```php
