@@ -51,7 +51,7 @@ artelad tx staking edit-validator \
 --chain-id=artela_11822-1 \
 --from=wallet
 ```
-## [Explorer](https://test.explorer.ist/artela/staking)
+## [Visit Explorer](https://test.explorer.ist/artela/staking)
 ## Upgrade
 ```
 sudo systemctl stop artela
