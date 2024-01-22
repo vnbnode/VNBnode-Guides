@@ -151,7 +151,9 @@ lavad version && lavap version
 ```
 ```php
 sudo systemctl restart cosmovisor
+sudo systemctl restart lavap
 sudo systemctl status cosmovisor
+
 ```
 ## Thank to support VNBnode.
 ### Visit us at:
