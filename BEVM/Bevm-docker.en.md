@@ -43,7 +43,7 @@ sudo docker pull btclayer2/bevm:v0.1.1
 WALLET_BEVM=<Your-address-wallet>
 ```
 ```
-sudo docker run -d -v /var/lib/node_bevm_test_storage:/root/.local/share/bevm btclayer2/bevm:v0.1.1 bevm "--chain=testnet" "--name=$WALLET_BEVM" "--pruning=archive" --telemetry-url "wss://telemetry.bevm.io/submit 0"
+sudo docker run -d -v /var/lib/node_bevm_test_storage:/root/.local/share/bevm btclayer2/bevm:v0.1.1 bevm "--chain=testnet" "--name=$WALLET_BEVM" "--pruning=archive" --telemetry-url "wss://telemetry.bevm.io/submit 0" /ip4/18.222.166.234/tcp/10000/ws/p2p/12D3KooWR1DNEVVWMaRJVfAkXTyZAZgnN159hNcPTooCSwMv4zbx /ip4/62.171.130.220/tcp/30333/ws/p2p/12D3KooWKiSXFw4eRP3zrvjtBNDEe4N6hfCDWppUUCBd9YwHH52w
 ```
 ### 4/ Rename container
 ```
