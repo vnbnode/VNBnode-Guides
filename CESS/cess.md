@@ -13,6 +13,7 @@ The OS requirement of the Storage server is as following:
 ufw allow 4001
 ```
 ## Disk mounting
+- If VPS please skip formatting the hard drive
 Check the hard disk status using the df -h command:
 ```
 df -h
@@ -69,6 +70,10 @@ If the "/cess" appers, the disk has been successfully mounted.
 Please refer to the [CESS Account](https://docs.cess.cloud/cess-build-book/cess-accounts) section above for creating a CESS account. 
 Please go to the [CESS faucet](https://testnet-faucet.cess.cloud/) to get TCESS. 
 ## Install cess-nodeadm
+### Option VPS:
+```
+mkdir /cess
+```
 ### 1. Install
 ```
 wget https://github.com/CESSProject/cess-nodeadm/archive/v0.5.3.tar.gz
