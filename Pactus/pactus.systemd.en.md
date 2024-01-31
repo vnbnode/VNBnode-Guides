@@ -1,6 +1,15 @@
 # PACTUS MAINNET
 Pactus is a decentralized blockchain platform, emphasizing fairness and transparency without the need for delegation or miners, enabling anyone to join and maintaining true decentralization.
 [Pactus](https://pactus.org/)
+
+## Recommended Hardware Requirements 
+
+|   SPEC      |        Recommend          |
+| :---------: | :-----------------------: |
+|   **CPU**   |        2 Cores            |
+|   **RAM**   |        4GB  Ram           |
+|   **SSD**   |        64GB SSD           | 
+
 # 1. Update system and install build tools
 ```
 sudo apt update && sudo apt list --upgradable && sudo apt upgrade -y
