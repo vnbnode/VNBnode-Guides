@@ -33,7 +33,16 @@ Get API keys information for both Ethereum and Optimism.
 sudo apt-get update && sudo apt-get upgrade -y
 sudo apt install curl build-essential git screen jq pkg-config libssl-dev libclang-dev ca-certificates gnupg lsb-release -y
 ```
-### 2. Download Source
+### 2. Install Docker
+```
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+rm $HOME/get-docker.sh
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+docker -v
+```
+### 3. Download Source
 ```
 git clone https://github.com/conduitxyz/node.git 
 cd node
@@ -41,7 +50,7 @@ cd node
 export CONDUIT_NETWORK=zora-mainnet-0
 cp .env.example .env 
 ```
-### 3. Edit .env
+### 4. Edit .env
 ```
 nano .env
 ```
@@ -52,16 +61,16 @@ nano .env
 
 Ctrl + X : Save
 
-### 4. Run Node
+### 5. Run Node
 ```
 docker compose up --build
 ```
-### 5. Auto Restart
+### 6. Auto Restart
 ```
 docker update --restart=unless-stopped node-node-1
 docker update --restart=unless-stopped node-geth-1
 ```
-### 6. Check logs
+### 7. Check logs
 ```
 docker logs -f node-node-1
 docker logs -f node-geth-1
