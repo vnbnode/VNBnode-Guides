@@ -23,10 +23,8 @@ go version
 # 4. Install binary & build binary
 ```
 cd $Home
-mkdir .pactus
+git clone https://github.com/pactus-project/pactus.git .pactus
 cd .pactus
-git clone https://github.com/pactus-project/pactus.git
-cd pactus
 make build
 cd build
 ```
@@ -47,7 +45,7 @@ After=network-online.target
 StartLimitIntervalSec=0
 [Service]
 User=root
-ExecStart= /root/.pactus/pactus/build/pactus-daemon start --password "canyouhearme"
+ExecStart= /root/.pactus/build/pactus-daemon start --password "canyouhearme"
 Restart=always
 RestartSec=120
 [Install]
