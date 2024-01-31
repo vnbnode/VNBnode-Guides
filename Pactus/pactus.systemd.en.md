@@ -62,12 +62,12 @@ sudo systemctl restart pactusd && journalctl -f -u pactusd
 ```
 nano $HOME/pactus/config.toml
 ```
-# Before
+### Before
 [http]
 enable = false
 listen = "127.0.0.1:80"
 
-# After
+### After
 [http]
 enable = true
 listen = "0.0.0.0:80"
@@ -75,7 +75,7 @@ listen = "0.0.0.0:80"
 sudo systemctl stop pactusd
 sudo systemctl restart pactusd
 ```
-# Check node ID.
+### Check node ID.
 http://***your_ip_node***:80/node
 # 7. Update bootstrap. Create a new Fork and pull request to Pactus Github
 [Link github](https://github.com/pactus-project/pactus)
