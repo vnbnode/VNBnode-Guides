@@ -16,7 +16,8 @@ Check the hard disk status using the df -h command:
 ```
 df -h
 ```
-Min 1TB HDD or SSD
+Note: Min 1TB HDD or SSD
+
 The disk is not mounted If the hard drive for storage mining cannot be found. Use the command below to view unmounted hard disks:
 ```
 fdisk -l
