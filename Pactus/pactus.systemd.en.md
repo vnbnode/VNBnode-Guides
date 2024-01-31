@@ -62,19 +62,15 @@ sudo systemctl restart pactusd && journalctl -f -u pactusd
 ```
 nano $HOME/pactus/config.toml
 ```
-
 **Before**
-
 [http]
-  enable = ***false***
-  listen = "***127.0.0.1:80***"
-  
+enable = ***false***
+listen = "***127.0.0.1:80***"
+
 **After**
-
 [http]
-  enable = ***true***
-  listen = "***0.0.0.0:80***"
-  
+enable = ***true***
+listen = "***0.0.0.0:80***"
 ```
 sudo systemctl stop pactusd
 sudo systemctl restart pactusd
