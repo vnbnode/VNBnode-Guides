@@ -1,6 +1,8 @@
 # Run Node Pactus Docker
 <img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/> <a href="https://pactus.org" target="_blank">Web</a>
-<img src="https://github.com/vnbnode/VNBnode-Guides/assets/76662222/4b23c7fc-4ffb-4126-a0a8-92caa02acb51" width="30"/> <a href="https://discord.gg/pactus-795592769300987944" target="_blank">Github</a>
+
+<img src="https://github.com/vnbnode/VNBnode-Guides/assets/76662222/23c3d2d7-f8e2-493b-bbc3-7c348fde2d6e" width="30"/> <a href="https://discord.gg/pactus-795592769300987944" target="_blank">Discord</a>
+
 ## Install Docker
 ```
 sudo apt update && sudo apt upgrade -y
