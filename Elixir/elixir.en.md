@@ -4,9 +4,10 @@
 
 |   SPEC      |        Recommend          |
 | :---------: | :-----------------------: |
-|   **CPU**   |        2 Cores            |
-|   **RAM**   |        4GB  Ram           |
-|   **SSD**   |        64GB SSD           | 
+|   **CPU**   | 4 Cores (ARM64 or x86-64) |
+|   **RAM**   |        4 GB (DDR4)        |
+|   **SSD**   |        30-100 GB          |
+| **NETWORK** |        100 Mbps           |
 
 
 ## Automatic Install
