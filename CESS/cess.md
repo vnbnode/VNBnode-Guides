@@ -6,7 +6,7 @@ The OS requirement of the Storage server is as following:
 | :---------: | :-----------------------: |
 |   **CPU**   |        ≥ 4 Cores          |
 |   **RAM**   |        ≥ 8 GB             |
-| **Storage** |        ≥ 300 GB HDD or SSD|
+| **Storage** |        ≥ 300 GB SSD       |
 | **NETWORK** |        ≥ 50 Mbps          |
 ## Firewall configuration
 ```
