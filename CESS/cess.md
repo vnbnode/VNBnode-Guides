@@ -93,8 +93,7 @@ Enter cess storage earnings account: cXiHsw32kT3Fzw6YeXDTECCfFNKjDVg85eg......
 Enter cess storage staking signature phrase: shoe ...... creek metal avoid
 Enter cess storage disk path (default: /opt/cess/storage/disk): /cess
 Enter cess storage space, by GB unit (current: 300, press enter to skip): 1000
-Enter the number of CPU cores used for mining; Your CPU cores are 15
-  (current: 0, 0 means all cores are used; press enter to skip): enter
+Enter the number of CPU cores used for mining; Your CPU cores are (current: 0, 0 means all cores are used; press enter to skip): enter
 Enter the staker's payment account if you have one (press enter to skip): enter
 Enter the reserved TEE worker endpoints (separate multiple values with commas, press enter to skip): enter
 Set configurations successfully
