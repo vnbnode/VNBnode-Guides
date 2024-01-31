@@ -16,6 +16,7 @@ Check the hard disk status using the df -h command:
 ```
 df -h
 ```
+Min 1TB HDD or SSD
 The disk is not mounted If the hard drive for storage mining cannot be found. Use the command below to view unmounted hard disks:
 ```
 fdisk -l
@@ -68,9 +69,9 @@ Please go to the [CESS faucet](https://testnet-faucet.cess.cloud/) to get TCESS.
 ## Install cess-nodeadm
 ### 1. Install
 ```
-wget https://github.com/CESSProject/cess-nodeadm/archive/v0.5.2.tar.gz
-tar -xvf v0.5.2.tar.gz
-cd cess-nodeadm-0.5.2
+wget https://github.com/CESSProject/cess-nodeadm/archive/v0.5.3.tar.gz
+tar -xvf v0.5.3.tar.gz
+cd cess-nodeadm-0.5.3
 ./install.sh
 ```
 ### 2. Set up Configuration
@@ -128,12 +129,12 @@ cess purge
 ```
 ### Update the cess-nodeadm
 ```
-wget https://github.com/CESSProject/cess-nodeadm/archive/v0.5.2.tar.gz
-tar -xvf v0.5.2.tar.gz
-cd cess-nodeadm-0.5.2/
+wget https://github.com/CESSProject/cess-nodeadm/archive/v0.5.3.tar.gz
+tar -xvf v0.5.3.tar.gz
+cd cess-nodeadm-0.5.3/
 ./install.sh --skip-dep --retain-config
 ```
-* Please make sure the cess-nodeadm version v0.5.2 is correct, check the [most updated version.](https://github.com/CESSProject/cess-nodeadm/tags)
+* Please make sure the cess-nodeadm version v0.5.3 is correct, check the [most updated version.](https://github.com/CESSProject/cess-nodeadm/tags)
 
 ### Pull images
 ```
