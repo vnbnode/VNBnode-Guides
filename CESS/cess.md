@@ -5,7 +5,7 @@ The OS requirement of the Storage server is as following:
 | :---------: | :-----------------------: |
 |   **CPU**   |        ≥ 4 Cores          |
 |   **RAM**   |        ≥ 8 GB             |
-|   **SSD**   |        ≥ 1 TB             |
+|   **SSD**   |        ≥ 300 GB           |
 | **NETWORK** |        ≥ 50 Mbps          |
 ## Firewall configuration
 ```
@@ -16,7 +16,7 @@ Check the hard disk status using the df -h command:
 ```
 df -h
 ```
-Note: Min 1TB HDD or SSD
+Note: `Min 300GB HDD or SSD`
 
 The disk is not mounted If the hard drive for storage mining cannot be found. Use the command below to view unmounted hard disks:
 ```
