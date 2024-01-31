@@ -12,8 +12,7 @@ The OS requirement of the Storage server is as following:
 ```
 ufw allow 4001
 ```
-## Disk mounting
-- If VPS please skip formatting the hard drive
+## Disk mounting (If VPS please skip formatting the hard drive. Go to Install cess-nodeadm)
 Check the hard disk status using the df -h command:
 ```
 df -h
