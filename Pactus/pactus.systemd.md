@@ -1,4 +1,4 @@
-# PACTUS MAINNET
+# PACTUS SystemD
 Pactus is a decentralized blockchain platform, emphasizing fairness and transparency without the need for delegation or miners, enabling anyone to join and maintaining true decentralization.
 [Pactus](https://pactus.org/)
 
