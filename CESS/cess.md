@@ -2,7 +2,7 @@
 <img src="https://github.com/vnbnode/VNBnode-Guides/assets/76662222/23c3d2d7-f8e2-493b-bbc3-7c348fde2d6e" width="30"/> <a href="https://discord.gg/cess" target="_blank">Discord</a>
 ## Mining  preparation
 The OS requirement of the Storage server is as following: 
-|   Thông số  |        Khuyến nghị        |
+|   SPEC	     |        Recommend          |
 | :---------: | :-----------------------: |
 |   **CPU**   |        ≥ 4 Cores          |
 |   **RAM**   |        ≥ 8 GB             |
