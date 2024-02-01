@@ -96,11 +96,13 @@ sudo docker run --network host --rm -it -w /data -v $(pwd):/data sarvalabs/moipo
 
 `{NODE_PWD}`: password lúc bạn điền vào để download file keystore.json về
 
-`{ADDRESS}`: Chọn ví đầu tiên trong 3 địa chỉ ví của bạn tại đây [MOI Voyage](https://voyage.moi.technology/)
-&#x20;![](<../.gitbook/assets/image (41).png>) 
+`{ADDRESS}`: Lấy địa chỉ ví của bạn tại đây [MOI Voyage](https://voyage.moi.technology/)
+
+![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/455c4157-0eba-48a9-963b-509a91756acd)
 
 `{NODE_IDX}`: muốn khởi chạy Krama ID số bao nhiêu thì nhập số đó vào
-&#x20;![](<../.gitbook/assets/image (1) (1).png>)
+
+![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/c25e9a5a-2087-4487-a710-9cab7890359a)
 
 `{IP_or_Domain}`: đây là địa chỉ IP WAN để kết nối ra bên ngoài, có thể thay thế bằng địa chỉ ddns. Khuyến khích dùng dịch vụ [NoIP](https://www.noip.com/).
 
