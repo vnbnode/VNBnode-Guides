@@ -3,6 +3,14 @@
 
 <img src="https://github.com/vnbnode/VNBnode-Guides/assets/76662222/23c3d2d7-f8e2-493b-bbc3-7c348fde2d6e" width="30"/> <a href="https://discord.gg/pactus-795592769300987944" target="_blank">Discord</a>
 
+## Recommended Hardware Requirements 
+
+|   SPEC      |        Recommend          |
+| :---------: | :-----------------------: |
+|   **CPU**   |        4 Cores            |
+|   **RAM**   |        4GB RAM            |
+|   **SSD**   |        100 GB             | 
+
 ## Install Docker
 ```
 sudo apt update && sudo apt upgrade -y
@@ -113,7 +121,7 @@ docker logs -f pactus
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/e893bca7-69e0-4629-bcba-ef463fc24c92)
 
 ## 10/ Update bootstrap. Create a new Fork and pull request to Pactus Github
-[Link github](https://github.com/pactus-project/pactus)
+<img src="https://github.com/vnbnode/VNBnode-Guides/assets/76662222/80008019-93a3-45b8-b250-d5c26647c787" width="30"/> <a href="https://github.com/pactus-project/pactus" target="_blank">Link Github</a>
 
 ## Thank to support VNBnode.
 ### Visit us at:
