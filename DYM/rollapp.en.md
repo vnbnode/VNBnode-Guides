@@ -44,3 +44,12 @@ One you finished, it will return to you 3 address as below:
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/91002010/e748b897-1d89-425a-9102-947b33e65638)
 
 #### Copy 3 addresses and go to Discord to claim faucets as below:
+
+## Thank to support VNBnode.
+### Visit us at:
+
+<img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/> <a href="https://t.me/VNBnodegroup" target="_blank">VNBnodegroup</a>
+
+<img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/> <a href="https://t.me/Vnbnode" target="_blank">VNBnode News</a>
+
+<img src="https://github.com/vnbnode/binaries/blob/main/Logo/VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>

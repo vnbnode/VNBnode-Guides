@@ -1,7 +1,68 @@
 # <p align="center"> VOI Network </p>
 <p align="center">
-  <img height="100" height="auto" src="/VOI/voi.jpg?raw=true">
+  <img height="100" height="auto" src="https://github.com/vnbnode/binaries/blob/main/Projects/VOI/voi.jpg?raw=true">
 </p>
+
+### Recommended Hardware Requirements
+
+|   SPEC      |        Recommend          |
+| :---------: | :-----------------------: |
+|   **CPU**   | 4 Cores 8 threads (ARM64 or x86-64)                                   |
+|   **RAM**   |        16 GB (DDR4)       |
+|   **SSD**   |    100 GB SSD or NVME     |
+| **NETWORK** |        100 Mbps           |
+
+## Option 1: Automatic
+### STEP 1: Install
+```
+echo "export ALGORAND_DATA=/var/lib/algorand/" >> $HOME/.bashrc && source $HOME/.bashrc
+```
+```
+cd $HOME && curl -o voi-auto.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/VOI/voi-auto.sh && bash voi-auto.sh
+```
+- Wait Catchpoint downloaded blocks = Catchpoint total blocks
+
+![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/f309da6d-6801-44db-9618-f53dc48ff686)
+
+### STEP 2: Create or Recovery Wallet, Account Address
+```
+cd $HOME && curl -o voi-create.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/VOI/voi-create.sh && bash voi-create.sh
+```
+### STEP 3: Set Node Name
+```
+sudo ALGORAND_DATA=/var/lib/algorand diagcfg telemetry name -n Nodename
+
+sudo ALGORAND_DATA=/var/lib/algorand diagcfg telemetry enable &&\
+sudo systemctl restart voi
+```
+- Save GUID
+
+### STEP 4: Create Participation
+```
+cd $HOME && curl -o participation.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/VOI/participation.sh && bash participation.sh
+```
+### STEP 5: Faucet
+- [Faucet Here]([https://discord.gg/voinetwork](https://discord.gg/voi-network-1055863853633785857))
+
+- Get Role
+
+![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/16166601-63da-4b0b-8e62-1f725ee11cf4)
+
+- Use /voi-testnet-faucet
+
+![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/e76d238a-e35f-495f-aacd-5685409d40ee)
+
+### STEP 6: Register and Active
+```
+cd $HOME && curl -o register-active-auto.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/VOI/register-active-auto.sh && bash register-active-auto.sh
+```
+### STEP 7: Faucet again
+
+![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/2d667095-ecc9-45d8-9904-b1468ee37682)
+
+- Fill the GUID you saved in Step 3
+- `NOTE`: Node must run for more than 4-6 hours to be able to faucet
+## Option 2: Manual
 
 ### 1/ Need install software and its updates
 ```
@@ -83,20 +144,19 @@ goal node status -w 1000
 sudo ALGORAND_DATA=/var/lib/algorand diagcfg telemetry name -n Nodename
 ```
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/e7200b6c-edf9-4b9a-991c-ace43e3b8068)
-
 ```
 sudo ALGORAND_DATA=/var/lib/algorand diagcfg telemetry enable &&\
 sudo systemctl restart voi
 ```
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/2146fb6a-a1f0-4d3d-a40c-75ce471b33eb)
-
+- Save GUID
 ### 11/ Create Wallet
 ```
 goal wallet new voi
 ```
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/5e6f59ac-6665-4714-acfd-98a139aecff4)
 - Save Your backup phrase
-### 12/ To create a new account
+### 12/ To create a new account address
 ```
 goal account new
 ```
@@ -149,10 +209,12 @@ goal account dump -a $addr | jq -r 'if (.onl == 1) then "You are online!" else "
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/1ee723fd-da78-449e-bfb2-c083e5d55ba8)
 
 ### 16/ Faucet
-- [Faucet Here](https://discord.gg/voinetwork)
+- [Faucet Here]([https://discord.gg/voinetwork](https://discord.gg/voi-network-1055863853633785857))
 - Get Role
+
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/16166601-63da-4b0b-8e62-1f725ee11cf4)
-- Use /faucet
+- Use /voi-testnet-faucet
+
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/e76d238a-e35f-495f-aacd-5685409d40ee)
 ### 17/ Register and Active Participating
 ```
@@ -170,7 +232,26 @@ sleep 1 &&\
 goal account dump -a $addr | jq -r 'if (.onl == 1) then "You are online!" else "You are offline." end'
 ```
 ### 18/ Faucet again
-### 19/ Check
+
+![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/2d667095-ecc9-45d8-9904-b1468ee37682)
+
+- Fill the GUID you saved in Step 10
+- `NOTE`: Node must run for more than 4-6 hours to be able to faucet
+### 19/ Check logs
+```
+tail -f /var/lib/algorand/node.log
+```
+### 20/ Check
 - Explorer: https://voi.observer/explorer/home    
 - https://cswenor.github.io/voi-proposer-data/health.html
 - https://voi-node-info.boeieruurd.com/
+- https://voirewards.com/
+
+## Thank to support VNBnode.
+### Visit us at:
+
+<img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/> <a href="https://t.me/VNBnodegroup" target="_blank">VNBnodegroup</a>
+
+<img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/> <a href="https://t.me/Vnbnode" target="_blank">VNBnode News</a>
+
+<img src="https://github.com/vnbnode/binaries/blob/main/Logo/VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>

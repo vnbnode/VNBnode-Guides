@@ -1,12 +1,12 @@
 ### Before start install Lava provider, you must ensure you have:
-* Your own domain (If yet buy one: [namecheap](https://www.namecheap.com/)
+* Your own domain (If you do not have yet, consider to buy one: [namecheap](https://www.namecheap.com/)
 * Lava node running
 * Lavap binaries installed
 #### Step 1: Setup A record for your domain
 
 ##### Go to DNS setting:
 * Create A record: Host = LAVA; Value = Your server public IP.
-![image](https://github.com/vnbnode/VNBnode-Guides/assets/128967122/91f04293-70d9-4b87-9f8b-66808ce1940a)
+
 #### Step 2: Install Required Dependencies
 ```php
 sudo apt update
@@ -126,8 +126,40 @@ lavap test rpcprovider --from $MONIKER  --endpoints "lava.your-domain.com:443,LA
 #### Step 14: Check the status of RPC provider
 [https://info.lavanet.xyz/provider/](https://info.lavanet.xyz/provider/)
 ***Enter your wallet address & Enjoy***
+### Upgradable Lava binaries
+```php
+sudo systemctl stop cosmovisor
+sudo systemctl stop lavap
+```
+```php
+cd $HOME
+rm -rf lava
+git clone https://github.com/lavanet/lava.git
+cd lava
+```
+```php
+# This is just sample command, Please change to the correct version
+git checkout v0.32.x
+```
+```php
+export LAVA_BINARY=lavad
+make install-all
+```
+```php
+# check version
+lavad version && lavap version
+```
+```php
+sudo systemctl restart cosmovisor
+sudo systemctl restart lavap
+sudo systemctl status cosmovisor
+
+```
 ## Thank to support VNBnode.
-## Visit us at: 
-Telegroup: [VNBnodegroup](https://t.me/VNBnodegroup)
-Telechannel:[Vnbnode News](https://t.me/Vnbnode)
-Web:[https://VNBnode.com](https://VNBnode.com)
+### Visit us at:
+
+<img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/> <a href="https://t.me/VNBnodegroup" target="_blank">VNBnodegroup</a>
+
+<img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/> <a href="https://t.me/Vnbnode" target="_blank">VNBnode News</a>
+
+<img src="https://github.com/vnbnode/binaries/blob/main/Logo/VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>

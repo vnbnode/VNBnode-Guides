@@ -1,3 +1,4 @@
+# Guide SystemD Avail (Goldberg)
 ### 1. Register for validators Avail:
 [Click this link](https://docs.google.com/forms/d/e/1FAIpQLScpwE8yuUkqJVQrVpLRqua5p8oA8DGUBYho9Rwjm1bmG8LebQ/viewform?ref=blog.availproject.org)
 ### 2. Hardware required
@@ -65,18 +66,19 @@ cargo build --release -p data-avail
 **Step 10: Make output folder**
 ```php
 mkdir -p output
+mkdir -p data
 ```
 ![image](https://github.com/vnbnode/Running-Nodes/assets/128967122/6ee1e07b-1162-4696-bb78-8a4beb77bd73)
 
 **Step 11: Switch git**
 ```php
-git checkout v1.7.2
+git checkout v1.9.0.0
 ```
 ![image](https://github.com/vnbnode/Running-Nodes/assets/128967122/b7556554-51f9-443c-9b34-5585336a6a5d)
 
 **Step 12: Run**
 ```php
-cargo run --locked --release -- --chain kate -d ./output
+cargo run --locked --release -- --chain goldberg --validator -d ./output
 ```
 *This step also takes time, be patient! Once it finished, you will see this screen:*
 ![image](https://github.com/vnbnode/Running-Nodes/assets/128967122/122cc330-0234-4ed2-8f2e-cafe1caa75e1)
@@ -100,7 +102,7 @@ After=network.target
 StartLimitIntervalSec=0
 [Service]
 User=root
-ExecStart= /root/avail/target/release/data-avail --base-path `pwd`/data --chain kate --name "VNBnode_Founder"
+ExecStart= /root/avail/target/release/data-avail -d ./output --chain goldberg --validator --name "✅ Your-Name|VNBnode ✅"
 Restart=always
 RestartSec=120
 [Install]
@@ -109,6 +111,7 @@ WantedBy=multi-user.target
 
 **Step 15: Enable the service file**
 ```php
+sudo systemctl daemon-reload
 sudo systemctl enable availd.service
 ```
 ![image](https://github.com/vnbnode/Running-Nodes/assets/128967122/e0653656-1542-4f56-9ef2-10d187c19131)
@@ -136,6 +139,15 @@ journalctl -f -u availd
 
 **Step 20: Check your node name here** [Here](https://telemetry.avail.tools/#list/0xd12003ac837853b062aaccca5ce87ac4838c48447e41db4a3dcfb5bf312350c6)
 ![image](https://github.com/vnbnode/Running-Nodes/assets/128967122/7b35733a-20fc-47a8-a600-5a9a08d2dbda)
+
+## Thank to support VNBnode.
+### Visit us at:
+
+<img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/> <a href="https://t.me/VNBnodegroup" target="_blank">VNBnodegroup</a>
+
+<img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/> <a href="https://t.me/Vnbnode" target="_blank">VNBnode News</a>
+
+<img src="https://github.com/vnbnode/binaries/blob/main/Logo/VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>
 
 
 

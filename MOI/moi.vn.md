@@ -46,72 +46,57 @@
 
     ![Download Keystore](https://docs.moi.technology/assets/images/download-keystore-9e17e6ca9121b7a76d6bf3d363eb75ad.gif)
 
-## Cài đặt Docker
-
-1\. Cập nhật hệ thống:
+## Option 1: Automatic
+``` 
+cd $HOME && mkdir moi && cd moi
+```
+- Download keystore.json --> $HOME/moi/keystore.json
+```
+cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/MOI/moi-auto.sh)
+```
+## Option 2: Manual
+### Cài đặt Docker
 
 ```
 sudo apt update && sudo apt upgrade -y
-```
-
-2\. Cài đặt các chứng chỉ và thư viện cho Docker
-
-```
 sudo apt-get update
 sudo apt-get install \
 ca-certificates \
 curl \
 gnupg
-```
-
-```
 sudo install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 sudo chmod a+r /etc/apt/keyrings/docker.gpg
-```
-
-```
 echo \
 "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
 "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
 sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-```
-
-3\. Cập nhật lại hệ thống
-
-```
 sudo apt-get update
-```
-
-4\. Tiến hành cài đặt docker
-
-```
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
-## Pull the MOIPod Docker Image
-
-```
-docker pull sarvalabs/moipod:latest
-```
-
-* Tiến hành mở các cổng trên Router
+### Tiến hành mở các cổng trên Router
 
 <table><thead><tr><th width="130">Transport</th><th width="76" align="center">Port</th><th width="179">Reachability</th><th>Purpose</th></tr></thead><tbody><tr><td>TCP/UDP</td><td align="center">6000</td><td>Inbound/Outbound</td><td>Protocol P2P Interface</td></tr><tr><td>TCP</td><td align="center">1600</td><td>Inbound</td><td>JSON RPC Interface</td></tr></tbody></table>
 
 ### Register the Guardian Node <a href="#register-the-guardian-node" id="register-the-guardian-node"></a>
-
+#### 1\. CPU from 2015 or later
 ```
-sudo docker run --network host --rm -it -w /data -v $(pwd):/data sarvalabs/moipod:latest register --data-dir {DIRPATH} --mnemonic-keystore-path {KEYSTORE_PATH} --watchdog-url https://babylon-watchdog.moi.technology/add --node-password {NODE_PWD} --network-rpc-url https://voyage-rpc.moi.technology/babylon --wallet-address {ADDRESS} --node-index {NODE_IDX} --local-rpc-url http://{IP_or_Domain}:1600
+sudo docker run --network host --rm -it -w /data -v $(pwd):/data sarvalabs/moipod:latest register --data-dir {DIRPATH} --mnemonic-keystore-path {KEYSTORE_PATH} --mnemonic-keystore-password {MNEMONIC_KEYSTORE_PASSWORD} --watchdog-url https://babylon-watchdog.moi.technology/add --node-password {NODE_PWD} --network-rpc-url https://voyage-rpc.moi.technology/babylon --wallet-address {ADDRESS} --node-index {NODE_IDX} --local-rpc-url http://{IP_or_Domain}:1600
 ```
+#### 2\. CPU from 2015 or earlier
+```
+sudo docker run --network host --rm -it -w /data -v $(pwd):/data sarvalabs/moipod:v0.5.0-port register --data-dir {DIRPATH} --mnemonic-keystore-path {KEYSTORE_PATH} --mnemonic-keystore-password {MNEMONIC_KEYSTORE_PASSWORD} --watchdog-url https://babylon-watchdog.moi.technology/add --node-password {NODE_PWD} --network-rpc-url https://voyage-rpc.moi.technology/babylon --wallet-address {ADDRESS} --node-index {NODE_IDX} --local-rpc-url http://{IP_or_Domain}:1600
+```
+`{DIRPATH}`: đường dẫn thư mục bạn tạo để lưu trữ node, ví dụ `moi`
 
-`{DIRPATH}`: đường dẫn thư mục bạn tạo để lưu trữ node, ví dụ `moi
+`{KEYSTORE_PATH}`: đường dẫn file keystore mà bạn đã tải lúc tạo Krama ID, ví dụ nếu bạn cho keystore vào trong thư mục moi thì đường dẫn sẽ là `moi/keystore.json`
 
-`{KEYSTORE_PATH}`: đường dẫn file keystore mà bạn đã tải lúc tạo Krama ID, ví dụ nếu bạn cho keystore vào trong thư mục moi thì đường dẫn sẽ là `moi/keystore.json
+`{MNEMONIC_KEYSTORE_PASSWORD}`: password lúc bạn điền vào để download file keystore.json về
 
 `{NODE_PWD}`: password lúc bạn điền vào để download file keystore.json về
 
-`{ADDRESS}`: Chọn 1 trong 3 địa chỉ ví của bạn tại đây [MOI Voyage](https://voyage.moi.technology/)
+`{ADDRESS}`: Chọn ví đầu tiên trong 3 địa chỉ ví của bạn tại đây [MOI Voyage](https://voyage.moi.technology/)
 &#x20;![](<../.gitbook/assets/image (41).png>) 
 
 `{NODE_IDX}`: muốn khởi chạy Krama ID số bao nhiêu thì nhập số đó vào
@@ -120,11 +105,14 @@ sudo docker run --network host --rm -it -w /data -v $(pwd):/data sarvalabs/moipo
 `{IP_or_Domain}`: đây là địa chỉ IP WAN để kết nối ra bên ngoài, có thể thay thế bằng địa chỉ ddns. Khuyến khích dùng dịch vụ [NoIP](https://www.noip.com/).
 
 ### Start the Guardian Node <a href="#start-the-guardian-node" id="start-the-guardian-node"></a>
-
+#### 1\. CPU from 2015 or later
 ```
 sudo docker run --network host -it -d -w /data -v $(pwd):/data sarvalabs/moipod:latest server --babylon --data-dir {DIRPATH} --log-level DEBUG --node-password {NODE_PWD}
 ```
-
+#### 2\. CPU from 2015 or earlier
+```
+sudo docker run --network host -it -d -w /data -v $(pwd):/data sarvalabs/moipod:v0.5.0-port server --babylon --data-dir {DIRPATH} --log-level DEBUG --node-password {NODE_PWD}
+```
 `{DIRPATH}`: đường dẫn thư mục bạn tạo để lưu trữ node, ví dụ `moi`
 
 `{NODE_PWD}`: có thể đặt password giống như lúc tải file keystore về
@@ -189,7 +177,20 @@ docker container prune
 ```
 
 * Chạy lại node
-
+#### 1\. CPU from 2015 or later
 ```
 sudo docker run --network host -it -d -w /data -v $(pwd):/data sarvalabs/moipod:latest server --babylon --data-dir {DIRPATH} --log-level DEBUG --node-password {NODE_PWD}
 ```
+#### 2\. CPU from 2015 or earlier
+```
+sudo docker run --network host -it -d -w /data -v $(pwd):/data sarvalabs/moipod:v0.5.0-port server --babylon --data-dir {DIRPATH} --log-level DEBUG --node-password {NODE_PWD}
+```
+
+## Thank to support VNBnode.
+### Visit us at:
+
+<img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/> <a href="https://t.me/VNBnodegroup" target="_blank">VNBnodegroup</a>
+
+<img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/> <a href="https://t.me/Vnbnode" target="_blank">VNBnode News</a>
+
+<img src="https://github.com/vnbnode/binaries/blob/main/Logo/VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>
