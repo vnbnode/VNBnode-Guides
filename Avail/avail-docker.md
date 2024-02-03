@@ -46,9 +46,12 @@ sudo snap install lz4
 curl -o - -L https://snapshots.avail.nexus/goldberg/avail_goldberg_testnet_snapshot_jan_31.tar.gz | tar -xz -C
 ```
 - Run Node 
-`Edit "VNBnode" --> "Your Name"`
+`Edit VNBnode --> Your Name`
 ```
-sudo docker run --name avail -v $(pwd)/avail/:/da/avail:rw --network host -d --restart unless-stopped availj/avail:v1.10.0.0 --chain goldberg --name "VNBnode" --validator -d /da/avail
+Nodename = VNBnode
+```
+```
+sudo docker run --name avail -v $(pwd)/avail/:/da/avail:rw --network host -d --restart unless-stopped availj/avail:v1.10.0.0 --chain goldberg --name "${Nodename}" --validator -d /da/avail
 ```
 ### 3/ Open Port 30333
 ```
