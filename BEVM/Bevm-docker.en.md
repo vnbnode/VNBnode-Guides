@@ -28,7 +28,7 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
-### 1/ Establish a host mapping path
+### 1/ Create folder bevm
 ```
 mkdir $HOME/bevm && cd $HOME/bevm
 ```
