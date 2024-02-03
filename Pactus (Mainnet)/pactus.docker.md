@@ -49,7 +49,7 @@ docker run -it --rm -v ~/pactus:/root/pactus pactus/pactus pactus-daemon init
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/bc1283c6-cb91-4236-8789-16dcc5694290)
 
 ## 3/ Fill password
-- Change pass_wallet
+- Change passwd_wallet
 ```
 passpactus=passwd_wallet
 ```
