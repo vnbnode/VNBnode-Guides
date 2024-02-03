@@ -45,7 +45,8 @@ sudo service availd restart
 ```php
 journalctl -f -u availd
 ```
-![image](https://github.com/vnbnode/VNBnode-Guides/assets/128967122/90da0394-f17b-4ddf-9064-e73729e6cad7)
+![image](https://github.com/vnbnode/VNBnode-Guides/assets/128967122/9760b907-3c83-44c1-ae70-f1f5baf3c203)
+
 
 ## Thank to support VNBnode.
 ### Visit us at:
