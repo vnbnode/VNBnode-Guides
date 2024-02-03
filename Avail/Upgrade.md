@@ -1,4 +1,4 @@
-### Guide to upgrade Avail binaries from V1.8.0.3 to V1.9.0.0
+### Guide to upgrade Avail binaries from V1.10.0.0
 ```php
 cd $Home
 cd avail
@@ -12,16 +12,38 @@ sudo systemctl stop availd.service
 git pull
 ```
 ```php
-git checkout v1.9.0.0
+git checkout v1.10.0.0
 ```
 ### Install
 ```php
 cargo run --locked --release -- --chain goldberg  --validator -d ./output
 ```
+### Remove rocksdb and Network
+```php
+rm -r output/chains/avail_goldberg_testnet/db/*
+rm -r output/chains/avail_goldberg_testnet/network/*
+```
+### Download snapshot
+```php
+curl -o - -L https://snapshots.avail.nexus/goldberg/avail_goldberg_testnet_snapshot_jan_31.tar.gz | tar -xz -C output/chains/avail_goldberg_testnet/
+```
+### Add peers
+```php
+sudo sed -i 's|ExecStart=.*|ExecStart= /root/avail/target/release/data-avail -d ./output --validator --name "✅ Your-Name|VNBnode ✅" --chain goldberg \\\n--reserved-nodes \\\n"/dns/bootnode-001.goldberg.avail.tools/tcp/30333/p2p/12D3KooWCVqFvrP3UJ1S338Gb8SHvEQ1xpENLb45Dbynk4hu1XGN" \\\n"/dns/bootnode-002.goldberg.avail.tools/tcp/30333/p2p/12D3KooWD6sWeWCG5Z1qhejhkPk9Rob5h75wYmPB6MUoPo7br58m" \\\n"/dns/bootnode-003.goldberg.avail.tools/tcp/30333/p2p/12D3KooWMR9ZoAVWJv6ahraVzUCfacNbFKk7ABoWxVL3fJ3XXGDw" \\\n"/dns/bootnode-004.goldberg.avail.tools/tcp/30333/p2p/12D3KooWMuyLE3aPQ82HTWuPUCjiP764ebQrZvGUzxrYGuXWZJZV" \\\n"/dns/bootnode-005.goldberg.avail.tools/tcp/30333/p2p/12D3KooWKJwbdcZ7QWcPLHy3EJ1UiffaLGnNBMffeK8AqRVWBZA1" \\\n"/dns/bootnode-006.goldberg.avail.tools/tcp/30333/p2p/12D3KooWM8AaHDH8SJvg6bq4CGQyHvW2LH7DCHbdv633dsrti7i5" \\\n--reserved-only|; s|Restart=.*|Restart=always|; s|RestartSec=.*|RestartSec=120|' /path/to/your/service/file.service 
+```
+### Enable service
+```php
+sudo systemctl disable availd.service 
+sudo systemctl daemon-reload
+sudo systemctl enable availd.service 
+```
 ### Restart and Check status
 ```php
 sudo service availd restart
-systemctl status availd.service
+```
+### Check logs
+```php
+journalctl -f -u availd
 ```
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/128967122/90da0394-f17b-4ddf-9064-e73729e6cad7)
 
