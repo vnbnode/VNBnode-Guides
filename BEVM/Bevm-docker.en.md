@@ -30,30 +30,52 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 
 ### 1/ Establish a host mapping path
 ```
-cd /var/lib
-mkdir node_bevm_test_storage
+mkdir $HOME/bevm && cd $HOME/bevm
 ```
 ### 2/ Pull image new 
 ```
-sudo docker pull btclayer2/bevm:v0.1.1
+sudo docker pull btclayer2/bevm:v0.1.2
+```
+### 3/ Create config.json
+```
+nano $HOME/bevm/config.json
+```
+- Edit "Your-Node-Name" --> "Address Wallet"
+```
+{
+  "chain": "testnet",
+  "log-dir": "/log",
+  "enable-console-log": true,
+  "no-mdns": true,
+  "validator": true,
+  "unsafe-rpc-external": true,
+  "offchain-worker": "never",
+  "rpc-methods": "unsafe",
+  "log": "info,runtime=info",
+  "port": 30333,
+  "rpc-port": 8087,
+  "pruning": "archive",
+  "db-cache": 2048,
+  "name": "Your-Node-Name",
+  "base-path": "/data",
+  "telemetry-url": "wss://telemetry-testnet.bevm.io/submit 1",
+  "bootnodes": []
+}
 ```
 ### 3/ Run node
-- Set Address BEVM on Metamask
 ```
-WALLET_BEVM=<Your-address-wallet>
+sudo docker run -d --restart always --name bevm \
+  -p 8087:8087 -p 30333:30333 \
+  -v $PWD/config.json:/config.json -v $PWD/data:/data \
+  -v $PWD/log:/log -v $PWD/keystore:/keystore \
+  btclayer2/bevm:testnet-v0.1.2 /usr/local/bin/bevm \
+  --config /config.json
 ```
+### 4/ Check log node
 ```
-sudo docker run -d -v /var/lib/node_bevm_test_storage:/root/.local/share/bevm btclayer2/bevm:v0.1.1 bevm "--chain=testnet" "--name=$WALLET_BEVM" "--pruning=archive" --telemetry-url "wss://telemetry.bevm.io/submit 0" /ip4/18.222.166.234/tcp/10000/ws/p2p/12D3KooWR1DNEVVWMaRJVfAkXTyZAZgnN159hNcPTooCSwMv4zbx /ip4/62.171.130.220/tcp/30333/ws/p2p/12D3KooWKiSXFw4eRP3zrvjtBNDEe4N6hfCDWppUUCBd9YwHH52w
+tail -f log/bevm.log
 ```
-### 4/ Rename container
-```
-docker rename name_old bevm
-```
-### 5/ Check log node
-```
-docker logs -f bevm 
-```
-### [Check Telemetry](https://telemetry.bevm.io/#/0x41cfeafc7177775a0e838b3725a0178b89ebf5dde1b5f766becbf975a24e297b)
+### [Check Telemetry](https://telemetry-testnet.bevm.io/#/0x309a090992035428553a9b85209cc3c1c0aa8e03030aac6ed4a7d75f37f1b362)
 ### *Follow the instruction from project:* [Guide](https://documents.bevm.io/)
 
 ## Remove Node
@@ -61,7 +83,7 @@ docker logs -f bevm
 cd $HOME
 docker stop bevm
 docker rm bevm
-rm -r /var/lib/node_bevm_test_storage
+rm -r $HOME/bevm
 ```
 
 ## Thank to support VNBnode.
