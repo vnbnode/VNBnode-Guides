@@ -1,4 +1,4 @@
-### Guide to upgrade Avail binaries from V1.10.0.0
+### Guide to upgrade Avail binaries to v1.10.0.0
 ```php
 cd $Home
 cd avail
