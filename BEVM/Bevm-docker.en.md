@@ -56,7 +56,7 @@ nano $HOME/bevm/config.json
   "rpc-port": 8087,
   "pruning": "archive",
   "db-cache": 2048,
-  "name": "Your-Node-Name",
+  "name": "Wallet_Address",
   "base-path": "/data",
   "telemetry-url": "wss://telemetry-testnet.bevm.io/submit 1",
   "bootnodes": []
