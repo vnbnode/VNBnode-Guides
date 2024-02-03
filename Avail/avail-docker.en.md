@@ -1,4 +1,4 @@
-# Run Full Node and Validator Avail Docker v1.9.0.0
+# Run Full Node and Validator Avail Docker v1.10.0.0
 <p align="center">
   <img height="100" height="auto" src="https://github.com/vnbnode/binaries/blob/main/Projects/Avail/avail.png?raw=true">
 </p>
@@ -32,11 +32,22 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 
 ### 1/ Pull image new 
 ```
-docker pull availj/avail:v1.9.0.0
+docker pull availj/avail:v1.10.0.0
 ```
 ### 2/ Run node
+- Remove old chain data
 ```
-sudo docker run --name avail -v $(pwd)/avail/:/da/avail:rw --network host -d --restart unless-stopped availj/avail:v1.9.0.0 --chain goldberg --name "VNBnode" --validator -d /da/avail
+rm -r $HOME/avail/chains/avail_goldberg_testnet/db 
+rm -r $HOME/avail/chains/avail_goldberg_testnet/network
+```
+- Download snapshot
+```
+curl -o - -L http://snapshots.staking4all.org/snapshots/avail/latest/avail.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/avail/chains/avail_goldberg_testnet/
+```
+- Run Node 
+`Edit "VNBnode" --> "Your Name"`
+```
+sudo docker run --name avail -v $(pwd)/avail/:/da/avail:rw --network host -d --restart unless-stopped availj/avail:v1.10.0.0 --chain goldberg --name "VNBnode" --validator -d /da/avail
 ```
 ### 3/ Open Port 30333
 ```
@@ -52,34 +63,6 @@ docker logs -f avail
 Navigate to the Goldberg network explorer at http://goldberg.avail.tools.
 * Note: `Need 1000 AVL to create Validator`
 ### *Follow the instruction from project:* [Guide](https://docs.availproject.org/operate/validator/staking/)
-
-## Update new version
-
-### 1/ Stop node
-```
-docker stop avail
-```
-### 2/ Remove node
-```
-docker rm avail
-```
-### 3/ Update new version
-```
-docker pull availj/avail:v1.9.0.0
-```
-### 4/ Run node
-```
-sudo docker run --name avail -v $(pwd)/avail/:/da/avail:rw --network host -d --restart unless-stopped availj/avail:v1.9.0.0 --chain goldberg --name "VNBnode" --validator -d /da/avail
-```
-### 5/ Open Port 30333
-```
-sudo ufw allow 30333/tcp
-sudo ufw allow 30333/udp
-```
-### 6/ Check log node
-```
-docker logs -f avail
-```
 
 ## Thank to support VNBnode.
 ### Visit us at:
