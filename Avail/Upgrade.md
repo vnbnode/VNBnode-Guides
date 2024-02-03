@@ -1,4 +1,4 @@
-### Guide to upgrade Avail binaries from V1.8.0.3 to V1.9.0.0
+### Guide to upgrade Avail binaries to v1.10.0.0
 ```php
 cd $Home
 cd avail
@@ -12,7 +12,7 @@ sudo systemctl stop availd.service
 git pull
 ```
 ```php
-git checkout v1.9.0.0
+git checkout v1.10.0.0
 ```
 ### Install
 ```php
