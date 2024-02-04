@@ -20,12 +20,12 @@ cargo run --locked --release -- --chain goldberg  --validator -d ./output
 ```
 ### Remove rocksdb and Network
 ```php
-rm -r output/chains/avail_goldberg_testnet/db/*
-rm -r output/chains/avail_goldberg_testnet/network/*
+rm -r /output/chains/avail_goldberg_testnet/db/*
+rm -r /output/chains/avail_goldberg_testnet/network/*
 ```
 ### Download snapshot
 ```php
-curl -o - -L http://snapshots.staking4all.org/snapshots/avail/latest/avail.tar.lz4 | lz4 -c -d - | tar -x -C output/chains/avail_goldberg_testnet/
+curl -o - -L http://snapshots.staking4all.org/snapshots/avail/latest/avail.tar.lz4 | lz4 -c -d - | tar -x -C /output/chains/avail_goldberg_testnet/
 ```
 ### Add peers
 ###### Remember to change your node's name correctly.
