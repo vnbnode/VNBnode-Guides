@@ -25,7 +25,7 @@ rm -r output/chains/avail_goldberg_testnet/network/*
 ```
 ### Download snapshot
 ```php
-curl -o - -L https://snapshots.avail.nexus/goldberg/avail_goldberg_testnet_snapshot_jan_31.tar.gz | tar -xz -C output/chains/avail_goldberg_testnet/
+curl -o - -L http://snapshots.staking4all.org/snapshots/avail/latest/avail.tar.lz4 | lz4 -c -d - | tar -x -C output/chains/avail_goldberg_testnet/
 ```
 ### Add peers
 ###### Remember to change your node's name correctly.
