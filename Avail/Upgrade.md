@@ -20,6 +20,7 @@ cargo run --locked --release -- --chain goldberg  --validator -d ./output
 ```
 ### Remove rocksdb and Network
 ```php
+cd $Home
 rm -r /output/chains/avail_goldberg_testnet/db/*
 rm -r /output/chains/avail_goldberg_testnet/network/*
 ```
