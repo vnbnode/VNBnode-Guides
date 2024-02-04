@@ -102,7 +102,7 @@ After=network.target
 StartLimitIntervalSec=0
 [Service]
 User=root
-ExecStart= /root/avail/target/release/data-avail -d ./output --chain goldberg --validator --name "✅ Your-Name|VNBnode ✅"
+ExecStart= /root/avail/target/release/data-avail -d $HOME/avail/output --chain goldberg --validator --name "✅ Your-Name|VNBnode ✅"
 Restart=always
 RestartSec=120
 [Install]
