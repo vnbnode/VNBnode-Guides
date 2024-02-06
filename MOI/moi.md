@@ -19,7 +19,7 @@
 
     ![Secret Recovery Generation](https://docs.moi.technology/assets/images/secret-recovery-89743716e6600f1f7d3fdc34a7b1ea65.png)
 * Select `Create secret recovery phrase for me`, to create a secret phrase.\
-* 
+
   ![Secret Recovery Backup](https://docs.moi.technology/assets/images/recovery-backup-abbb0c28b9b1c5e9ae05e9259e17f756.png)
 * Once you've created your secret phrase, save it and select it `I've copied` to complete.
 
