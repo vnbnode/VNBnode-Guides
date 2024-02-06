@@ -247,6 +247,18 @@ tail -f /var/lib/algorand/node.log
 - https://voi-node-info.boeieruurd.com/
 - https://voirewards.com/
 
+## Upgrade new version
+```
+source ~/.bashrc
+sudo apt update
+sudo systemctl stop voi
+sudo apt install algorand
+sudo systemctl start voi
+goal version -v
+goal node status
+sudo systemctl status voi
+```
+
 ## Thank to support VNBnode.
 ### Visit us at:
 
