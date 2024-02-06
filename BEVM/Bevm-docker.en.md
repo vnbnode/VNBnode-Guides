@@ -34,7 +34,7 @@ mkdir $HOME/bevm && cd $HOME/bevm
 ```
 ### 2/ Pull image new 
 ```
-sudo docker pull btclayer2/bevm:v0.1.2
+sudo docker pull btclayer2/bevm:testnet-v0.1.2
 ```
 ### 3/ Create config.json
 ```
