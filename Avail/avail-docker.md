@@ -34,18 +34,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 ```
 docker pull availj/avail:v1.10.0.0
 ```
-### 2/ Run node
-- Remove old chain data
-```
-rm -r $HOME/avail/chains/avail_goldberg_testnet/db 
-rm -r $HOME/avail/chains/avail_goldberg_testnet/network
-```
-- Download snapshot
-```
-sudo snap install lz4
-curl -o - -L https://snapshots.avail.nexus/goldberg/avail_goldberg_testnet_snapshot_jan_31.tar.gz | tar -xz -C
-```
-- Run Node 
+### 2/ Run node 
 `Edit VNBnode --> Your Name`
 ```
 Nodename = VNBnode
