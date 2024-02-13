@@ -238,6 +238,7 @@ sudo systemctl restart dymension.service
 ```
 sudo systemctl status dymension.service
 ```
-
 CHECK SERVICE LOGS
+```
 sudo journalctl -u dymension.service -f --no-hostname -o cat
+```
