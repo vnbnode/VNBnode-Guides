@@ -76,7 +76,7 @@ dymd init $MONIKER --chain-id dymension_1100-1
 curl -Ls https://snapshots.kjnodes.com/dymension/genesis.json > $HOME/.dymension/config/genesis.json
 curl -Ls https://snapshots.kjnodes.com/dymension/addrbook.json > $HOME/.dymension/config/addrbook.json
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"a8d11f345c358b2b41e6e916e04a3d87ff845d02@84.46.245.250:14656\"|" $HOME/.dymension/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@dymension.rpc.kjnodes.com:14659\"|" $HOME/.dymension/config/config.toml
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"20000000000adym\"|" $HOME/.dymension/config/app.toml
 # Set pruning
