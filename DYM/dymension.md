@@ -1,3 +1,4 @@
+# Dymension Mainnet validator
 - Chain ID:dymension_1100-1
 - Port: 150
 - Version: v3.0.0
