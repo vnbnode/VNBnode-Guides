@@ -29,12 +29,18 @@ rm -rf dymension
 git clone https://github.com/dymensionxyz/dymension.git
 cd dymension
 git checkout v3.0.0
+```
+```
 # Build binaries
 make build
+```
+```
 # Prepare binaries for Cosmovisor
 mkdir -p $HOME/.dymension/cosmovisor/genesis/bin
 mv build/dymd $HOME/.dymension/cosmovisor/genesis/bin/
 rm -rf build
+```
+```
 # Create application symlinks
 sudo ln -s $HOME/.dymension/cosmovisor/genesis $HOME/.dymension/cosmovisor/current -f
 sudo ln -s $HOME/.dymension/cosmovisor/current/bin/dymd /usr/local/bin/dymd -f
