@@ -1,4 +1,41 @@
-### Guide to upgrade Avail binaries to v1.10.0.0
+### Guide to upgrade Avail binaries to v1.11.0.0 (Latest version)
+```php
+cd $Home
+cd avail
+```
+### Stop Service
+```php
+sudo systemctl stop availd.service
+```
+### Download
+```php
+git pull
+```
+```php
+git checkout v1.11.0.0
+```
+### Install
+```php
+cargo run --locked --release -- --chain goldberg  --validator -d ./output
+```
+![image](https://github.com/vnbnode/VNBnode-Guides/assets/128967122/b3b5ecb9-e74e-4883-9c24-e544c991d4cc)
+
+### Enable service
+```php
+sudo systemctl disable availd.service 
+sudo systemctl daemon-reload
+sudo systemctl enable availd.service 
+```
+### Restart and Check status
+```php
+sudo service availd restart
+```
+### Check logs
+```php
+journalctl -f -u availd
+```
+
+### Guide to upgrade Avail binaries to v1.10.0.0 (old version)
 ```php
 cd $Home
 cd avail
