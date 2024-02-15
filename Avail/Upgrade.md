@@ -1,4 +1,4 @@
-### Guide to upgrade Avail binaries to v1.11.0.0 (Latest version)
+## Guide to upgrade Avail binaries to v1.11.0.0 (Latest version)
 ```php
 cd $Home
 cd avail
@@ -35,7 +35,7 @@ sudo service availd restart
 journalctl -f -u availd
 ```
 
-### Guide to upgrade Avail binaries to v1.10.0.0 (old version)
+## Guide to upgrade Avail binaries to v1.10.0.0 (old version)
 ```php
 cd $Home
 cd avail
