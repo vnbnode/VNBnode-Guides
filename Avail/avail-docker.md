@@ -1,4 +1,4 @@
-# Run Full Node and Validator Avail Docker v1.10.0.0
+# Run Full Node and Validator Avail Docker v1.11.0.0
 <p align="center">
   <img height="100" height="auto" src="https://github.com/vnbnode/binaries/blob/main/Projects/Avail/avail.png?raw=true">
 </p>
@@ -32,7 +32,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 
 ### 1/ Pull image new 
 ```
-docker pull availj/avail:v1.10.0.0
+docker pull availj/avail:v1.11.0.0
 ```
 ### 2/ Run node 
 `Edit VNBnode --> Your Name`
@@ -40,7 +40,7 @@ docker pull availj/avail:v1.10.0.0
 Nodename = VNBnode
 ```
 ```
-sudo docker run --name avail -v $(pwd)/avail/:/da/avail:rw --network host -d --restart unless-stopped availj/avail:v1.10.0.0 --chain goldberg --name "${Nodename}" --validator -d /da/avail
+sudo docker run --name avail -v $(pwd)/avail/:/da/avail:rw --network host -d --restart unless-stopped availj/avail:v1.11.0.0 --chain goldberg --name "${Nodename}" --validator -d /da/avail
 ```
 ### 3/ Open Port 30333
 ```
