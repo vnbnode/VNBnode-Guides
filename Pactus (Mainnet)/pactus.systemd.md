@@ -50,7 +50,7 @@ After=network-online.target
 StartLimitIntervalSec=0
 [Service]
 User=root
-ExecStart= /root/.pactus/build/pactus-daemon start --password "Your pass"
+ExecStart= /root/.pactus/build/pactus-daemon start -w /root/pactus --password "Your pass"
 Restart=always
 RestartSec=120
 [Install]
