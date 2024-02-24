@@ -47,7 +47,7 @@ dymd tx staking create-validator \
 --from wallet \
 --gas-adjustment 1.4 \
 --gas auto \
---gas-prices 20000000000adym \
+--gas-prices 5000000000adym \
 -y
 ```
 - EDIT EXISTING VALIDATOR
@@ -62,12 +62,12 @@ dymd tx staking edit-validator \
 --from wallet \
 --gas-adjustment 1.4 \
 --gas auto \
---gas-prices 20000000000adym \
+--gas-prices 5000000000adym \
 -y
 ```
 - UNJAIL VALIDATOR
 ```
-dymd tx slashing unjail --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 20000000000adym -y
+dymd tx slashing unjail --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 5000000000adym -y
 ```
 - JAIL REASON
 ```
@@ -88,31 +88,31 @@ dymd q staking validator $(dymd keys show wallet --bech val -a)
 ## Token management
 - WITHDRAW REWARDS FROM ALL VALIDATORS
 ```
-dymd tx distribution withdraw-all-rewards --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 20000000000adym -y
+dymd tx distribution withdraw-all-rewards --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 5000000000adym -y
 ```
 - WITHDRAW COMMISSION AND REWARDS FROM YOUR VALIDATOR
 ```
-dymd tx distribution withdraw-rewards $(dymd keys show wallet --bech val -a) --commission --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 20000000000adym -y
+dymd tx distribution withdraw-rewards $(dymd keys show wallet --bech val -a) --commission --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 5000000000adym -y
 ```
 - DELEGATE TOKENS TO YOURSELF
 ```
-dymd tx staking delegate $(dymd keys show wallet --bech val -a) 1000000adym --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 20000000000adym -y
+dymd tx staking delegate $(dymd keys show wallet --bech val -a) 1000000adym --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 5000000000adym -y
 ```
 - DELEGATE TOKENS TO VALIDATOR
 ```
-dymd tx staking delegate <TO_VALOPER_ADDRESS> 1000000adym --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 20000000000adym -y
+dymd tx staking delegate <TO_VALOPER_ADDRESS> 1000000adym --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 5000000000adym -y
 ```
 - REDELEGATE TOKENS TO ANOTHER VALIDATOR
 ```
-dymd tx staking redelegate $(dymd keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000adym --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 20000000000adym -y
+dymd tx staking redelegate $(dymd keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000adym --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 5000000000adym -y
 ```
 - UNBOND TOKENS FROM YOUR VALIDATOR
 ```
-dymd tx staking unbond $(dymd keys show wallet --bech val -a) 1000000adym --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 20000000000adym -y
+dymd tx staking unbond $(dymd keys show wallet --bech val -a) 1000000adym --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 5000000000adym -y
 ```
 - SEND TOKENS TO THE WALLET
 ```
-dymd tx bank send wallet <TO_WALLET_ADDRESS> 1000000adym --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 20000000000adym -y
+dymd tx bank send wallet <TO_WALLET_ADDRESS> 1000000adym --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 5000000000adym -y
 ```
 ## Governance
 - LIST ALL PROPOSALS
@@ -125,19 +125,19 @@ dymd query gov proposal 1
 ```
 - VOTE ‘YES’
 ```
-dymd tx gov vote 1 yes --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 20000000000adym -y
+dymd tx gov vote 1 yes --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 5000000000adym -y
 ```
 - VOTE ‘NO’
 ```
-dymd tx gov vote 1 no --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 20000000000adym -y
+dymd tx gov vote 1 no --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 5000000000adym -y
 ```
 - VOTE ‘ABSTAIN’
 ```
-dymd tx gov vote 1 abstain --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 20000000000adym -y
+dymd tx gov vote 1 abstain --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 5000000000adym -y
 ```
 - VOTE ‘NOWITHVETO’
 ```
-dymd tx gov vote 1 NoWithVeto --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 20000000000adym -y
+dymd tx gov vote 1 NoWithVeto --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 5000000000adym -y
 ```
 ## Utility
 - UPDATE PORTS
@@ -187,7 +187,7 @@ curl -sS http://localhost:14657/net_info | jq -r '.result.peers[] | "\(.node_inf
 ```
 - SET MINIMUM GAS PRICE
 ```
-sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"20000000000adym\"/" $HOME/.dymension/config/app.toml
+sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"5000000000adym\"/" $HOME/.dymension/config/app.toml
 ```
 - ENABLE PROMETHEUS
 ```
