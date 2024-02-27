@@ -28,7 +28,7 @@ go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
 - Download and install binary
 ```
 cd $HOME
-wget https://snapshots.indonode.net/selfchain/selfchaind
+curl -O http://37.60.236.233/selfchain/selfchaind
 sudo chmod +x selfchaind
 ```
 - Setup Cosmovisor Symlinks
