@@ -111,23 +111,23 @@ sudo systemctl start selfchaind
 sudo journalctl -fu selfchaind -o cat
 ```
 - Snapshot
-### Install lz4
+_Install lz4_
 ```
 sudo apt update
 sudo apt-get install snapd lz4 -y
 ```
-### Off State Sync
+_Off State Sync_
 ```
 sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1false|" ~/.selfchain/config/config.toml
 ```
-### Stop Node and Reset Date
+_Stop Node and Reset Date_
 ```
 sudo systemctl stop selfchaind
 cp $HOME/.selfchain/data/priv_validator_state.json $HOME/.selfchain/priv_validator_state.json.backup
 rm -rf $HOME/.selfchain/data
 selfchaind tendermint unsafe-reset-all --home ~/.selfchain/ --keep-addr-book
 ```
-### Download Snapshot
+_Download Snapshot_
 ```
 SNAP_NAME=$(curl -s https://ss-t.selfchain.nodestake.org/ | egrep -o ">20.*\.tar.lz4" | tr -d ">")
 curl -o - -L https://ss-t.selfchain.nodestake.org/${SNAP_NAME}  | lz4 -c -d - | tar -x -C $HOME/.selfchain
@@ -135,7 +135,7 @@ curl -o - -L https://ss-t.selfchain.nodestake.org/${SNAP_NAME}  | lz4 -c -d - | 
 ```
 mv $HOME/.selfchain/priv_validator_state.json.backup $HOME/.selfchain/data/priv_validator_state.json
 ```
-### Restart Node
+_Restart Node_
 ```
 sudo systemctl restart selfchaind
 journalctl -u selfchaind -f
