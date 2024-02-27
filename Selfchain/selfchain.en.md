@@ -138,15 +138,6 @@ _Restart Node_
 ```
 sudo systemctl restart selfchaind && sudo journalctl -u selfchaind -f --no-hostname -o cat
 ```
-- Remove node
-```
-sudo systemctl stop selfchaind
-sudo systemctl disable selfchaind
-sudo rm /etc/systemd/system/selfchaind.service
-sudo systemctl daemon-reload
-rm -f $(which selfchaind)
-rm -rf $HOME/.selfchain
-```
 ## Thank to support VNBnode.
 ### Visit us at:
 
