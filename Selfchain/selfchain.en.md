@@ -49,7 +49,7 @@ After=network-online.target
 ​
 [Service]
 User=$USER
-ExecStart=$(which cosmovisor) run start --home=$DAEMON_HOME
+ExecStart=$(which cosmovisor) run start
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=65535
@@ -60,7 +60,6 @@ Environment="UNSAFE_SKIP_BACKUP=true"
 [Install]
 WantedBy=multi-user.target
 EOF
-​
 sudo systemctl daemon-reload
 sudo systemctl enable selfchaind
 ```
