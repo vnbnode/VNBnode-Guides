@@ -2,12 +2,12 @@
 
 ## Recommended Hardware Requirements
 
-|   SPEC      |       Recommend           |
-| :---------: | :-----------------------: |
-|   **CPU**   | 4 Cores (ARM64 or x86-64) |
-|   **RAM**   |        16 GB (DDR4)       |
-|   **SSD**   |           512 GB          |
-| **NETWORK** |          500 Mbps         |
+|   SPEC      |       Recommend          |
+| :---------: | :-----------------------:|
+|   **CPU**   |        4 Cores           |
+|   **RAM**   |        4 GB (DDR4)       |
+|   **SSD**   |        50 GB             |
+| **NETWORK** |        50 Mbps           |
 
 ## Create Account
 
@@ -85,7 +85,7 @@ sudo docker run --network host --rm -it -w /data -v $(pwd):/data sarvalabs/moipo
 ```
 #### 2\. CPU from 2015 or earlier
 ```
-sudo docker run --network host --rm -it -w /data -v $(pwd):/data sarvalabs/moipod:v0.6.2-port register --data-dir {DIRPATH} --mnemonic-keystore-path {KEYSTORE_PATH} --mnemonic-keystore-password {MNEMONIC_KEYSTORE_PASSWORD} --watchdog-url https://babylon-watchdog.moi.technology/add --node-password {NODE_PWD} --network-rpc-url https://voyage-rpc.moi.technology/babylon --wallet-address {ADDRESS} --node-index {NODE_IDX} --local-rpc-url http://{IP_or_Domain}:1600
+sudo docker run --network host --rm -it -w /data -v $(pwd):/data sarvalabs/moipod:v0.6.3-port register --data-dir {DIRPATH} --mnemonic-keystore-path {KEYSTORE_PATH} --mnemonic-keystore-password {MNEMONIC_KEYSTORE_PASSWORD} --watchdog-url https://babylon-watchdog.moi.technology/add --node-password {NODE_PWD} --network-rpc-url https://voyage-rpc.moi.technology/babylon --wallet-address {ADDRESS} --node-index {NODE_IDX} --local-rpc-url http://{IP_or_Domain}:1600
 ```
 `{DIRPATH}`: the directory path you create to store the node, for example `moi`
 
@@ -112,7 +112,7 @@ sudo docker run --network host -it -d -w /data -v $(pwd):/data sarvalabs/moipod:
 ```
 #### 2\. CPU from 2015 or earlier
 ```
-sudo docker run --network host -it -d -w /data -v $(pwd):/data sarvalabs/moipod:v0.6.2-port server --babylon --data-dir {DIRPATH} --log-level DEBUG --node-password {NODE_PWD}
+sudo docker run --network host -it -d -w /data -v $(pwd):/data sarvalabs/moipod:v0.6.3-port server --babylon --data-dir {DIRPATH} --log-level DEBUG --node-password {NODE_PWD}
 ```
 `{DIRPATH}`: the directory path you create to store the node, for example `moi`
 
