@@ -28,7 +28,7 @@ go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
 - Download and install binary
 ```
 cd $HOME
-wget https://snapshots.indonode.net/selfchain/selfchaind
+curl -O http://37.60.236.233/selfchain/selfchaind
 sudo chmod +x selfchaind
 ```
 - Setup Cosmovisor Symlinks
@@ -109,6 +109,37 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:11317\"
 ```
 sudo systemctl start selfchaind
 sudo journalctl -fu selfchaind -o cat
+```
+- Snapshot
+
+_Install lz4_
+```
+sudo apt update
+sudo apt-get install snapd lz4 -y
+```
+_Off State Sync_
+```
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1false|" ~/.selfchain/config/config.toml
+```
+_Stop Node and Reset Date_
+```
+sudo systemctl stop selfchaind
+cp $HOME/.selfchain/data/priv_validator_state.json $HOME/.selfchain/priv_validator_state.json.backup
+rm -rf $HOME/.selfchain/data
+selfchaind tendermint unsafe-reset-all --home ~/.selfchain/ --keep-addr-book
+```
+_Download Snapshot_
+```
+SNAP_NAME=$(curl -s https://ss-t.selfchain.nodestake.org/ | egrep -o ">20.*\.tar.lz4" | tr -d ">")
+curl -o - -L https://ss-t.selfchain.nodestake.org/${SNAP_NAME}  | lz4 -c -d - | tar -x -C $HOME/.selfchain
+```
+```
+mv $HOME/.selfchain/priv_validator_state.json.backup $HOME/.selfchain/data/priv_validator_state.json
+```
+_Restart Node_
+```
+sudo systemctl restart selfchaind
+journalctl -u selfchaind -f
 ```
 - Remove node
 ```
