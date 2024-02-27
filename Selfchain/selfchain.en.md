@@ -110,6 +110,36 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:11317\"
 sudo systemctl start selfchaind
 sudo journalctl -fu selfchaind -o cat
 ```
+- Snapshot
+Install lz4
+```
+sudo apt update
+sudo apt-get install snapd lz4 -y
+```
+Off State Sync
+```
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1false|" ~/.selfchain/config/config.toml
+```
+Stop Node and Reset Date
+```
+sudo systemctl stop selfchaind
+cp $HOME/.selfchain/data/priv_validator_state.json $HOME/.selfchain/priv_validator_state.json.backup
+rm -rf $HOME/.selfchain/data
+selfchaind tendermint unsafe-reset-all --home ~/.selfchain/ --keep-addr-book
+```
+Download Snapshot
+```
+SNAP_NAME=$(curl -s https://ss-t.selfchain.nodestake.org/ | egrep -o ">20.*\.tar.lz4" | tr -d ">")
+curl -o - -L https://ss-t.selfchain.nodestake.org/${SNAP_NAME}  | lz4 -c -d - | tar -x -C $HOME/.selfchain
+```
+```
+mv $HOME/.selfchain/priv_validator_state.json.backup $HOME/.selfchain/data/priv_validator_state.json
+```
+Restart Node
+```
+sudo systemctl restart selfchaind
+journalctl -u selfchaind -f
+```
 - Remove node
 ```
 sudo systemctl stop selfchaind
