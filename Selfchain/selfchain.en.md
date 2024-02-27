@@ -60,7 +60,8 @@ Environment="UNSAFE_SKIP_BACKUP=true"
 [Install]
 WantedBy=multi-user.target
 EOF
-​
+​```
+​```
 sudo systemctl daemon-reload
 sudo systemctl enable selfchaind
 ```
