@@ -111,11 +111,6 @@ sudo journalctl -fu selfchaind -o cat
 ```
 - Snapshot
 
-_Install lz4_
-```
-sudo apt update
-sudo apt-get install snapd lz4 -y
-```
 _Off State Sync_
 ```
 sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1false|" ~/.selfchain/config/config.toml
