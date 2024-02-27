@@ -49,7 +49,7 @@ After=network-online.target
 ​
 [Service]
 User=$USER
-ExecStart=$(which cosmovisor) run start
+ExecStart=$(which cosmovisor) run start --home=$DAEMON_HOME
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=65535
