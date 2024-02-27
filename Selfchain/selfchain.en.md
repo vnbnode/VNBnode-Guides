@@ -111,6 +111,7 @@ sudo systemctl start selfchaind
 sudo journalctl -fu selfchaind -o cat
 ```
 - Snapshot
+
 _Install lz4_
 ```
 sudo apt update
