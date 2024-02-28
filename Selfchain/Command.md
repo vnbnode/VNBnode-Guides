@@ -82,9 +82,10 @@ selfchaind tx staking edit-validator \
 --new-moniker "$MONIKER" \
 --identity "" \
 --details "" \
+--gas-prices "0.005uself" \
+--gas "auto" \
+--gas-adjustment "1.5" \
 --from wallet \
---chain-id self-dev-1 \
---gas auto --gas-adjustment 1.5 \
 -y
 ```
 Validator info
