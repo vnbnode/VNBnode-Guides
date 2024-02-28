@@ -37,23 +37,23 @@ selfchaind tx distribution withdraw-rewards $(selfchaind keys show wallet --bech
 ```
 Delegate to Yourself
 ```
-selfchaind tx staking delegate $(selfchaind keys show wallet --bech val -a) 1000000uself --from wallet --chain-id self-dev-1 --gas auto --gas-adjustment 1.5 -y
+selfchaind tx staking delegate $(selfchaind keys show wallet --bech val -a) 1000000uself --from wallet --chain-id self-dev-1 --gas-prices=0.005uself --gas-adjustment 1.5 --gas "auto" -y 
 ```
 Delegate
 ```
-selfchaind tx staking delegate <TO_VALOPER_ADDRESS> 1000000uself --from wallet --chain-id self-dev-1 --gas auto --gas-adjustment 1.5 -y
+selfchaind tx staking delegate <TO_VALOPER_ADDRESS> 1000000uself --from wallet --chain-id self-dev-1 --gas-prices=0.005uself --gas-adjustment 1.5 --gas "auto" -y 
 ```
 Redelegate Stake to Another Validator
 ```
-selfchaind tx staking redelegate $VALOPER_ADDRESS <TO_VALOPER_ADDRESS> 1000000uself --from wallet --chain-id self-dev-1 --gas auto --gas-adjustment 1.5 -y
+selfchaind tx staking redelegate $VALOPER_ADDRESS <TO_VALOPER_ADDRESS> 1000000uself --from wallet --chain-id self-dev-1 --gas-prices=0.005uself --gas-adjustment 1.5 --gas "auto" -y 
 ```
 Unbond
 ```
-selfchaind tx staking unbond $(selfchaind keys show wallet --bech val -a) 1000000uself --from wallet --chain-id self-dev-1 --gas auto --gas-adjustment 1.5 -y
+selfchaind tx staking unbond $(selfchaind keys show wallet --bech val -a) 1000000uself --from wallet --chain-id self-dev-1 --gas-prices=0.005uself --gas-adjustment 1.5 --gas "auto" -y 
 ```
 Transfer Funds
 ```
-selfchaind tx bank send wallet_ADDRESS <TO_WALLET_ADDRESS> 1000000uself --gas auto --gas-adjustment 1.5 -y
+selfchaind tx bank send wallet_ADDRESS <TO_WALLET_ADDRESS> 1000000uself --gas-prices=0.005uself --gas-adjustment 1.5 --gas "auto" -y 
 ```
 Create New Validator
 ```
@@ -101,7 +101,7 @@ selfchaind q slashing signing-info $(selfchaind tendermint show-validator)
 ```
 Unjail validator
 ```
-selfchaind tx slashing unjail --from wallet --chain-id self-dev-1 --gas auto --gas-adjustment 1.5 -y
+selfchaind tx slashing unjail --from wallet --chain-id self-dev-1 --gas-prices=0.005uself --gas-adjustment 1.5 --gas "auto" -y 
 ```
 Active Validators List
 ```
@@ -136,19 +136,19 @@ selfchaind query gov proposal 1
 ```
 Vote 'Yes'
 ```
-selfchaind tx gov vote 78 yes --from wallet --chain-id self-dev-1 --gas auto --gas-adjustment 1.5 -y
+selfchaind tx gov vote 78 yes --from wallet --chain-id self-dev-1 --gas-prices=0.005uself --gas-adjustment 1.5 --gas "auto" -y 
 ```
 Vote 'No'
 ```
-selfchaind tx gov vote 1 no --from wallet --chain-id self-dev-1 --gas auto --gas-adjustment 1.5 -y
+selfchaind tx gov vote 1 no --from wallet --chain-id self-dev-1 --gas-prices=0.005uself --gas-adjustment 1.5 --gas "auto" -y 
 ```
 Vote 'Abstain'
 ```
-selfchaind tx gov vote 1 abstain --from wallet --chain-id self-dev-1 --gas auto --gas-adjustment 1.5 -y
+selfchaind tx gov vote 1 abstain --from wallet --chain-id self-dev-1 --gas-prices=0.005uself --gas-adjustment 1.5 --gas "auto" -y 
 ```
 Vote 'NoWithVeto'
 ```
-selfchaind tx gov vote 1 nowithveto --from wallet --chain-id self-dev-1 --gas auto --gas-adjustment 1.5 -y
+selfchaind tx gov vote 1 nowithveto --from wallet --chain-id self-dev-1 --gas-prices=0.005uself --gas-adjustment 1.5 --gas "auto" -y 
 ```
 Remove node
 ```
