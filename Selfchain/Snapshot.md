@@ -1,4 +1,4 @@
-- Snapshot (Automatically update every day)
+- Snapshot (Automatically update daily)
 
 _Off State Sync_
 ```
