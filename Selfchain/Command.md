@@ -122,8 +122,10 @@ selfchaind  tx gov submit-proposal \
 --description "" \
 --deposit 1000000uself \
 --type Text \
+--gas-prices "0.005uself" \
+--gas "auto" \
+--gas-adjustment "1.5" \
 --from wallet \
---gas auto --gas-adjustment 1.5 \
 -y
 ```
 🗳 Governance
