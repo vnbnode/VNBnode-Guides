@@ -96,13 +96,13 @@ Get sync status
 ```
 selfchaind status 2>&1 | jq .SyncInfo.catching_up
 ```
-Validator Details
-```
-selfchaind q staking validator $(selfchaind keys show wallet --bech val -a)
-```
 Get latest height
 ```
 selfchaind status 2>&1 | jq .SyncInfo.latest_block_height
+```
+Validator Details
+```
+selfchaind q staking validator $(selfchaind keys show wallet --bech val -a)
 ```
 Jailing info
 ```
