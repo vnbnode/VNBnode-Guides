@@ -1,8 +1,8 @@
 # Selfchain
-- Chain ID:self-dev-1
-- Port: 113
-- Version: 0.2.2
-
+|  Chain ID  |  Port  |  Version  |
+|------------|--------|-----------|
+| self-dev-1 |  113   |   0.2.2   |
+<img src="https://github.com/vnbnode/VNBnode-Guides/assets/76662222/7724db8a-a28e-452b-8431-ed5a748ba9bd" width="30"/> <a href="https://discord.com/invite/selfchainxyz" target="_blank">Discord</a>
 ## RPC, API, gRPC and Snapshot
 ✅ RPC http://109.199.118.239:11357/
 
@@ -14,6 +14,13 @@
 ```
 https://github.com/vnbnode/VNBnode-Guides/blob/main/Selfchain/Snapshot.md 
 ```
+## Server Requirements
+| Component   |  Requirements  |
+|-------------|----------------|
+| CPU         | 4-8 cores CPU  |
+| Storage     | 100 GB         |
+| Ram         | 16 GB          |
+| OS          | Ubuntu 22.04+  |
 ## Install
 ```
 MONIKER="Yourmoniker"
