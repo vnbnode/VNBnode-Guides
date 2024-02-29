@@ -2,6 +2,14 @@
 - Chain ID:dymension_1100-1
 - Port: 150
 - Version: v3.0.0
+Minimum hardware
+| CPU | 8 Core |
+---------------
+| Ram | 16 GB |
+---------------
+|NVME | 1TB |
+
+
 ## Setup validator name
 Replace YOUR_MONIKER with your validator name
 ```
