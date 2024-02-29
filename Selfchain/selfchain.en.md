@@ -3,7 +3,7 @@
 - Port: 113
 - Version: 0.2.2
 
-# RPC, API, gRPC
+## RPC, API, gRPC and Snapshot
 ✅ RPC http://109.199.118.239:11357/
 
 ✅ API: http://109.199.118.239:11317/
@@ -14,6 +14,7 @@
 ```
 https://github.com/vnbnode/VNBnode-Guides/blob/main/Selfchain/Snapshot.md 
 ```
+## Install
 ```
 MONIKER="Yourmoniker"
 ```
