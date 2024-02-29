@@ -28,7 +28,7 @@ go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
 - Download and install binary
 ```
 cd $HOME
-curl -O http://37.60.236.233/selfchain/selfchaind
+curl -O http://109.199.118.239/selfchain/selfchaind
 sudo chmod +x selfchaind
 ```
 - Setup Cosmovisor Symlinks
@@ -124,7 +124,7 @@ selfchaind tendermint unsafe-reset-all --home ~/.selfchain/ --keep-addr-book
 ```
 _Download Snapshot_
 ```
-curl -L http://37.60.236.233/selfchain/self-dev-1_snapshot_latest.tar.lz4 | tar -I lz4 -xf - -C $HOME/.selfchain/data
+curl -L http://109.199.118.239/selfchain/self-dev-1_snapshot_latest.tar.lz4 | tar -I lz4 -xf - -C $HOME/.selfchain/data
 ```
 ```
 mv $HOME/.selfchain/priv_validator_state.json.backup $HOME/.selfchain/data/priv_validator_state.json
