@@ -3,12 +3,11 @@
 - Port: 150
 - Version: v3.0.0
 Minimum hardware
-| CPU | 8 Core |
----------------
-| Ram | 16 GB |
----------------
-|NVME | 1TB |
-
+|   Spec  |        Requirements      |
+| :---------: | :-----------------------: |
+|   **CPU**   |          8 Cores (Intel / AMD)        |
+|   **RAM**   |          16 GB            |
+|   **NVME**   |          1 TB            | 
 
 ## Setup validator name
 Replace YOUR_MONIKER with your validator name
