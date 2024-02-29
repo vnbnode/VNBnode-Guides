@@ -5,10 +5,15 @@
 
 # RPC, API, gRPC
 ✅ RPC http://109.199.118.239:11357/
-✅ API: http://109.199.118.239:11317/
-✅ gRPC: http://109.199.118.239:11391/
-✅ Snapshot: https://github.com/vnbnode/VNBnode-Guides/blob/main/Selfchain/Snapshot.md 
 
+✅ API: http://109.199.118.239:11317/
+
+✅ gRPC: http://109.199.118.239:11391/
+
+✅ Auto Snapshot: 
+```
+https://github.com/vnbnode/VNBnode-Guides/blob/main/Selfchain/Snapshot.md 
+```
 ```
 MONIKER="Yourmoniker"
 ```
