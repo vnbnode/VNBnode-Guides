@@ -2,7 +2,7 @@
 - Chain ID:dymension_1100-1
 - Port: 150
 - Version: v3.0.0
-Minimum hardware
+# Minimum hardware
 |   Spec  |        Requirements      |
 | :---------: | :-----------------------: |
 |   **CPU**   |          8 Cores (Intel / AMD)        |
