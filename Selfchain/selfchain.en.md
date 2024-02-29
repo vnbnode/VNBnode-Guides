@@ -10,7 +10,7 @@
 
 ✅ gRPC: http://109.199.118.239:11391/
 
-✅ Auto Snapshot: 
+✅ Auto Snapshot daily: 
 ```
 https://github.com/vnbnode/VNBnode-Guides/blob/main/Selfchain/Snapshot.md 
 ```
