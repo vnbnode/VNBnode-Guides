@@ -13,7 +13,7 @@ selfchaind tendermint unsafe-reset-all --home ~/.selfchain/ --keep-addr-book
 ```
 _Download Snapshot_ (auto daily update)
 ```
-curl -L http://109.199.118.239/selfchain/self-dev-1_snapshot_latest.tar.lz4 | tar -I lz4 -xf - -C $HOME/.selfchain/data
+curl -L https://snap.vnbnode.com/selfchain/self-dev-1_snapshot_latest.tar.lz4 | tar -I lz4 -xf - -C $HOME/.selfchain/data
 ```
 ```
 mv $HOME/.selfchain/priv_validator_state.json.backup $HOME/.selfchain/data/priv_validator_state.json
