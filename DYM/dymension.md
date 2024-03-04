@@ -2,6 +2,10 @@
 - Chain ID:dymension_1100-1
 - Port: 150
 - Version: v3.0.0
+
+|  Chain ID       |  Port  |  Version  |
+|-----------------|--------|-----------|
+|dymension_1100-1 |  150   |  v3.0.0   |
 # Minimum hardware
 |   Spec  |        Requirements      |
 | :---------: | :-----------------------: |
