@@ -91,8 +91,8 @@ dymd init $MONIKER --chain-id dymension_1100-1
 ```
 ```
 # Download genesis and addrbook
-curl -Ls https://snapshots.kjnodes.com/dymension/genesis.json > $HOME/.dymension/config/genesis.json
-curl -Ls https://snapshots.kjnodes.com/dymension/addrbook.json > $HOME/.dymension/config/addrbook.json
+curl -Ls https://snap.vnbnode.com/dymension/genesis.json > $HOME/.dymension/config/genesis.json
+curl -Ls https://snap.vnbnode.com/dymension/addrbook.json > $HOME/.dymension/config/addrbook.json
 ```
 ```
 # Add seeds
