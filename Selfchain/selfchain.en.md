@@ -136,7 +136,7 @@ _Off State Sync_
 ```
 sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1false|" ~/.selfchain/config/config.toml
 ```
-_Stop Node and Reset Date_
+_Stop Node and Reset Data_
 ```
 sudo systemctl stop selfchaind
 cp $HOME/.selfchain/data/priv_validator_state.json $HOME/.selfchain/priv_validator_state.json.backup
