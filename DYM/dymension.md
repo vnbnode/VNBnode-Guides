@@ -9,6 +9,18 @@
 |   **RAM**   |          16 GB            |
 |   **NVME**   |          1 TB            | 
 
+## RPC, API, gRPC and Snapshot
+✅ RPC:  https://rpc-dym.vnbnode.com/
+
+✅ API:  https://api-dym.vnbnode.com/
+
+✅ gRPC: https://grpc-dym.vnbnode.com/
+
+✅ Auto Snapshot daily: 
+```
+https://github.com/vnbnode/VNBnode-Guides/blob/main/DYM/snapshot.md
+```
+
 ## Setup validator name
 Replace YOUR_MONIKER with your validator name
 ```
