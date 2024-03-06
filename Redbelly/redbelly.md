@@ -46,6 +46,7 @@ sudo certbot certonly --standalone -d YOUR-DOMAIN. --non-interactive --agree-tos
 ```
 ```
 sudo certbot certificates
+# CHECK CERTIFICATES AFTER RENEW
 ```
 ```
 pgrep rbbc
