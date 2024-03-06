@@ -42,7 +42,7 @@ kill NUMBER
 sudo systemctl stop apache2
 ```
 ```
-sudo certbot certonly --standalone -d YOUR-DOMAIN. --non-interactive --agree-tos -m YOUR-EMAIL
+sudo certbot certonly --standalone -d <YOUR-DOMAIN>. --non-interactive --agree-tos -m <YOUR-EMAIL>
 ```
 ```
 sudo certbot certificates
