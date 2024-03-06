@@ -37,7 +37,27 @@ kill NUMBER
 # RUN AGAIN
 ./start-rbn.sh
 ```
-
+### Renew certificate
+```
+sudo systemctl stop apache2
+```
+```
+sudo certbot certonly --standalone -d YOUR-DOMAIN. --non-interactive --agree-tos -m YOUR-EMAIL
+```
+```
+sudo certbot certificates
+```
+```
+pgrep rbbc
+# you will see a NUMBER (if your node was running before)
+```
+```
+kill NUMBER
+```
+```
+# RUN AGAIN
+./start-rbn.sh
+```
 ## Thank to support VNBnode.
 ### Visit us at:
 
