@@ -24,6 +24,19 @@ or
 ```
 tail -f $HOME/logs/rbbcLogs
 ```
+## Trouble Shoot
+### Handshake TLS Error
+```
+pgrep rbbc
+# you will see a NUMBER (if your node was running before)
+```
+```
+kill NUMBER
+```
+```
+# RUN AGAIN
+./start-rbn.sh
+```
 
 ## Thank to support VNBnode.
 ### Visit us at:
