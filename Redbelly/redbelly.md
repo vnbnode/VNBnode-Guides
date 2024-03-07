@@ -24,7 +24,7 @@ or
 ```
 tail -f $HOME/logs/rbbcLogs
 ```
-## Trouble Shoot
+## Part 3: Trouble Shoot
 ### Handshake TLS Error
 ```
 pgrep rbbc
