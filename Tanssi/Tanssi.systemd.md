@@ -13,6 +13,7 @@ chmod +x ./tanssi-node
 ```
 # 3. Creat tanssi-data
 ```
+adduser tanssi_service --system --no-create-home
 mkdir /var/lib/tanssi-data
 sudo chown -R tanssi_service /var/lib/tanssi-data
 mv ./tanssi-node /var/lib/tanssi-data
