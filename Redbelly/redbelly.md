@@ -61,7 +61,7 @@ kill NUMBER
 ```
 ### Check synch
 ```
-curl --location 'https://yourNodeURL.redbelly.network:8545' --header 'Content-Type: application/json' --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'
+curl --location 'https://your_domain:8545' --header 'Content-Type: application/json' --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'
 # You will get a result of Hexagon_number
 ```
 ```
