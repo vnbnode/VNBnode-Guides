@@ -143,7 +143,7 @@ git checkout v0.32.x
 ```
 ```php
 export LAVA_BINARY=lavad
-make install-all
+make install
 ```
 ```php
 # check version

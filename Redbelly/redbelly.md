@@ -24,7 +24,54 @@ or
 ```
 tail -f $HOME/logs/rbbcLogs
 ```
-
+## Part 3: Trouble Shoot
+### Handshake TLS Error
+```
+pgrep rbbc
+# you will see a NUMBER (if your node was running before)
+```
+```
+kill NUMBER
+```
+```
+# RUN AGAIN
+./start-rbn.sh
+```
+### Renew certificate
+```
+sudo systemctl stop apache2
+```
+```
+sudo certbot certonly --standalone -d <YOUR-DOMAIN>. --non-interactive --agree-tos -m <YOUR-EMAIL>
+```
+```
+sudo certbot certificates
+# CHECK CERTIFICATES AFTER RENEW
+```
+```
+pgrep rbbc
+# you will see a NUMBER (if your node was running before)
+```
+```
+kill NUMBER
+```
+```
+# RUN AGAIN
+./start-rbn.sh
+```
+### Check synch
+```
+curl --location 'https://your_domain:8545' --header 'Content-Type: application/json' --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'
+# You will get a result of Hexagon_number
+```
+```
+# convert to decimal
+printf "%d" Hexagon_number
+```
+```
+Compare with the latest block here
+https://explorer.devnet.redbelly.network/overview
+```
 ## Thank to support VNBnode.
 ### Visit us at:
 

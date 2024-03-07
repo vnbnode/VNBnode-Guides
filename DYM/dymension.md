@@ -1,7 +1,26 @@
 # Dymension Mainnet validator
-- Chain ID:dymension_1100-1
-- Port: 150
-- Version: v3.0.0
+|  Chain ID       |  Port  |  Version  |
+|-----------------|--------|-----------|
+|dymension_1100-1 |  150   |  v3.0.0   |
+# Minimum hardware
+|   Spec  |        Requirements      |
+| :---------: | :-----------------------: |
+|   **CPU**   |          8 Cores (Intel / AMD)        |
+|   **RAM**   |          16 GB            |
+|   **NVME**   |          1 TB            | 
+
+## RPC, API, gRPC and Snapshot
+✅ RPC:  https://rpc-dym.vnbnode.com/
+
+✅ API:  https://api-dym.vnbnode.com/
+
+✅ gRPC: https://grpc-dym.vnbnode.com/
+
+✅ Auto Snapshot daily: 
+```
+https://github.com/vnbnode/VNBnode-Guides/blob/main/DYM/snapshot.md
+```
+
 ## Setup validator name
 Replace YOUR_MONIKER with your validator name
 ```
@@ -84,8 +103,8 @@ dymd init $MONIKER --chain-id dymension_1100-1
 ```
 ```
 # Download genesis and addrbook
-curl -Ls https://snapshots.kjnodes.com/dymension/genesis.json > $HOME/.dymension/config/genesis.json
-curl -Ls https://snapshots.kjnodes.com/dymension/addrbook.json > $HOME/.dymension/config/addrbook.json
+curl -Ls https://snap.vnbnode.com/dymension/genesis.json > $HOME/.dymension/config/genesis.json
+curl -Ls https://snap.vnbnode.com/dymension/addrbook.json > $HOME/.dymension/config/addrbook.json
 ```
 ```
 # Add seeds
@@ -109,12 +128,33 @@ sed -i \
 sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:58\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:15057\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:15060\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:15056\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":15066\"%" $HOME/.dymension/config/config.toml
 sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:15017\"%; s%^address = \":8080\"%address = \":15080\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:15090\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:15091\"%; s%:8545%:15045%; s%:8546%:15046%; s%:6065%:15065%" $HOME/.dymension/config/app.toml
 ```
-## Download latest chain snapshot
-```
-curl -L https://snapshots.kjnodes.com/dymension/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.dymension
-[[ -f $HOME/.dymension/data/upgrade-info.json ]] && cp $HOME/.dymension/data/upgrade-info.json $HOME/.dymension/cosmovisor/genesis/upgrade-info.json
-```
 ## Start service and check the logs
 ```
 sudo systemctl start dymension.service && sudo journalctl -u dymension.service -f --no-hostname -o cat
 ```
+## Snapshot
+_Stop Node and Reset Data_
+```
+sudo systemctl stop dymension
+cp $HOME/.dymension/data/priv_validator_state.json $HOME/.dymension/priv_validator_state.json.backup
+rm -rf $HOME/.dymension/data && mkdir -p $HOME/.dymension/data
+```
+_Download Snapshot_
+```
+curl -L https://snap.vnbnode.com/dymension/dymension_1100-1_snapshot_latest.tar.lz4 | tar -I lz4 -xf - -C $HOME/.dymension/data
+```
+```
+mv $HOME/.dymension/priv_validator_state.json.backup $HOME/.dymension/data/priv_validator_state.json
+```
+_Restart Node_
+```
+sudo systemctl start dymension.service && sudo journalctl -u dymension -f --no-hostname -o cat
+```
+## Thank to support VNBnode.
+### Visit us at:
+
+<img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/> <a href="https://t.me/VNBnodegroup" target="_blank">VNBnodegroup</a>
+
+<img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/> <a href="https://t.me/Vnbnode" target="_blank">VNBnode News</a>
+
+<img src="https://github.com/vnbnode/binaries/blob/main/Logo/VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>

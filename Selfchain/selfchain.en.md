@@ -1,7 +1,28 @@
 # Selfchain
-- Chain ID:self-dev-1
-- Port: 113
-- Version: 0.2.2
+|  Chain ID  |  Port  |  Version  |
+|------------|--------|-----------|
+|self-dev-1  |113   | 0.2.2       |
+
+<img src="https://github.com/vnbnode/VNBnode-Guides/assets/76662222/7724db8a-a28e-452b-8431-ed5a748ba9bd" width="30"/> <a href="https://discord.com/invite/selfchainxyz" target="_blank">Discord</a>
+## RPC, API, gRPC and Snapshot
+✅ RPC http://109.199.118.239:11357/
+
+✅ API: http://109.199.118.239:11317/
+
+✅ gRPC: http://109.199.118.239:11391/
+
+✅ Auto Snapshot daily: 
+```
+https://github.com/vnbnode/VNBnode-Guides/blob/main/Selfchain/Snapshot.md 
+```
+## Server Requirements
+| Component   |  Requirements  |
+|-------------|----------------|
+| CPU         | 4-8 cores CPU  |
+| Storage     | 100 GB         |
+| Ram         | 16 GB          |
+| OS          | Ubuntu 22.04+  |
+## Install
 ```
 MONIKER="Yourmoniker"
 ```
@@ -28,7 +49,7 @@ go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
 - Download and install binary
 ```
 cd $HOME
-curl -O http://37.60.236.233/selfchain/selfchaind
+curl -O https://snap.vnbnode.com/selfchain/selfchaind
 sudo chmod +x selfchaind
 ```
 - Setup Cosmovisor Symlinks
@@ -81,8 +102,8 @@ wget -O $HOME/.selfchain/config/addrbook.json  https://raw.githubusercontent.com
 ```
 - Configure Seeds and Peers
 ```
-SEEDS="94a7baabb2bcc00c7b47cbaa58adf4f433df9599@157.230.119.165:26656,d3b5b6ca39c8c62152abbeac4669816166d96831@165.22.24.236:26656,35f478c534e2d58dc2c4acdf3eb22eeb6f23357f@165.232.125.66:26656,85bef166449c5fbb2eabbf3409a79a1376edd6f3@65.21.131.215:37656,dab7ab7c0a6c7a3ad47ed9e57765346ee2f87eda@144.76.97.251:38656,17c1b48b13c6a00d4aec8479fc0716874bab79ac@62.171.130.196:11356"
-PEERS="94a7baabb2bcc00c7b47cbaa58adf4f433df9599@157.230.119.165:26656,d3b5b6ca39c8c62152abbeac4669816166d96831@165.22.24.236:26656,35f478c534e2d58dc2c4acdf3eb22eeb6f23357f@165.232.125.66:26656,85bef166449c5fbb2eabbf3409a79a1376edd6f3@65.21.131.215:37656,dab7ab7c0a6c7a3ad47ed9e57765346ee2f87eda@144.76.97.251:38656,17c1b48b13c6a00d4aec8479fc0716874bab79ac@62.171.130.196:11356"
+SEEDS="94a7baabb2bcc00c7b47cbaa58adf4f433df9599@157.230.119.165:26656,d3b5b6ca39c8c62152abbeac4669816166d96831@165.22.24.236:26656,35f478c534e2d58dc2c4acdf3eb22eeb6f23357f@165.232.125.66:26656,85bef166449c5fbb2eabbf3409a79a1376edd6f3@65.21.131.215:37656,dab7ab7c0a6c7a3ad47ed9e57765346ee2f87eda@144.76.97.251:38656,17c1b48b13c6a00d4aec8479fc0716874bab79ac@62.171.130.196:11356,d3b5b6ca39c8c62152abbeac4669816166d96831@165.22.24.236:26656,e8502eb858f555051f3f80edc13f46ea942e7507@23.111.23.233:26656,163b116b0181fc9d979e4c2e2e9f2be680cf5d22@109.199.118.239:11356"
+PEERS="94a7baabb2bcc00c7b47cbaa58adf4f433df9599@157.230.119.165:26656,d3b5b6ca39c8c62152abbeac4669816166d96831@165.22.24.236:26656,35f478c534e2d58dc2c4acdf3eb22eeb6f23357f@165.232.125.66:26656,85bef166449c5fbb2eabbf3409a79a1376edd6f3@65.21.131.215:37656,dab7ab7c0a6c7a3ad47ed9e57765346ee2f87eda@144.76.97.251:38656,17c1b48b13c6a00d4aec8479fc0716874bab79ac@62.171.130.196:11356,d3b5b6ca39c8c62152abbeac4669816166d96831@165.22.24.236:26656,e8502eb858f555051f3f80edc13f46ea942e7507@23.111.23.233:26656,163b116b0181fc9d979e4c2e2e9f2be680cf5d22@109.199.118.239:11356"
 sed -i -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.selfchain/config/config.toml
 ```
 - Set Pruning, Enable Prometheus, Gas Price, and Indexer
@@ -111,16 +132,11 @@ sudo journalctl -fu selfchaind -o cat
 ```
 - Snapshot
 
-_Install lz4_
-```
-sudo apt update
-sudo apt-get install snapd lz4 -y
-```
 _Off State Sync_
 ```
 sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1false|" ~/.selfchain/config/config.toml
 ```
-_Stop Node and Reset Date_
+_Stop Node and Reset Data_
 ```
 sudo systemctl stop selfchaind
 cp $HOME/.selfchain/data/priv_validator_state.json $HOME/.selfchain/priv_validator_state.json.backup
@@ -129,25 +145,14 @@ selfchaind tendermint unsafe-reset-all --home ~/.selfchain/ --keep-addr-book
 ```
 _Download Snapshot_
 ```
-SNAP_NAME=$(curl -s https://ss-t.selfchain.nodestake.org/ | egrep -o ">20.*\.tar.lz4" | tr -d ">")
-curl -o - -L https://ss-t.selfchain.nodestake.org/${SNAP_NAME}  | lz4 -c -d - | tar -x -C $HOME/.selfchain
+curl -L https://snap.vnbnode.com/selfchain/self-dev-1_snapshot_latest.tar.lz4 | tar -I lz4 -xf - -C $HOME/.selfchain/data
 ```
 ```
 mv $HOME/.selfchain/priv_validator_state.json.backup $HOME/.selfchain/data/priv_validator_state.json
 ```
 _Restart Node_
 ```
-sudo systemctl restart selfchaind
-journalctl -u selfchaind -f
-```
-- Remove node
-```
-sudo systemctl stop selfchaind
-sudo systemctl disable selfchaind
-sudo rm /etc/systemd/system/selfchaind.service
-sudo systemctl daemon-reload
-rm -f $(which selfchaind)
-rm -rf $HOME/.selfchain
+sudo systemctl restart selfchaind && sudo journalctl -u selfchaind -f --no-hostname -o cat
 ```
 ## Thank to support VNBnode.
 ### Visit us at:
