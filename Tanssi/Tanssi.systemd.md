@@ -72,6 +72,7 @@ systemctl restart tanssi.service && journalctl -f -u tanssi.service
 ```
 ./tanssi-node key generate -w24
 ```
+# 5. [Check telemetry](https://telemetry.polkadot.io/#list/0x27aafd88e5921f5d5c6aebcd728dacbbf5c2a37f63e2eda301f8e0def01c43ea)
 # 6. [Fill form](https://www.tanssi.network/block-producer-form)
 
 ## Thank to support VNBnode.
