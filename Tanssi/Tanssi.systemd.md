@@ -11,7 +11,7 @@ apt install curl iptables build-essential git wget jq make gcc nano tmux htop nv
 wget https://github.com/moondance-labs/tanssi/releases/download/v0.5.0/tanssi-node && \
 chmod +x ./tanssi-node
 ```
-# 3. Setup the Systemd Service
+# 3. Creat tanssi-data
 ```
 mkdir /var/lib/tanssi-data
 sudo chown -R tanssi_service /var/lib/tanssi-data
