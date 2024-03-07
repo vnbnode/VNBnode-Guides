@@ -19,6 +19,7 @@ sudo chown -R tanssi_service /var/lib/tanssi-data
 mv ./tanssi-node /var/lib/tanssi-data
 ```
 # 4. Create the Systemd Service Configuration File
+(**Replace _INSERT_YOUR_TANSSI_NODE_NAME_**)
 ```
 sudo tee /etc/systemd/system/tanssi.service > /dev/null << EOF
 [Unit]
