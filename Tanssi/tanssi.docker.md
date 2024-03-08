@@ -31,7 +31,7 @@ moondancelabs/tanssi \
 --telemetry-url='wss://telemetry.polkadot.io/submit/ 0' \
 --database paritydb \
 -- \
---name=INSERT_YOUR_BLOCK_PRODUCER_NODE_NAME \
+--name=VNBnode \
 --base-path=/data/container \
 --telemetry-url='wss://telemetry.polkadot.io/submit/ 0' \
 -- \
@@ -66,7 +66,7 @@ moondancelabs/tanssi \
 --base-path=/data/container \
 --telemetry-url='wss://telemetry.polkadot.io/submit/ 0' \
 -- \
---name=INSERT_YOUR_RELAY_NODE_NAME \
+--name=VNBnode \
 --chain=westend_moonbase_relay_testnet \
 --sync=fast \
 --base-path=/data/relay \
@@ -79,7 +79,17 @@ moondancelabs/tanssi \
 ```
 docker logs -f tanssi
 ```
-
+## Generate Session Keys
+```
+curl http://127.0.0.1:9944 -H \
+"Content-Type:application/json;charset=utf-8" -d \
+  '{
+    "jsonrpc":"2.0",
+    "id":1,
+    "method":"author_rotateKeys",
+    "params": []
+  }'
+```
 ### [Check telemetry](https://telemetry.polkadot.io/#list/0x27aafd88e5921f5d5c6aebcd728dacbbf5c2a37f63e2eda301f8e0def01c43ea)
 
 ### [Fill form](https://www.tanssi.network/block-producer-form)
