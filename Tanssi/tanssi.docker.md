@@ -14,7 +14,7 @@
 cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/docker-install.sh)
 ```
 ## Run Node
-- CPU Intel
+- CPU INTEL
   
 Please change `INSERT_YOUR_TANSSI_NODE_NAME` to your name
 
