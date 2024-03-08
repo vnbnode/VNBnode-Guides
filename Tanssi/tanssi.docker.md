@@ -15,7 +15,7 @@ cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/
 ```
 ## Run Node
 - CPU Intel
-Please change `VNBnode` to your name
+Please change `INSERT_YOUR_TANSSI_NODE_NAME` to your name
 
 ```
 docker run --name tanssi --network="host" -v "$HOME/dancebox:/data" \
@@ -23,7 +23,7 @@ docker run --name tanssi --network="host" -v "$HOME/dancebox:/data" \
 --entrypoint "/tanssi/tanssi-node-skylake" \
 moondancelabs/tanssi \
 --chain=dancebox \
---name=VNBnode \
+--name=INSERT_YOUR_TANSSI_NODE_NAME \
 --base-path=/data/para \
 --state-pruning=2000 \
 --blocks-pruning=2000 \
@@ -31,11 +31,11 @@ moondancelabs/tanssi \
 --telemetry-url='wss://telemetry.polkadot.io/submit/ 0' \
 --database paritydb \
 -- \
---name=VNBnode \
+--name=INSERT_YOUR_TANSSI_NODE_NAME \
 --base-path=/data/container \
 --telemetry-url='wss://telemetry.polkadot.io/submit/ 0' \
 -- \
---name=VNBnode \
+--name=INSERT_YOUR_TANSSI_NODE_NAME \
 --chain=westend_moonbase_relay_testnet \
 --sync=fast \
 --base-path=/data/relay \
@@ -46,7 +46,7 @@ moondancelabs/tanssi \
 ```
 - CPU AMD
   
-Please change `VNBnode` to your name
+Please change `INSERT_YOUR_TANSSI_NODE_NAME` to your name
 
 ```
 docker run --name tanssi --network="host" -v "$HOME/dancebox:/data" \
@@ -54,7 +54,7 @@ docker run --name tanssi --network="host" -v "$HOME/dancebox:/data" \
 --entrypoint "/tanssi/tanssi-node-znver3" \
 moondancelabs/tanssi \
 --chain=dancebox \
---name=VNBnode \
+--name=INSERT_YOUR_TANSSI_NODE_NAME \
 --base-path=/data/para \
 --state-pruning=2000 \
 --blocks-pruning=2000 \
@@ -62,11 +62,11 @@ moondancelabs/tanssi \
 --telemetry-url='wss://telemetry.polkadot.io/submit/ 0' \
 --database paritydb \
 -- \
---name=VNBnode \
+--name=INSERT_YOUR_TANSSI_NODE_NAME \
 --base-path=/data/container \
 --telemetry-url='wss://telemetry.polkadot.io/submit/ 0' \
 -- \
---name=VNBnode \
+--name=INSERT_YOUR_TANSSI_NODE_NAME \
 --chain=westend_moonbase_relay_testnet \
 --sync=fast \
 --base-path=/data/relay \
