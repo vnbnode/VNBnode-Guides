@@ -18,7 +18,7 @@ cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/
 Please change `VNBnode` to your name
 
 ```
-docker run --name tanssi --network="host" -v "/var/lib/dancebox:/data" \
+docker run --name tanssi --network="host" -v "$HOME/dancebox:/data" \
 -u $(id -u ${USER}):$(id -g ${USER}) \
 --entrypoint "/tanssi/tanssi-node-skylake" \
 moondancelabs/tanssi \
@@ -49,7 +49,7 @@ moondancelabs/tanssi \
 Please change `VNBnode` to your name
 
 ```
-docker run --name tanssi --network="host" -v "/var/lib/dancebox:/data" \
+docker run --name tanssi --network="host" -v "$HOME/dancebox:/data" \
 -u $(id -u ${USER}):$(id -g ${USER}) \
 --entrypoint "/tanssi/tanssi-node-znver3" \
 moondancelabs/tanssi \
