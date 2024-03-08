@@ -11,14 +11,18 @@ apt install curl iptables build-essential git wget jq make gcc nano tmux htop nv
 wget https://github.com/moondance-labs/tanssi/releases/download/v0.5.0/tanssi-node && \
 chmod +x ./tanssi-node
 ```
-# 3. Creat tanssi-data
+# 3. Creat new wallet
+```
+./tanssi-node key generate -w24
+```
+# 4. Creat tanssi-data
 ```
 adduser tanssi_service --system --no-create-home
 mkdir /var/lib/tanssi-data
 sudo chown -R tanssi_service /var/lib/tanssi-data
 mv ./tanssi-node /var/lib/tanssi-data
 ```
-# 4. Create the Systemd Service Configuration File
+# 5. Create the Systemd Service Configuration File
 (**Replace** _INSERT_YOUR_TANSSI_NODE_NAME_)
 ```
 sudo tee /etc/systemd/system/tanssi.service > /dev/null << EOF
@@ -70,12 +74,8 @@ systemctl daemon-reload
 ```
 systemctl restart tanssi.service && journalctl -f -u tanssi.service
 ```
-# 5. Creat new wallet
-```
-./tanssi-node key generate -w24
-```
-# 5. [Check telemetry](https://telemetry.polkadot.io/#list/0x27aafd88e5921f5d5c6aebcd728dacbbf5c2a37f63e2eda301f8e0def01c43ea)
-# 6. [Fill form](https://www.tanssi.network/block-producer-form)
+# 6. [Check telemetry](https://telemetry.polkadot.io/#list/0x27aafd88e5921f5d5c6aebcd728dacbbf5c2a37f63e2eda301f8e0def01c43ea)
+# 7. [Fill form](https://www.tanssi.network/block-producer-form)
 
 ## Thank to support VNBnode.
 ### Visit us at:
