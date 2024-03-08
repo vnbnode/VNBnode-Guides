@@ -20,6 +20,7 @@ docker pull moondancelabs/dancebox-container-chain-evm-templates
 ## Run Node
 - CPU Intel
 Please change `VNBnode` to your name
+
 Please change `INSERT_YOUR_APPCHAIN_BOOTNODE` =/dns4/domain/tcp/30333/p2p/id
 ```
 docker run -ti moondancelabs/dancebox-container-chain-evm-templates \
@@ -44,6 +45,7 @@ docker run -ti moondancelabs/dancebox-container-chain-evm-templates \
 ```
 - CPU AMD
 Please change `VNBnode` to your name
+
 Please change `INSERT_YOUR_APPCHAIN_BOOTNODE` =/dns4/domain/tcp/30333/p2p/id
 ```
 docker run -ti moondancelabs/dancebox-container-chain-evm-templates \
@@ -71,9 +73,9 @@ docker run -ti moondancelabs/dancebox-container-chain-evm-templates \
 docker logs -f tanssi
 ```
 
-###[Check telemetry](https://telemetry.polkadot.io/#list/0x27aafd88e5921f5d5c6aebcd728dacbbf5c2a37f63e2eda301f8e0def01c43ea)
+### [Check telemetry](https://telemetry.polkadot.io/#list/0x27aafd88e5921f5d5c6aebcd728dacbbf5c2a37f63e2eda301f8e0def01c43ea)
 
-###[Fill form](https://www.tanssi.network/block-producer-form)
+### [Fill form](https://www.tanssi.network/block-producer-form)
 
 ## Thank to support VNBnode.
 ### Visit us at:
