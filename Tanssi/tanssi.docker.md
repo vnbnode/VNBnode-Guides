@@ -13,62 +13,67 @@
 ```
 cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/docker-install.sh)
 ```
-## Pull image
-```
-docker pull moondancelabs/dancebox-container-chain-evm-templates
-```
 ## Run Node
 - CPU Intel
-
 Please change `VNBnode` to your name
 
-Please change `INSERT_YOUR_APPCHAIN_BOOTNODE` =/dns4/domain/tcp/30333/p2p/id
 ```
-docker run -ti moondancelabs/dancebox-container-chain-evm-templates \
-/chain-network/container-chain-template-frontier-node-skylake \
---chain=/chain-network/container-YOUR_APPCHAIN_ID-raw-specs.json \
---rpc-port=9944 \
---name=VNBnode \ 
---bootnodes=INSERT_YOUR_APPCHAIN_BOOTNODE \
+docker run --name tanssi --network="host" -v "/var/lib/dancebox:/data" \
+-u $(id -u ${USER}):$(id -g ${USER}) \
+--entrypoint "/tanssi/tanssi-node-skylake" \
+moondancelabs/tanssi \
+--chain=dancebox \
+--name=VNBnode \
+--base-path=/data/para \
+--state-pruning=2000 \
+--blocks-pruning=2000 \
+--collator \
+--telemetry-url='wss://telemetry.polkadot.io/submit/ 0' \
+--database paritydb \
+-- \
+--name=INSERT_YOUR_BLOCK_PRODUCER_NODE_NAME \
+--base-path=/data/container \
+--telemetry-url='wss://telemetry.polkadot.io/submit/ 0' \
 -- \
 --name=VNBnode \
---chain=/chain-network/relay-raw-no-bootnodes-specs.json \
---rpc-port=9945 \
+--chain=westend_moonbase_relay_testnet \
 --sync=fast \
---bootnodes=/dns4/frag3-stagenet-relay-val-0.g.moondev.network/tcp/30334/p2p/12D3KooWKvtM52fPRSdAnKBsGmST7VHvpKYeoSYuaAv5JDuAvFCc \
---bootnodes=/dns4/frag3-stagenet-relay-val-1.g.moondev.network/tcp/30334/p2p/12D3KooWQYLjopFtjojRBfTKkLFq2Untq9yG7gBjmAE8xcHFKbyq \
---bootnodes=/dns4/frag3-stagenet-relay-val-2.g.moondev.network/tcp/30334/p2p/12D3KooWMAtGe8cnVrg3qGmiwNjNaeVrpWaCTj82PGWN7PBx2tth \
---bootnodes=/dns4/frag3-stagenet-relay-val-3.g.moondev.network/tcp/30334/p2p/12D3KooWLKAf36uqBBug5W5KJhsSnn9JHFCcw8ykMkhQvW7Eus3U \
---bootnodes=/dns4/vira-stagenet-relay-validator-0.a.moondev.network/tcp/30334/p2p/12D3KooWSVTKUkkD4KBBAQ1QjAALeZdM3R2Kc2w5eFtVxbYZEGKd \
---bootnodes=/dns4/vira-stagenet-relay-validator-1.a.moondev.network/tcp/30334/p2p/12D3KooWFJoVyvLNpTV97SFqs91HaeoVqfFgRNYtUYJoYVbBweW4 \
---bootnodes=/dns4/vira-stagenet-relay-validator-2.a.moondev.network/tcp/30334/p2p/12D3KooWP1FA3dq1iBmEBYdQKAe4JNuzvEcgcebxBYMLKpTNirCR \
---bootnodes=/dns4/vira-stagenet-relay-validator-3.a.moondev.network/tcp/30334/p2p/12D3KooWDaTC6H6W1F4NkbaqK3Ema3jzc2BbhE2tyD3YEf84yNLE \
+--base-path=/data/relay \
+--state-pruning=2000 \
+--blocks-pruning=2000 \
+--telemetry-url='wss://telemetry.polkadot.io/submit/ 0' \
+--database paritydb
 ```
 - CPU AMD
   
 Please change `VNBnode` to your name
 
-Please change `INSERT_YOUR_APPCHAIN_BOOTNODE` =/dns4/domain/tcp/30333/p2p/id
 ```
-docker run -ti moondancelabs/dancebox-container-chain-evm-templates \
-/chain-network/container-chain-template-frontier-node-znver3 \
---chain=/chain-network/container-YOUR_APPCHAIN_ID-raw-specs.json \
---rpc-port=9944 \
---name=para \ 
---bootnodes=INSERT_YOUR_APPCHAIN_BOOTNODE \
+docker run --name tanssi --network="host" -v "/var/lib/dancebox:/data" \
+-u $(id -u ${USER}):$(id -g ${USER}) \
+--entrypoint "/tanssi/tanssi-node-znver3" \
+moondancelabs/tanssi \
+--chain=dancebox \
+--name=VNBnode \
+--base-path=/data/para \
+--state-pruning=2000 \
+--blocks-pruning=2000 \
+--collator \
+--telemetry-url='wss://telemetry.polkadot.io/submit/ 0' \
+--database paritydb \
 -- \
---name=relay \
---chain=/chain-network/relay-raw-no-bootnodes-specs.json \
---rpc-port=9945 \
+--name=VNBnode \
+--base-path=/data/container \
+--telemetry-url='wss://telemetry.polkadot.io/submit/ 0' \
+-- \
+--name=INSERT_YOUR_RELAY_NODE_NAME \
+--chain=westend_moonbase_relay_testnet \
 --sync=fast \
---bootnodes=/dns4/frag3-stagenet-relay-val-0.g.moondev.network/tcp/30334/p2p/12D3KooWKvtM52fPRSdAnKBsGmST7VHvpKYeoSYuaAv5JDuAvFCc \
---bootnodes=/dns4/frag3-stagenet-relay-val-1.g.moondev.network/tcp/30334/p2p/12D3KooWQYLjopFtjojRBfTKkLFq2Untq9yG7gBjmAE8xcHFKbyq \
---bootnodes=/dns4/frag3-stagenet-relay-val-2.g.moondev.network/tcp/30334/p2p/12D3KooWMAtGe8cnVrg3qGmiwNjNaeVrpWaCTj82PGWN7PBx2tth \
---bootnodes=/dns4/frag3-stagenet-relay-val-3.g.moondev.network/tcp/30334/p2p/12D3KooWLKAf36uqBBug5W5KJhsSnn9JHFCcw8ykMkhQvW7Eus3U \
---bootnodes=/dns4/vira-stagenet-relay-validator-0.a.moondev.network/tcp/30334/p2p/12D3KooWSVTKUkkD4KBBAQ1QjAALeZdM3R2Kc2w5eFtVxbYZEGKd \
---bootnodes=/dns4/vira-stagenet-relay-validator-1.a.moondev.network/tcp/30334/p2p/12D3KooWFJoVyvLNpTV97SFqs91HaeoVqfFgRNYtUYJoYVbBweW4 \
---bootnodes=/dns4/vira-stagenet-relay-validator-2.a.moondev.network/tcp/30334/p2p/12D3KooWP1FA3dq1iBmEBYdQKAe4JNuzvEcgcebxBYMLKpTNirCR \
---bootnodes=/dns4/vira-stagenet-relay-validator-3.a.moondev.network/tcp/30334/p2p/12D3KooWDaTC6H6W1F4NkbaqK3Ema3jzc2BbhE2tyD3YEf84yNLE \
+--base-path=/data/relay \
+--state-pruning=2000 \
+--blocks-pruning=2000 \
+--telemetry-url='wss://telemetry.polkadot.io/submit/ 0' \
+--database paritydb
 ```
 ### Check log node
 ```
