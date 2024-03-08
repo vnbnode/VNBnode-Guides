@@ -15,6 +15,7 @@ cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/
 ```
 ## Run Node
 - CPU Intel
+  
 Please change `INSERT_YOUR_TANSSI_NODE_NAME` to your name
 
 ```
