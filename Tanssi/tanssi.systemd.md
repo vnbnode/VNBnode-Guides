@@ -10,28 +10,28 @@ Tanssi, an appchain infrastructure protocol, is currently under construction to 
 |   **RAM**   |        ≥ 8 GB             |
 | **Storage** |        ≥ 200 GB SSD       |
 | **NETWORK** |        ≥ 100 Mbps         |
-# 1. Update system and install build tools
+## 1. Update system and install build tools
 ```
 apt update && apt upgrade -y
 apt install curl iptables build-essential git wget jq make gcc nano tmux htop nvme-cli pkg-config libssl-dev libleveldb-dev libgmp3-dev tar clang bsdmainutils ncdu unzip llvm libudev-dev make protobuf-compiler -y
 ```
-# 2. Download the Latest Release
+## 2. Download the Latest Release
 ```
 wget https://github.com/moondance-labs/tanssi/releases/download/v0.5.0/tanssi-node && \
 chmod +x ./tanssi-node
 ```
-# 3. Creat new wallet
+## 3. Creat new wallet
 ```
 ./tanssi-node key generate -w24
 ```
-# 4. Creat tanssi-data
+## 4. Creat tanssi-data
 ```
 adduser tanssi_service --system --no-create-home
 mkdir /var/lib/tanssi-data
 sudo chown -R tanssi_service /var/lib/tanssi-data
 mv ./tanssi-node /var/lib/tanssi-data
 ```
-# 5. Create the Systemd Service Configuration File
+## 5. Create the Systemd Service Configuration File
 (**Replace** _INSERT_YOUR_TANSSI_NODE_NAME_)
 ```
 sudo tee /etc/systemd/system/tanssi.service > /dev/null << EOF
@@ -83,9 +83,19 @@ systemctl daemon-reload
 ```
 systemctl restart tanssi.service && journalctl -f -u tanssi.service
 ```
-# 6. [Check telemetry](https://telemetry.polkadot.io/#list/0x27aafd88e5921f5d5c6aebcd728dacbbf5c2a37f63e2eda301f8e0def01c43ea)
-# 7. [Fill form](https://www.tanssi.network/block-producer-form)
-
+## 6. [Check telemetry](https://telemetry.polkadot.io/#list/0x27aafd88e5921f5d5c6aebcd728dacbbf5c2a37f63e2eda301f8e0def01c43ea)
+## 7. [Fill form](https://www.tanssi.network/block-producer-form)
+## Generate Session Keys
+```
+curl http://127.0.0.1:9944 -H \
+"Content-Type:application/json;charset=utf-8" -d \
+  '{
+    "jsonrpc":"2.0",
+    "id":1,
+    "method":"author_rotateKeys",
+    "params": []
+  }'
+```
 ## Thank to support VNBnode.
 ### Visit us at:
 
