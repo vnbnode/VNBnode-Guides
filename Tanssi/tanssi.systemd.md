@@ -1,6 +1,15 @@
 # Tanssi SystemD
 Tanssi, an appchain infrastructure protocol, is currently under construction to simplify and enhance appchain deployment like never before.
 [Tanssi](https://www.tanssi.network/)
+
+## Recommended Hardware Requirements 
+
+|   SPEC	    |        Recommend          |
+| :---------: | :-----------------------: |
+|   **CPU**   |        ≥ 4 Cores          |
+|   **RAM**   |        ≥ 8 GB             |
+| **Storage** |        ≥ 200 GB SSD       |
+| **NETWORK** |        ≥ 100 Mbps         |
 # 1. Update system and install build tools
 ```
 apt update && apt upgrade -y
