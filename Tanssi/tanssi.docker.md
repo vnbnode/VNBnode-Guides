@@ -19,6 +19,7 @@ docker pull moondancelabs/dancebox-container-chain-evm-templates
 ```
 ## Run Node
 - CPU Intel
+
 Please change `VNBnode` to your name
 
 Please change `INSERT_YOUR_APPCHAIN_BOOTNODE` =/dns4/domain/tcp/30333/p2p/id
@@ -44,6 +45,7 @@ docker run -ti moondancelabs/dancebox-container-chain-evm-templates \
 --bootnodes=/dns4/vira-stagenet-relay-validator-3.a.moondev.network/tcp/30334/p2p/12D3KooWDaTC6H6W1F4NkbaqK3Ema3jzc2BbhE2tyD3YEf84yNLE \
 ```
 - CPU AMD
+  
 Please change `VNBnode` to your name
 
 Please change `INSERT_YOUR_APPCHAIN_BOOTNODE` =/dns4/domain/tcp/30333/p2p/id
