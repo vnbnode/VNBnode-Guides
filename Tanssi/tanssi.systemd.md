@@ -77,6 +77,8 @@ ExecStart=/var/lib/tanssi-data/tanssi-node \
 [Install]
 WantedBy=multi-user.target
 EOF
+```
+```
 systemctl enable tanssi.service
 systemctl daemon-reload
 ```
