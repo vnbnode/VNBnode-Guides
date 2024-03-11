@@ -33,8 +33,11 @@ mv ./tanssi-node /var/lib/tanssi-data
 ```
 ## 5. Create the Systemd Service Configuration File
 (**Replace** _INSERT_YOUR_TANSSI_NODE_NAME_)
+Creat tanssi.service & save file
 ```
-sudo tee /etc/systemd/system/tanssi.service > /dev/null << EOF
+sudo nano /etc/systemd/system/tanssi.service
+```
+```
 [Unit]
 Description="Tanssi systemd service"
 After=network.target
@@ -50,33 +53,30 @@ SyslogFacility=local7
 KillSignal=SIGHUP
 ExecStart=/var/lib/tanssi-data/tanssi-node \
 --chain=dancebox \
---rpc-port=9944 \
 --name=INSERT_YOUR_TANSSI_NODE_NAME \
+--sync=warp \
 --base-path=/var/lib/tanssi-data/para \
 --state-pruning=2000 \
 --blocks-pruning=2000 \
 --collator \
+--telemetry-url='wss://telemetry.polkadot.io/submit/ 0' \
 --database paritydb \
---telemetry-url='wss://telemetry.polkadot.io/submit/ 0'
--- \
---rpc-port=9946 \
---name=tanssi-appchain \
---base-path=/var/lib/tanssi-data/container \
---telemetry-url='wss://telemetry.polkadot.io/submit/ 0'
 -- \
 --name=INSERT_YOUR_TANSSI_NODE_NAME \
+--base-path=/var/lib/tanssi-data/container \
+--telemetry-url='wss://telemetry.polkadot.io/submit/ 0' \
+-- \
 --chain=westend_moonbase_relay_testnet \
---rpc-port=9945 \
+--name=INSERT_YOUR_TANSSI_NODE_NAME \
 --sync=fast \
 --base-path=/var/lib/tanssi-data/relay \
 --state-pruning=2000 \
 --blocks-pruning=2000 \
+--telemetry-url='wss://telemetry.polkadot.io/submit/ 0' \
 --database paritydb \
---telemetry-url='wss://telemetry.polkadot.io/submit/ 0'
 
 [Install]
 WantedBy=multi-user.target
-EOF
 ```
 ```
 systemctl enable tanssi.service
