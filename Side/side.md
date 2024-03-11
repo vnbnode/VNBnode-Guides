@@ -109,7 +109,6 @@ sided tx staking create-validator \
 ```
 
 ### Faucet and stake validator: https://testnet.side.one/
-Delegate: https://testnet.side.one/validators/sidevaloper1vfm2uc8mrg6yynjegcvuhekrqpykh6mzl2ytnr
 
 ## Thank to support VNBnode.
 ### Visit us at:
