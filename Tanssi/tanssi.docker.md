@@ -80,17 +80,7 @@ moondancelabs/tanssi \
 ```
 docker logs -f tanssi
 ```
-## Generate Session Keys
-```
-curl http://127.0.0.1:9944 -H \
-"Content-Type:application/json;charset=utf-8" -d \
-  '{
-    "jsonrpc":"2.0",
-    "id":1,
-    "method":"author_rotateKeys",
-    "params": []
-  }'
-```
+
 ### [Explorer](https://polkadot.js.org/apps/?rpc=wss://fraa-dancebox-rpc.a.dancebox.tanssi.network#/extrinsics)
 ### [Check telemetry](https://telemetry.polkadot.io/#list/0x27aafd88e5921f5d5c6aebcd728dacbbf5c2a37f63e2eda301f8e0def01c43ea)
 
