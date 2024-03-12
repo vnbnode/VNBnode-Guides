@@ -44,6 +44,7 @@ moondancelabs/tanssi \
 --blocks-pruning=2000 \
 --telemetry-url='wss://telemetry.polkadot.io/submit/ 0' \
 --database paritydb
+docker update --restart=unless-stopped tanssi
 ```
 - CPU AMD
   
@@ -75,6 +76,7 @@ moondancelabs/tanssi \
 --blocks-pruning=2000 \
 --telemetry-url='wss://telemetry.polkadot.io/submit/ 0' \
 --database paritydb
+docker update --restart=unless-stopped tanssi
 ```
 ### Check log node
 ```
