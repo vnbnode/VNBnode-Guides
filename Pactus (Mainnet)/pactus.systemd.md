@@ -43,7 +43,7 @@ For recover wallet
 ```
 # 5. Create & start service
 ```
-tee /etc/systemd/system/pactusd.service > /dev/null << EOF
+sudo tee /etc/systemd/system/pactusd.service > /dev/null << EOF
 [Unit]
 Description=pactus Node
 After=network-online.target
