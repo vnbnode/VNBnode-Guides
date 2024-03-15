@@ -13,18 +13,20 @@
 ```
 cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/docker-install.sh)
 ```
+## Pull image
+```
+docker pull moondancelabs/tanssi
+```
 ## Run Node
-- CPU INTEL
-  
 Please change `INSERT_YOUR_TANSSI_NODE_NAME` to your name
 
 ```
-docker run --name tanssi --network="host" -d -v "$HOME/dancebox:/data" \
+docker run --network="host" -v "/var/lib/dancebox:/data" \
 -u $(id -u ${USER}):$(id -g ${USER}) \
---entrypoint "/tanssi/tanssi-node-skylake" \
 moondancelabs/tanssi \
 --chain=dancebox \
 --name=INSERT_YOUR_TANSSI_NODE_NAME \
+--sync=warp \
 --base-path=/data/para \
 --state-pruning=2000 \
 --blocks-pruning=2000 \
@@ -32,44 +34,12 @@ moondancelabs/tanssi \
 --telemetry-url='wss://telemetry.polkadot.io/submit/ 0' \
 --database paritydb \
 -- \
---name=INSERT_YOUR_TANSSI_NODE_NAME \
+--name=INSERT_YOUR_BLOCK_PRODUCER_NODE_NAME \
 --base-path=/data/container \
 --telemetry-url='wss://telemetry.polkadot.io/submit/ 0' \
 -- \
---name=INSERT_YOUR_TANSSI_NODE_NAME \
 --chain=westend_moonbase_relay_testnet \
---sync=fast \
---base-path=/data/relay \
---state-pruning=2000 \
---blocks-pruning=2000 \
---telemetry-url='wss://telemetry.polkadot.io/submit/ 0' \
---database paritydb
-docker update --restart=unless-stopped tanssi
-```
-- CPU AMD
-  
-Please change `INSERT_YOUR_TANSSI_NODE_NAME` to your name
-
-```
-docker run --name tanssi --network="host" -d -v "$HOME/dancebox:/data" \
--u $(id -u ${USER}):$(id -g ${USER}) \
---entrypoint "/tanssi/tanssi-node-znver3" \
-moondancelabs/tanssi \
---chain=dancebox \
---name=INSERT_YOUR_TANSSI_NODE_NAME \
---base-path=/data/para \
---state-pruning=2000 \
---blocks-pruning=2000 \
---collator \
---telemetry-url='wss://telemetry.polkadot.io/submit/ 0' \
---database paritydb \
--- \
---name=INSERT_YOUR_TANSSI_NODE_NAME \
---base-path=/data/container \
---telemetry-url='wss://telemetry.polkadot.io/submit/ 0' \
--- \
---name=INSERT_YOUR_TANSSI_NODE_NAME \
---chain=westend_moonbase_relay_testnet \
+--name=INSERT_YOUR_RELAY_NODE_NAME \
 --sync=fast \
 --base-path=/data/relay \
 --state-pruning=2000 \
