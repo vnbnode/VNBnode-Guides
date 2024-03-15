@@ -108,11 +108,11 @@ sudo docker run -p 1600:1600 -p 6000:6000/tcp -p 6000:6000/udp --rm -it -w /data
 ### Start the Guardian Node <a href="#start-the-guardian-node" id="start-the-guardian-node"></a>
 #### 1\. CPU from 2015 or later
 ```
-sudo docker run -p 1600:1600 -p 6000:6000/tcp -p 6000:6000/udp -it -d -w /data -v $(pwd):/data sarvalabs/moipod:latest server --babylon --data-dir {DIRPATH} --log-level DEBUG --node-password {NODE_PWD}
+sudo docker run -p 1600:1600 -p 6000:6000/tcp -p 6000:6000/udp -it -d -w /data -v $(pwd):/data sarvalabs/moipod:latest server --babylon --data-dir {DIRPATH} --log-level DEBUG --node-password {NODE_PWD} --clean-db=false
 ```
 #### 2\. CPU from 2015 or earlier
 ```
-sudo docker run -p 1600:1600 -p 6000:6000/tcp -p 6000:6000/udp -it -d -w /data -v $(pwd):/data sarvalabs/moipod:v0.6.4-port server --babylon --data-dir {DIRPATH} --log-level DEBUG --node-password {NODE_PWD}
+sudo docker run -p 1600:1600 -p 6000:6000/tcp -p 6000:6000/udp -it -d -w /data -v $(pwd):/data sarvalabs/moipod:v0.6.4-port server --babylon --data-dir {DIRPATH} --log-level DEBUG --node-password {NODE_PWD} --clean-db=false
 ```
 `{DIRPATH}`: the directory path you create to store the node, for example `moi`
 
