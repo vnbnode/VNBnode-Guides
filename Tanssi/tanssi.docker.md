@@ -56,7 +56,36 @@ docker logs -f tanssi
 ```
 docker stop tanssi
 docker pull moondancelabs/tanssi
-docker restart tanssi
+```
+- Please change `INSERT_YOUR_TANSSI_NODE_NAME` to your name
+
+```
+docker run --name tanssi --network="host" -d -v "$HOME/dancebox:/data" \
+-u $(id -u ${USER}):$(id -g ${USER}) \
+moondancelabs/tanssi \
+--chain=dancebox \
+--name=INSERT_YOUR_TANSSI_NODE_NAME \
+--sync=warp \
+--base-path=/data/para \
+--state-pruning=2000 \
+--blocks-pruning=2000 \
+--collator \
+--telemetry-url='wss://telemetry.polkadot.io/submit/ 0' \
+--database paritydb \
+-- \
+--name=INSERT_YOUR_BLOCK_PRODUCER_NODE_NAME \
+--base-path=/data/container \
+--telemetry-url='wss://telemetry.polkadot.io/submit/ 0' \
+-- \
+--chain=westend_moonbase_relay_testnet \
+--name=INSERT_YOUR_RELAY_NODE_NAME \
+--sync=fast \
+--base-path=/data/relay \
+--state-pruning=2000 \
+--blocks-pruning=2000 \
+--telemetry-url='wss://telemetry.polkadot.io/submit/ 0' \
+--database paritydb
+docker update --restart=unless-stopped tanssi
 ```
 ### [Explorer](https://polkadot.js.org/apps/?rpc=wss://fraa-dancebox-rpc.a.dancebox.tanssi.network#/extrinsics)
 ### [Check telemetry](https://telemetry.polkadot.io/#list/0x27aafd88e5921f5d5c6aebcd728dacbbf5c2a37f63e2eda301f8e0def01c43ea)
