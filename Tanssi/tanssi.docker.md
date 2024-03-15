@@ -21,7 +21,7 @@ docker pull moondancelabs/tanssi
 Please change `INSERT_YOUR_TANSSI_NODE_NAME` to your name
 
 ```
-docker run --network="host" -v "/var/lib/dancebox:/data" \
+docker run --name tanssi --network="host" -d -v "/var/lib/dancebox:/data" \
 -u $(id -u ${USER}):$(id -g ${USER}) \
 moondancelabs/tanssi \
 --chain=dancebox \
