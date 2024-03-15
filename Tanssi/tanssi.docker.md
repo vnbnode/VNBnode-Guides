@@ -55,6 +55,7 @@ docker logs -f tanssi
 ## Update Node
 ```
 docker stop tanssi
+docker rm tanssi
 docker pull moondancelabs/tanssi
 ```
 - Please change `INSERT_YOUR_TANSSI_NODE_NAME` to your name
