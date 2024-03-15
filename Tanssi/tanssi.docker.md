@@ -52,7 +52,12 @@ docker update --restart=unless-stopped tanssi
 ```
 docker logs -f tanssi
 ```
-
+## Update Node
+```
+docker stop tanssi
+docker pull moondancelabs/tanssi
+docker restart tanssi
+```
 ### [Explorer](https://polkadot.js.org/apps/?rpc=wss://fraa-dancebox-rpc.a.dancebox.tanssi.network#/extrinsics)
 ### [Check telemetry](https://telemetry.polkadot.io/#list/0x27aafd88e5921f5d5c6aebcd728dacbbf5c2a37f63e2eda301f8e0def01c43ea)
 
