@@ -98,6 +98,14 @@ curl http://127.0.0.1:9944 -H \
     "params": []
   }'
 ```
+## Update New Version
+```
+systemctl stop tanssi.service
+wget https://github.com/moondance-labs/tanssi/releases/download/v0.5.1/tanssi-node && \
+chmod +x ./tanssi-node
+mv ./tanssi-node /var/lib/tanssi-data
+systemctl restart tanssi.service
+```
 ## Thank to support VNBnode.
 ### Visit us at:
 
