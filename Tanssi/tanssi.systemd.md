@@ -104,7 +104,9 @@ systemctl stop tanssi.service
 wget https://github.com/moondance-labs/tanssi/releases/download/v0.5.1/tanssi-node && \
 chmod +x ./tanssi-node
 mv ./tanssi-node /var/lib/tanssi-data
-systemctl restart tanssi.service
+```
+```
+systemctl restart tanssi.service && journalctl -f -u tanssi.service
 ```
 ## Thank to support VNBnode.
 ### Visit us at:
