@@ -139,10 +139,10 @@ cd lava
 ```
 ```php
 # This is just sample command, Please change to the correct version
-git checkout v0.32.x
+git checkout v1.0.0
 ```
 ```php
-export LAVA_BINARY=lavad
+export LAVA_BINARY=lavap
 make install
 ```
 ```php
