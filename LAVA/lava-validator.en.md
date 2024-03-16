@@ -92,6 +92,10 @@ lavap tx pairing unfreeze LAV1,ETH1 --from your-wallet-name --gas-prices 0.1ulav
 ```
 ### Upgradable Lava binaries
 ```php
+sudo systemctl stop cosmovisor
+sudo systemctl stop lavap
+```
+```php
 cd $HOME
 rm -rf lava
 git clone https://github.com/lavanet/lava.git
