@@ -125,6 +125,12 @@ sudo docker run -p 1600:1600 -p 6000:6000/tcp -p 6000:6000/udp -it -d -w /data -
 
 <table><thead><tr><th width="112">Container ID</th><th width="80">Image</th><th width="121">Command</th><th width="93">Created</th><th width="83">Status</th><th width="81">Ports</th><th>Names</th></tr></thead><tbody><tr><td>f00f11223344</td><td>my-image</td><td>"/bin/bash"</td><td>10 minutes ago</td><td>Up 10 minutes</td><td></td><td>my-container</td></tr></tbody></table>
 
+## Check Status Node
+
+```
+tail -f moi/log/3*
+```
+
 ## Thank to support VNBnode.
 ### Visit us at:
 
