@@ -75,9 +75,9 @@ mkdir /cess
 ```
 ### 1. Install
 ```
-wget https://github.com/CESSProject/cess-nodeadm/archive/v0.5.3.tar.gz
-tar -xvf v0.5.3.tar.gz
-cd cess-nodeadm-0.5.3
+wget https://github.com/CESSProject/cess-nodeadm/archive/v0.5.5.tar.gz
+tar -xvf v0.5.5.tar.gz
+cd cess-nodeadm-0.5.5
 ./install.sh
 ```
 ### 2. Set up Configuration
