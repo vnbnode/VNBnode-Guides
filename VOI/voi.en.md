@@ -247,7 +247,7 @@ tail -f /var/lib/algorand/node.log
 - https://voi-node-info.boeieruurd.com/
 - https://voirewards.com/
 
-## Upgrade new version
+### 21/ Upgrade new version
 ```
 source ~/.bashrc
 sudo apt update
@@ -258,7 +258,7 @@ goal version -v
 goal node status
 sudo systemctl status voi
 ```
-### 21/ Renew keys
+### 22/ Renew keys
 ```
 getaddress() {
   if [ "$addr" == "" ]; then echo -ne "\nNote: Completing this will remember your address until you log out. "; else echo -ne "\nNote: Using previously entered address. "; fi; echo -e "To forget the address, press Ctrl+C and enter the command:\n\tunset addr\n";
