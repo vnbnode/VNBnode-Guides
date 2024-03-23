@@ -66,7 +66,7 @@ docker run --name tanssi --network="host" -d -v "$HOME/dancebox:/data" \
 moondancelabs/tanssi \
 --chain=dancebox \
 --name=INSERT_YOUR_TANSSI_NODE_NAME \
---sync=warp \
+--sync=full \
 --base-path=/data/para \
 --state-pruning=2000 \
 --blocks-pruning=2000 \
