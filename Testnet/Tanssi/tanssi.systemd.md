@@ -101,10 +101,12 @@ curl http://127.0.0.1:9944 -H \
 ## Update New Version
 ```
 systemctl stop tanssi.service
-rm tanssi-node
-https://github.com/moondance-labs/tanssi/releases/download/v0.5.2/tanssi-node && \
+
+wget https://github.com/moondance-labs/tanssi/releases/download/v0.5.2/tanssi-node && \
 chmod +x ./tanssi-node
 mv ./tanssi-node /var/lib/tanssi-data
+systemctl restart tanssi.service
+journalctl -f -u tanssi.service
 ```
 ```
 systemctl restart tanssi.service && journalctl -f -u tanssi.service
