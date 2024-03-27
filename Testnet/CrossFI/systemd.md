@@ -5,9 +5,9 @@ Chain ID: `crossfi-evm-testnet-1`
 
 |   Node Type   |      RAM     |   STORAGE   |
 |  :---------:  | :-----------:| :----------:|
-| **Validator** |      32G     |  500GB-2TB* | 
-|   **Full**    |      16G     |  2TB        |
-|  **Default**  |      16G     |  1TB        |
+| **Validator** |      32 G    |  500GB-2TB* | 
+|   **Full**    |      16 G    |  2 TB       |
+|  **Default**  |      16 G    |  1 TB       |
 
 ### Update and install packages for compiling
 ```
@@ -32,6 +32,33 @@ mv bin/crossfid $HOME/.mineplex-chain/cosmovisor/genesis/bin/
 rm -rf build
 sudo ln -s $HOME/.mineplex-chain/cosmovisor/genesis $HOME/.mineplex-chain/cosmovisor/current -f
 sudo ln -s $HOME/.mineplex-chain/cosmovisor/current/bin/crossfid /usr/local/bin/crossfid -f
+```
+
+### Cosmovisor Setup
+```
+go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
+```
+```
+sudo tee /etc/systemd/system/crossfi.service > /dev/null << EOF
+[Unit]
+Description=crossfi node service
+After=network-online.target
+ 
+[Service]
+User=$USER
+ExecStart=$(which cosmovisor) run start
+Restart=on-failure
+RestartSec=10
+LimitNOFILE=65535
+Environment="DAEMON_HOME=$HOME/.mineplex-chain"
+Environment="DAEMON_NAME=crossfid"
+Environment="UNSAFE_SKIP_BACKUP=true"
+ 
+[Install]
+WantedBy=multi-user.target
+EOF
+sudo systemctl daemon-reload
+sudo systemctl enable crossfi
 ```
 
 ### Initialize Node
@@ -76,25 +103,6 @@ sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.
 sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:23917\"%; s%^address = \":8080\"%address = \":23980\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:23990\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:23991\"%; s%:8545%:23945%; s%:8546%:23946%; s%:6065%:23965%" $HOME/.mineplex-chain/config/app.toml
 ```
 
-### Create service
-```
-sudo tee /etc/systemd/system/crossfid.service > /dev/null <<EOF
-[Unit]
-Description=CrossFI Daemon
-After=network-online.target
-[Service]
-User=$USER
-ExecStart=$(which crossfid) start
-Restart=always
-RestartSec=3
-LimitNOFILE=65535
-[Install]
-WantedBy=multi-user.target
-EOF
-sudo systemctl daemon-reload
-sudo systemctl enable crossfid
-```
-
 ### Snapshot
 ```
 curl -L https://snap.nodex.one/crossfi-testnet/crossfi-latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.mineplex-chain
@@ -103,8 +111,8 @@ curl -L https://snap.nodex.one/crossfi-testnet/crossfi-latest.tar.lz4 | tar -Ilz
 
 ### Start Node
 ```
-sudo systemctl start crossfid
-journalctl -u crossfid -f
+sudo systemctl start crossfi
+journalctl -u crossfi -f
 ```
 
 ## Thank to support VNBnode.

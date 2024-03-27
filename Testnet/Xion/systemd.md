@@ -6,7 +6,7 @@ Chain ID: `xion-testnet-1`
 |   SPEC      |       Recommend          |
 | :---------: | :-----------------------:|
 |   **CPU**   |        4 Cores           |
-|   **RAM**   |        16 GB             |
+|   **RAM**   |        4 GB             |
 |   **SSD**   |        200 GB            |
 | **NETWORK** |        100 Mbps          |
 
@@ -32,6 +32,40 @@ git clone https://github.com/burnt-labs/xion.git
 cd xion
 git checkout v0.3.4
 make build
+mkdir -p $HOME/.xiond/cosmovisor/genesis/bin
+mv build/xiond $HOME/.xiond/cosmovisor/genesis/bin/
+rm -rf build
+sudo ln -s $HOME/.xiond/cosmovisor/genesis $HOME/.xiond/cosmovisor/current -f
+sudo ln -s $HOME/.xiond/cosmovisor/current/bin/xiond /usr/local/bin/xiond -f
+```
+
+### Cosmovisor Setup
+```
+go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
+```
+
+```
+sudo tee /etc/systemd/system/xion.service > /dev/null << EOF
+[Unit]
+Description=xion node service
+After=network-online.target
+ 
+[Service]
+User=$USER
+ExecStart=$(which cosmovisor) run start
+Restart=on-failure
+RestartSec=10
+LimitNOFILE=65535
+Environment="DAEMON_HOME=$HOME/.xiond"
+Environment="DAEMON_NAME=xiond"
+Environment="UNSAFE_SKIP_BACKUP=true"
+Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:$HOME/.xiond/cosmovisor/current/bin"
+ 
+[Install]
+WantedBy=multi-user.target
+EOF
+sudo systemctl daemon-reload
+sudo systemctl enable xion
 ```
 
 ### Initialize Node
@@ -76,25 +110,6 @@ sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.
 sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:22317\"%; s%^address = \":8080\"%address = \":22380\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:22390\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:22391\"%; s%:8545%:22345%; s%:8546%:22346%; s%:6065%:22365%" $HOME/.xiond/config/app.toml
 ```
 
-### Create service
-```
-sudo tee /etc/systemd/system/xiond.service > /dev/null <<EOF
-[Unit]
-Description=Xion Daemon
-After=network-online.target
-[Service]
-User=$USER
-ExecStart=$(which xiond) start
-Restart=always
-RestartSec=3
-LimitNOFILE=65535
-[Install]
-WantedBy=multi-user.target
-EOF
-sudo systemctl daemon-reload
-sudo systemctl enable xiond
-```
-
 ### Snapshot
 ```
 curl -L https://snap.nodex.one/xion-testnet/xion-latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.xiond
@@ -103,8 +118,8 @@ curl -L https://snap.nodex.one/xion-testnet/xion-latest.tar.lz4 | tar -Ilz4 -xf 
 
 ### Start Node
 ```
-sudo systemctl restart xiond
-journalctl -u xiond -f
+sudo systemctl restart xion
+journalctl -u xion -f
 ```
 
 ## Thank to support VNBnode.

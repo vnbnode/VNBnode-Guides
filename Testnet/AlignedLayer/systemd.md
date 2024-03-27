@@ -34,6 +34,33 @@ sudo ln -s $HOME/.alignedlayer/cosmovisor/genesis $HOME/.alignedlayer/cosmovisor
 sudo ln -s $HOME/.alignedlayer/cosmovisor/current/bin/alignedlayerd /usr/local/bin/alignedlayerd -f
 ```
 
+### Cosmovisor Setup
+```
+go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
+```
+```
+sudo tee /etc/systemd/system/alignedlayer.service > /dev/null << EOF
+[Unit]
+Description=alignedlayer node service
+After=network-online.target
+ 
+[Service]
+User=$USER
+ExecStart=$(which cosmovisor) run start
+Restart=on-failure
+RestartSec=10
+LimitNOFILE=65535
+Environment="DAEMON_HOME=$HOME/.alignedlayer"
+Environment="DAEMON_NAME=alignedlayerd"
+Environment="UNSAFE_SKIP_BACKUP=true"
+ 
+[Install]
+WantedBy=multi-user.target
+EOF
+sudo systemctl daemon-reload
+sudo systemctl enable alignedlayer
+```
+
 ### Initialize Node
 Replace `Name` with your own moniker
 ```
@@ -79,25 +106,6 @@ sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.
 sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:24217\"%; s%^address = \":8080\"%address = \":24280\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:24290\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:24291\"%; s%:8545%:24245%; s%:8546%:24246%; s%:6065%:24265%" $HOME/.alignedlayer/config/app.toml
 ```
 
-### Create service
-```
-sudo tee /etc/systemd/system/alignedlayerd.service > /dev/null <<EOF
-[Unit]
-Description=Alignedlayer Daemon
-After=network-online.target
-[Service]
-User=$USER
-ExecStart=$(which alignedlayerd) start
-Restart=always
-RestartSec=3
-LimitNOFILE=65535
-[Install]
-WantedBy=multi-user.target
-EOF
-sudo systemctl daemon-reload
-sudo systemctl enable alignedlayerd
-```
-
 ### Snapshot
 ```
 curl -L https://snap.nodex.one/alignedlayer-testnet/alignedlayer-latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.alignedlayer
@@ -107,7 +115,7 @@ curl -L https://snap.nodex.one/alignedlayer-testnet/alignedlayer-latest.tar.lz4 
 ### Start Node
 ```
 sudo systemctl start alignedlayer
-journalctl -u alignedlayerd -f
+journalctl -u alignedlayer -f
 ```
 
 ### Create wallet
