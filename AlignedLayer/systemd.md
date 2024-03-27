@@ -129,6 +129,8 @@ alignedlayerd keys add wallet
 
 ### Explorer: https://testnet.alignedlayer.explorers.guru/validators
 
+### Telegram: https://t.me/aligned_layer
+
 ### Create validator
 ```
 cd aligned_layer_tendermint
