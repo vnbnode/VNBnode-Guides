@@ -76,7 +76,7 @@ sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.
 sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:22317\"%; s%^address = \":8080\"%address = \":22380\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:22390\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:22391\"%; s%:8545%:22345%; s%:8546%:22346%; s%:6065%:22365%" $HOME/.xiond/config/app.toml
 ```
 
-## Create service
+### Create service
 ```
 sudo tee /etc/systemd/system/xiond.service > /dev/null <<EOF
 [Unit]

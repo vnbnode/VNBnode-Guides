@@ -34,44 +34,15 @@ sudo ln -s $HOME/.mineplex-chain/cosmovisor/genesis $HOME/.mineplex-chain/cosmov
 sudo ln -s $HOME/.mineplex-chain/cosmovisor/current/bin/crossfid /usr/local/bin/crossfid -f
 ```
 
-### Cosmovisor Setup
-```
-go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
-```
-```
-sudo tee /etc/systemd/system/crossfi.service > /dev/null << EOF
-[Unit]
-Description=crossfi node service
-After=network-online.target
- 
-[Service]
-User=$USER
-ExecStart=$(which cosmovisor) run start
-Restart=on-failure
-RestartSec=10
-LimitNOFILE=65535
-Environment="DAEMON_HOME=$HOME/.mineplex-chain"
-Environment="DAEMON_NAME=crossfid"
-Environment="UNSAFE_SKIP_BACKUP=true"
- 
-[Install]
-WantedBy=multi-user.target
-EOF
-```
-```
-sudo systemctl daemon-reload
-sudo systemctl enable crossfi
-```
-
 ### Initialize Node
+Replace `Your moniker` with your own moniker
+```
+MONIKER="Your moniker"
+```
 ```
 crossfid config chain-id crossfi-evm-testnet-1
 crossfid config keyring-backend test
 crossfid config node tcp://localhost:23957
-```
-Replace `Your moniker` with your own moniker
-```
-MONIKER="Your moniker"
 ```
 ```
 crossfid init $MONIKER --chain-id crossfi-evm-testnet-1
@@ -105,6 +76,25 @@ sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.
 sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:23917\"%; s%^address = \":8080\"%address = \":23980\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:23990\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:23991\"%; s%:8545%:23945%; s%:8546%:23946%; s%:6065%:23965%" $HOME/.mineplex-chain/config/app.toml
 ```
 
+### Create service
+```
+sudo tee /etc/systemd/system/crossfid.service > /dev/null <<EOF
+[Unit]
+Description=CrossFI Daemon
+After=network-online.target
+[Service]
+User=$USER
+ExecStart=$(which crossfid) start
+Restart=always
+RestartSec=3
+LimitNOFILE=65535
+[Install]
+WantedBy=multi-user.target
+EOF
+sudo systemctl daemon-reload
+sudo systemctl enable crossfid
+```
+
 ### Snapshot
 ```
 curl -L https://snap.nodex.one/crossfi-testnet/crossfi-latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.mineplex-chain
@@ -113,8 +103,8 @@ curl -L https://snap.nodex.one/crossfi-testnet/crossfi-latest.tar.lz4 | tar -Ilz
 
 ### Start Node
 ```
-sudo systemctl start crossfi
-journalctl -u crossfi -f
+sudo systemctl start crossfid
+journalctl -u crossfid -f
 ```
 
 ## Thank to support VNBnode.

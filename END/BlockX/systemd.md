@@ -78,7 +78,7 @@ sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.
 sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:20517\"%; s%^address = \":8080\"%address = \":20580\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:20590\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:20591\"%; s%:8545%:20545%; s%:8546%:20546%; s%:6065%:20565%" $HOME/.blockxd/config/app.toml
 ```
 
-## Create service
+### Create service
 ```
 sudo tee /etc/systemd/system/blockxd.service > /dev/null <<EOF
 [Unit]
