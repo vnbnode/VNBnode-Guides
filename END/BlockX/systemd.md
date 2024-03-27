@@ -37,9 +37,9 @@ sudo ln -s $HOME/.blockxd/cosmovisor/current/bin/blockxd /usr/local/bin/blockxd 
 ```
 
 ### Initialize Node
-Replace `Your moniker` with your own moniker
+Replace `Name` with your own moniker
 ```
-MONIKER="Your moniker"
+MONIKER="Name-VNBnode"
 ```
 ```
 blockxd config chain-id blockx_50-1
