@@ -127,6 +127,8 @@ alignedlayerd keys add wallet
 
 ### Faucet: https://faucet.alignedlayer.com/
 
+### Explorer: https://testnet.alignedlayer.explorers.guru/validators
+
 ### Create validator
 ```
 cd aligned_layer_tendermint
@@ -151,6 +153,7 @@ alignedlayerd tx staking edit-validator \
 --gas-prices 0.0001stake \
 -y
 ```
+
 
 ## Thank to support VNBnode.
 ### Visit us at:
