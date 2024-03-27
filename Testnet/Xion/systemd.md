@@ -118,7 +118,7 @@ curl -L https://snap.nodex.one/xion-testnet/xion-latest.tar.lz4 | tar -Ilz4 -xf 
 
 ### Start Node
 ```
-sudo systemctl restart xion
+sudo systemctl start xion
 journalctl -u xion -f
 ```
 
