@@ -76,7 +76,6 @@ hedged config node tcp://localhost:24057
 ```
 hedged init $MONIKER --chain-id berberis-1
 ```
-```
 
 ### Download Genesis & Addrbook
 ```
