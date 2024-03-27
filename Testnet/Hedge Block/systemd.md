@@ -1,5 +1,5 @@
 # Hedge Block
-Chain ID: `berberis-1	`
+Chain ID: `berberis-1`
 
 ## Recommended Hardware Requirements
 
