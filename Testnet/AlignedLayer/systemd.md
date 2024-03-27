@@ -156,7 +156,6 @@ alignedlayerd tx staking edit-validator \
 -y
 ```
 
-
 ## Thank to support VNBnode.
 ### Visit us at:
 

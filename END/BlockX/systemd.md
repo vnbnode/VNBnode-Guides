@@ -36,35 +36,6 @@ sudo ln -s $HOME/.blockxd/cosmovisor/genesis $HOME/.blockxd/cosmovisor/current -
 sudo ln -s $HOME/.blockxd/cosmovisor/current/bin/blockxd /usr/local/bin/blockxd -f
 ```
 
-### Cosmovisor Setup
-```
-go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
-```
-```
-sudo tee /etc/systemd/system/blockx.service > /dev/null << EOF
-[Unit]
-Description=blockx node service
-After=network-online.target
- 
-[Service]
-User=$USER
-ExecStart=$(which cosmovisor) run start
-Restart=on-failure
-RestartSec=10
-LimitNOFILE=65535
-Environment="DAEMON_HOME=$HOME/.blockxd"
-Environment="DAEMON_NAME=blockxd"
-Environment="UNSAFE_SKIP_BACKUP=true"
- 
-[Install]
-WantedBy=multi-user.target
-EOF
-```
-```
-sudo systemctl daemon-reload
-sudo systemctl enable blockx
-```
-
 ### Initialize Node
 Replace `Your moniker` with your own moniker
 ```
@@ -107,6 +78,25 @@ sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.
 sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:20517\"%; s%^address = \":8080\"%address = \":20580\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:20590\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:20591\"%; s%:8545%:20545%; s%:8546%:20546%; s%:6065%:20565%" $HOME/.blockxd/config/app.toml
 ```
 
+## Create service
+```
+sudo tee /etc/systemd/system/blockxd.service > /dev/null <<EOF
+[Unit]
+Description=BlockX Daemon
+After=network-online.target
+[Service]
+User=$USER
+ExecStart=$(which blockxd) start
+Restart=always
+RestartSec=3
+LimitNOFILE=65535
+[Install]
+WantedBy=multi-user.target
+EOF
+sudo systemctl daemon-reload
+sudo systemctl enable blockxd
+```
+
 ### Snapshot
 ```
 curl -L https://snap.nodex.one/blockx-testnet/blockx-latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.blockxd
@@ -115,8 +105,8 @@ curl -L https://snap.nodex.one/blockx-testnet/blockx-latest.tar.lz4 | tar -Ilz4 
 
 ### Start Node
 ```
-sudo systemctl start blockx
-journalctl -u blockx -f
+sudo systemctl start blockxd
+journalctl -u blockxd -f
 ```
 
 ## Thank to support VNBnode.
