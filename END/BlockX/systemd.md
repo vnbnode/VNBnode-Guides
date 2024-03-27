@@ -1,5 +1,5 @@
 # BlockX
-Chain ID: `alignedlayer`
+Chain ID: `blockx_50-1`
 
 ## Recommended Hardware Requirements
 

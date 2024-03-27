@@ -64,9 +64,9 @@ sudo systemctl enable alignedlayer
 ```
 
 ### Initialize Node
-Replace `Your moniker` with your own moniker
+Replace `Name` with your own moniker
 ```
-MONIKER="Your moniker"
+MONIKER="Name-VNBnode"
 ```
 ```
 alignedlayerd init $MONIKER --chain-id alignedlayer
@@ -142,7 +142,7 @@ bash setup_validator.sh wallet 1050000stake
 ### Edit validator
 ```
 alignedlayerd tx staking edit-validator \
---new-moniker "new-moniker-name" \
+--new-moniker "Name-VNBnode" \
 --identity "06F5F34BD54AA6C7" \
 --website "https://vnbnode.com" \
 --details "VNBnode is a group of professional validators" \
