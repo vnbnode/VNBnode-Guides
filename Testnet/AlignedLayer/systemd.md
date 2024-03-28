@@ -159,14 +159,17 @@ Please create `validator.json`
 nano $HOME/aligned_layer_tendermint/setup_validator.sh
 ```
 Edit line`cat << EOF > $NODE_HOME/config/validator.json`
+
+![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/75c51844-5bf2-4dfb-a8d0-a288081a0023)
+
 ```
 {
 	"pubkey": $VALIDATOR_KEY,
 	"amount": "$STAKING_AMOUNT",
 	"moniker": $MONIKER,
 	"identity": "06F5F34BD54AA6C7",
- "website": "https://vnbnode.com",
- "details": "VNBnode is a group of professional validators",
+        "website": "https://vnbnode.com",
+        "details": "VNBnode is a group of professional validators",
 	"commission-rate": "0.1",
 	"commission-max-rate": "0.2",
 	"commission-max-change-rate": "0.01",
