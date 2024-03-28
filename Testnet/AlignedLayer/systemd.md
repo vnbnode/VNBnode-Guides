@@ -27,7 +27,7 @@ eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 ### Build binary
 ```
 cd $HOME
-rm -rf $HOME/aligned_layer_tendermint && git clone --depth 1 --branch v0.0.2 https://github.com/yetanotherco/aligned_layer_tendermint && cd $HOME/aligned_layer_tendermint/cmd/alignedlayerd && go build
+rm -rf $HOME/aligned_layer_tendermint && wget https://github.com/yetanotherco/aligned_layer_tendermint/releases/download/v0.1.0/alignedlayerd && chmod +x alignedlayerd
 mkdir -p $HOME/.alignedlayer/cosmovisor/genesis/bin
 mv alignedlayerd $HOME/.alignedlayer/cosmovisor/genesis/bin/
 sudo ln -s $HOME/.alignedlayer/cosmovisor/genesis $HOME/.alignedlayer/cosmovisor/current -f
