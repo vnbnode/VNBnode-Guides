@@ -154,13 +154,13 @@ nano $HOME/aligned_layer_tendermint/validator.json
     "min-self-delegation": "1"
 }
 ```
-```
-nano $HOME/aligned_layer_tendermint/setup_validator.sh
-```
 Edit line`cat << EOF > $NODE_HOME/config/validator.json`
 
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/75c51844-5bf2-4dfb-a8d0-a288081a0023)
 
+```
+nano $HOME/aligned_layer_tendermint/setup_validator.sh
+```
 ```
 {
 	"pubkey": $VALIDATOR_KEY,
