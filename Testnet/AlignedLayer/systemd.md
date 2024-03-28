@@ -12,53 +12,15 @@ Chain ID: `alignedlayer`
 
 ### Update and install packages for compiling
 ```
-sudo apt update
-sudo apt-get install git curl build-essential make jq gcc snapd chrony lz4 tmux unzip bc -y
-```
-
-### Install Go
-```
-sudo rm -rf /usr/local/go
-curl -Ls https://go.dev/dl/go1.21.7.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
-eval $(echo 'export PATH=$PATH:/usr/local/go/bin' | sudo tee /etc/profile.d/golang.sh)
-eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
+cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/update-binary.sh)
 ```
 
 ### Build binary
 ```
 cd $HOME
 rm -rf $HOME/aligned_layer_tendermint && git clone https://github.com/yetanotherco/aligned_layer_tendermint.git && wget https://github.com/yetanotherco/aligned_layer_tendermint/releases/download/v0.1.0/alignedlayerd && chmod +x alignedlayerd
-mkdir -p $HOME/.alignedlayer/cosmovisor/genesis/bin
-mv alignedlayerd $HOME/.alignedlayer/cosmovisor/genesis/bin/
-sudo ln -s $HOME/.alignedlayer/cosmovisor/genesis $HOME/.alignedlayer/cosmovisor/current -f
-sudo ln -s $HOME/.alignedlayer/cosmovisor/current/bin/alignedlayerd /usr/local/bin/alignedlayerd -f
-```
-
-### Cosmovisor Setup
-```
-go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
-```
-```
-sudo tee /etc/systemd/system/alignedlayer.service > /dev/null << EOF
-[Unit]
-Description=alignedlayer node service
-After=network-online.target
- 
-[Service]
-User=$USER
-ExecStart=$(which cosmovisor) run start
-Restart=on-failure
-RestartSec=10
-LimitNOFILE=65535
-Environment="DAEMON_HOME=$HOME/.alignedlayer"
-Environment="DAEMON_NAME=alignedlayerd"
-Environment="UNSAFE_SKIP_BACKUP=true"
- 
-[Install]
-WantedBy=multi-user.target
-EOF
-sudo systemctl daemon-reload
-sudo systemctl enable alignedlayer
+mv alignedlayerd $HOME/go/bin/
+alignedlayerd version
 ```
 
 ### Initialize Node
@@ -106,12 +68,31 @@ sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://0.0.0.0:
 sed -i -e "s%^address = \"tcp://localhost:1317\"%address = \"tcp://0.0.0.0:24217\"%; s%^address = \":8080\"%address = \":24280\"%; s%^address = \"localhost:9090\"%address = \"0.0.0.0:24290\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:24291\"%; s%:8545%:24245%; s%:8546%:24246%; s%:6065%:24265%" $HOME/.alignedlayer/config/app.toml
 ```
 
+### Create service
+```
+sudo tee /etc/systemd/system/alignedlayerd.service > /dev/null <<EOF
+[Unit]
+Description=alignedlayerd Daemon
+After=network-online.target
+[Service]
+User=$USER
+ExecStart=$(which alignedlayerd) start
+Restart=always
+RestartSec=3
+LimitNOFILE=65535
+[Install]
+WantedBy=multi-user.target
+EOF
+sudo systemctl daemon-reload
+sudo systemctl enable alignedlayerd
+```
+
 ### Snapshot
 
 ### Start Node
 ```
-sudo systemctl start alignedlayer
-journalctl -u alignedlayer -f
+sudo systemctl start alignedlayerd
+journalctl -u alignedlayerd -f
 ```
 
 ### Create wallet
