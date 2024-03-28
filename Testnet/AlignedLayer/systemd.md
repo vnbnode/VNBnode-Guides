@@ -78,10 +78,6 @@ sed -i \
 ```
 
 ### Download Genesis & Addrbook
-```
-curl -Ls https://snap.nodex.one/alignedlayer-testnet/genesis.json > $HOME/.alignedlayer/config/genesis.json
-curl -Ls https://snap.nodex.one/alignedlayer-testnet/addrbook.json > $HOME/.alignedlayer/config/addrbook.json 
-```
 
 ### Configure
 ```
