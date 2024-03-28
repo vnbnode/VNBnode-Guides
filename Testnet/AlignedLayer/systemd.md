@@ -138,6 +138,9 @@ alignedlayerd tendermint show-validator
 
 Please create `validator.json`
 ```
+nano $HOME/aligned_layer_tendermint/validator.json
+```
+```
 {
     "pubkey": {"@type":"/cosmos.crypto.ed25519.PubKey","key":"xxxxxx"},
     "amount": "1000000stake",
