@@ -1,5 +1,5 @@
 
-## Snapshot (Automatically update daily)
+## Snapshot (Automatically updated daily)
 _Stop Node and Reset Date_
 ```
 sudo systemctl stop alignedlayer
