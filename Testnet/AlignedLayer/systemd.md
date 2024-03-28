@@ -119,7 +119,7 @@ alignedlayerd tendermint show-validator
 
 Please create `validator.json`
 ```
-nano $HOME/aligned_layer_tendermint/validator.json
+nano $HOME/.alignedlayer/config/validator.json
 ```
 ```
 {
