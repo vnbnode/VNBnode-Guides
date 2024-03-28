@@ -9,7 +9,7 @@ Chain ID: `alignedlayer`
 |   **RAM**   |        16 GB             |
 |   **SSD**   |        200 GB            |
 | **NETWORK** |        100 Mbps          |
-|   **Port**  | 24256,24257,24258 (Local please open)|
+|   **Port**  | 24256, 24257, 24258 (Local please open)|
 
 ### Update and install packages for compiling
 ```
