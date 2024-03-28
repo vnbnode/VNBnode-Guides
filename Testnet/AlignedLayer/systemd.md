@@ -176,6 +176,19 @@ alignedlayerd tx staking edit-validator \
 -y
 ```
 
+### Remove Node
+```
+cd $HOME
+sudo systemctl stop alignedlayer
+sudo systemctl disable alignedlayer
+sudo rm /etc/systemd/system/alignedlayer.service
+sudo systemctl daemon-reload
+sudo rm -f $(which alignedlayerd)
+sudo rm -rf $HOME/.alignedlayer
+sudo rm -rf $HOME/aligned_layer_tendermint
+sudo rm -rf $HOME/go
+```
+
 ## Thank to support VNBnode.
 ### Visit us at:
 
