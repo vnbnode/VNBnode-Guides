@@ -160,6 +160,7 @@ nano $HOME/setup_validator.sh
 ```
 ```
 bash setup_validator.sh wallet 1050000stake
+rm $HOME/setup_validator.sh
 ```
 
 ### Edit validator
