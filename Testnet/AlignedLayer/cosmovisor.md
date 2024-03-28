@@ -29,6 +29,8 @@ sudo ln -s $HOME/.alignedlayer/cosmovisor/current/bin/alignedlayerd /usr/local/b
 ### Cosmovisor Setup
 ```
 go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
+```
+```
 sudo tee /etc/systemd/system/alignedlayer.service > /dev/null << EOF
 [Unit]
 Description=alignedlayer node service
@@ -47,6 +49,8 @@ Environment="UNSAFE_SKIP_BACKUP=true"
 [Install]
 WantedBy=multi-user.target
 EOF
+```
+```
 sudo systemctl daemon-reload
 sudo systemctl enable alignedlayer
 ```
