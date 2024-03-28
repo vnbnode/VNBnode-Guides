@@ -121,7 +121,7 @@ alignedlayerd keys add wallet
 
 ### Faucet: https://faucet.alignedlayer.com/
 
-### Explorer: https://testnet.alignedlayer.explorers.guru/validators
+### Explorer: https://explorer.alignedlayer.com/alignedlayer
 
 ### Telegram: https://t.me/aligned_layer
 
