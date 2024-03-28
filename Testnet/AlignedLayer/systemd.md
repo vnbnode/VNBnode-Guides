@@ -18,7 +18,7 @@ cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/
 ### Build binary
 ```
 cd $HOME
-rm -rf $HOME/aligned_layer_tendermint && git clone https://github.com/yetanotherco/aligned_layer_tendermint.git && wget https://github.com/yetanotherco/aligned_layer_tendermint/releases/download/v0.1.0/alignedlayerd && chmod +x alignedlayerd
+rm -rf $HOME/aligned_layer_tendermint && wget https://github.com/yetanotherco/aligned_layer_tendermint/releases/download/v0.1.0/alignedlayerd && chmod +x alignedlayerd
 mv alignedlayerd $HOME/go/bin/
 alignedlayerd version
 ```
@@ -140,7 +140,9 @@ Edit line `cat << EOF > $NODE_HOME/config/validator.json`
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/75c51844-5bf2-4dfb-a8d0-a288081a0023)
 
 ```
-nano $HOME/aligned_layer_tendermint/setup_validator.sh
+cd $HOME && wget https://raw.githubusercontent.com/yetanotherco/aligned_layer_tendermint/main/setup_validator.sh
+chmod +x setup_validator.sh
+nano $HOME/setup_validator.sh
 ```
 ```
 {
