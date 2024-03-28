@@ -62,9 +62,9 @@ sudo systemctl enable crossfi
 ```
 
 ### Initialize Node
-Replace `Your moniker` with your own moniker
+Replace `Name-VNBnode` with your own moniker
 ```
-MONIKER="Your moniker"
+MONIKER="Name-VNBnode"
 ```
 ```
 crossfid config chain-id crossfi-evm-testnet-1
