@@ -78,6 +78,10 @@ sed -i \
 ```
 
 ### Download Genesis & Addrbook
+```
+curl -Ls https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/AlignedLayer/genesis.json $HOME/.alignedlayer/config/genesis.json
+curl -Ls https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/AlignedLayer/addrbook.json > $HOME/.alignedlayer/config/addrbook.json
+```
 
 ### Configure
 ```
