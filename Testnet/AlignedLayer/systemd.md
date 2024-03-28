@@ -69,6 +69,13 @@ MONIKER="Name-VNBnode"
 ```
 alignedlayerd init $MONIKER --chain-id alignedlayer
 ```
+```
+sed -i \
+  -e 's|^chain-id *=.*|chain-id = "alignedlayer"|' \
+  -e 's|^keyring-backend *=.*|keyring-backend = "test"|' \
+  -e 's|^node *=.*|node = "tcp://localhost:24257"|' \
+  $HOME/.alignedlayer/config/client.toml
+```
 
 ### Download Genesis & Addrbook
 ```
