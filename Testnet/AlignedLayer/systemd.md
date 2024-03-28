@@ -162,6 +162,15 @@ nano $HOME/setup_validator.sh
 bash setup_validator.sh wallet 1050000stake
 rm $HOME/setup_validator.sh
 ```
+### Command
+Delegate
+```
+alignedlayerd tx staking delegate $(alignedlayerd keys show wallet --bech val -a) 1000000stake --from wallet --chain-id alignedlayer --gas-adjustment 1.4 --gas auto --gas-prices 0.0001stake -y
+```
+Unjail
+```
+alignedlayerd tx slashing unjail --from wallet --chain-id alignedlayer --gas-adjustment 1.4 --gas auto --gas-prices 0.0001stake -y
+```
 
 ### Edit validator
 ```
