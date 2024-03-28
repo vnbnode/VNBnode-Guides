@@ -198,7 +198,6 @@ sudo rm /etc/systemd/system/alignedlayerd.service
 sudo systemctl daemon-reload
 sudo rm -f $(which alignedlayerd)
 sudo rm -rf $HOME/.alignedlayer
-sudo rm -rf $HOME/aligned_layer_tendermint
 ```
 
 ## Thank to support VNBnode.
