@@ -189,11 +189,11 @@ alignedlayerd tx staking edit-validator \
 ### Remove Node
 ```
 cd $HOME
-sudo systemctl stop alignedlayerd
-sudo systemctl disable alignedlayerd
-sudo rm /etc/systemd/system/alignedlayerd.service
+sudo systemctl stop alignedlayer
+sudo systemctl disable alignedlayer
+sudo rm /etc/systemd/system/alignedlayer.service
 sudo systemctl daemon-reload
-sudo rm -f $(which alignedlayerd)
+sudo rm -f $(which alignedlayer)
 sudo rm -rf $HOME/.alignedlayer
 ```
 
