@@ -135,6 +135,27 @@ cd $HOME
 cd aligned_layer_tendermint
 ```
 ```
+alignedlayerd tendermint show-validator
+```
+
+![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/133b30b7-b830-4802-beac-7d8296b95c70)
+
+Please create validator.json
+```
+{
+    "pubkey": {"@type":"/cosmos.crypto.ed25519.PubKey","key":"xxxxxx"},
+    "amount": "1000000stake",
+    "moniker": "Name-VNBnode",
+    "identity": "06F5F34BD54AA6C7",
+    "website": "https://vnbnode.com",
+    "details": "VNBnode is a group of professional validators",
+    "commission-rate": "0.1",
+    "commission-max-rate": "0.2",
+    "commission-max-change-rate": "0.01",
+    "min-self-delegation": "1"
+}
+```
+```
 bash setup_validator.sh wallet 1050000stake
 ```
 
