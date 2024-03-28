@@ -10,6 +10,8 @@ Chain ID: `alignedlayer`
 |   **SSD**   |        200 GB            |
 | **NETWORK** |        100 Mbps          |
 
+### Port 24256 ( Local please open port )
+
 ### Update and install packages for compiling
 ```
 cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/update-binary.sh)
