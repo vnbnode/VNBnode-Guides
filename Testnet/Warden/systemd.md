@@ -29,7 +29,7 @@ eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 cd $HOME
 rm -rf wardenprotocol
 git clone --depth 1 --branch v0.2.0 https://github.com/warden-protocol/wardenprotocol/
-cd wardenprotocol/warden/cmd/wardend
+cd wardenprotocol/cmd/wardend
 go build
 mv wardend $HOME/go/bin
 ```
