@@ -171,8 +171,7 @@ Unjail
 ```
 alignedlayerd tx slashing unjail --from wallet --chain-id alignedlayer --gas-adjustment 1.4 --gas auto --gas-prices 0.0001stake -y
 ```
-
-### Edit validator
+Edit validator
 ```
 alignedlayerd tx staking edit-validator \
 --new-moniker "Name-VNBnode" \
