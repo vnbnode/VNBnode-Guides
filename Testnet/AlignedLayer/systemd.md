@@ -49,7 +49,7 @@ curl -Ls https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Aligne
 ### Configure
 ```
 sed -i -e "s|^seeds *=.*|seeds = \"d1d43cc7c7aef715957289fd96a114ecaa7ba756@testnet-seeds.nodex.one:24210\"|" $HOME/.alignedlayer/config/config.toml
-sed -i -e 's|^persistent_peers *=.*|persistent_peers ="c355b86c882d05a83f84afba379291d7b954b28f@65.108.236.43:26656,b499b9eb88c1c78ae25fdc7c390090f7542160eb@167.235.12.38:26656,18e1adeadb8cc596375e4212288fcd00690df067@213.199.48.195:26656,d5f2890998932efb906eaa0070030ef3b5480a72@176.57.150.2:24256,6190cd77e6f17763fa6553f355bb4c8088560068@62.171.130.196:24256"|' $HOME/.alignedlayer/config/config.toml
+sed -i -e 's|^persistent_peers *=.*|persistent_peers ="c355b86c882d05a83f84afba379291d7b954b28f@65.108.236.43:26656,b499b9eb88c1c78ae25fdc7c390090f7542160eb@167.235.12.38:26656,18e1adeadb8cc596375e4212288fcd00690df067@213.199.48.195:26656,d5f2890998932efb906eaa0070030ef3b5480a72@176.57.150.2:24256,6190cd77e6f17763fa6553f355bb4c8088560068@62.171.130.196:24256,68f7bbbeaa79fe5d1043d67f0ad75c03fce8d078@109.199.118.239:24256"|' $HOME/.alignedlayer/config/config.toml
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.0001stake\"|" $HOME/.alignedlayer/config/app.toml
 ```
 
