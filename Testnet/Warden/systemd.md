@@ -31,6 +31,7 @@ rm -rf wardenprotocol
 git clone --depth 1 --branch v0.2.0 https://github.com/warden-protocol/wardenprotocol/
 cd wardenprotocol/cmd/wardend
 go build
+wget https://github.com/warden-protocol/wardenprotocol/releases/download/v0.2.0/wardend_Linux_x86_64.zip | unzip wardend_Linux_x86_64.zip
 mv wardend $HOME/go/bin
 ```
 
