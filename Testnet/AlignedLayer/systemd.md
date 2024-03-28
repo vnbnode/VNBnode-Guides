@@ -110,9 +110,6 @@ alignedlayerd keys add wallet
 ### Create validator
 ```
 cd $HOME
-cd aligned_layer_tendermint
-```
-```
 alignedlayerd tendermint show-validator
 ```
 
