@@ -2,7 +2,7 @@
 ## Snapshot (Updated daily)
 _Stop Node and Reset Date_
 ```
-sudo systemctl stop alignedlayer
+sudo systemctl stop alignedlayerd
 
 cp $HOME/.alignedlayer/data/priv_validator_state.json $HOME/.alignedlayer/priv_validator_state.json.backup
 
@@ -15,5 +15,5 @@ mv $HOME/.alignedlayer/priv_validator_state.json.backup $HOME/.alignedlayer/data
 ```
 _Restart Node_
 ```
-sudo systemctl restart alignedlayer && sudo journalctl -u alignedlayer -f --no-hostname -o cat
+sudo systemctl restart alignedlayerd && sudo journalctl -u alignedlayerd -f --no-hostname -o cat
 ```
