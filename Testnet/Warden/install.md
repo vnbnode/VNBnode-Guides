@@ -64,8 +64,8 @@ wardend init $MONIKER --chain-id alfama
 ```
 ### Download Genesis & Addrbook
 ```
-curl -Ls https://snap.nodex.one/warden-testnet/genesis.json > $HOME/.warden/config/genesis.json
-curl -Ls https://snap.nodex.one/warden-testnet/addrbook.json > $HOME/.warden/config/addrbook.json
+curl -Ls https://testnet-files.itrocket.net/warden/genesis.json > $HOME/.warden/config/genesis.json
+curl -Ls https://testnet-files.itrocket.net/warden/addrbook.json > $HOME/.warden/config/addrbook.json
 ```
 
 ### Configure
