@@ -1,5 +1,5 @@
 # PRYZM ZONE
-Chain ID: `indigo-1	`
+Chain ID: `indigo-1`
 
 ## Recommended Hardware Requirements
 
