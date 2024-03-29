@@ -119,7 +119,7 @@ journalctl -fu alignedlayer -o cat
 alignedlayerd keys add wallet
 ```
 
-### Create validator
+### Create validator.json
 ```
 cd $HOME
 alignedlayerd tendermint show-validator
@@ -145,6 +145,7 @@ nano $HOME/.alignedlayer/config/validator.json
     "min-self-delegation": "1"
 }
 ```
+### Proceed to create validation
 ```
 alignedlayerd tx staking create-validator $HOME/.alignedlayer/config/validator.json \
 --from wallet --chain-id alignedlayer \
