@@ -152,6 +152,7 @@ alignedlayerd tx staking create-validator $HOME/.alignedlayer/config/validator.j
 --gas-adjustment 1.4 \
 --gas auto \
 --gas-prices 0.0001stake
+--node tcp://rpc-node.alignedlayer.com:26657
 ```
 
 ### Command
