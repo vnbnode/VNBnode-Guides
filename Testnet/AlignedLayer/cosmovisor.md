@@ -125,15 +125,15 @@ cd $HOME
 alignedlayerd tendermint show-validator
 ```
 
-![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/133b30b7-b830-4802-beac-7d8296b95c70)
+![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/b64a2a03-e384-4b8b-b962-22bad6cfe422)
 
-Please create `validator.json`
+Please create `validator.json` replace {...} inside like below
 ```
 nano $HOME/.alignedlayer/config/validator.json
 ```
 ```
 {
-    "pubkey": {"@type":"/cosmos.crypto.ed25519.PubKey","key":"xxxxxx"},
+    "pubkey": {"@type":"/cosmos.crypto.ed25519.PubKey","key":"IkGeamll8JFsV5jqoT37JfI37Ey/viBTZJLvLv8hlF0="},
     "amount": "1000000stake",
     "moniker": "Name-VNBnode",
     "identity": "06F5F34BD54AA6C7",
