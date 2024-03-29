@@ -104,6 +104,12 @@ sudo systemctl start warden
 journalctl -u warden -f
 ```
 
+### Backup Validator
+```
+mkdir $HOME/backup
+cp $HOME/.warden/config/priv_validator_key.json $HOME/backup
+```
+
 ### Remove Node
 ```
 cd $HOME
