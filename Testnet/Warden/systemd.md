@@ -54,19 +54,8 @@ sed -i -e "s/^indexer *=.*/indexer = \"null\"/" $HOME/.warden/config/config.toml
 
 ### Custom Port
 ```
-sed -i.bak -e "s%:1317%:${WARDEN_PORT}317%g;
-s%:8080%:${WARDEN_PORT}080%g;
-s%:9090%:${WARDEN_PORT}090%g;
-s%:9091%:${WARDEN_PORT}091%g;
-s%:8545%:${WARDEN_PORT}545%g;
-s%:8546%:${WARDEN_PORT}546%g;
-s%:6065%:${WARDEN_PORT}065%g" $HOME/.warden/config/app.toml
-sed -i.bak -e "s%:26658%:${WARDEN_PORT}658%g;
-s%:26657%:${WARDEN_PORT}657%g;
-s%:6060%:${WARDEN_PORT}060%g;
-s%:26656%:${WARDEN_PORT}656%g;
-s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):${WARDEN_PORT}656\"%;
-s%:26660%:${WARDEN_PORT}660%g" $HOME/.warden/config/config.toml
+sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:24158\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:24157\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:24160\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:24156\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":24166\"%" $HOME/.warden/config/config.toml
+sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:24117\"%; s%^address = \":8080\"%address = \":24180\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:24190\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:24191\"%; s%:8545%:24145%; s%:8546%:24146%; s%:6065%:24165%" $HOME/.warden/config/app.toml
 ```
 
 ### Create service
