@@ -1,4 +1,5 @@
 # AlignedLayer
+
 ### Website: https://alignedlayer.com
 
 ### Telegram: https://t.me/aligned_layer
@@ -9,6 +10,8 @@
 
 ### Explorer: https://explorer.alignedlayer.com/alignedlayer
 
+## Chain ID: `alignedlayer`
+
 ## Recommended Hardware Requirements
 
 |   SPEC      |       Recommend          |
@@ -18,8 +21,6 @@
 |   **SSD**   |        200 GB            |
 | **NETWORK** |        100 Mbps          |
 |   **Port**  | 24256, 24257, 24258 (Local please open)|
-
-# Chain ID: `alignedlayer`
 
 ### Update and install packages for compiling
 ```
