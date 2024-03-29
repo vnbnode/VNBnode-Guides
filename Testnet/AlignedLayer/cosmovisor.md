@@ -1,5 +1,13 @@
 # AlignedLayer
-Chain ID: `alignedlayer`
+### Website: https://alignedlayer.com
+
+### Telegram: https://t.me/aligned_layer
+
+### Twitter: https://twitter.com/alignedlayer
+
+### Faucet: https://faucet.alignedlayer.com
+
+### Explorer: https://explorer.alignedlayer.com/alignedlayer
 
 ## Recommended Hardware Requirements
 
@@ -10,6 +18,8 @@ Chain ID: `alignedlayer`
 |   **SSD**   |        200 GB            |
 | **NETWORK** |        100 Mbps          |
 |   **Port**  | 24256, 24257, 24258 (Local please open)|
+
+# Chain ID: `alignedlayer`
 
 ### Update and install packages for compiling
 ```
@@ -107,12 +117,6 @@ journalctl -fu alignedlayer -o cat
 ```
 alignedlayerd keys add wallet
 ```
-
-### Faucet: https://faucet.alignedlayer.com/
-
-### Explorer: https://explorer.alignedlayer.com/alignedlayer
-
-### Telegram: https://t.me/aligned_layer
 
 ### Create validator
 ```
