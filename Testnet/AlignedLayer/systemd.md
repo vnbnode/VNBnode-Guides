@@ -71,9 +71,9 @@ sed -i -e "s%^address = \"tcp://localhost:1317\"%address = \"tcp://0.0.0.0:24217
 
 ### Create service
 ```
-sudo tee /etc/systemd/system/alignedlayerd.service > /dev/null <<EOF
+sudo tee /etc/systemd/system/alignedlayer.service > /dev/null <<EOF
 [Unit]
-Description=alignedlayerd Daemon
+Description=alignedlayer Daemon
 After=network-online.target
 [Service]
 User=$USER
@@ -85,7 +85,7 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 sudo systemctl daemon-reload
-sudo systemctl enable alignedlayerd
+sudo systemctl enable alignedlayer
 ```
 
 ### Snapshot
@@ -98,8 +98,8 @@ mv $HOME/.alignedlayer/priv_validator_state.json.backup $HOME/.alignedlayer/data
 
 ### Start Node
 ```
-sudo systemctl start alignedlayerd
-journalctl -u alignedlayerd -f
+sudo systemctl start alignedlayer
+journalctl -u alignedlayer -f
 ```
 
 ### Create wallet
