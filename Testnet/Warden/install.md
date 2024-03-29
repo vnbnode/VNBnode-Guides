@@ -26,6 +26,7 @@ mkdir -p $HOME/.warden/cosmovisor/genesis/bin
 mv wardend $HOME/.warden/cosmovisor/genesis/bin/
 sudo ln -s $HOME/.warden/cosmovisor/genesis $HOME/.warden/cosmovisor/current -f
 sudo ln -s $HOME/.warden/cosmovisor/current/bin/wardend /usr/local/bin/wardend -f
+cd $HOME
 ```
 
 ### Cosmovisor Setup
