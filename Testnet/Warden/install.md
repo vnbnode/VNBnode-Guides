@@ -20,7 +20,7 @@ cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/
 cd $HOME
 rm -rf wardenprotocol
 git clone --depth 1 --branch v0.2.0 https://github.com/warden-protocol/wardenprotocol/
-cd  wardenprotocol/cmd/wardend
+cd wardenprotocol/cmd/wardend
 go build
 mkdir -p $HOME/.warden/cosmovisor/genesis/bin
 mv wardend $HOME/.warden/cosmovisor/genesis/bin/
