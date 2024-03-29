@@ -10,13 +10,13 @@
 
 ### Discord: https://discord.gg/zrHsyVUnrR
 
-### Docs: https://docs.tanssi.network/
+### Docs: https://docs.tanssi.network
 
-### [Explorer](https://polkadot.js.org/apps/?rpc=wss://fraa-dancebox-rpc.a.dancebox.tanssi.network)
+### Explorer: https://polkadot.js.org/apps/?rpc=wss://fraa-dancebox-rpc.a.dancebox.tanssi.network
 
-### [Check telemetry](https://telemetry.polkadot.io/#list/0x27aafd88e5921f5d5c6aebcd728dacbbf5c2a37f63e2eda301f8e0def01c43ea)
+### Check telemetry: https://telemetry.polkadot.io/#list/0x27aafd88e5921f5d5c6aebcd728dacbbf5c2a37f63e2eda301f8e0def01c43ea
 
-### [Fill form](https://www.tanssi.network/block-producer-form)
+### Fill form: https://www.tanssi.network/block-producer-form
 
 ## Recommended Hardware Requirements 
 
