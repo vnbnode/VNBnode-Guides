@@ -29,7 +29,7 @@ sudo ln -s $HOME/.alignedlayer/cosmovisor/current/bin/alignedlayerd /usr/local/b
 ### Cosmovisor Setup
 ```
 go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
-sudo tee /etc/systemd/system/alignedlayer.service > /dev/null << EOF
+sudo tee /etc/systemd/system/alignedlayerd.service > /dev/null << EOF
 [Unit]
 Description=alignedlayer node service
 After=network-online.target
@@ -48,7 +48,7 @@ Environment="UNSAFE_SKIP_BACKUP=true"
 WantedBy=multi-user.target
 EOF
 sudo systemctl daemon-reload
-sudo systemctl enable alignedlayer
+sudo systemctl enable alignedlayerd
 ```
 
 ### Initialize Node
@@ -99,8 +99,8 @@ mv $HOME/.alignedlayer/priv_validator_state.json.backup $HOME/.alignedlayer/data
 
 ### Start Node
 ```
-sudo systemctl start alignedlayer
-journalctl -u alignedlayer -f
+sudo systemctl start alignedlayerd
+journalctl -fu alignedlayerd -o cat
 ```
 
 ### Create wallet
@@ -195,9 +195,9 @@ alignedlayerd tx staking edit-validator \
 ### Remove Node
 ```
 cd $HOME
-sudo systemctl stop alignedlayer
-sudo systemctl disable alignedlayer
-sudo rm /etc/systemd/system/alignedlayer.service
+sudo systemctl stop alignedlayerd
+sudo systemctl disable alignedlayerd
+sudo rm /etc/systemd/system/alignedlayerd.service
 sudo systemctl daemon-reload
 sudo rm -f $(which alignedlayer)
 sudo rm -rf $HOME/.alignedlayer
