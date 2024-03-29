@@ -199,6 +199,7 @@ sudo systemctl stop alignedlayer
 sudo systemctl disable alignedlayer
 sudo rm /etc/systemd/system/alignedlayer.service
 sudo systemctl daemon-reload
+sudo rm $HOME/go/bin/alignedlayerd
 sudo rm -f $(which alignedlayerd)
 sudo rm -rf $HOME/.alignedlayer
 ```
