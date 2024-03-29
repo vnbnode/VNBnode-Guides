@@ -6,7 +6,7 @@ Chain ID: `alfama`
 |   SPEC      |       Recommend          |
 | :---------: | :-----------------------:|
 |   **CPU**   |        4 Cores           |
-|   **RAM**   |        4 GB             |
+|   **RAM**   |        4 GB              |
 |   **SSD**   |        200 GB            |
 | **NETWORK** |        100 Mbps          |
 
@@ -22,36 +22,7 @@ rm -rf wardenprotocol
 git clone --depth 1 --branch v0.2.0 https://github.com/warden-protocol/wardenprotocol/
 cd wardenprotocol/cmd/wardend
 go build
-mkdir -p $HOME/.warden/cosmovisor/genesis/bin
-mv wardend $HOME/.warden/cosmovisor/genesis/bin/
-sudo ln -s $HOME/.warden/cosmovisor/genesis $HOME/.warden/cosmovisor/current -f
-sudo ln -s $HOME/.warden/cosmovisor/current/bin/wardend /usr/local/bin/wardend -f
-```
-
-### Cosmovisor Setup
-```
-go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
-sudo tee /etc/systemd/system/warden.service > /dev/null << EOF
-[Unit]
-Description=warden node service
-After=network-online.target
- 
-[Service]
-User=$USER
-ExecStart=$(which cosmovisor) run start
-Restart=on-failure
-RestartSec=10
-LimitNOFILE=65535
-Environment="DAEMON_HOME=$HOME/.warden"
-Environment="DAEMON_NAME=wardend"
-Environment="UNSAFE_SKIP_BACKUP=true"
-Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:$HOME/.warden/cosmovisor/current/bin"
-
-[Install]
-WantedBy=multi-user.target
-EOF
-sudo systemctl daemon-reload
-sudo systemctl enable warden
+mv wardend $HOME/go/bin
 ```
 
 ### Initialize Node
