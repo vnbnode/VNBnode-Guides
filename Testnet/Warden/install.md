@@ -117,6 +117,7 @@ sudo rm /etc/systemd/system/warden.service
 sudo systemctl daemon-reload
 sudo rm -f $(which warden)
 sudo rm -rf $HOME/.warden
+sudo rm -rf $HOME/wardenprotocol
 ```
 
 ## Thank to support VNBnode.
