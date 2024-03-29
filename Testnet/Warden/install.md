@@ -24,7 +24,7 @@ cd wardenprotocol/cmd/wardend
 go build
 chmod +x wardend
 mkdir -p $HOME/.warden/cosmovisor/genesis/bin
-mv alignedlayerd $HOME/.warden/cosmovisor/genesis/bin/
+mv wardend $HOME/.warden/cosmovisor/genesis/bin/
 sudo ln -s $HOME/.warden/cosmovisor/genesis $HOME/.warden/cosmovisor/current -f
 sudo ln -s $HOME/.warden/cosmovisor/current/bin/warden /usr/local/bin/warden -f
 cd $HOME
