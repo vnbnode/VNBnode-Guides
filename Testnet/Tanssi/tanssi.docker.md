@@ -1,5 +1,23 @@
 # Tanssi Docker Guide
 
+### Website: https://www.tanssi.network
+
+### Telegram (Tanssi Network Official): https://t.me/tanssiofficial 
+
+### Telegram (Tanssi Vietnam): https://t.me/tanssivietnam
+
+### Twitter: https://twitter.com/TanssiNetwork
+
+### Discord: https://discord.gg/zrHsyVUnrR
+
+### Docs: https://docs.tanssi.network/
+
+### [Explorer](https://polkadot.js.org/apps/?rpc=wss://fraa-dancebox-rpc.a.dancebox.tanssi.network)
+
+### [Check telemetry](https://telemetry.polkadot.io/#list/0x27aafd88e5921f5d5c6aebcd728dacbbf5c2a37f63e2eda301f8e0def01c43ea)
+
+### [Fill form](https://www.tanssi.network/block-producer-form)
+
 ## Recommended Hardware Requirements 
 
 |   SPEC	    |        Recommend          |
@@ -88,10 +106,6 @@ moondancelabs/tanssi \
 --database paritydb
 docker update --restart=unless-stopped tanssi
 ```
-### [Explorer](https://polkadot.js.org/apps/?rpc=wss://fraa-dancebox-rpc.a.dancebox.tanssi.network#/extrinsics)
-### [Check telemetry](https://telemetry.polkadot.io/#list/0x27aafd88e5921f5d5c6aebcd728dacbbf5c2a37f63e2eda301f8e0def01c43ea)
-
-### [Fill form](https://www.tanssi.network/block-producer-form)
 
 ## Thank to support VNBnode.
 ### Visit us at:
