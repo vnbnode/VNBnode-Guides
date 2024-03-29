@@ -69,15 +69,6 @@ s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):${WARDEN_PO
 s%:26660%:${WARDEN_PORT}660%g" $HOME/.warden/config/config.toml
 ```
 
-### Snapshot
-```
-cp $HOME/.warden/data/priv_validator_state.json $HOME/.warden/priv_validator_state.json.backup
-wardend tendermint unsafe-reset-all --home $HOME/.warden
-rm -rf $HOME/.warden/data $HOME/.warden/wasmPath
-curl https://testnet-files.itrocket.net/warden/snap_warden.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.warden
-mv $HOME/.warden/priv_validator_state.json.backup $HOME/.warden/data/priv_validator_state.json
-```
-
 ### Create service
 ```
 sudo tee /etc/systemd/system/warden.service > /dev/null <<EOF
@@ -96,6 +87,15 @@ WantedBy=multi-user.target
 EOF
 sudo systemctl daemon-reload
 sudo systemctl enable warden
+```
+
+### Snapshot
+```
+cp $HOME/.warden/data/priv_validator_state.json $HOME/.warden/priv_validator_state.json.backup
+wardend tendermint unsafe-reset-all --home $HOME/.warden
+rm -rf $HOME/.warden/data $HOME/.warden/wasmPath
+curl https://testnet-files.itrocket.net/warden/snap_warden.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.warden
+mv $HOME/.warden/priv_validator_state.json.backup $HOME/.warden/data/priv_validator_state.json
 ```
 
 ### Start Node
