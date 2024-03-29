@@ -78,6 +78,26 @@ curl https://testnet-files.itrocket.net/warden/snap_warden.tar.lz4 | lz4 -dc - |
 mv $HOME/.warden/priv_validator_state.json.backup $HOME/.warden/data/priv_validator_state.json
 ```
 
+### Create service
+```
+sudo tee /etc/systemd/system/warden.service > /dev/null <<EOF
+[Unit]
+Description=Warden node
+After=network-online.target
+[Service]
+User=$USER
+WorkingDirectory=$HOME/.warden
+ExecStart=$(which wardend) start --home $HOME/.warden
+Restart=on-failure
+RestartSec=5
+LimitNOFILE=65535
+[Install]
+WantedBy=multi-user.target
+EOF
+sudo systemctl daemon-reload
+sudo systemctl enable warden
+```
+
 ### Start Node
 ```
 sudo systemctl start warden
@@ -93,6 +113,7 @@ sudo rm /etc/systemd/system/warden.service
 sudo systemctl daemon-reload
 sudo rm -f $(which warden)
 sudo rm -rf $HOME/.warden
+sudo rm $HOME/go/bin/wardend
 sudo rm -rf $HOME/wardenprotocol
 ```
 
