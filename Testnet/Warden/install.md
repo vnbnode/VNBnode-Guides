@@ -106,6 +106,16 @@ sudo systemctl start warden
 journalctl -u warden -f
 ```
 
+### Remove Node
+```
+cd $HOME
+sudo systemctl stop warden
+sudo systemctl disable warden
+sudo rm /etc/systemd/system/warden.service
+sudo systemctl daemon-reload
+sudo rm -f $(which warden)
+sudo rm -rf $HOME/.warden
+```
 
 ## Thank to support VNBnode.
 ### Visit us at:
