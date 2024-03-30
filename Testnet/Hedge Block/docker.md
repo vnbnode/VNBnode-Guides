@@ -57,6 +57,7 @@ cp $HOME/hedge/berberis-1/data/priv_validator_state.json $HOME/hedge/priv_valida
 rm -rf $HOME/hedge/berberis-1/data
 SNAP_NAME=$(curl -s https://ss-t.hedge.nodestake.org/ | egrep -o ">20.*\.tar.lz4" | tr -d ">")
 curl -o - -L https://ss-t.hedge.nodestake.top/${SNAP_NAME}  | lz4 -c -d - | tar -x -C $HOME/hedge/berberis-1
+[[ -f $HOME/.hedge/data/upgrade-info.json ]] && cp $HOME/.hedge/data/upgrade-info.json $HOME/.hedge/cosmovisor/genesis/upgrade-info.json
 mv $HOME/hedge/priv_validator_state.json.backup $HOME/hedge/berberis-1/data/priv_validator_state.json
 ```
 
