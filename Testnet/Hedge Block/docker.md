@@ -24,7 +24,7 @@ curl -Ls https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Hedge/
 
 ### Setup Node
 ```
-docker run -d -p 9090:9090 -p 207:207 -p 206:206 -p 24017:24017 -v $HOME/hedge:/root/hedge --env-file $HOME/hedge/.env  --name hedge hedgeblock/berberis:v0.1
+docker run -d -p 24090:24090 -p 207:207 -p 206:206 -p 24017:24017 -v $HOME/hedge:/root/hedge --env-file $HOME/hedge/.env  --name hedge hedgeblock/berberis:v0.1
 ```
 
 ### Configure
