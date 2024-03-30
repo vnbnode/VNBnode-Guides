@@ -110,7 +110,8 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:24017\"
 
 ### Snapshot
 ```
-curl -L https://snap.nodex.one/hedge-testnet/hedge-latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.hedge
+SNAP_NAME=$(curl -s https://ss-t.hedge.nodestake.org/ | egrep -o ">20.*\.tar.lz4" | tr -d ">")
+curl -o - -L https://ss-t.hedge.nodestake.top/${SNAP_NAME}  | lz4 -c -d - | tar -x -C $HOME/.hedge
 [[ -f $HOME/.hedge/data/upgrade-info.json ]] && cp $HOME/.hedge/data/upgrade-info.json $HOME/.hedge/cosmovisor/genesis/upgrade-info.json
 ```
 
