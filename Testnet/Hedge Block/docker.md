@@ -55,9 +55,7 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:24017\"
 ```
 cp $HOME/hedge/berberis-1/data/priv_validator_state.json $HOME/hedge/priv_validator_state.json.backup
 rm -rf $HOME/hedge/berberis-1/data
-SNAP_NAME=$(curl -s https://ss-t.hedge.nodestake.org/ | egrep -o ">20.*\.tar.lz4" | tr -d ">")
-curl -o - -L https://ss-t.hedge.nodestake.top/${SNAP_NAME}  | lz4 -c -d - | tar -x -C $HOME/hedge/berberis-1
-[[ -f $HOME/.hedge/data/upgrade-info.json ]] && cp $HOME/.hedge/data/upgrade-info.json $HOME/.hedge/cosmovisor/genesis/upgrade-info.json
+curl -L https://snap.nodex.one/hedge-testnet/hedge-latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/hedge/berberis-1
 mv $HOME/hedge/priv_validator_state.json.backup $HOME/hedge/berberis-1/data/priv_validator_state.json
 ```
 
@@ -65,6 +63,19 @@ mv $HOME/hedge/priv_validator_state.json.backup $HOME/hedge/berberis-1/data/priv
 ```
 docker restart hedge
 docker logs -f hedge
+```
+
+### Backup Node
+```
+mkdir $HOME/backup
+cp $HOME/hedge/berberis-1/config/priv_validator_key.json $HOME/backup
+```
+
+### Remove Node
+```
+docker stop hedge
+docker rm hedge
+rm -rf $HOME/hedge
 ```
 
 ## Thank to support VNBnode.
