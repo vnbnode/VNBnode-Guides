@@ -110,15 +110,33 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:24017\"
 
 ### Snapshot
 ```
-SNAP_NAME=$(curl -s https://ss-t.hedge.nodestake.org/ | egrep -o ">20.*\.tar.lz4" | tr -d ">")
-curl -o - -L https://ss-t.hedge.nodestake.top/${SNAP_NAME}  | lz4 -c -d - | tar -x -C $HOME/.hedge
-[[ -f $HOME/.hedge/data/upgrade-info.json ]] && cp $HOME/.hedge/data/upgrade-info.json $HOME/.hedge/cosmovisor/genesis/upgrade-info.json
+cp $HOME/.hedge/data/priv_validator_state.json $HOME/.hedge/priv_validator_state.json.backup
+rm -rf $HOME/.hedge/data
+curl -L https://snap.nodex.one/hedge-testnet/hedge-latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.hedge
+mv $HOME/.hedge/priv_validator_state.json.backup $HOME/.hedge/data/priv_validator_state.json
 ```
 
 ### Start Node
 ```
 sudo systemctl start hedge
 journalctl -u hedge -f
+```
+
+### Backup Node
+```
+mkdir $HOME/backup
+cp $HOME/.hedge/config/priv_validator_key.json $HOME/backup
+```
+
+### Remove Node
+```
+cd $HOME
+sudo systemctl stop hedge
+sudo systemctl disable hedge
+sudo rm /etc/systemd/system/hedge.service
+sudo systemctl daemon-reload
+sudo rm -f $(which hedge)
+sudo rm -rf $HOME/.hedge
 ```
 
 ## Thank to support VNBnode.
