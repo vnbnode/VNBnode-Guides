@@ -12,7 +12,7 @@ Chain ID: `berberis-1`
 
 ### Update and install packages for compiling
 ```
-scd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/docker-install.sh)
+cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/docker-install.sh)
 ```
 
 ### Build binary
