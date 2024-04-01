@@ -67,8 +67,8 @@ docker logs -f hedge
 
 ### Backup Node
 ```
-mkdir $HOME/backup
-cp $HOME/hedge/berberis-1/config/priv_validator_key.json $HOME/backup
+mkdir $HOME/backup/hedge
+cp $HOME/hedge/berberis-1/config/priv_validator_key.json $HOME/backup/hedge
 ```
 
 ### Remove Node
