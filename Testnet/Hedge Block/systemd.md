@@ -124,8 +124,8 @@ journalctl -u hedge -f
 
 ### Backup Node
 ```
-mkdir $HOME/backup
-cp $HOME/.hedge/config/priv_validator_key.json $HOME/backup
+mkdir $HOME/backup/hedge
+cp $HOME/.hedge/config/priv_validator_key.json $HOME/backup/hedge
 ```
 
 ### Remove Node
