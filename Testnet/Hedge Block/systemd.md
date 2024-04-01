@@ -124,7 +124,7 @@ journalctl -u hedge -f
 
 ### Backup Node
 ```
-mkdir $HOME/backup/hedge
+mkdir -p $HOME/backup/hedge
 cp $HOME/.hedge/config/priv_validator_key.json $HOME/backup/hedge
 ```
 
