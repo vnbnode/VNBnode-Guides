@@ -95,8 +95,8 @@ journalctl -u warden -f
 
 ### Backup Validator
 ```
-mkdir $HOME/backup
-cp $HOME/.warden/config/priv_validator_key.json $HOME/backup
+mkdir -p $HOME/backup/warden
+cp $HOME/.warden/config/priv_validator_key.json $HOME/backup/warden
 ```
 
 ### Remove Node
