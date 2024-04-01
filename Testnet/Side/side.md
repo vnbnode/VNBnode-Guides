@@ -110,6 +110,24 @@ sudo systemctl start side
 journalctl -fu side -o cat
 ```
 
+### Backup Validator
+```
+mkdir -p $HOME/backup/side
+cp $HOME/.side/config/priv_validator_key.json $HOME/backup/side
+```
+
+### Remove Node
+```
+cd $HOME
+sudo systemctl stop side
+sudo systemctl disable side
+sudo rm /etc/systemd/system/side.service
+sudo systemctl daemon-reload
+sudo rm -f $(which side)
+sudo rm -rf $HOME/.side
+sudo rm -rf $HOME/sidechain
+```
+
 ## Thank to support VNBnode.
 ### Visit us at:
 
