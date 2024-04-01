@@ -182,8 +182,8 @@ alignedlayerd tx staking edit-validator \
 
 ### Backup Validator
 ```
-mkdir $HOME/backup
-cp $HOME/.alignedlayer/config/priv_validator_key.json $HOME/backup
+mkdir -p $HOME/backup/alignedlayer
+cp $HOME/.alignedlayer/config/priv_validator_key.json $HOME/backup/alignedlayer
 ```
 
 ### Remove Node
