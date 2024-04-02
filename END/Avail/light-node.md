@@ -18,6 +18,7 @@ cd $HOME && curl -o lightclient-pre-auto.sh https://raw.githubusercontent.com/vn
 
 ```
 systemctl stop availd.service
+rm-rf /root/avail-light
 git clone https://github.com/availproject/avail-light.git
 cd avail-light
 git checkout v1.7.10
