@@ -24,6 +24,8 @@ git clone https://github.com/availproject/avail-light.git
 cd avail-light
 git checkout v1.7.10
 cargo build --release
+```
+```
 systemctl restart availd.service && journalctl -f -u availd
 ```
 
