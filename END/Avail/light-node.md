@@ -1,4 +1,4 @@
-# Guide to run Light Client Avail Goldberg (Lastest Version 1.7.4)
+# Guide to run Light Client Avail Goldberg (Lastest Version 1.7.9)
 <p align="center">
   <img height="100" height="auto" src="https://github.com/vnbnode/binaries/blob/main/Projects/Avail/avail.png?raw=true">
 </p>
