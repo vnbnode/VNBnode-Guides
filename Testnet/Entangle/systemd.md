@@ -1,5 +1,5 @@
 # ENTANGLE
-Chain ID: `entangle_33133-1	`
+Chain ID: `entangle_33133-1`
 
 ## Recommended Hardware Requirements
 
