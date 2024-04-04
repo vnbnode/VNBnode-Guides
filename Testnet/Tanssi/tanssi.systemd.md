@@ -18,6 +18,10 @@ Tanssi, an appchain infrastructure protocol, is currently under construction to 
 
 ### Check telemetry: https://telemetry.polkadot.io/#list/0x27aafd88e5921f5d5c6aebcd728dacbbf5c2a37f63e2eda301f8e0def01c43ea
 
+### SubScan: https://dancebox.subscan.io
+
+### Staking: https://apps.tanssi.network/staking
+
 ### Fill form: https://www.tanssi.network/block-producer-form
 
 ## Recommended Hardware Requirements 
