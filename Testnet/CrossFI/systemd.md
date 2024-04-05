@@ -77,8 +77,8 @@ crossfid init $MONIKER --chain-id crossfi-evm-testnet-1
 
 ### Download Genesis & Addrbook
 ```
-curl -Ls https://snap.nodex.one/crossfi-testnet/genesis.json > $HOME/.mineplex-chain/config/genesis.json
-curl -Ls https://snap.nodex.one/crossfi-testnet/addrbook.json > $HOME/.mineplex-chain/config/addrbook.json
+curl -Ls https://snap.vnbnode.com/crossfi/genesis.json > $HOME/.mineplex-chain/config/genesis.json
+curl -Ls https://snap.vnbnode.com/crossfi/addrbook.json > $HOME/.mineplex-chain/config/addrbook.json
 ```
 
 ### Configure
@@ -105,8 +105,7 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:23917\"
 
 ### Snapshot
 ```
-curl -L https://snap.nodex.one/crossfi-testnet/crossfi-latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.mineplex-chain
-[[ -f $HOME/.mineplex-chain/data/upgrade-info.json ]] && cp $HOME/.mineplex-chain/data/upgrade-info.json $HOME/.mineplex-chain/cosmovisor/genesis/upgrade-info.json
+curl -L https://snap.vnbnode.com/crossfi/crossfi-evm-testnet-1_snapshot_latest.tar.lz4 | tar -I lz4 -xf - -C $HOME/.mineplex-chain/data
 ```
 
 ### Start Node
