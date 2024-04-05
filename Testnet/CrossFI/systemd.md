@@ -10,9 +10,9 @@
 |   **SSD**   |           1 TB            | 
 
 ## RPC, API, gRPC and Snapshot
-✅ RPC:  http:/109.199.118.239:23957
+✅ RPC:  http://109.199.118.239:23957/
 
-✅ API:  http:/109.199.118.239:23917
+✅ API:  http://109.199.118.239:23917/
 
 ✅ Auto Snapshot daily: 
 ```
