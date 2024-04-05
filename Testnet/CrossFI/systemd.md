@@ -1,21 +1,30 @@
-# CrossFi
-Chain ID: `crossfi-evm-testnet-1`
+# Crossfi testnet validator
+|        Chain ID       |    Port    |      Version     |
+|-----------------------|------------|------------------|
+| crossfi-evm-testnet-1 |     239    | v0.3.0-prebuild3 |
+# Minimum hardware
+|      Spec   |        Requirements       |
+| :---------: | :-----------------------: |
+|   **CPU**   |          8 Cores          |
+|   **RAM**   |           16 GB           |
+|   **SSD**   |           1 TB            | 
 
-## Recommended Hardware Requirements
+## RPC, API, gRPC and Snapshot
+✅ RPC:  http://crossfi.vnbnode.com:23957/
 
-|   Node Type   |      RAM     |   STORAGE   |
-|  :---------:  | :-----------:| :----------:|
-| **Validator** |      32 G    |  500GB-2TB* | 
-|   **Full**    |      16 G    |  2 TB       |
-|  **Default**  |      16 G    |  1 TB       |
+✅ API:  http://crossfi.vnbnode.com:23957/
 
-### Update and install packages for compiling
+✅ Auto Snapshot daily: 
+```
+https://github.com/vnbnode/VNBnode-Guides/blob/main/Testnet/CrossFI/snapshot.md
+```
+## Update and install packages for compiling
 ```
 sudo apt update
 sudo apt-get install git curl build-essential make jq gcc snapd chrony lz4 tmux unzip bc -y
 ```
 
-### Install Go
+## Install Go
 ```
 sudo rm -rf /usr/local/go
 curl -Ls https://go.dev/dl/go1.21.7.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
@@ -23,7 +32,7 @@ eval $(echo 'export PATH=$PATH:/usr/local/go/bin' | sudo tee /etc/profile.d/gola
 eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 ```
 
-### Build binary
+## Build binary
 ```
 cd $HOME
 wget https://github.com/crossfichain/crossfi-node/releases/download/v0.3.0-prebuild3/crossfi-node_0.3.0-prebuild3_linux_amd64.tar.gz && sudo mv crossfi-node_0.3.0-prebuild3_linux_amd64.tar.gz crossfid-v0.3.0.tar.gz && sudo tar -xvf crossfid-v0.3.0.tar.gz
@@ -34,7 +43,7 @@ sudo ln -s $HOME/.mineplex-chain/cosmovisor/genesis $HOME/.mineplex-chain/cosmov
 sudo ln -s $HOME/.mineplex-chain/cosmovisor/current/bin/crossfid /usr/local/bin/crossfid -f
 ```
 
-### Cosmovisor Setup
+## Cosmovisor Setup
 ```
 go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
 ```
@@ -61,7 +70,7 @@ sudo systemctl daemon-reload
 sudo systemctl enable crossfi
 ```
 
-### Initialize Node
+## Initialize Node
 Replace `Name-VNBnode` with your own moniker
 ```
 MONIKER="Name-VNBnode"
