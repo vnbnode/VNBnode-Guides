@@ -1,4 +1,8 @@
-
+Pruning	Indexer	Version Tag
+100/0/19	null	v2
+|  Pruning      |       Indexer          |
+| :---------: | :-----------------------:|
+|   **100/0/10**   |        null          |
 ## Snapshot (Updated daily)
 _Stop Node and Reset Date_
 ```
