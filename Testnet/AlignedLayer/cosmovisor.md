@@ -78,13 +78,13 @@ curl -Ls https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Aligne
 
 ### Configure
 ```
-sed -i -e "s|^seeds *=.*|seeds = \"d1d43cc7c7aef715957289fd96a114ecaa7ba756@testnet-seeds.nodex.one:24210\"|" $HOME/.alignedlayer/config/config.toml
-sed -i -e 's|^persistent_peers *=.*|persistent_peers ="d5f2890998932efb906eaa0070030ef3b5480a72@176.57.150.2:24256,6190cd77e6f17763fa6553f355bb4c8088560068@62.171.130.196:24256,68f7bbbeaa79fe5d1043d67f0ad75c03fce8d078@109.199.118.239:24256,2514706bb8a168d3e12e07c66e37a9b585abeeb4@37.60.232.236:24256"|' $HOME/.alignedlayer/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"68f7bbbeaa79fe5d1043d67f0ad75c03fce8d078@109.199.118.239:24256\"|" $HOME/.alignedlayer/config/config.toml
+peers=$(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/AlignedLayer/peers.txt)
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.alignedlayer/config/config.toml
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.0001stake\"|" $HOME/.alignedlayer/config/app.toml
 sed -i \
   -e 's|^chain-id *=.*|chain-id = "alignedlayer"|' \
   -e 's|^keyring-backend *=.*|keyring-backend = "test"|' \
-  -e 's|^node *=.*|node = "tcp://localhost:24257"|' \
   $HOME/.alignedlayer/config/client.toml
 sed -i \
   -e 's|^pruning *=.*|pruning = "custom"|' \
