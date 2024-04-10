@@ -1,34 +1,24 @@
 # Command OG
 
 ## Managing keys
+Generate new key
 ```
-evmosd keys add $WALLET_NAME
+evmosd keys add wallet
 ```
-Check sync
+Recover key
 ```
-evmosd status | jq .SyncInfo.catching_up
+evmosd keys add wallet --recover
 ```
-
-Node status
+List all key
 ```
-evmosd status | jq
+evmosd keys list
 ```
-
-Get your p2p peer address
+Query wallet balances
 ```
-echo $(evmosd tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.evmosd/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
-```
-
-Check balance
-```
-evmosd q bank balances $(evmosd keys show $WALLET_NAME -a) 
+evmosd q bank balances $(evmosd keys show wallet -a)
 ```
 
-Send token
-```
-evmosd tx bank send $WALLET_NAME <TO_WALLET> <AMOUNT>aevmos --gas=500000 --gas-prices=99999aevmos -y
-```
-
+## Managing validators
 Create validator
 ```
 evmosd tx staking create-validator \
@@ -48,20 +38,6 @@ evmosd tx staking create-validator \
   --gas=500000 --gas-prices=99999aevmos \
   -y
 ```
-
-Show validator
-```
-evmosd keys show $WALLET_NAME --bech val -a
-```
-
-Delegate
-```
-evmosd tx staking delegate $(evmosd keys show $WALLET_NAME --bech val -a)  10000000000000000aevmos --from $WALLET_NAME --gas auto --gas-adjustment 1.5 --gas-prices=99999aevmos --chain-id zgtendermint_9000-1 -y
-```
-Unjail
-```
-evmosd tx slashing unjail --from wallet --chain-id zgtendermint_9000-1 --gas-adjustment 1.4 --gas auto --gas-prices=99999aevmos -y
-```
 Edit validator
 ```
 evmosd tx staking edit-validator \
@@ -77,3 +53,98 @@ evmosd tx staking edit-validator \
 --gas=500000 --gas-prices=99999aevmos \
 -y
 ```
+Unjail
+```
+evmosd tx slashing unjail --from wallet --chain-id zgtendermint_9000-1 --gas-adjustment 1.4 --gas auto --gas-prices=99999aevmos -y
+```
+View validator details
+```
+evmosd keys show wallet --bech val -a
+```
+Query active validators
+```
+evmosd q staking validators -o json --limit=1000 \
+| jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' \
+| jq -r '.tokens + " - " + .description.moniker' \
+| sort -gr | nl
+```
+Query inactive validators
+```
+evmosd q staking validators -o json --limit=1000 \
+| jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' \
+| jq -r '.tokens + " - " + .description.moniker' \
+| sort -gr | nl
+```
+
+## Managing Tokens
+Delegate tokens to your validator
+```
+evmosd tx staking delegate $(evmosd keys show $WALLET_NAME --bech val -a)  10000000000000000aevmos --from $WALLET_NAME --gas=500000 --gas-prices=99999aevmos -y
+```
+Send token
+```
+evmosd tx bank send <WALLET> <TO_WALLET> <AMOUNT>aevmos --gas=500000 --gas-prices=99999aevmos -y
+```
+Withdraw reward from all validator
+```
+alignedlayerd tx distribution withdraw-all-rewards --from wallet --chain-id alignedlayer --gas-adjustment 1.4 --gas auto --gas-prices 0.0001stake -y
+```
+Withdraw reward and commission
+```
+alignedlayerd tx distribution withdraw-rewards $(alignedlayerd keys show wallet --bech val -a) --commission --from wallet --chain-id alignedlayer --gas-adjustment 1.4 --gas auto --gas-prices 0.0001stake -y
+```
+Redelegate to another validator
+```
+alignedlayerd tx staking redelegate $(alignedlayerd keys show wallet --bech val -a) <to-valoper-address> 1000000stake --from wallet --chain-id alignedlayer --gas-adjustment 1.4 --gas auto --gas-prices 0.0001stake -y
+```
+
+## Governance
+Query list proposal
+```
+alignedlayerd query gov proposals
+```
+View proposal by ID
+```
+alignedlayerd query gov proposal 1
+```
+Vote yes
+```
+alignedlayerd tx gov vote 1 yes --from wallet --chain-id alignedlayer --gas-adjustment 1.4 --gas auto --gas-prices 0.0001stake -y
+```
+Vote No
+```
+alignedlayerd tx gov vote 1 no --from wallet --chain-id alignedlayer --gas-adjustment 1.4 --gas auto --gas-prices 0.0001stake -y
+```
+Vote option asbtain
+```
+alignedlayerd tx gov vote 1 abstain --from wallet --chain-id alignedlayer --gas-adjustment 1.4 --gas auto --gas-prices 0.0001stake -y
+```
+Vote option NoWithVeto
+```
+alignedlayerd tx gov vote 1 NoWithVeto --from wallet --chain-id alignedlayer --gas-adjustment 1.4 --gas auto --gas-prices 0.0001stake -y
+```
+
+## Maintenance
+Check sync
+```
+evmosd status 2>&1 | jq .SyncInfo
+```
+Node status
+```
+evmosd status | jq
+```
+Get validator information
+```
+alignedlayerd status 2>&1 | jq .ValidatorInfo
+```
+Get your p2p peer address
+```
+echo $(evmosd tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.evmosd/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
+```
+Get peers live
+```
+curl -sS http://localhost:2157/net_info | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}'
+```
+
+
+
