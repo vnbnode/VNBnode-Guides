@@ -104,64 +104,6 @@ sudo systemctl start og
 journalctl -u og -f
 ```
 
-### Create wallet
-```
-evmosd keys add $WALLET_NAME
-evmosd keys list
-```
-
-### Faucet
-```
-echo "0x$(evmosd debug addr $(evmosd keys show wallet -a) | grep hex | awk '{print $3}')"
-```
-![image](https://github.com/vnbnode/docs/assets/76662222/007a32ee-fc07-454e-b8ee-f9202e722e07)
-
-[Link Faucet](https://faucet.0g.ai)
-
-### Create validator
-```
-evmosd tx staking create-validator \
-  --amount=10000000000000000aevmos \
-  --commission-max-change-rate 0.01 \
-  --commission-max-rate 0.1 \
-  --commission-rate 0.1 \
-  --from $WALLET_NAME \
-  --min-self-delegation 1 \
-  --moniker $MONIKER \
-  --security-contact "" \
-  --identity "06F5F34BD54AA6C7" \
-  --website "https://vnbnode.com" \
-  --details "VNBnode is a group of professional validators" \
-  --pubkey $(evmosd tendermint show-validator) \
-  --chain-id $CHAIN_ID \
-  --gas=500000 --gas-prices=99999aevmos \
-  -y
-```
-
-Delegate
-```
-evmosd tx staking delegate $(evmosd keys show $WALLET_NAME --bech val -a)  10000000000000000aevmos --from $WALLET_NAME --gas auto --gas=500000 --gas-prices=99999aevmos --chain-id $CHAIN_ID -y
-```
-Unjail
-```
-evmosd tx slashing unjail --from $WALLET_NAME --chain-id $CHAIN_ID --gas-adjustment 1.4 --gas auto --gas-prices=99999aevmos -y
-```
-Edit validator
-```
-evmosd tx staking edit-validator \
---new-moniker "NewName-VNBnode" \
---identity "06F5F34BD54AA6C7" \
---website "https://vnbnode.com" \
---details "VNBnode is a group of professional validators" \
---security-contact "" \
---commission-rate 0.05 \
---from $WALLET_NAME \
---gas-adjustment 1.4 \
--chain-id $CHAIN_ID \
---gas=500000 --gas-prices=99999aevmos \
--y
-```
-
 ### Monitoring
 http://dashboard-0g.trusted-point.com
 
