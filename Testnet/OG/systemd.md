@@ -165,6 +165,9 @@ evmosd tx staking edit-validator \
 -y
 ```
 
+### Monitoring
+http://dashboard-0g.trusted-point.com
+
 ### Backup Validator
 ```
 mkdir -p $HOME/backup/evmosd
