@@ -68,7 +68,7 @@ echo 'export WALLET_NAME="wallet"' >> ~/.bash_profile
 source $HOME/.bash_profile
 evmosd init $MONIKER --chain-id $CHAIN_ID
 evmosd config chain-id $CHAIN_ID
-evmosd config keyring-backend os 
+evmosd config keyring-backend test 
 ```
 
 ### Download Genesis & Addrbook
