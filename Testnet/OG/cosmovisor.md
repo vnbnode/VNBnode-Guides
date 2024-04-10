@@ -136,8 +136,8 @@ evmosd tx staking create-validator \
   --from wallet \
   --min-self-delegation 1 \
   --moniker $MONIKER \
-  --security-contact "admin@vnbnode.com" \
-  --identity "" \
+  --security-contact "" \
+  --identity "06F5F34BD54AA6C7" \
   --website "https://vnbnode.com" \
   --details "VNBnode is a group of professional validators" \
   --pubkey $(evmosd tendermint show-validator) \
@@ -158,10 +158,10 @@ Edit validator
 ```
 evmosd tx staking edit-validator \
 --new-moniker "NewName-VNBnode" \
---identity "xx" \
+--identity "06F5F34BD54AA6C7" \
 --website "https://vnbnode.com" \
 --details "VNBnode is a group of professional validators" \
---security-contact "admin@vnbnode.com" \
+--security-contact "" \
 --commission-rate 0.05 \
 --from wallet \
 --gas-adjustment 1.4 \
