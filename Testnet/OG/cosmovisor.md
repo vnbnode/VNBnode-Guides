@@ -121,7 +121,7 @@ echo "0x$(evmosd debug addr $(evmosd keys show wallet -a) | grep hex | awk '{pri
 Link Faucet: https://faucet.0g.ai
 
 ### Monitoring
-http://dashboard-0g.trusted-point.com
+https://smartinvest-explorer.xyz/0g/staking
 
 ### Backup Validator
 ```
