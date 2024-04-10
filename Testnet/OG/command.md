@@ -87,41 +87,41 @@ evmosd tx bank send <WALLET> <TO_WALLET> <AMOUNT>aevmos --gas=500000 --gas-price
 ```
 Withdraw reward from all validator
 ```
-alignedlayerd tx distribution withdraw-all-rewards --from wallet --chain-id alignedlayer --gas-adjustment 1.4 --gas auto --gas-prices 0.0001stake -y
+evmosd tx distribution withdraw-all-rewards --from wallet --chain-id zgtendermint_9000-1 --gas-adjustment 1.4 --gas auto --gas-prices=99999aevmos -y
 ```
 Withdraw reward and commission
 ```
-alignedlayerd tx distribution withdraw-rewards $(alignedlayerd keys show wallet --bech val -a) --commission --from wallet --chain-id alignedlayer --gas-adjustment 1.4 --gas auto --gas-prices 0.0001stake -y
+evmosd tx distribution withdraw-rewards $(evmosd keys show wallet --bech val -a) --commission --from wallet --chain-id zgtendermint_9000-1 --gas-adjustment 1.4 --gas auto --gas-prices=99999aevmos -y
 ```
 Redelegate to another validator
 ```
-alignedlayerd tx staking redelegate $(alignedlayerd keys show wallet --bech val -a) <to-valoper-address> 1000000stake --from wallet --chain-id alignedlayer --gas-adjustment 1.4 --gas auto --gas-prices 0.0001stake -y
+evmosd tx staking redelegate $(evmosd keys show wallet --bech val -a) <to-valoper-address> 1000000stake --from wallet --chain-id zgtendermint_9000-1 --gas-adjustment 1.4 --gas auto --gas-prices=99999aevmos -y
 ```
 
 ## Governance
 Query list proposal
 ```
-alignedlayerd query gov proposals
+evmosd query gov proposals
 ```
 View proposal by ID
 ```
-alignedlayerd query gov proposal 1
+evmosd query gov proposal 1
 ```
 Vote yes
 ```
-alignedlayerd tx gov vote 1 yes --from wallet --chain-id alignedlayer --gas-adjustment 1.4 --gas auto --gas-prices 0.0001stake -y
+evmosd tx gov vote 1 yes --from wallet --chain-id zgtendermint_9000-1 --gas-adjustment 1.4 --gas auto --gas-prices=99999aevmos -y
 ```
 Vote No
 ```
-alignedlayerd tx gov vote 1 no --from wallet --chain-id alignedlayer --gas-adjustment 1.4 --gas auto --gas-prices 0.0001stake -y
+evmosd tx gov vote 1 no --from wallet --chain-id zgtendermint_9000-1 --gas-adjustment 1.4 --gas auto --gas-prices=99999aevmos -y
 ```
 Vote option asbtain
 ```
-alignedlayerd tx gov vote 1 abstain --from wallet --chain-id alignedlayer --gas-adjustment 1.4 --gas auto --gas-prices 0.0001stake -y
+evmosd tx gov vote 1 abstain --from wallet --chain-id zgtendermint_9000-1 --gas-adjustment 1.4 --gas auto --gas-prices=99999aevmos -y
 ```
 Vote option NoWithVeto
 ```
-alignedlayerd tx gov vote 1 NoWithVeto --from wallet --chain-id alignedlayer --gas-adjustment 1.4 --gas auto --gas-prices 0.0001stake -y
+evmosd tx gov vote 1 NoWithVeto --from wallet --chain-id zgtendermint_9000-1 --gas-adjustment 1.4 --gas auto --gas-prices=99999aevmos -y
 ```
 
 ## Maintenance
@@ -135,7 +135,7 @@ evmosd status | jq
 ```
 Get validator information
 ```
-alignedlayerd status 2>&1 | jq .ValidatorInfo
+evmosd status 2>&1 | jq .ValidatorInfo
 ```
 Get your p2p peer address
 ```
