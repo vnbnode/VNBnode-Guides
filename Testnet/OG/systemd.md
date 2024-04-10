@@ -129,11 +129,11 @@ evmosd tx staking create-validator \
   --commission-max-change-rate 0.01 \
   --commission-max-rate 0.1 \
   --commission-rate 0.1 \
-  --from wallet \
+  --from $WALLET_NAME \
   --min-self-delegation 1 \
   --moniker $MONIKER \
-  --security-contact "admin@vnbnode.com" \
-  --identity "" \
+  --security-contact "" \
+  --identity "06F5F34BD54AA6C7" \
   --website "https://vnbnode.com" \
   --details "VNBnode is a group of professional validators" \
   --pubkey $(evmosd tendermint show-validator) \
@@ -154,12 +154,12 @@ Edit validator
 ```
 evmosd tx staking edit-validator \
 --new-moniker "NewName-VNBnode" \
---identity "xx" \
+--identity "06F5F34BD54AA6C7" \
 --website "https://vnbnode.com" \
 --details "VNBnode is a group of professional validators" \
---security-contact "admin@vnbnode.com" \
+--security-contact "" \
 --commission-rate 0.05 \
---from wallet \
+--from $WALLET_NAME \
 --gas-adjustment 1.4 \
 -chain-id zgtendermint_9000-1 \
 --gas=500000 --gas-prices=99999aevmos \
