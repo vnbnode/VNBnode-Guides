@@ -10,7 +10,7 @@ Run the node using systemd
 | :---------: | :-----------------------:|
 |   **CPU**   |        4 Cores           |
 |   **RAM**   |        8 GB              |
-| **Storage** |        500 GB Nvme       |
+| **Storage** |        500 GB SSD        |
 | **NETWORK** |        100 Mbps          |
 |   **OS**    |   Ubuntu 20.04 - 22.04   |
 
