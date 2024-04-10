@@ -131,7 +131,7 @@ evmosd keys add $WALLET_NAME
 echo "0x$(evmosd debug addr $(evmosd keys show $WALLET_NAME -a) | grep hex | awk '{print $3}')"
 ```
 ### 15. Request tokens from the faucet
--> FAUCET <-
+-> (https://faucet.0g.ai/) <-
 
 ### 16. Check wallet balance
 Make sure your node is fully synced unless it won't work.
