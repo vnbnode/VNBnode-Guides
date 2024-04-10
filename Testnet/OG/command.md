@@ -59,6 +59,11 @@ evmosd tx staking create-validator \
   -y
 ```
 
+Show validator
+```
+evmosd keys show $WALLET_NAME --bech val -a
+```
+
 Delegate
 ```
 evmosd tx staking delegate $(evmosd keys show $WALLET_NAME --bech val -a)  10000000000000000aevmos --from $WALLET_NAME --gas auto --gas-adjustment 1.5 --gas-prices=99999aevmos --chain-id zgtendermint_9000-1 -y
