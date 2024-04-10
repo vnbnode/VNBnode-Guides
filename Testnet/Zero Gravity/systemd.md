@@ -33,7 +33,7 @@ git checkout v1.0.0-testnet
 make install
 evmosd version
 ```
-### 4. Set up variables
+### 4. Set up variables (Change your node name here)
 ```
 echo 'export MONIKER="NAME_VNBnode"' >> ~/.bash_profile
 echo 'export CHAIN_ID="zgtendermint_9000-1"' >> ~/.bash_profile
