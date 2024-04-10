@@ -112,7 +112,7 @@ sudo systemctl start og
 journalctl -u og -f
 ```
 
-Faucet
+### Faucet
 ```
 echo "0x$(evmosd debug addr $(evmosd keys show wallet -a) | grep hex | awk '{print $3}')"
 ```
