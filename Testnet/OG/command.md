@@ -1,12 +1,27 @@
 # Command OG
 
-### Create wallet
+Check sync
+```
+evmosd status | jq .SyncInfo.catching_up
+```
+
+Node status
+```
+evmosd status | jq
+```
+
+Get your p2p peer address
+```
+evmosd status | jq -r '"\(.NodeInfo.id)@\(.NodeInfo.listen_addr)"'
+```
+
+Create wallet
 ```
 evmosd keys add $WALLET_NAME
 evmosd keys list
 ```
 
-### Faucet
+Faucet
 ```
 echo "0x$(evmosd debug addr $(evmosd keys show wallet -a) | grep hex | awk '{print $3}')"
 ```
@@ -14,7 +29,17 @@ echo "0x$(evmosd debug addr $(evmosd keys show wallet -a) | grep hex | awk '{pri
 
 [Link Faucet](https://faucet.0g.ai)
 
-### Create validator
+Check balance
+```
+evmosd q bank balances $(evmosd keys show $WALLET_NAME -a) 
+```
+
+Send token
+```
+evmosd tx bank send $WALLET_NAME <TO_WALLET> <AMOUNT>aevmos --gas=500000 --gas-prices=99999aevmos -y
+```
+
+Create validator
 ```
 evmosd tx staking create-validator \
   --amount=10000000000000000aevmos \
