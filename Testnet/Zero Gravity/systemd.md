@@ -35,7 +35,7 @@ evmosd version
 ```
 ### 4. Set up variables
 ```
-echo 'export MONIKER="My_Node"' >> ~/.bash_profile
+echo 'export MONIKER="NAME_VNBnode"' >> ~/.bash_profile
 echo 'export CHAIN_ID="zgtendermint_9000-1"' >> ~/.bash_profile
 echo 'export WALLET_NAME="wallet"' >> ~/.bash_profile
 echo 'export RPC_PORT="26657"' >> ~/.bash_profile
