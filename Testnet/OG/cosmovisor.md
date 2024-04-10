@@ -112,6 +112,9 @@ sudo systemctl start og
 journalctl -u og -f
 ```
 
+### Monitoring
+http://dashboard-0g.trusted-point.com
+
 ### Backup Validator
 ```
 mkdir -p $HOME/backup/evmosd
