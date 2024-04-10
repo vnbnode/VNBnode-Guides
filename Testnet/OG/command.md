@@ -61,7 +61,7 @@ evmosd tx staking create-validator \
 
 Delegate
 ```
-evmosd tx staking delegate fairyvaloper1l89kp2ut04s8svltg9j9ue3z88hejypnnjk8c4 10000000000000000aevmos --from wallet --gas auto --gas-adjustment 1.5 --gas-prices=99999aevmos --chain-id zgtendermint_9000-1
+evmosd tx staking delegate $(evmosd keys show $WALLET_NAME --bech val -a)  10000000000000000aevmos --from $WALLET_NAME --gas auto --gas-adjustment 1.5 --gas-prices=99999aevmos --chain-id zgtendermint_9000-1 -y
 ```
 Unjail
 ```
