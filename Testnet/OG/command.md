@@ -12,7 +12,7 @@ evmosd status | jq
 
 Get your p2p peer address
 ```
-evmosd status | jq -r '"\(.NodeInfo.id)@\(.NodeInfo.listen_addr)"'
+echo $(evmosd tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.evmosd/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
 ```
 
 Create wallet
