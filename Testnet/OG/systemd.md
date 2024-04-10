@@ -39,7 +39,6 @@ evmosd config zgtendermint_9000-1
 evmosd config keyring-backend os
 echo 'export CHAIN_ID="zgtendermint_9000-1"' >> ~/.bash_profile
 echo 'export WALLET_NAME="wallet"' >> ~/.bash_profile
-echo 'export RPC_PORT="26657"' >> ~/.bash_profile
 source $HOME/.bash_profile
 ```
 
