@@ -148,14 +148,13 @@ evmosd tx staking create-validator \
   --amount=10000000000000000aevmos \
   --pubkey=$(evmosd tendermint show-validator) \
   --moniker=$MONIKER \
-  --identity=06F5F34BD54AA6C7 \
   --chain-id=$CHAIN_ID \
   --commission-rate=0.05 \
   --commission-max-rate=0.10 \
   --commission-max-change-rate=0.01 \
   --min-self-delegation=1 \
   --from=$WALLET_NAME \
-  --identity="" \
+  --identity="06F5F34BD54AA6C7" \
   --website="https://vnbnode.com" \
   --details="VNBnode is a group of professional validators" \
   --gas=500000 --gas-prices=99999aevmos \
