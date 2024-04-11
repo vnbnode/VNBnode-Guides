@@ -106,7 +106,7 @@ sudo systemctl enable alignedlayer
 ```
 cp $HOME/.alignedlayer/data/priv_validator_state.json $HOME/.alignedlayer/priv_validator_state.json.backup
 rm -rf $HOME/.alignedlayer/data && mkdir -p $HOME/.alignedlayer/data
-curl -L https://snap.vnbnode.com/alignedlayer/alignedlayer_snapshot_latest.tar.lz4 | tar -I lz4 -xf - -C $HOME/.alignedlayer/data
+curl -L https://snap.nodex.one/alignedlayer-testnet/alignedlayer-latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.alignedlayer
 mv $HOME/.alignedlayer/priv_validator_state.json.backup $HOME/.alignedlayer/data/priv_validator_state.json
 ```
 
