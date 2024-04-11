@@ -84,10 +84,6 @@ peers=$(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/Projects
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.alignedlayer/config/config.toml
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.0001stake\"|" $HOME/.alignedlayer/config/app.toml
 sed -i \
-  -e 's|^chain-id *=.*|chain-id = "alignedlayer"|' \
-  -e 's|^keyring-backend *=.*|keyring-backend = "test"|' \
-  $HOME/.alignedlayer/config/client.toml
-sed -i \
   -e 's|^pruning *=.*|pruning = "custom"|' \
   -e 's|^pruning-keep-recent *=.*|pruning-keep-recent = "100"|' \
   -e 's|^pruning-keep-every *=.*|pruning-keep-every = "0"|' \
@@ -100,7 +96,11 @@ sed -i \
 aligned=20
 sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://0.0.0.0:${aligned}58\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://0.0.0.0:${aligned}57\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:24260\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:${aligned}56\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":24266\"%" $HOME/.alignedlayer/config/config.toml
 sed -i -e "s%^address = \"tcp://localhost:1317\"%address = \"tcp://0.0.0.0:24217\"%; s%^address = \":8080\"%address = \":24280\"%; s%^address = \"localhost:9090\"%address = \"0.0.0.0:24290\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:24291\"%; s%:8545%:24245%; s%:8546%:24246%; s%:6065%:24265%" $HOME/.alignedlayer/config/app.toml
-alignedlayerd config node tcp://localhost:${aligned}57
+sed -i \
+  -e 's|^chain-id *=.*|chain-id = "alignedlayer"|' \
+  -e 's|^keyring-backend *=.*|keyring-backend = "test"|' \
+  -e 's|^node *=.*|node = "tcp://localhost:${aligned}57"|' \
+  $HOME/.alignedlayer/config/client.toml
 ```
 
 ### Snapshot
