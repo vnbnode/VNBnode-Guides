@@ -69,7 +69,6 @@ MONIKER="Name-VNBnode"
 ```
 ```
 alignedlayerd init $MONIKER --chain-id alignedlayer
-alignedlayerd config keyring-backend test 
 ```
 ### Download Genesis & Addrbook
 ```
