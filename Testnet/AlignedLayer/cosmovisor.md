@@ -98,7 +98,7 @@ sed -i -e "s%^address = \"tcp://localhost:1317\"%address = \"tcp://0.0.0.0:24217
 sed -i \
   -e 's|^chain-id *=.*|chain-id = "alignedlayer"|' \
   -e 's|^keyring-backend *=.*|keyring-backend = "test"|' \
-  -e 's|^node *=.*|node = "tcp://localhost:${aligned}57"|' \
+  -e 's|^node *=.*|node = "tcp://localhost:2057"|' \
   $HOME/.alignedlayer/config/client.toml
 ```
 
