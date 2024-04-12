@@ -156,7 +156,7 @@ alignedlayerd status 2>&1 | jq .ValidatorInfo
 ```
 Get your p2p peer address
 ```
-echo $(alignedlayerd tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.alignedlayerd/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
+echo $(alignedlayerd tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.alignedlayer/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
 ```
 Get peers live
 ```
