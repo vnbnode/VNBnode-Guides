@@ -100,19 +100,19 @@ alignedlayerd tx staking delegate $(alignedlayerd keys show wallet --bech val -a
 ```
 Send token
 ```
-alignedlayerd tx bank send <WALLET> <TO_WALLET> <AMOUNT>aevmos --gas=500000 --gas-prices=99999aevmos -y
+alignedlayerd tx bank send <WALLET> <TO_WALLET> <AMOUNT>stake --gas=500000 --gas-prices=99999stake -y
 ```
 Withdraw reward from all validator
 ```
-alignedlayerd tx distribution withdraw-all-rewards --from wallet --chain-id alignedlayer --gas-adjustment 1.4 --gas auto --gas-prices=99999aevmos -y
+alignedlayerd tx distribution withdraw-all-rewards --from wallet --chain-id alignedlayer --gas-adjustment 1.4 --gas auto --gas-prices=99999stake -y
 ```
 Withdraw reward and commission
 ```
-alignedlayerd tx distribution withdraw-rewards $(alignedlayerd keys show wallet --bech val -a) --commission --from wallet --chain-id alignedlayer --gas-adjustment 1.4 --gas auto --gas-prices=99999aevmos -y
+alignedlayerd tx distribution withdraw-rewards $(alignedlayerd keys show wallet --bech val -a) --commission --from wallet --chain-id alignedlayer --gas-adjustment 1.4 --gas auto --gas-prices=99999stake -y
 ```
 Redelegate to another validator
 ```
-alignedlayerd tx staking redelegate $(alignedlayerd keys show wallet --bech val -a) <to-valoper-address> 1000000stake --from wallet --chain-id alignedlayer --gas-adjustment 1.4 --gas auto --gas-prices=99999aevmos -y
+alignedlayerd tx staking redelegate $(alignedlayerd keys show wallet --bech val -a) <to-valoper-address> 1000000stake --from wallet --chain-id alignedlayer --gas-adjustment 1.4 --gas auto --gas-prices=99999stake -y
 ```
 
 ## Governance
@@ -126,19 +126,19 @@ alignedlayerd query gov proposal 1
 ```
 Vote yes
 ```
-alignedlayerd tx gov vote 1 yes --from wallet --chain-id alignedlayer --gas-adjustment 1.4 --gas auto --gas-prices=99999aevmos -y
+alignedlayerd tx gov vote 1 yes --from wallet --gas-prices=99999stake -y
 ```
 Vote No
 ```
-alignedlayerd tx gov vote 1 no --from wallet --chain-id alignedlayer --gas-adjustment 1.4 --gas auto --gas-prices=99999aevmos -y
+alignedlayerd tx gov vote 1 no --from wallet --gas-prices=99999stake -y
 ```
 Vote option asbtain
 ```
-alignedlayerd tx gov vote 1 abstain --from wallet --chain-id alignedlayer --gas-adjustment 1.4 --gas auto --gas-prices=99999aevmos -y
+alignedlayerd tx gov vote 1 abstain --from wallet --gas-prices=99999stake -y
 ```
 Vote option NoWithVeto
 ```
-alignedlayerd tx gov vote 1 NoWithVeto --from wallet --chain-id alignedlayer --gas-adjustment 1.4 --gas auto --gas-prices=99999aevmos -y
+alignedlayerd tx gov vote 1 NoWithVeto --from wallet --gas-prices=99999stake -y
 ```
 
 ## Maintenance
