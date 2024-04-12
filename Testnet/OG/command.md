@@ -109,19 +109,19 @@ evmosd query gov proposal 1
 ```
 Vote yes
 ```
-evmosd tx gov vote 1 yes --from wallet --chain-id zgtendermint_9000-1 --gas-adjustment 1.4 --gas auto --gas-prices=99999aevmos -y
+evmosd tx gov vote 1 yes --from wallet --gas-prices=99999aevmos -y
 ```
 Vote No
 ```
-evmosd tx gov vote 1 no --from wallet --chain-id zgtendermint_9000-1 --gas-adjustment 1.4 --gas auto --gas-prices=99999aevmos -y
+evmosd tx gov vote 1 no --from wallet --gas-prices=99999aevmos -y
 ```
 Vote option asbtain
 ```
-evmosd tx gov vote 1 abstain --from wallet --chain-id zgtendermint_9000-1 --gas-adjustment 1.4 --gas auto --gas-prices=99999aevmos -y
+evmosd tx gov vote 1 abstain --from wallet --gas-prices=99999aevmos -y
 ```
 Vote option NoWithVeto
 ```
-evmosd tx gov vote 1 NoWithVeto --from wallet --chain-id zgtendermint_9000-1 --gas-adjustment 1.4 --gas auto --gas-prices=99999aevmos -y
+evmosd tx gov vote 1 NoWithVeto --from wallet --gas-prices=99999aevmos -y
 ```
 
 ## Maintenance
