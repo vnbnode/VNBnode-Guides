@@ -27,7 +27,7 @@ alignedlayerd tendermint show-validator
 
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/b64a2a03-e384-4b8b-b962-22bad6cfe422)
 
-Please create `validator.json` replace {...} inside like below
+Please create `validator.json` replace pubkey and key inside like below
 ```
 nano $HOME/.alignedlayer/config/validator.json
 ```
