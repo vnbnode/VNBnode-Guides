@@ -7,7 +7,7 @@ alignedlayerd tendermint unsafe-reset-all --keep-addr-book --home $HOME/.aligned
 ```
 Configure State Sync
 ```
-SNAP_RPC="https://alignedlayer-testnet.rpc.nodex.one:443"
+SNAP_RPC="http://109.199.118.239:24257"
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)); \
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
