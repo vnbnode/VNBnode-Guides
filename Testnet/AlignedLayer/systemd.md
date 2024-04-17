@@ -20,7 +20,7 @@
 |   **RAM**   |        16 GB             |
 |   **SSD**   |        200 GB            |
 | **NETWORK** |        100 Mbps          |
-|   **Port**  | 24256, 24257, 24258 (Local please open)|
+|   **Port**  |        10056             |
 
 ### Update and install packages for compiling
 ```
@@ -66,14 +66,14 @@ sed -i \
 
 ### Custom Port
 ```
-echo 'export aligned="20"' >> ~/.bash_profile
+echo 'export aligned="100"' >> ~/.bash_profile
 source $HOME/.bash_profile
-sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://0.0.0.0:${aligned}58\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://0.0.0.0:${aligned}57\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:24260\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:${aligned}56\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":24266\"%" $HOME/.alignedlayer/config/config.toml
-sed -i -e "s%^address = \"tcp://localhost:1317\"%address = \"tcp://0.0.0.0:24217\"%; s%^address = \":8080\"%address = \":24280\"%; s%^address = \"localhost:9090\"%address = \"0.0.0.0:24290\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:24291\"%; s%:8545%:24245%; s%:8546%:24246%; s%:6065%:24265%" $HOME/.alignedlayer/config/app.toml
+sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://0.0.0.0:${aligned}58\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://0.0.0.0:${aligned}57\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:${aligned}60\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:${aligned}56\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":${aligned}60\"%" $HOME/.alignedlayer/config/config.toml
+sed -i -e "s%^address = \"tcp://localhost:1317\"%address = \"tcp://0.0.0.0:${aligned}17\"%; s%^address = \":8080\"%address = \":${aligned}80\"%; s%^address = \"localhost:9090\"%address = \"0.0.0.0:${aligned}90\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:${aligned}91\"%; s%:8545%:${aligned}45%; s%:8546%:${aligned}46%; s%:6065%:${aligned}65%" $HOME/.alignedlayer/config/app.toml
 sed -i \
   -e 's|^chain-id *=.*|chain-id = "alignedlayer"|' \
   -e 's|^keyring-backend *=.*|keyring-backend = "test"|' \
-  -e 's|^node *=.*|node = "tcp://localhost:2057"|' \
+  -e 's|^node *=.*|node = "tcp://localhost:10057"|' \
   $HOME/.alignedlayer/config/client.toml
 ```
 
