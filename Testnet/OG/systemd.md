@@ -114,9 +114,6 @@ echo "0x$(evmosd debug addr $(evmosd keys show wallet -a) | grep hex | awk '{pri
 
 Link Faucet: https://faucet.0g.ai
 
-### Monitoring
-https://smartinvest-explorer.xyz/0g/staking
-
 ### Backup Validator
 ```
 mkdir -p $HOME/backup/evmosd
