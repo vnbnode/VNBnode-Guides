@@ -18,13 +18,13 @@ cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/
 ### Build binary
 ```
 cd $HOME
-mkdir hedge
-curl -Ls https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Hedge/.env > $HOME/hedge/.env
+mkdir .hedged
+curl -Ls https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Hedge/.env > $HOME/.hedged/.env
 ```
 
 ### Setup Node
 ```
-docker run -d -p 10290:10290 -p 10257:10257 -p 10256:10256 -p 10217:10217 -v $HOME/hedge:/root/hedge --env-file $HOME/hedge/.env  --name hedge hedgeblock/berberis:v0.1
+docker run -d -p 10290:10290 -p 10257:10257 -p 10256:10256 -p 10217:10217 -v $HOME/.hedged:/root/.hedged --env-file $HOME/.hedged/.env  --name hedge hedgeblock/berberis:v0.1
 ```
 
 ### Configure
