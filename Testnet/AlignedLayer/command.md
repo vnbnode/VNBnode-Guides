@@ -38,7 +38,7 @@ nano $HOME/.alignedlayer/config/validator.json
     "moniker": "Name-VNBnode",
     "identity": "06F5F34BD54AA6C7",
     "website": "https://vnbnode.com",
-    "details": "VNBnode is a group of professional validators",
+    "details": "VNBnode is a group of professional validators / researchers in blockchain",
     "commission-rate": "0.1",
     "commission-max-rate": "0.2",
     "commission-max-change-rate": "0.01",
@@ -56,10 +56,10 @@ alignedlayerd tx staking create-validator $HOME/.alignedlayer/config/validator.j
 Edit validator
 ```
 alignedlayerd tx staking edit-validator \
---new-moniker "Name-VNBnode" \
+--new-moniker "NewName-VNBnode" \
 --identity "06F5F34BD54AA6C7" \
 --website "https://vnbnode.com" \
---details "VNBnode is a group of professional validators" \
+--details "VNBnode is a group of professional validators / researchers in blockchain" \
 --security-contact "email" \
 --chain-id alignedlayer \
 --commission-rate 0.05 \
