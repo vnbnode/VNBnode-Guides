@@ -32,7 +32,7 @@ evmosd tx staking create-validator \
   --security-contact "" \
   --identity "06F5F34BD54AA6C7" \
   --website "https://vnbnode.com" \
-  --details "VNBnode is a group of professional validators" \
+  --details "VNBnode is a group of professional validators / researchers in blockchain" \
   --pubkey $(evmosd tendermint show-validator) \
   --chain-id zgtendermint_9000-1 \
   --gas=500000 --gas-prices=99999aevmos \
@@ -44,7 +44,7 @@ evmosd tx staking edit-validator \
 --new-moniker "NewName-VNBnode" \
 --identity "06F5F34BD54AA6C7" \
 --website "https://vnbnode.com" \
---details "VNBnode is a group of professional validators" \
+--details "VNBnode is a group of professional validators / researchers in blockchain" \
 --security-contact "" \
 --commission-rate 0.05 \
 --from wallet \
