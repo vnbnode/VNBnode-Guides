@@ -63,8 +63,6 @@ MONIKER="Name-VNBnode"
 ```
 hedged config chain-id berberis-1
 hedged config keyring-backend test
-```
-```
 hedged init $MONIKER --chain-id berberis-1
 ```
 
