@@ -12,16 +12,7 @@ Chain ID: `berberis-1`
 
 ### Update and install packages for compiling
 ```
-sudo apt update
-sudo apt-get install git curl build-essential make jq gcc snapd chrony lz4 tmux unzip bc -y
-```
-
-### Install Go
-```
-sudo rm -rf /usr/local/go
-curl -Ls https://go.dev/dl/go1.21.3.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
-eval $(echo 'export PATH=$PATH:/usr/local/go/bin' | sudo tee /etc/profile.d/golang.sh)
-eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
+cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/update-binary.sh)
 ```
 
 ### Build binary
