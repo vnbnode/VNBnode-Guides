@@ -122,7 +122,7 @@ sudo systemctl disable hedge
 sudo rm /etc/systemd/system/hedge.service
 sudo systemctl daemon-reload
 sudo rm -f $(which hedge)
-sudo rm -rf $HOME/.hedge
+sudo rm -rf $HOME/.hedged
 ```
 
 ## Thank to support VNBnode.
