@@ -1,3 +1,4 @@
+# THIS TESTNET WAS OVER, CHANGED TO MAINNET
 ### 1. Server Requirements
 | Component   |  Requirements  |
 |-------------|----------------|
