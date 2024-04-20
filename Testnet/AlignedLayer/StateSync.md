@@ -1,11 +1,11 @@
-Reset blockchain data
-Make sure backup your priv_validator_state.json before reset
+## Reset blockchain data
+### Make sure backup your priv_validator_state.json before reset
 ```
 sudo systemctl stop alignedlayer
 cp $HOME/.alignedlayer/data/priv_validator_state.json $HOME/.alignedlayer/priv_validator_state.json.backup
 alignedlayerd tendermint unsafe-reset-all --keep-addr-book --home $HOME/.alignedlayer
 ```
-Configure State Sync
+### Configure State Sync
 ```
 SNAP_RPC="http://109.199.118.239:24257"
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
@@ -24,24 +24,12 @@ more ~/.alignedlayer/config/config.toml | grep 'rpc_servers'
 more ~/.alignedlayer/config/config.toml | grep 'trust_height'
 more ~/.alignedlayer/config/config.toml | grep 'trust_hash'
 ```
-Backup state data
-Return state file to the previous location
+## Backup state data
+### Return state file to the previous location
 ```
 mv $HOME/.alignedlayer/priv_validator_state.json.backup $HOME/.alignedlayer/data/priv_validator_state.json
 ```
-Restart your nodes after perform a state sync
+### Restart your nodes after perform a state sync
 ```
 sudo systemctl start alignedlayer && sudo journalctl -fu alignedlayer -o cat
 ```
-
-
-
-
-
-
-
-
-
-
-
-
