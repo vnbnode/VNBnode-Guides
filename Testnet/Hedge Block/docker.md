@@ -9,6 +9,7 @@ Chain ID: `berberis-1`
 |   **RAM**   |        32 GB          |        16 GB         |
 |   **SSD**   |        200 GB         |        200 GB        |
 | **NETWORK** |        100 Mbps       |        100 Mbps      |
+| **Port**    |        10256          |
 
 ### Update and install packages for compiling
 ```
