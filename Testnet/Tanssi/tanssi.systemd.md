@@ -39,7 +39,7 @@ apt install curl iptables build-essential git wget jq make gcc nano tmux htop nv
 ```
 ## 2. Download the Latest Release
 ```
-wget https://github.com/moondance-labs/tanssi/releases/download/v0.5.2/tanssi-node && \
+wget https://github.com/moondance-labs/tanssi/releases/download/v0.6.0/tanssi-node && \
 chmod +x ./tanssi-node
 ```
 ## 3. Creat new wallet
