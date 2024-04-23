@@ -47,6 +47,7 @@ tar -xf x86_64-ubuntu-2204-avail-node.tar.gz
 ./avail-node --chain turing --name "Yourname_VNBnode" --validator -d ./node-data
 ```
 CTRL + C to escape
+
 **Step 12: Edit service file**
 ```php
 sudo nano /etc/systemd/system/availd.service
