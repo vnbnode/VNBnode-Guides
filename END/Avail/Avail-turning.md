@@ -60,7 +60,7 @@ After=network.target
 StartLimitIntervalSec=0
 [Service]
 User=root
-ExecStart= /root/avail/avail-node -d /root/avail/node-data --chain turing --validator --name "✅Your-Name|VNBnode✅"  --pruning archive \ --rpc-external --ws-external --rpc-port 9944 --ws-port 9944 --rpc-cors=all
+ExecStart= /root/avail/avail-node -d /root/avail/node-data --chain turing --validator --name "✅Your-Name|VNBnode✅"
 Restart=always
 RestartSec=120
 [Install]
