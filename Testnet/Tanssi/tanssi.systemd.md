@@ -26,12 +26,13 @@ Tanssi, an appchain infrastructure protocol, is currently under construction to 
 
 ## Recommended Hardware Requirements 
 
-|   SPEC	    |        Recommend          |
-| :---------: | :-----------------------: |
-|   **CPU**   |        ≥ 4 Cores          |
-|   **RAM**   |        ≥ 8 GB             |
-| **Storage** |        ≥ 200 GB SSD       |
-| **NETWORK** |        ≥ 100 Mbps         |
+|   SPEC	    |         FullNode          |       Block Producer      |
+| :---------: | :-----------------------: |:-----------------------:  |    
+|   **CPU**   |        ≥ 4 Cores          |        ≥ 8 Cores          |
+|   **RAM**   |        ≥ 8 GB             |        ≥ 32 GB            |
+| **Storage** |        ≥ 500 GB SSD       |        ≥ 1 TB SSD         |
+| **NETWORK** |        ≥ 100 Mbps         |        ≥ 500 Mbps         |
+
 ## 1. Update system and install build tools
 ```
 apt update && apt upgrade -y

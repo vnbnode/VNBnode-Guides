@@ -24,12 +24,12 @@
 
 ## Recommended Hardware Requirements 
 
-|   SPEC	    |        Recommend          |
-| :---------: | :-----------------------: |
-|   **CPU**   |        ≥ 4 Cores          |
-|   **RAM**   |        ≥ 8 GB             |
-| **Storage** |        ≥ 200 GB SSD       |
-| **NETWORK** |        ≥ 100 Mbps          |
+|   SPEC	    |         FullNode          |       Block Producer      |
+| :---------: | :-----------------------: |:-----------------------:  |    
+|   **CPU**   |        ≥ 4 Cores          |        ≥ 8 Cores          |
+|   **RAM**   |        ≥ 8 GB             |        ≥ 32 GB            |
+| **Storage** |        ≥ 500 GB SSD       |        ≥ 1 TB SSD         |
+| **NETWORK** |        ≥ 100 Mbps         |        ≥ 500 Mbps         |
 
 ## Update ubuntu and install Docker
 ```
