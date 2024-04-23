@@ -52,7 +52,7 @@ CTRL + C to escape
 sudo nano /etc/systemd/system/availd.service
 ```
 *Copy and Paste the content of service file as:*
-*Replace “VNBnode” by “Yourname_VNBnode”.*
+*Replace yourname in “Yourname_VNBnode”.*
 ```php
 [Unit]
 Description=Avail Validator
