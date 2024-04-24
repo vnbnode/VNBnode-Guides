@@ -64,7 +64,6 @@ Replace `Name` with your own moniker
 MONIKER="Name-VNBnode"
 ```
 ```
-wardend config chain-id buenavista-1
 wardend config keyring-backend test 
 wardend init $MONIKER --chain-id buenavista-1
 ```
