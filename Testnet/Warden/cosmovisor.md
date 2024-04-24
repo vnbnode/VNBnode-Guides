@@ -63,7 +63,11 @@ Replace `Name` with your own moniker
 MONIKER="Name-VNBnode"
 ```
 ```
-wardend config keyring-backend test 
+sed -i \
+  -e 's|^chain-id *=.*|chain-id = "buenavista-1"|' \
+  -e 's|^keyring-backend *=.*|keyring-backend = "test"|' \
+  -e 's|^node *=.*|node = "tcp://localhost:10357"|' \
+  $HOME/.warden/config/client.toml
 wardend init $MONIKER --chain-id buenavista-1
 ```
 
