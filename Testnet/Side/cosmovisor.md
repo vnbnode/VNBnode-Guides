@@ -25,6 +25,10 @@ cd sidechain
 git checkout v0.7.0
 make install
 sided version
+mkdir -p $HOME/.side/cosmovisor/genesis/bin
+cp $HOME/go/bin/sided $HOME/.side/cosmovisor/genesis/bin/
+sudo ln -s $HOME/.side/cosmovisor/genesis $HOME/.side/cosmovisor/current -f
+sudo ln -s $HOME/.side/cosmovisor/current/bin/sided /usr/local/bin/sided -f
 ```
 
 ### Cosmovisor Setup
