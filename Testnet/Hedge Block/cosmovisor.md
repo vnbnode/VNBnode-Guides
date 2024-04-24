@@ -23,7 +23,7 @@ wget -O hedged https://github.com/hedgeblock/testnets/releases/download/v0.1.0/h
 sudo chmod +x hedged
 sudo wget -O /usr/lib/libwasmvm.x86_64.so https://github.com/CosmWasm/wasmvm/releases/download/v1.3.0/libwasmvm.x86_64.so
 mkdir -p $HOME/.hedge/cosmovisor/genesis/bin
-mv hedged $HOME/.hedge/cosmovisor/genesis/bin/
+cp hedged $HOME/.hedge/cosmovisor/genesis/bin/
 sudo ln -s $HOME/.hedge/cosmovisor/genesis $HOME/.hedge/cosmovisor/current -f
 sudo ln -s $HOME/.hedge/cosmovisor/current/bin/hedged /usr/local/bin/hedged -f
 ```
