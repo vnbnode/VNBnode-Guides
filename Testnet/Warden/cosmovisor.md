@@ -27,7 +27,7 @@ git clone --depth 1 --branch v0.3.0 https://github.com/warden-protocol/wardenpro
 cd wardenprotocol/cmd/wardend
 go build
 mkdir -p $HOME/.warden/cosmovisor/genesis/bin
-cp $HOME/go/bin/wardend $HOME/.warden/cosmovisor/genesis/bin/
+cp $HOME/wardenprotocol/cmd/wardend/wardend $HOME/.warden/cosmovisor/genesis/bin/
 sudo ln -s $HOME/.warden/cosmovisor/genesis $HOME/.warden/cosmovisor/current -f
 sudo ln -s $HOME/.warden/cosmovisor/current/bin/wardend /usr/local/bin/wardend -f
 ```
