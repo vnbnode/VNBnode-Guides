@@ -79,7 +79,8 @@ curl -Ls https://testnet-files.itrocket.net/side/addrbook.json > $HOME/.side/con
 ### Configure
 ```
 sed -i -e "s|^seeds *=.*|seeds = \"9c14080752bdfa33f4624f83cd155e2d3976e303@side-testnet-seed.itrocket.net:45656\"|" $HOME/.side/config/config.toml
-sed -i -e 's|^persistent_peers *=.*|persistent_peers ="bbbf623474e377664673bde3256fc35a36ba0df1@side-testnet-peer.itrocket.net:45656,6decdc5565bf5232cdf5597a7784bfe828c32277@158.220.126.137:11656,e9ee4fb923d5aab89207df36ce660ff1b882fc72@136.243.33.177:21656,169332e1a5aad8e49fced765992201774a754cd0@95.216.27.29:34656,2a6d31c23160e49db1f03a884dc7b9602fffe895@176.9.126.85:30004,b588e261519d49e436fc503af5b602810110bd36@194.163.149.7:26656,ca3379b48e196c3ef910a08452b459b0f327fdb6@95.216.3.115:34656,2780ffa710b0d42dacc4eeffb4c6bc145ef6636f@38.129.16.236:26656,162c0fffde8769b85fa84db97bb136b1016c0c83@38.242.205.192:26656,53e164d1b28ba845da0cec828b4f69fe1e8bf78a@65.108.153.66:26656,64bc7a0fb50832ff70b11d633038486c912d5220@170.64.163.55:26656"|' $HOME/.side/config/config.toml
+peers=$(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Side/peers.txt)
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.side/config/config.toml
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.0001stake\"|" $HOME/.side/config/app.toml
 sed -i \
   -e 's|^chain-id *=.*|chain-id = "side-testnet-3"|' \
