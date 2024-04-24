@@ -27,7 +27,7 @@ git checkout v1.0.0-testnet
 make install
 evmosd version
 mkdir -p $HOME/.evmosd/cosmovisor/genesis/bin
-mv $HOME/go/bin/evmosd $HOME/.evmosd/cosmovisor/genesis/bin/
+cp $HOME/go/bin/evmosd $HOME/.evmosd/cosmovisor/genesis/bin/
 sudo ln -s $HOME/.evmosd/cosmovisor/genesis $HOME/.evmosd/cosmovisor/current -f
 sudo ln -s $HOME/.evmosd/cosmovisor/current/bin/evmosd /usr/local/bin/evmosd -f
 ```
