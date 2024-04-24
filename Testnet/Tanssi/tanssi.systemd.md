@@ -40,7 +40,7 @@ apt install curl iptables build-essential git wget jq make gcc nano tmux htop nv
 ```
 ## 2. Download the Latest Release
 ```
-wget https://github.com/moondance-labs/tanssi/releases/download/v0.6.0/tanssi-node && \
+wget https://github.com/moondance-labs/tanssi/releases/download/v0.6.1/tanssi-node && \
 chmod +x ./tanssi-node
 ```
 ## 3. Creat new wallet
@@ -123,7 +123,7 @@ curl http://127.0.0.1:9944 -H \
 ## Update New Version
 ```
 systemctl stop tanssi.service
-wget https://github.com/moondance-labs/tanssi/releases/download/v0.6.0/tanssi-node && \
+wget https://github.com/moondance-labs/tanssi/releases/download/v0.6.1/tanssi-node && \
 chmod +x ./tanssi-node
 mv ./tanssi-node /var/lib/tanssi-data
 ```
