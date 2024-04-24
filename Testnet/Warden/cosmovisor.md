@@ -26,7 +26,6 @@ rm -rf wardenprotocol
 git clone --depth 1 --branch v0.3.0 https://github.com/warden-protocol/wardenprotocol/
 cd wardenprotocol/cmd/wardend
 go build
-cp $HOME/wardenprotocol/cmd/wardend/wardend $HOME/go/bin/sided
 mkdir -p $HOME/.warden/cosmovisor/genesis/bin
 cp $HOME/wardenprotocol/cmd/wardend/wardend $HOME/.warden/cosmovisor/genesis/bin/
 sudo ln -s $HOME/.warden/cosmovisor/genesis $HOME/.warden/cosmovisor/current -f
