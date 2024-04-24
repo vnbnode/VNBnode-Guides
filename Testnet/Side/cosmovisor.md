@@ -9,6 +9,7 @@ Chain ID: `side-testnet-3`
 |   **RAM**   |        8 GB              |
 |   **SSD**   |        500 GB            |
 | **NETWORK** |        1 Gbps            |
+|   **Port**  |        10456             |
 
 ### Update and install packages for compiling
 ```
@@ -60,7 +61,6 @@ MONIKER="Name-VNBnode"
 ```
 sided config chain-id side-testnet-3	
 sided config keyring-backend test
-sided config node tcp://localhost:257
 ```
 ```
 sided init $MONIKER --chain-id=side-testnet-3
@@ -92,8 +92,11 @@ sed -i \
 
 ### Custom Port
 ```
-sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://0.0.0.0:258\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://0.0.0.0:257\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:24260\"%; s%^laddr = \"tcp://0.0.0.0:256\"%laddr = \"tcp://0.0.0.0:256\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":24266\"%" $HOME/.side/config/config.toml
-sed -i -e "s%^address = \"tcp://localhost:1317\"%address = \"tcp://0.0.0.0:24217\"%; s%^address = \":8080\"%address = \":24280\"%; s%^address = \"localhost:9090\"%address = \"0.0.0.0:24290\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:24291\"%; s%:8545%:24245%; s%:8546%:24246%; s%:6065%:24265%" $HOME/.side/config/app.toml
+echo 'export side="104"' >> ~/.bash_profile
+source $HOME/.bash_profile
+sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://0.0.0.0:${side}58\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://0.0.0.0:${side}57\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:${side}60\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:${side}56\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":${side}60\"%" $HOME/.side/config/config.toml
+sed -i -e "s%^address = \"tcp://localhost:1317\"%address = \"tcp://0.0.0.0:${side}17\"%; s%^address = \":8080\"%address = \":${side}80\"%; s%^address = \"localhost:9090\"%address = \"0.0.0.0:${side}90\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:${side}91\"%; s%:8545%:${side}45%; s%:8546%:${side}46%; s%:6065%:${side}65%" $HOME/.side/config/app.toml
+sided config node tcp://localhost:${side}57
 ```
 
 ### Snapshot
