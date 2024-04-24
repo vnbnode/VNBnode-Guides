@@ -97,7 +97,6 @@ echo 'export warden="103"' >> ~/.bash_profile
 source $HOME/.bash_profile
 sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://0.0.0.0:${warden}58\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://0.0.0.0:${warden}57\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:${warden}60\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:${warden}56\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":${warden}60\"%" $HOME/.warden/config/config.toml
 sed -i -e "s%^address = \"tcp://localhost:1317\"%address = \"tcp://0.0.0.0:${warden}17\"%; s%^address = \":8080\"%address = \":${warden}80\"%; s%^address = \"localhost:9090\"%address = \"0.0.0.0:${warden}90\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:${warden}91\"%; s%:8545%:${warden}45%; s%:8546%:${warden}46%; s%:6065%:${warden}65%" $HOME/.warden/config/config.toml
-wardend config node tcp://localhost:${warden}57
 ```
 
 ### Snapshot
