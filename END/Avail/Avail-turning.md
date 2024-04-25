@@ -94,4 +94,22 @@ sudo systemctl status availd.service
 ```php
 journalctl -f -u availd
 ```
-
+# Upgrade
+```php
+cd $Home
+cd avail
+```
+```php
+rm -rf /node-data
+rm x86_64-ubuntu-2204-avail-node.tar.gz
+```
+```php
+wget https://github.com/availproject/avail/releases/download/v2.1.0.0-rc1/x86_64-ubuntu-2204-avail-node.tar.gz
+```
+```php
+tar -xf x86_64-ubuntu-2204-avail-node.tar.gz
+```
+```php
+sudo systemctl daemon-reload
+sudo systemctl restart availd.service && journalctl -f -u availd
+```
