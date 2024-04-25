@@ -1,3 +1,7 @@
+**wss://rpc-avail.vnbnode.com
+https://rpc-avail.vnbnode.com/
+https://polkadot.js.org/apps/?rpc=wss://rpc-avail.vnbnode.com/explorer **
+
 **Step 1: Update system**
 ```php
 sudo apt update && sudo apt upgrade -y
