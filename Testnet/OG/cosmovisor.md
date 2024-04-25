@@ -100,10 +100,9 @@ evmosd config node tcp://localhost:${og}57
 ### Snapshot
 ```
 cp $HOME/.evmosd/data/priv_validator_state.json $HOME/.evmosd/priv_validator_state.json.backup
-rm -rf $HOME/.evmosd/data && mkdir -p $HOME/.fairyring/data
+rm -rf $HOME/.evmosd/data && mkdir -p $HOME/.evmosd/data
 evmosd tendermint unsafe-reset-all --home $HOME/.evmosd --keep-addr-book
-wget https://rpc-zero-gravity-testnet.trusted-point.com/latest_snapshot.tar.lz4
-lz4 -d -c ./latest_snapshot.tar.lz4 | tar -xf - -C $HOME/.evmosd
+curl https://snapshots-testnet.nodejumper.io/0g-testnet/0g-testnet_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.evmosd
 mv $HOME/.evmosd/priv_validator_state.json.backup $HOME/.evmosd/data/priv_validator_state.json
 ```
 
