@@ -81,7 +81,7 @@ curl -Ls https://testnet-files.itrocket.net/side/addrbook.json > $HOME/.side/con
 sed -i -e "s|^seeds *=.*|seeds = \"9c14080752bdfa33f4624f83cd155e2d3976e303@side-testnet-seed.itrocket.net:45656\"|" $HOME/.side/config/config.toml
 peers=$(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Side/peers.txt)
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.side/config/config.toml
-sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.0001stake\"|" $HOME/.side/config/app.toml
+sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.0001uside\"|" $HOME/.side/config/app.toml
 sed -i \
   -e 's|^chain-id *=.*|chain-id = "side-testnet-3"|' \
   -e 's|^keyring-backend *=.*|keyring-backend = "test"|' \
