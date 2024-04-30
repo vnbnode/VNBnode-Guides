@@ -85,7 +85,7 @@ sudo docker run -p 1600:1600 -p 6000:6000/tcp -p 6000:6000/udp --rm -it -w /data
 ```
 #### 2\. CPU from 2015 or earlier
 ```
-sudo docker run -p 1600:1600 -p 6000:6000/tcp -p 6000:6000/udp --rm -it -w /data -v $(pwd):/data sarvalabs/moipod:v0.7.2-port register --data-dir {DIRPATH} --mnemonic-keystore-path {KEYSTORE_PATH} --mnemonic-keystore-password {MNEMONIC_KEYSTORE_PASSWORD} --watchdog-url https://babylon-watchdog.moi.technology/add --node-password {NODE_PWD} --network-rpc-url https://voyage-rpc.moi.technology/babylon --wallet-address {ADDRESS} --node-index {NODE_IDX} --local-rpc-url http://{IP_or_Domain}:1600
+sudo docker run -p 1600:1600 -p 6000:6000/tcp -p 6000:6000/udp --rm -it -w /data -v $(pwd):/data sarvalabs/moipod:v0.8.1-port register --data-dir {DIRPATH} --mnemonic-keystore-path {KEYSTORE_PATH} --mnemonic-keystore-password {MNEMONIC_KEYSTORE_PASSWORD} --watchdog-url https://babylon-watchdog.moi.technology/add --node-password {NODE_PWD} --network-rpc-url https://voyage-rpc.moi.technology/babylon --wallet-address {ADDRESS} --node-index {NODE_IDX} --local-rpc-url http://{IP_or_Domain}:1600
 ```
 `{DIRPATH}`: the directory path you create to store the node, for example `moi`
 
@@ -112,7 +112,7 @@ sudo docker run -p 1600:1600 -p 6000:6000/tcp -p 6000:6000/udp -it -d -w /data -
 ```
 #### 2\. CPU from 2015 or earlier
 ```
-sudo docker run -p 1600:1600 -p 6000:6000/tcp -p 6000:6000/udp -it -d -w /data -v $(pwd):/data sarvalabs/moipod:v0.7.2-port server --babylon --data-dir {DIRPATH} --log-level DEBUG --node-password {NODE_PWD} --clean-db=true
+sudo docker run -p 1600:1600 -p 6000:6000/tcp -p 6000:6000/udp -it -d -w /data -v $(pwd):/data sarvalabs/moipod:v0.8.1-port server --babylon --data-dir {DIRPATH} --log-level DEBUG --node-password {NODE_PWD} --clean-db=true
 ```
 `{DIRPATH}`: the directory path you create to store the node, for example `moi`
 
