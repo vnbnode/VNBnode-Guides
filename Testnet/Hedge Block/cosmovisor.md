@@ -100,7 +100,7 @@ hedged config node tcp://localhost:${hedge}57
 ```
 cp $HOME/.hedge/data/priv_validator_state.json $HOME/.hedge/priv_validator_state.json.backup
 rm -rf $HOME/.hedge/data && mkdir -p $HOME/.hedge/data
-curl -L https://snap.nodex.one/hedge-testnet/hedge-latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.hedge
+curl -o - -L https://snapshot-de-1.genznodes.dev/hedgeblock/hedge-testnet-1509189.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.hedge
 mv $HOME/.hedge/priv_validator_state.json.backup $HOME/.hedge/data/priv_validator_state.json
 ```
 
