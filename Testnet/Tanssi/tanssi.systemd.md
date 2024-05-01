@@ -22,7 +22,7 @@ Tanssi, an appchain infrastructure protocol, is currently under construction to 
 
 ### Staking: https://apps.tanssi.network/staking
 
-### Fill form: https://www.tanssi.network/block-producer-form
+### Fill form: https://www.tanssi.network/testnet-campaign/block-producers-waitlist 
 
 ## Recommended Hardware Requirements 
 
