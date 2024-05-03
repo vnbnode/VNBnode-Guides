@@ -31,8 +31,6 @@ sudo ln -s $HOME/.hedge/cosmovisor/current/bin/hedged /usr/local/bin/hedged -f
 ### Cosmovisor Setup
 ```
 go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
-```
-```
 sudo tee /etc/systemd/system/hedge.service > /dev/null << EOF
 [Unit]
 Description=hedge node service
