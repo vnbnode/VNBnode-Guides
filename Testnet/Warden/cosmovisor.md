@@ -29,7 +29,7 @@ go build
 mkdir -p $HOME/.warden/cosmovisor/genesis/bin
 cp $HOME/wardenprotocol/cmd/wardend/wardend $HOME/.warden/cosmovisor/genesis/bin/
 sudo ln -s $HOME/.warden/cosmovisor/genesis $HOME/.warden/cosmovisor/current -f
-sudo ln -s $HOME/.warden/cosmovisor/current/bin/wardend /usr/local/bin/wardend -f
+sudo ln -s $HOME/.warden/cosmovisor/current/bin/wardend /usr/local/bin/wardend -f && cd $HOME
 ```
 
 ### Cosmovisor Setup
@@ -67,7 +67,7 @@ sed -i \
   -e 's|^chain-id *=.*|chain-id = "buenavista-1"|' \
   -e 's|^keyring-backend *=.*|keyring-backend = "test"|' \
   -e 's|^node *=.*|node = "tcp://localhost:10357"|' \
-  $HOME/.warden/config/client.toml
+$HOME/.warden/config/client.toml
 wardend init $MONIKER --chain-id buenavista-1
 ```
 
