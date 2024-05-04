@@ -5,6 +5,7 @@
 
 **https://polkadot.js.org/apps/?rpc=wss://rpc-avail.vnbnode.com/explorer**
 
+**https://telemetry.avail.so/#list/0xd3d2f3a3495dc597434a99d7d449ebad6616db45e4e4f178f31cc6fa14378b70**
 
 **Step 1: Update system**
 ```php
