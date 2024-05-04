@@ -99,7 +99,7 @@ hedged config node tcp://localhost:${hedge}57
 sudo systemctl stop hedge
 cp $HOME/.hedge/data/priv_validator_state.json $HOME/.hedge/priv_validator_state.json.backup
 rm -rf $HOME/.hedge/data && mkdir $HOME/.hedge/data
-curl -o - -L https://snapshot-de-1.genznodes.dev/hedgeblock/hedge-testnet-1542396.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.hedge
+curl -o - -L https://snapshot-de-1.genznodes.dev/hedgeblock/hedge-testnet-1558876.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.hedge
 mv $HOME/.hedge/priv_validator_state.json.backup $HOME/.hedge/data/priv_validator_state.json
 ```
 
