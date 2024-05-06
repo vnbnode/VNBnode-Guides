@@ -45,7 +45,7 @@ cd avail
 ```
 **Step 9: Download binaries**
 ```php
-wget https://github.com/availproject/avail/releases/download/v2.1.0.0-rc1/x86_64-ubuntu-2204-avail-node.tar.gz
+wget https://github.com/availproject/avail/releases/download/v2.2.0.0-rc1/x86_64-ubuntu-2204-avail-node.tar.gz
 ```
 **Step 10: Extract**
 ```php
