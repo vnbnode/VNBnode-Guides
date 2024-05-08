@@ -78,7 +78,7 @@ wget https://github.com/0glabs/0g-evmos/releases/download/v1.0.0-testnet/genesis
 
 ### Configure
 ```
-sed -i -e "s|^seeds *=.*|seeds = \"1248487ea585730cdf5d3c32e0c2a43ad0cda973@peer-zero-gravity-testnet.trusted-point.com:26326\"|" $HOME/.evmosd/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"\"|" $HOME/.evmosd/config/config.toml
 peers=$(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/OG/peers.txt)
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.evmosd/config/config.toml
 sed -i.bak -e "s/^pruning *=.*/pruning = \"custom\"/" $HOME/.evmosd/config/app.toml
