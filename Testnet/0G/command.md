@@ -3,26 +3,26 @@
 ## Managing keys
 Generate new key
 ```
-evmosd keys add wallet
+0gchaind keys add wallet --eth
 ```
 Recover key
 ```
-evmosd keys add wallet --recover
+0gchaind keys add wallet --recover
 ```
 List all key
 ```
-evmosd keys list
+0gchaind keys list
 ```
 Query wallet balances
 ```
-evmosd q bank balances $(evmosd keys show wallet -a)
+0gchaind q bank balances $(0gchaind keys show wallet -a)
 ```
 
 ## Managing validators
 Create validator
 ```
-evmosd tx staking create-validator \
-  --amount=10000000000000000aevmos \
+0gchaind tx staking create-validator \
+  --amount=10000000000000000aua0gi \
   --commission-max-change-rate 0.01 \
   --commission-max-rate 0.1 \
   --commission-rate 0.1 \
@@ -35,12 +35,12 @@ evmosd tx staking create-validator \
   --details "VNBnode is a group of professional validators / researchers in blockchain" \
   --pubkey $(evmosd tendermint show-validator) \
   --chain-id zgtendermint_9000-1 \
-  --gas=500000 --gas-prices=99999aevmos \
+  --gas=500000 --gas-prices=99999ua0gi \
   -y
 ```
 Edit validator
 ```
-evmosd tx staking edit-validator \
+0gchaind tx staking edit-validator \
 --new-moniker "NewName-VNBnode" \
 --identity "06F5F34BD54AA6C7" \
 --website "https://vnbnode.com" \
@@ -50,27 +50,27 @@ evmosd tx staking edit-validator \
 --from wallet \
 --gas-adjustment 1.4 \
 -chain-id zgtendermint_9000-1 \
---gas=500000 --gas-prices=99999aevmos \
+--gas=500000 --gas-prices=99999ua0gi \
 -y
 ```
 Unjail
 ```
-evmosd tx slashing unjail --from wallet --chain-id zgtendermint_9000-1 --gas-adjustment 1.4 --gas auto --gas-prices=99999aevmos -y
+0gchaind tx slashing unjail --from wallet --chain-id zgtendermint_9000-1 --gas-adjustment 1.4 --gas auto --gas-prices=99999ua0gi -y
 ```
 View validator details
 ```
-evmosd keys show wallet --bech val -a
+0gchaind keys show wallet --bech val -a
 ```
 Query active validators
 ```
-evmosd q staking validators -o json --limit=1000 \
+0gchaind q staking validators -o json --limit=1000 \
 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' \
 | jq -r '.tokens + " - " + .description.moniker' \
 | sort -gr | nl
 ```
 Query inactive validators
 ```
-evmosd q staking validators -o json --limit=1000 \
+0gchaind q staking validators -o json --limit=1000 \
 | jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' \
 | jq -r '.tokens + " - " + .description.moniker' \
 | sort -gr | nl
@@ -79,63 +79,63 @@ evmosd q staking validators -o json --limit=1000 \
 ## Managing Tokens
 Delegate tokens to your validator
 ```
-evmosd tx staking delegate $(evmosd keys show $WALLET_NAME --bech val -a)  10000000000000000aevmos --from $WALLET_NAME --gas=500000 --gas-prices=99999aevmos -y
+0gchaind tx staking delegate $(0gchaind keys show $WALLET_NAME --bech val -a)  10000000000000000ua0gi --from $WALLET_NAME --gas=500000 --gas-prices=99999ua0gi -y
 ```
 Send token
 ```
-evmosd tx bank send <WALLET> <TO_WALLET> <AMOUNT>aevmos --gas=500000 --gas-prices=99999aevmos -y
+0gchaind tx bank send <WALLET> <TO_WALLET> <AMOUNT>ua0gi --gas=500000 --gas-prices=99999ua0gi -y
 ```
 Withdraw reward from all validator
 ```
-evmosd tx distribution withdraw-all-rewards --from wallet --chain-id zgtendermint_9000-1 --gas-adjustment 1.4 --gas auto --gas-prices=99999aevmos -y
+0gchaind tx distribution withdraw-all-rewards --from wallet --chain-id zgtendermint_9000-1 --gas-adjustment 1.4 --gas auto --gas-prices=99999ua0gi -y
 ```
 Withdraw reward and commission
 ```
-evmosd tx distribution withdraw-rewards $(evmosd keys show wallet --bech val -a) --commission --from wallet --chain-id zgtendermint_9000-1 --gas-adjustment 1.4 --gas auto --gas-prices=99999aevmos -y
+0gchaind tx distribution withdraw-rewards $(0gchaind keys show wallet --bech val -a) --commission --from wallet --chain-id zgtendermint_9000-1 --gas-adjustment 1.4 --gas auto --gas-prices=99999ua0gi -y
 ```
 Redelegate to another validator
 ```
-evmosd tx staking redelegate $(evmosd keys show wallet --bech val -a) <to-valoper-address> 1000000stake --from wallet --chain-id zgtendermint_9000-1 --gas-adjustment 1.4 --gas auto --gas-prices=99999aevmos -y
+0gchaind tx staking redelegate $(0gchaind keys show wallet --bech val -a) <to-valoper-address> 1000000stake --from wallet --chain-id zgtendermint_9000-1 --gas-adjustment 1.4 --gas auto --gas-prices=99999ua0gi -y
 ```
 
 ## Governance
 Query list proposal
 ```
-evmosd query gov proposals
+0gchaind query gov proposals
 ```
 View proposal by ID
 ```
-evmosd query gov proposal 1
+0gchaind query gov proposal 1
 ```
 Vote yes
 ```
-evmosd tx gov vote 1 yes --from wallet --gas-prices=99999aevmos -y
+0gchaind tx gov vote 1 yes --from wallet --gas-prices=99999ua0gi -y
 ```
 Vote No
 ```
-evmosd tx gov vote 1 no --from wallet --gas-prices=99999aevmos -y
+0gchaind tx gov vote 1 no --from wallet --gas-prices=99999ua0gi -y
 ```
 Vote option asbtain
 ```
-evmosd tx gov vote 1 abstain --from wallet --gas-prices=99999aevmos -y
+0gchaind tx gov vote 1 abstain --from wallet --gas-prices=99999ua0gi -y
 ```
 Vote option NoWithVeto
 ```
-evmosd tx gov vote 1 NoWithVeto --from wallet --gas-prices=99999aevmos -y
+0gchaind tx gov vote 1 NoWithVeto --from wallet --gas-prices=99999ua0gi -y
 ```
 
 ## Maintenance
 Check sync
 ```
-evmosd status 2>&1 | jq .SyncInfo
+0gchaind status 2>&1 | jq .SyncInfo
 ```
 Node status
 ```
-evmosd status | jq
+0gchaind status | jq
 ```
 Get validator information
 ```
-evmosd status 2>&1 | jq .ValidatorInfo
+0gchaind status 2>&1 | jq .ValidatorInfo
 ```
 Get your p2p peer address
 ```
