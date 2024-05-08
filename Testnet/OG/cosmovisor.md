@@ -103,13 +103,6 @@ sudo systemctl start og
 journalctl -u og -f
 ```
 
-### Faucet
-```
-echo "0x$(0gchaind debug addr $(0gchaind keys show wallet -a) | grep hex | awk '{print $3}')"
-```
-
-Link Faucet: https://faucet.0g.ai
-
 ### Backup Validator
 ```
 mkdir -p $HOME/backup/.0gchain
