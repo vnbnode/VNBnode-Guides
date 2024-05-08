@@ -1,5 +1,7 @@
 # 0G
 
+# Snapshot: 
+
 ## Chain ID: `zgtendermint_16600-1`
 
 ## Recommended Hardware Requirements
