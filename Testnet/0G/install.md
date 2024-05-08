@@ -1,6 +1,4 @@
-# OG
-
-Run the node using cosmovisor
+# 0G
 
 ## Chain ID: `zgtendermint_16600-1`
 
