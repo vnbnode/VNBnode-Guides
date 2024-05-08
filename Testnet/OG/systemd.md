@@ -90,27 +90,11 @@ sudo systemctl daemon-reload
 sudo systemctl enable og
 ```
 
-### Snapshot
-```
-cp $HOME/.evmosd/data/priv_validator_state.json $HOME/.evmosd/priv_validator_state.json.backup
-rm -rf $HOME/.evmosd/data && mkdir -p $HOME/.evmosd/data
-evmosd tendermint unsafe-reset-all --home $HOME/.evmosd --keep-addr-book
-curl https://snapshots-testnet.nodejumper.io/0g-testnet/0g-testnet_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.evmosd
-mv $HOME/.evmosd/priv_validator_state.json.backup $HOME/.evmosd/data/priv_validator_state.json
-```
-
 ### Start Node
 ```
 sudo systemctl start og
 journalctl -u og -f
 ```
-
-### Faucet
-```
-echo "0x$(evmosd debug addr $(evmosd keys show wallet -a) | grep hex | awk '{print $3}')"
-```
-
-Link Faucet: https://faucet.0g.ai
 
 ### Backup Validator
 ```
