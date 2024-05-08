@@ -21,7 +21,7 @@ cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/
 
 ### Build binary
 ```
-git clone https://github.com/0glabs/0g-chain.git
+git clone -b v0.1.0 https://github.com/0glabs/0g-chain.git
 git checkout v1.0.0-testnet
 ./0g-chain/networks/testnet/install.sh
 source .profile
