@@ -1,6 +1,6 @@
 # 0G
 
-# Snapshot: 
+## Snapshot: https://github.com/vnbnode/VNBnode-Guides/blob/main/Testnet/0G/Snapshot.md
 
 ## Chain ID: `zgtendermint_16600-1`
 
