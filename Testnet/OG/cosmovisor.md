@@ -118,8 +118,8 @@ sudo rm /etc/systemd/system/og.service
 sudo systemctl daemon-reload
 sudo rm $HOME/go/bin/0gchaind
 sudo rm -f $(which 0gchaind)
-sudo rm -rf $HOME/0gchain
-sudo rm -rf $HOME/0g-evmos
+sudo rm -rf $HOME/0g-chain
+sudo rm -rf $HOME/.0gchain
 ```
 
 ## Thank to support VNBnode.
