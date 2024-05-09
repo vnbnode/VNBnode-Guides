@@ -7,7 +7,7 @@ Generate new key
 ```
 Recover key
 ```
-0gchaind keys add wallet --recover
+0gchaind keys add wallet --recover --eth
 ```
 List all key
 ```
@@ -22,21 +22,21 @@ Query wallet balances
 Create validator
 ```
 0gchaind tx staking create-validator \
-  --amount=10000000000000000aua0gi \
-  --commission-max-change-rate 0.01 \
-  --commission-max-rate 0.1 \
-  --commission-rate 0.1 \
-  --from wallet \
-  --min-self-delegation 1 \
-  --moniker $MONIKER \
+  --amount=<staking_amount>ua0gi \
+  --pubkey=$(0gchaind tendermint show-validator) \
+  --moniker="<your_validator_name>" \
+  --chain-id=zgtendermint_16600-1 \
+  --commission-rate="0.10" \
+  --commission-max-rate="0.20" \
+  --commission-max-change-rate="0.01" \
+  --min-self-delegation="1" \
   --security-contact "" \
   --identity "06F5F34BD54AA6C7" \
   --website "https://vnbnode.com" \
   --details "VNBnode is a group of professional validators / researchers in blockchain" \
-  --pubkey $(evmosd tendermint show-validator) \
-  --chain-id zgtendermint_9000-1 \
-  --gas=500000 --gas-prices=99999ua0gi \
-  -y
+  --from=<key_name> \
+  --gas-adjustment=1.4 \
+  --gas-prices 0.00252ua0gi
 ```
 Edit validator
 ```
@@ -49,13 +49,13 @@ Edit validator
 --commission-rate 0.05 \
 --from wallet \
 --gas-adjustment 1.4 \
--chain-id zgtendermint_9000-1 \
---gas=500000 --gas-prices=99999ua0gi \
+-chain-id zgtendermint_16600-1 \
+--gas=auto --gas-prices=0.00252ua0gi \
 -y
 ```
 Unjail
 ```
-0gchaind tx slashing unjail --from wallet --chain-id zgtendermint_9000-1 --gas-adjustment 1.4 --gas auto --gas-prices=99999ua0gi -y
+0gchaind tx slashing unjail --from wallet --chain-id zgtendermint_16600-1 --gas-adjustment 1.4 --gas auto --gas-prices=0.00252ua0gi -y
 ```
 View validator details
 ```
@@ -79,23 +79,23 @@ Query inactive validators
 ## Managing Tokens
 Delegate tokens to your validator
 ```
-0gchaind tx staking delegate $(0gchaind keys show $WALLET_NAME --bech val -a)  10000000000000000ua0gi --from $WALLET_NAME --gas=500000 --gas-prices=99999ua0gi -y
+0gchaind tx staking delegate $(0gchaind keys show $WALLET_NAME --bech val -a)  10000000000000000ua0gi --from $WALLET_NAME --gas=500000 --gas-prices=0.00252ua0gi -y
 ```
 Send token
 ```
-0gchaind tx bank send <WALLET> <TO_WALLET> <AMOUNT>ua0gi --gas=500000 --gas-prices=99999ua0gi -y
+0gchaind tx bank send <WALLET> <TO_WALLET> <AMOUNT>ua0gi --gas=500000 --gas-prices=0.00252ua0gi -y
 ```
 Withdraw reward from all validator
 ```
-0gchaind tx distribution withdraw-all-rewards --from wallet --chain-id zgtendermint_9000-1 --gas-adjustment 1.4 --gas auto --gas-prices=99999ua0gi -y
+0gchaind tx distribution withdraw-all-rewards --from wallet --chain-id zgtendermint_16600-1 --gas-adjustment 1.4 --gas auto --gas-prices=0.00252ua0gi -y
 ```
 Withdraw reward and commission
 ```
-0gchaind tx distribution withdraw-rewards $(0gchaind keys show wallet --bech val -a) --commission --from wallet --chain-id zgtendermint_9000-1 --gas-adjustment 1.4 --gas auto --gas-prices=99999ua0gi -y
+0gchaind tx distribution withdraw-rewards $(0gchaind keys show wallet --bech val -a) --commission --from wallet --chain-id zgtendermint_16600-1 --gas-adjustment 1.4 --gas auto --gas-prices=0.00252ua0gi -y
 ```
 Redelegate to another validator
 ```
-0gchaind tx staking redelegate $(0gchaind keys show wallet --bech val -a) <to-valoper-address> 1000000stake --from wallet --chain-id zgtendermint_9000-1 --gas-adjustment 1.4 --gas auto --gas-prices=99999ua0gi -y
+0gchaind tx staking redelegate $(0gchaind keys show wallet --bech val -a) <to-valoper-address> 1000000stake --from wallet --chain-id zgtendermint_16600-1 --gas-adjustment 1.4 --gas auto --gas-prices=0.00252ua0gi -y
 ```
 
 ## Governance
@@ -109,19 +109,19 @@ View proposal by ID
 ```
 Vote yes
 ```
-0gchaind tx gov vote 1 yes --from wallet --gas-prices=99999ua0gi -y
+0gchaind tx gov vote 1 yes --from wallet --gas-prices=0.00252ua0gi -y
 ```
 Vote No
 ```
-0gchaind tx gov vote 1 no --from wallet --gas-prices=99999ua0gi -y
+0gchaind tx gov vote 1 no --from wallet --gas-prices=0.00252ua0gi -y
 ```
 Vote option asbtain
 ```
-0gchaind tx gov vote 1 abstain --from wallet --gas-prices=99999ua0gi -y
+0gchaind tx gov vote 1 abstain --from wallet --gas-prices=0.00252ua0gi -y
 ```
 Vote option NoWithVeto
 ```
-0gchaind tx gov vote 1 NoWithVeto --from wallet --gas-prices=99999ua0gi -y
+0gchaind tx gov vote 1 NoWithVeto --from wallet --gas-prices=0.00252ua0gi -y
 ```
 
 ## Maintenance
@@ -145,6 +145,3 @@ Get peers live
 ```
 curl -sS http://localhost:${og}57/net_info | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}'
 ```
-
-
-
