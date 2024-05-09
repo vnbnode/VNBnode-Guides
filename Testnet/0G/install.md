@@ -34,9 +34,9 @@ sudo ln -s $HOME/.0gchain/cosmovisor/current/bin/0gchaind /usr/local/bin/0gchain
 ### Cosmovisor Setup
 ```
 go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
-sudo tee /etc/systemd/system/og.service > /dev/null << EOF
+sudo tee /etc/systemd/system/0g.service > /dev/null << EOF
 [Unit]
-Description=og node service
+Description=0G node service
 After=network-online.target
  
 [Service]
@@ -53,7 +53,7 @@ Environment="UNSAFE_SKIP_BACKUP=true"
 WantedBy=multi-user.target
 EOF
 sudo systemctl daemon-reload
-sudo systemctl enable og
+sudo systemctl enable 0g
 ```
 
 ### Initialize Node
@@ -100,8 +100,8 @@ sed -i -e "s%^address = \"tcp://localhost:1317\"%address = \"tcp://0.0.0.0:${og}
 
 ### Start Node
 ```
-sudo systemctl start og
-journalctl -u og -f
+sudo systemctl start 0g
+journalctl -u 0g -f
 ```
 
 ### Backup Validator
@@ -113,9 +113,9 @@ cp $HOME/.0gchain/config/priv_validator_key.json $HOME/backup/.0gchain
 ### Remove Node
 ```
 cd $HOME
-sudo systemctl stop og
-sudo systemctl disable og
-sudo rm /etc/systemd/system/og.service
+sudo systemctl stop 0g
+sudo systemctl disable 0g
+sudo rm /etc/systemd/system/0g.service
 sudo systemctl daemon-reload
 sudo rm $HOME/go/bin/0gchaind
 sudo rm -f $(which 0gchaind)
