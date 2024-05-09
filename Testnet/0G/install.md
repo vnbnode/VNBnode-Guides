@@ -12,7 +12,8 @@
 |   **RAM**   |        64 GB             |
 | **Storage** |        1 TB Nvme         |
 | **NETWORK** |        1 Gbps            |
-|   **OS**    |   Ubuntu 20.04 - 22.04   |
+|   **OS**    |        Ubuntu 22.04      |
+|   **Port**  |        10156             | 
 
 ### Update and install packages for compiling
 ```
