@@ -23,12 +23,13 @@ cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/
 ```
 git clone -b v0.1.0 https://github.com/0glabs/0g-chain.git
 git checkout v1.0.0-testnet
-./0g-chain/networks/testnet/install.sh
-source .profile
+cd 0g-chain
+make install
 mkdir -p $HOME/.0gchain/cosmovisor/genesis/bin
 cp $HOME/go/bin/0gchaind $HOME/.0gchain/cosmovisor/genesis/bin/
 sudo ln -s $HOME/.0gchain/cosmovisor/genesis $HOME/.0gchain/cosmovisor/current -f
 sudo ln -s $HOME/.0gchain/cosmovisor/current/bin/0gchaind /usr/local/bin/0gchaind -f
+cd $HOME
 ```
 
 ### Cosmovisor Setup
