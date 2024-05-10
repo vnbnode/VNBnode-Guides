@@ -1,7 +1,7 @@
 ## Snapshot (Automatically updates daily)
 _Stop Node and Reset Date_
 ```
-sudo systemctl stop og
+sudo systemctl stop 0g
 cp $HOME/.0gchain/data/priv_validator_state.json $HOME/.0gchain/priv_validator_state.json.backup
 rm -rf $HOME/.0gchain/data && mkdir -p $HOME/.0gchain/data
 ```
@@ -14,5 +14,5 @@ mv $HOME/.0gchain/priv_validator_state.json.backup $HOME/.0gchain/data/priv_vali
 ```
 _Restart Node_
 ```
-sudo systemctl restart og && sudo journalctl -u og -f --no-hostname -o cat
+sudo systemctl restart 0g && sudo journalctl -u 0g -f --no-hostname -o cat
 ```
