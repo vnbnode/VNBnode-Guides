@@ -36,7 +36,7 @@ cd $HOME
 ### Cosmovisor Setup
 ```
 go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
-sudo tee /etc/systemd/system/og.service > /dev/null << EOF
+sudo tee /etc/systemd/system/0g.service > /dev/null << EOF
 [Unit]
 Description=0G node service
 After=network-online.target
@@ -102,8 +102,8 @@ sed -i -e "s%^address = \"tcp://localhost:1317\"%address = \"tcp://0.0.0.0:${og}
 
 ### Start Node
 ```
-sudo systemctl start og
-journalctl -u og -f
+sudo systemctl start 0g
+journalctl -u 0g -f
 ```
 
 ### Backup Validator
@@ -115,8 +115,8 @@ cp $HOME/.0gchain/config/priv_validator_key.json $HOME/backup/.0gchain
 ### Remove Node
 ```
 cd $HOME
-sudo systemctl stop og
-sudo systemctl disable og
+sudo systemctl stop 0g
+sudo systemctl disable 0g
 sudo rm /etc/systemd/system/og.service
 sudo systemctl daemon-reload
 sudo rm $HOME/go/bin/0gchaind
