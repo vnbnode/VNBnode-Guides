@@ -78,7 +78,7 @@ Query inactive validators
 ## Managing Tokens
 Delegate tokens to your validator
 ```
-0gchaind tx staking delegate $(0gchaind keys show wallet --bech val -a)  1000000ua0gi --from wallet --chain-id zgtendermint_16600-1 --gas auto -y
+0gchaind tx staking delegate $(0gchaind keys show wallet --bech val -a)  90000ua0gi --from wallet --chain-id zgtendermint_16600-1 --gas=auto -y
 ```
 Send token
 ```
