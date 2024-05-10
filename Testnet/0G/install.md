@@ -36,7 +36,7 @@ cd $HOME
 ### Cosmovisor Setup
 ```
 go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
-sudo tee /etc/systemd/system/0g.service > /dev/null << EOF
+sudo tee /etc/systemd/system/og.service > /dev/null << EOF
 [Unit]
 Description=0G node service
 After=network-online.target
@@ -102,8 +102,8 @@ sed -i -e "s%^address = \"tcp://localhost:1317\"%address = \"tcp://0.0.0.0:${og}
 
 ### Start Node
 ```
-sudo systemctl start 0g
-journalctl -u 0g -f
+sudo systemctl start og
+journalctl -u og -f
 ```
 
 ### Backup Validator
