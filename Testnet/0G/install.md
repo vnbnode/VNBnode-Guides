@@ -40,7 +40,7 @@ cd $HOME
 ### Cosmovisor Setup
 ```
 go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
-sudo tee /etc/systemd/system/og.service > /dev/null << EOF
+sudo tee /etc/systemd/system/0g.service > /dev/null << EOF
 [Unit]
 Description=0G node service
 After=network-online.target
@@ -59,7 +59,7 @@ Environment="UNSAFE_SKIP_BACKUP=true"
 WantedBy=multi-user.target
 EOF
 sudo systemctl daemon-reload
-sudo systemctl enable og
+sudo systemctl enable 0g
 ```
 
 ### Initialize Node
