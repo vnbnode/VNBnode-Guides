@@ -106,8 +106,8 @@ sed -i -e "s%^address = \"tcp://localhost:1317\"%address = \"tcp://0.0.0.0:${og}
 
 ### Start Node
 ```
-sudo systemctl start og
-journalctl -u og -f
+sudo systemctl start 0g
+journalctl -u 0g -f
 ```
 
 ### Backup Validator
