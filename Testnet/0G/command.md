@@ -35,8 +35,7 @@ Create validator
   --website "https://vnbnode.com" \
   --details "VNBnode is a group of professional validators / researchers in blockchain" \
   --from=<key_name> \
-  --gas-adjustment=1.4 \
-  --gas-prices 0.00252ua0gi
+  --gas-adjustment=1.4
 ```
 Edit validator
 ```
@@ -50,12 +49,12 @@ Edit validator
 --from wallet \
 --gas-adjustment 1.4 \
 -chain-id zgtendermint_16600-1 \
---gas=auto --gas-prices=0.00252ua0gi \
+--gas=auto \
 -y
 ```
 Unjail
 ```
-0gchaind tx slashing unjail --from wallet --chain-id zgtendermint_16600-1 --gas-adjustment 1.4 --gas auto --gas-prices=0.00252ua0gi -y
+0gchaind tx slashing unjail --from wallet --chain-id zgtendermint_16600-1 --gas-adjustment 1.4 --gas auto -y
 ```
 View validator details
 ```
@@ -79,23 +78,23 @@ Query inactive validators
 ## Managing Tokens
 Delegate tokens to your validator
 ```
-0gchaind tx staking delegate $(0gchaind keys show $WALLET_NAME --bech val -a)  10000000000000000ua0gi --from $WALLET_NAME --gas=500000 --gas-prices=0.00252ua0gi -y
+0gchaind tx staking delegate $(0gchaind keys show wallet --bech val -a)  10000000000000000ua0gi --from wallet --gas=500000 -y
 ```
 Send token
 ```
-0gchaind tx bank send <WALLET> <TO_WALLET> <AMOUNT>ua0gi --gas=500000 --gas-prices=0.00252ua0gi -y
+0gchaind tx bank send <WALLET> <TO_WALLET> <AMOUNT>ua0gi --gas=500000 -y
 ```
 Withdraw reward from all validator
 ```
-0gchaind tx distribution withdraw-all-rewards --from wallet --chain-id zgtendermint_16600-1 --gas-adjustment 1.4 --gas auto --gas-prices=0.00252ua0gi -y
+0gchaind tx distribution withdraw-all-rewards --from wallet --chain-id zgtendermint_16600-1 --gas-adjustment 1.4 --gas auto -y
 ```
 Withdraw reward and commission
 ```
-0gchaind tx distribution withdraw-rewards $(0gchaind keys show wallet --bech val -a) --commission --from wallet --chain-id zgtendermint_16600-1 --gas-adjustment 1.4 --gas auto --gas-prices=0.00252ua0gi -y
+0gchaind tx distribution withdraw-rewards $(0gchaind keys show wallet --bech val -a) --commission --from wallet --chain-id zgtendermint_16600-1 --gas-adjustment 1.4 --gas auto -y
 ```
 Redelegate to another validator
 ```
-0gchaind tx staking redelegate $(0gchaind keys show wallet --bech val -a) <to-valoper-address> 1000000stake --from wallet --chain-id zgtendermint_16600-1 --gas-adjustment 1.4 --gas auto --gas-prices=0.00252ua0gi -y
+0gchaind tx staking redelegate $(0gchaind keys show wallet --bech val -a) <to-valoper-address> 1000000stake --from wallet --chain-id zgtendermint_16600-1 --gas-adjustment 1.4 --gas auto -y
 ```
 
 ## Governance
@@ -109,19 +108,19 @@ View proposal by ID
 ```
 Vote yes
 ```
-0gchaind tx gov vote 1 yes --from wallet --gas-prices=0.00252ua0gi -y
+0gchaind tx gov vote 1 yes --from wallet -y
 ```
 Vote No
 ```
-0gchaind tx gov vote 1 no --from wallet --gas-prices=0.00252ua0gi -y
+0gchaind tx gov vote 1 no --from wallet -y
 ```
 Vote option asbtain
 ```
-0gchaind tx gov vote 1 abstain --from wallet --gas-prices=0.00252ua0gi -y
+0gchaind tx gov vote 1 abstain --from wallet -y
 ```
 Vote option NoWithVeto
 ```
-0gchaind tx gov vote 1 NoWithVeto --from wallet --gas-prices=0.00252ua0gi -y
+0gchaind tx gov vote 1 NoWithVeto --from wallet -y
 ```
 
 ## Maintenance
