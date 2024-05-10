@@ -70,7 +70,6 @@ source $HOME/.bash_profile
 0gchaind init $MONIKER --chain-id $CHAIN_ID
 0gchaind config chain-id $CHAIN_ID
 0gchaind config keyring-backend test
-0gchaind config node tcp://localhost:10157
 ```
 
 ### Download Genesis & Addrbook
