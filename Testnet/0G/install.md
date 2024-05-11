@@ -1,10 +1,11 @@
 # 0G
 
-## Snapshot: https://github.com/vnbnode/VNBnode-Guides/blob/main/Testnet/0G/Snapshot.md
-## https://rpc-0g.vnbnode.com
-## https://api-0g.vnbnode.com
-## https://grpc-0g.vnbnode.com
-## https://explorer.vnbnode.com/OG-Testnet/uptime
+### Snapshot: https://github.com/vnbnode/VNBnode-Guides/blob/main/Testnet/0G/Snapshot.md
+
+https://rpc-0g.vnbnode.com
+https://api-0g.vnbnode.com
+https://grpc-0g.vnbnode.com
+https://explorer.vnbnode.com/OG-Testnet/uptime
 
 ## Chain ID: `zgtendermint_16600-1`
 
