@@ -2,11 +2,15 @@
 
 ### Snapshot: https://github.com/vnbnode/VNBnode-Guides/blob/main/Testnet/0G/Snapshot.md
 
+### End Points
+
 https://rpc-0g.vnbnode.com
 
 https://api-0g.vnbnode.com
 
 https://grpc-0g.vnbnode.com
+
+### Explorer
 
 https://explorer.vnbnode.com/OG-Testnet/uptime
 
