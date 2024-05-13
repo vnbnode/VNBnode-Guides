@@ -91,12 +91,6 @@ sed -i \
   -e 's|^keyring-backend *=.*|keyring-backend = "test"|' \
   -e 's|^node *=.*|node = "tcp://localhost:10557"|' \
   $HOME/.junction/config/client.toml
-sed -i \
-  -e 's|^pruning *=.*|pruning = "custom"|' \
-  -e 's|^pruning-keep-recent *=.*|pruning-keep-recent = "100"|' \
-  -e 's|^pruning-keep-every *=.*|pruning-keep-every = "0"|' \
-  -e 's|^pruning-interval *=.*|pruning-interval = "19"|' \
-  $HOME/.junction/config/app.toml
 ```
 
 ### Custom Port
