@@ -6,7 +6,7 @@
 | :---------: | :-----------------------:|
 |   **CPU**   |        4 Cores           |
 |   **RAM**   |        16 GB             |
-| **Storage** |        TB SSD            |
+| **Storage** |        1 TB SSD          |
 | **NETWORK** |        100 Mbps          |
 |   **OS**    |        Ubuntu 22.04      |
 |   **Port**  |        10656             | 
