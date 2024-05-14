@@ -128,7 +128,7 @@ sudo rm -f $(which initiad)
 sudo rm -rf $HOME/.initia
 ```
 
-2/ Run Oracle
+## 2/ Run Oracle
 
 ### Build binary
 ```
