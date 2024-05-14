@@ -88,7 +88,7 @@ sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.i
 sed -i.bak -e "s/^pruning *=.*/pruning = \"custom\"/" $HOME/.initia/config/app.toml
 sed -i.bak -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"100\"/" $HOME/.initia/config/app.toml
 sed -i.bak -e "s/^pruning-interval *=.*/pruning-interval = \"10\"/" $HOME/.initia/config/app.toml
-sed -i "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0amf\"/" $HOME/.initia/config/app.toml
+sed -i "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0uinit\"/" $HOME/.initia/config/app.toml
 sed -i "s/^indexer *=.*/indexer = \"kv\"/" $HOME/.initia/config/config.toml
 sed -i \
   -e 's|^chain-id *=.*|chain-id = "initation-1"|' \
