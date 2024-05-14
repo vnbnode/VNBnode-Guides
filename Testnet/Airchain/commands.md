@@ -37,8 +37,9 @@ echo "{\"pubkey\":{\"@type\":\"/cosmos.crypto.ed25519.PubKey\",\"key\":\"$(junct
 }" > validator.json
 ```
 
-# Create a validator using the JSON configuration
 ```
+# Create a validator using the JSON configuration
+
 junctiond tx staking create-validator validator.json \
     --from wallet \
     --chain-id junction \
