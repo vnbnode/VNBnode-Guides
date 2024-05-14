@@ -1,5 +1,7 @@
 # Initia
 
+## 1/ Run Node
+
 ## Recommended Hardware Requirements
 
 |   SPEC      |       Recommend          |
@@ -125,6 +127,29 @@ sudo systemctl daemon-reload
 sudo rm -f $(which initiad)
 sudo rm -rf $HOME/.initia
 ```
+
+2/ Run Oracle
+
+### Build binary
+```
+git clone https://github.com/skip-mev/slinky.git
+cd slinky
+git checkout v0.4.3
+make build
+```
+
+### Enable Oracle
+```
+sed -i -e "s%^enabled = \"false\"%enabled = \"true\"%" $HOME/.initia/config/app.toml
+```
+
+### Start Orcale 
+```
+./build/slinky --oracle-config-path ./config/core/oracle.json --market-map-endpoint 0.0.0.0:9090
+```
+
+
+
 
 ## Thank to support VNBnode.
 ### Visit us at:
