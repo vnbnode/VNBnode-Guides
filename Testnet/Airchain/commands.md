@@ -42,6 +42,6 @@ echo "{\"pubkey\":{\"@type\":\"/cosmos.crypto.ed25519.PubKey\",\"key\":\"$(junct
 junctiond tx staking create-validator validator.json \
     --from wallet \
     --chain-id junction \
-	--fees 200amf \
-- y
+    --fees 200amf \
+    -y
 ```
