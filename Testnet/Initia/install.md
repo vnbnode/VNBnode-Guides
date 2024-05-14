@@ -145,7 +145,6 @@ sed -i -e "s%^enabled = \"false\"%enabled = \"true\"%" $HOME/.initia/config/app.
 
 ### Start Orcale 
 ```
-tmux
 ./build/slinky --oracle-config-path ./config/core/oracle.json --market-map-endpoint 0.0.0.0:10690
 ```
 
