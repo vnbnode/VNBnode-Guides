@@ -28,9 +28,9 @@ initiad tx mstaking create-validator \
   --pubkey=$(initiad tendermint show-validator) \
   --moniker=$MONIKER \
   --chain-id=initiation-1 \
-  --identity="keybase-id" \
-  --website="https://github.com/slatro" \
-  --details="info-detail" \
+  --identity="06F5F34BD54AA6C7" \
+  --website="https://vnbnode.com" \
+  --details="VNBnode is a group of professional validators / researchers in blockchain" \
   --security-contact="email-address" \
   --commission-rate="0.05" \
   --commission-max-rate="0.20" \
