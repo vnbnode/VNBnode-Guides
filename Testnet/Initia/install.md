@@ -110,7 +110,7 @@ sed -i -e "s%^address = \"tcp://localhost:1317\"%address = \"tcp://0.0.0.0:${ini
 
 ### Start Node
 ```
-sudo systemctl start initia
+sudo systemctl restart initia
 journalctl -u initia -f
 ```
 
