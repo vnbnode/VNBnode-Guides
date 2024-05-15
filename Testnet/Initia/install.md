@@ -114,6 +114,19 @@ sudo systemctl restart initia
 journalctl -u initia -f
 ```
 
+### Fast synch
+```
+sudo systemctl stop initia
+
+initiad tendermint unsafe-reset-all --home $HOME/.initia --keep-addr-book
+
+curl -L https://t-ss.nodeist.net/initia/snapshot_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.initia --strip-components 2
+```
+```
+sudo systemctl restart initia
+journalctl -u initia -f
+```
+
 ### Backup Validator
 ```
 mkdir -p $HOME/backup/.initia
