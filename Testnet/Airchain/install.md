@@ -13,11 +13,11 @@
 
 ## End Points
 
-https://rpc-0g.vnbnode.com
+https://rpc-airchain.vnbnode.com
 
-https://api-0g.vnbnode.com
+https://api-airchain.vnbnode.com
 
-https://grpc-0g.vnbnode.com
+https://grpc-airchain.vnbnode.com
 
 ### Update and install packages for compiling
 ```
