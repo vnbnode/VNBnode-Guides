@@ -15,7 +15,7 @@ initiad keys list
 ```
 Query wallet balances
 ```
-initiad q bank balances $(initiad keys show wallet -a)
+initiad q bank balances $(initiad keys show wallet -a) --node https://rpc-initia-testnet.trusted-point.com:443
 ```
 ## Synch check
 ```
