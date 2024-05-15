@@ -42,6 +42,14 @@ initiad tx mstaking create-validator \
   -y
 ```
 
+Edit validator
+```
+initiad tx mstaking edit-validator --website="https://vnbnode.com" --details="VNBnode is a group of professional validators / researchers in blockchain" --chain-id=initiation-1 --moniker="Name_VNBnode" --from=wallet --gas=2000000 --fees=300000uinit -y
+```
+Check validator info
+```
+initiad q mstaking validator $(initiad keys show wallet --bech val -a)
+```
 ## Managing Tokens
 Delegate tokens to your validator
 ```
