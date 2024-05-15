@@ -41,3 +41,22 @@ initiad tx mstaking create-validator \
   --fees=300000uinit \
   -y
 ```
+
+## Managing Tokens
+Delegate tokens to your validator
+```
+initiad tx staking delegate $(initiad keys show wallet --bech val -a)  1000000uinit --from wallet --chain-id initiation-1 --gas=auto -y
+```
+Send token
+```
+initiad tx bank send <WALLET> <TO_WALLET> <AMOUNT>uinit --gas=500000 -y
+```
+Withdraw reward from all validator
+```
+initiad tx distribution withdraw-all-rewards --from wallet --chain-id initiation-1 --gas-adjustment 1.4 --gas auto -y
+```
+Withdraw reward and commission
+```
+initiad tx distribution withdraw-rewards $(initiad keys show wallet --bech val -a) --commission --from wallet --chain-id initiation-1 --gas-adjustment 1.4 --gas auto -y
+```
+
