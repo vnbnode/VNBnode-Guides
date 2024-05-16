@@ -56,6 +56,7 @@ LimitNOFILE=65535
 Environment="DAEMON_HOME=$HOME/.initia"
 Environment="DAEMON_NAME=initiad"
 Environment="UNSAFE_SKIP_BACKUP=true"
+Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
  
 [Install]
 WantedBy=multi-user.target
@@ -130,6 +131,21 @@ mkdir -p $HOME/backup/.initia
 cp $HOME/.initia/config/priv_validator_key.json $HOME/backup/.initia
 ```
 
+### Update
+```
+git clone -b v0.2.14 https://github.com/initia-labs/initia.git
+cd initia
+git checkout v0.2.14
+make install
+mkdir -p $HOME/.initia/cosmovisor/genesis/bin
+cp $HOME/go/bin/initiad $HOME/.initia/cosmovisor/genesis/bin/
+sudo ln -s $HOME/.initia/cosmovisor/genesis $HOME/.initia/cosmovisor/current -f
+sudo ln -s $HOME/.initia/cosmovisor/current/bin/initiad /usr/local/bin/initiad -f
+cd $HOME
+sudo systemctl restart initia
+journalctl -u initia -f
+```
+
 ### Remove Node
 ```
 cd $HOME
@@ -160,9 +176,6 @@ sed -i -e "s%^enabled = \"false\"%enabled = \"true\"%" $HOME/.initia/config/app.
 ```
 ./build/slinky --oracle-config-path ./config/core/oracle.json --market-map-endpoint 0.0.0.0:10690
 ```
-
-
-
 
 ## Thank to support VNBnode.
 ### Visit us at:
