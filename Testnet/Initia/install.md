@@ -28,9 +28,9 @@ cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/
 
 ### Build binary
 ```
-git clone -b v0.2.12 https://github.com/initia-labs/initia.git
+git clone -b v0.2.14 https://github.com/initia-labs/initia.git
 cd initia
-git checkout v0.2.12
+git checkout v0.2.14
 make install
 mkdir -p $HOME/.initia/cosmovisor/genesis/bin
 cp $HOME/go/bin/initiad $HOME/.initia/cosmovisor/genesis/bin/
