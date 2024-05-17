@@ -54,7 +54,7 @@ initiad q mstaking validator $(initiad keys show wallet --bech val -a)
 ## Managing Tokens
 Delegate tokens to your validator
 ```
-initiad tx staking delegate $(initiad keys show wallet --bech val -a)  1000000uinit --from wallet --chain-id initiation-1 --gas=auto -y
+initiad tx mstaking delegate $(initiad keys show wallet --bech val -a)  1000000uinit --from wallet --chain-id initiation-1 --gas=auto -y
 ```
 Send token
 ```
