@@ -35,10 +35,11 @@ initiad tx mstaking create-validator \
   --commission-rate="0.05" \
   --commission-max-rate="0.20" \
   --commission-max-change-rate="0.05" \
-  --from=wallet \
   --gas=auto \
   --gas-adjustment=1.4 \
   --fees=300000uinit \
+  --node https://rpc-initia-testnet.trusted-point.com:443 \
+  --from=wallet \
   -y
 ```
 
