@@ -127,9 +127,9 @@ cp $HOME/.0gchain/config/priv_validator_key.json $HOME/backup/.0gchain
 ### Remove Node
 ```
 cd $HOME
-sudo systemctl stop og
-sudo systemctl disable og
-sudo rm /etc/systemd/system/og.service
+sudo systemctl stop 0g
+sudo systemctl disable 0g
+sudo rm /etc/systemd/system/0g.service
 sudo systemctl daemon-reload
 sudo rm $HOME/go/bin/0gchaind
 sudo rm -f $(which 0gchaind)
