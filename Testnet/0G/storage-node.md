@@ -1,7 +1,6 @@
 ## Storage Node
 
 ## Hardware requirements
-```py
 |   SPEC      |       Recommend          |
 | :---------: | :-----------------------:|
 |   **CPU**   |        4 Cores           |
@@ -9,7 +8,6 @@
 | **Storage** |        1 TB Nvme         |
 | **NETWORK** |        1 Gbps            |
 |   **OS**    |        Ubuntu 22.04      |
-```
 
 ### Update and install packages for compiling
 ```bash
