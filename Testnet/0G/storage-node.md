@@ -4,7 +4,7 @@
 |   SPEC      |       Recommend          |
 | :---------: | :-----------------------:|
 |   **CPU**   |        4 Cores           |
-|   **RAM**   |        64 GB             |
+|   **RAM**   |        16 GB             |
 | **Storage** |        1 TB Nvme         |
 | **NETWORK** |        1 Gbps            |
 |   **OS**    |        Ubuntu 22.04      |
