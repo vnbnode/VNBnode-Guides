@@ -49,7 +49,7 @@ initiad tx mstaking edit-validator --website="https://vnbnode.com" --details="VN
 ```
 Check validator info
 ```
-initiad q mstaking validator $(initiad keys show wallet --bech val -a)
+initiad q mstaking validator $(initiad keys show wallet --bech val -a) --node https://rpc-initia-testnet.trusted-point.com:443
 ```
 ## Managing Tokens
 Delegate tokens to your validator
