@@ -5,7 +5,7 @@ sudo systemctl stop initia
 cp $HOME/.initia/data/priv_validator_state.json $HOME/.initia/priv_validator_state.json.backup
 rm -rf $HOME/.initia/data && mkdir -p $HOME/.initia/data
 ```
-_Download Snapshot_ (auto daily update)
+_Download Snapshot_
 ```
 curl -L https://snap.vnbnode.com/initia/initation-1_snapshot_latest.tar.lz4 | tar -I lz4 -xf - -C $HOME/.initia/data
 ```
