@@ -112,15 +112,13 @@ sudo systemctl restart initia
 journalctl -u initia -f
 ```
 
-### Fast synch
+### Snapshot
 ```
 sudo systemctl stop initia
-
-initiad tendermint unsafe-reset-all --home $HOME/.initia --keep-addr-book
-
+cp $HOME/.initia/data/priv_validator_state.json $HOME/.initia/priv_validator_state.json.backup
+rm -rf $HOME/.initia/data && mkdir -p $HOME/.initia/data
 curl -L https://snap.vnbnode.com/initia/initation-1_snapshot_latest.tar.lz4 | tar -I lz4 -xf - -C $HOME/.initia/data
-```
-```
+mv $HOME/.initia/priv_validator_state.json.backup $HOME/.initia/data/priv_validator_state.json
 sudo systemctl restart initia
 journalctl -u initia -f
 ```
