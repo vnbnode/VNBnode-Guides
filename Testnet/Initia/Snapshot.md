@@ -7,7 +7,7 @@ rm -rf $HOME/.initia/data && mkdir -p $HOME/.initia/data
 ```
 _Download Snapshot_
 ```
-curl -L https://snap.vnbnode.com/initia/initation-1_snapshot_latest.tar.lz4 | tar -I lz4 -xf - -C $HOME/.initia/data
+curl -L https://snap.vnbnode.com/initia/initiation-1_snapshot_200150.tar.lz4 | tar -I lz4 -xf - -C $HOME/.initia/data
 ```
 ```
 mv $HOME/.initia/priv_validator_state.json.backup $HOME/.initia/data/priv_validator_state.json
