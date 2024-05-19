@@ -28,9 +28,9 @@ cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/
 
 ### Build binary
 ```
-git clone -b v0.2.14 https://github.com/initia-labs/initia.git
+git clone -b v0.2.15 https://github.com/initia-labs/initia.git
 cd initia
-git checkout v0.2.14
+git checkout v0.2.15
 make install
 mkdir -p $HOME/.initia/cosmovisor/genesis/bin
 cp $HOME/go/bin/initiad $HOME/.initia/cosmovisor/genesis/bin/
@@ -133,9 +133,9 @@ cp $HOME/.initia/config/priv_validator_key.json $HOME/backup/.initia
 
 ### Update
 ```
-git clone -b v0.2.14 https://github.com/initia-labs/initia.git
+git clone -b v0.2.15 https://github.com/initia-labs/initia.git
 cd initia
-git checkout v0.2.14
+git checkout v0.2.15
 make install
 mkdir -p $HOME/.initia/cosmovisor/genesis/bin
 cp $HOME/go/bin/initiad $HOME/.initia/cosmovisor/genesis/bin/
