@@ -51,11 +51,6 @@ read -sp "Enter your private key: " PRIVATE_KEY && echo
 
 ### Update node configuration
 ```bash
-if grep -q '# miner_id' $ZGS_CONFIG_FILE; then
-    MINER_ID=$(openssl rand -hex 32)
-    sed -i "/# miner_id/c\miner_id = \"$MINER_ID\"" $ZGS_CONFIG_FILE
-fi
-
 if grep -q '# miner_key' $ZGS_CONFIG_FILE; then
     sed -i "/# miner_key/c\miner_key = \"$PRIVATE_KEY\"" $ZGS_CONFIG_FILE
 fi
@@ -98,7 +93,6 @@ sudo systemctl status zgs
 
 ### Backup
 ```bash
-grep 'miner_id' $ZGS_CONFIG_FILE
 grep 'miner_key' $ZGS_CONFIG_FILE
 ```
 
