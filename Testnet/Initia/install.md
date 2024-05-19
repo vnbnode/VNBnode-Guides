@@ -118,7 +118,7 @@ sudo systemctl stop initia
 
 initiad tendermint unsafe-reset-all --home $HOME/.initia --keep-addr-book
 
-curl -L https://t-ss.nodeist.net/initia/snapshot_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.initia --strip-components 2
+curl -L https://snap.vnbnode.com/initia/initation-1_snapshot_latest.tar.lz4 | tar -I lz4 -xf - -C $HOME/.initia/data
 ```
 ```
 sudo systemctl restart initia
