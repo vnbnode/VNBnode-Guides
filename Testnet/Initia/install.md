@@ -117,7 +117,8 @@ journalctl -u initia -f
 sudo systemctl stop initia
 cp $HOME/.initia/data/priv_validator_state.json $HOME/.initia/priv_validator_state.json.backup
 rm -rf $HOME/.initia/data && mkdir -p $HOME/.initia/data
-curl -L https://snapshots.polkachu.com/testnet-snapshots/initia/initia_211947.tar.lz4 | tar -I lz4 -xf - -C $HOME/.initia/data
+wget -O initia_211947.tar.lz4 https://snapshots.polkachu.com/testnet-snapshots/initia/initia_211947.tar.lz4 --inet4-only
+lz4 -c -d initia_211947.tar.lz4  | tar -x -C $HOME/.initia
 mv $HOME/.initia/priv_validator_state.json.backup $HOME/.initia/data/priv_validator_state.json
 sudo systemctl restart initia
 journalctl -u initia -f
