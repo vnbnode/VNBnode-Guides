@@ -131,6 +131,11 @@ cp $HOME/.initia/config/priv_validator_key.json $HOME/backup/.initia
 
 ### Update
 ```
+# Check current version
+initiad version
+```
+
+```
 sudo systemctl stop initia
 rm -r initia
 git clone -b v0.2.15 https://github.com/initia-labs/initia.git
