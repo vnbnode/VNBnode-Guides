@@ -147,6 +147,12 @@ cp $HOME/go/bin/initiad $HOME/.initia/cosmovisor/genesis/bin/
 sudo ln -s $HOME/.initia/cosmovisor/genesis $HOME/.initia/cosmovisor/current -f
 sudo ln -s $HOME/.initia/cosmovisor/current/bin/initiad /usr/local/bin/initiad -f
 cd $HOME
+```
+```
+# Check new version
+initiad version
+```
+```
 sudo systemctl restart initia
 journalctl -u initia -f
 ```
