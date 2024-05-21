@@ -75,6 +75,37 @@ junctiond tx staking edit-validator \
 --gas 350000 -y
 ```
 
+### Valoper-Address
+```
+junctiond keys show Wallet_Name --bech val
+```
+### Validator-Info
+```
+junctiond query staking validator aloperaddress......
+```
+
+### Jail Info
+```
+junctiond query slashing signing-info $(junctiond tendermint show-validator)
+```
+### Unjail
+```
+junctiond tx slashing unjail --from Wallet_name --chain-id junction --gas 350000 -y
+```
+### Withdraw all rewards from all validators
+```
+junctiond  tx distribution withdraw-all-rewards --from Wallet_Name --chain-id junction --gas 350000 -y
+```
+
+### Withdraw and commission from your Validator
+```
+junctiond tx distribution withdraw-rewards valoper1amxp0k0hg4edrxg85v07t9ka2tfuhamhldgf8e --from Wallet_Name --gas 350000 --chain-id=junction --commission -y
+```
+### Delegate tokens to your validator
+```
+junctiond tx staking delegate valpoer........ "100000000"amf --from Wallet_Name --gas 350000 --chain-id=junction -y
+```
+
 ## Governance
 
 ### View all proposals
