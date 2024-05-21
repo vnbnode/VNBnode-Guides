@@ -65,14 +65,13 @@ junctiond tx staking create-validator validator.json \
 
 ```
 junctiond tx staking edit-validator \
---new-moniker "Your_Moniker" \
---identity "Keybase_ID" \
---details "Your_Description" \
---website "Your_Website" \
+--new-moniker "Yourname|VNBnode" \
+--identity "06F5F34BD54AA6C7" \
+--website "https://vnbnode.com" \
 --security-contact "Your_Email" \
 --chain-id junction \
 --commission-rate 0.05 \
---from Wallet_Name \
+--from wallet \
 --gas 350000 -y
 ```
 
