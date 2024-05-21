@@ -1,4 +1,4 @@
-# Command Airchain
+# Commands for Airchains
 
 ## Managing keys
 ### Generate new key
