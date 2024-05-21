@@ -36,7 +36,7 @@ junctiond status 2>&1 | jq
 junctiond query bank balances $WALLET_ADDRESS 
 ```
 ## Managing validators
-Create validator.json file
+### Create validator.json file
 ```
 cd $HOME
 # Create validator.json file
@@ -53,16 +53,61 @@ echo "{\"pubkey\":{\"@type\":\"/cosmos.crypto.ed25519.PubKey\",\"key\":\"$(junct
     \"min-self-delegation\": \"1\"
 }" > validator.json
 ```
-
+### Create a validator using the JSON configuration
 ```
-# Create a validator using the JSON configuration
-
 junctiond tx staking create-validator validator.json \
     --from wallet \
     --chain-id junction \
     --fees 200amf \
     -y
 ```
+### Edit Validator
+
+```
+junctiond tx staking edit-validator \
+--new-moniker "Your_Moniker" \
+--identity "Keybase_ID" \
+--details "Your_Description" \
+--website "Your_Website" \
+--security-contact "Your_Email" \
+--chain-id junction \
+--commission-rate 0.05 \
+--from Wallet_Name \
+--gas 350000 -y
+```
+
+## Governance
+
+### View all proposals
+```
+junctiond query gov proposals
+```
+
+### View specific proposal
+```
+junctiond query gov proposal 1
+```
+
+### Vote yes
+```
+junctiond tx gov vote 1 yes --from Wallet_Name --gas 350000  --chain-id=junction -y
+```
+
+### Vote no
+```
+junctiond tx gov vote 1 no --from Wallet_Name --gas 350000  --chain-id=junction -y
+```
+
+### Vote abstain
+```
+junctiond tx gov vote 1 abstain --from Wallet_Name --gas 350000  --chain-id=junction -y
+```
+
+### Vote no_with_veto
+```
+junctiond tx gov vote 1 no_with_veto --fr
+```
+
 
 
 
