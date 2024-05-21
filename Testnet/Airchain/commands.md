@@ -13,6 +13,10 @@ junctiond keys add $WALLET --recover
 ```
 junctiond keys list
 ```
+### delete key
+```
+junctiond keys delete Wallet_Name
+```
 ### Query wallet balances
 ```
 junctiond q bank balances $(junctiond keys show wallet -a)
