@@ -85,19 +85,30 @@ sed -i.bak -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"100\"/" $HOME
 sed -i.bak -e "s/^pruning-interval *=.*/pruning-interval = \"10\"/" $HOME/.junction/config/app.toml
 sed -i "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0amf\"/" $HOME/.junction/config/app.toml
 sed -i "s/^indexer *=.*/indexer = \"kv\"/" $HOME/.junction/config/config.toml
-sed -i \
-  -e 's|^chain-id *=.*|chain-id = "function"|' \
-  -e 's|^keyring-backend *=.*|keyring-backend = "test"|' \
-  -e 's|^node *=.*|node = "tcp://localhost:10557"|' \
-  $HOME/.junction/config/client.toml
 ```
 
 ### Custom Port
 ```
 echo 'export junction="105"' >> ~/.bash_profile
 source $HOME/.bash_profile
-sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://0.0.0.0:${junction}58\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://0.0.0.0:${junction}57\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:${junction}60\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:${junction}56\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":${junction}60\"%" $HOME/.junction/config/config.toml
-sed -i -e "s%^address = \"tcp://localhost:1317\"%address = \"tcp://0.0.0.0:${junction}17\"%; s%^address = \":8080\"%address = \":${junction}80\"%; s%^address = \"localhost:9090\"%address = \"0.0.0.0:${junction}90\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:${junction}91\"%; s%:8545%:${junction}45%; s%:8546%:${junction}46%; s%:6065%:${junction}65%" $HOME/.junction/config/app.toml
+sed -i.bak -e "s%:1317%:${junction}17%g;
+s%:8080%:${junction}80%g;
+s%:9090%:${junction}90%g;
+s%:9091%:${junction}91%g;
+s%:8545%:${junction}45%g;
+s%:8546%:${junction}46%g;
+s%:6065%:${junction}65%g" $HOME/.junction/config/app.toml
+sed -i.bak -e "s%:26658%:${junction}58%g;
+s%:26657%:${junction}57%g;
+s%:6060%:${junction}60%g;
+s%:26656%:${junction}56%g;
+s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):${junction}56\"%;
+s%:26660%:${junction}60%g" $HOME/.junction/config/config.toml
+sed -i \
+  -e 's|^chain-id *=.*|chain-id = "function"|' \
+  -e 's|^keyring-backend *=.*|keyring-backend = "test"|' \
+  -e 's|^node *=.*|node = "tcp://localhost:${junction}57"|' \
+  $HOME/.junction/config/client.toml
 ```
 
 ### Start Node
