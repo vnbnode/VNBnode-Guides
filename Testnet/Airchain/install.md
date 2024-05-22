@@ -109,7 +109,7 @@ s%:26660%:${junction}60%g" $HOME/.junction/config/config.toml
 sed -i \
   -e 's|^chain-id *=.*|chain-id = "function"|' \
   -e 's|^keyring-backend *=.*|keyring-backend = "test"|' \
-  -e 's|^node *=.*|node = "tcp://localhost:${junction}57"|' \
+  -e 's|^node *=.*|node = "tcp://localhost:10557"|' \
   $HOME/.junction/config/client.toml
 ```
 
