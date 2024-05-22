@@ -105,7 +105,7 @@ mv $HOME/.hedge/priv_validator_state.json.backup $HOME/.hedge/data/priv_validato
 
 ### Start Node
 ```
-sudo systemctl start hedge
+sudo systemctl restart hedge
 journalctl -u hedge -f
 ```
 
