@@ -12,7 +12,7 @@ https://grpc-0g.vnbnode.com
 
 ## Explorer
 
-https://explorer.vnbnode.com/OG-Testnet/uptime
+https://explorer.vnbnode.com/OG-Testnet
 
 ## Chain ID: `zgtendermint_16600-1`
 
