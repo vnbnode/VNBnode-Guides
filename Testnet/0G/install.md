@@ -120,7 +120,7 @@ s%:6060%:${0g}60%g;
 s%:26656%:${0g}56%g;
 s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):${0g}56\"%;
 s%:26660%:${0g}60%g" $HOME/.0gchain/config/config.toml
-0gchaind config node tcp://localhost:${og}57
+0gchaind config node tcp://localhost:10157
 ```
 
 ### Start Node
