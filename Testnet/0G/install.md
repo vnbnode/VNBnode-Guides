@@ -107,8 +107,21 @@ sed -i "s/^indexer *=.*/indexer = \"kv\"/" $HOME/.0gchain/config/config.toml
 ```
 echo 'export port="101"' >> ~/.bash_profile
 source $HOME/.bash_profile
-sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://0.0.0.0:${port}58\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://0.0.0.0:${port}57\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:${port}60\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:${port}56\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":${port}60\"%" $HOME/.0gchain/config/config.toml
-sed -i -e "s%^address = \"tcp://localhost:1317\"%address = \"tcp://0.0.0.0:${port}17\"%; s%^address = \":8080\"%address = \":${port}80\"%; s%^address = \"localhost:9090\"%address = \"0.0.0.0:${port}90\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:${port}91\"%; s%:8545%:${port}45%; s%:8546%:${port}46%; s%:6065%:${port}65%" $HOME/.0gchain/config/app.toml
+sed -i.bak -e "s%:1317%:${port}17%g;
+s%:8080%:${port}80%g;
+s%:9090%:${port}90%g;
+s%:9091%:${port}91%g;
+s%:8545%:${port}45%g;
+s%:8546%:${port}46%g;
+s%:6065%:${port}65%g" $HOME/.0gchain/config/app.toml
+sed -i.bak -e "s%:26658%:${port}58%g;
+s%:26657%:${port}57%g;
+s%:6060%:${port}60%g;
+s%:26656%:${port}56%g;
+s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):${port}56\"%;
+s%:26660%:${port}60%g" $HOME/.0gchain/config/config.toml
+sed -i -e "s%^proxy_app = \"tcp://127.0.0.1\"%proxy_app = \"tcp://0.0.0.0\"%; s%^laddr = \"tcp://127.0.0.1\"%laddr = \"tcp://0.0.0.0\"%" $HOME/.0gchain/config/config.toml
+sed -i -e "s%^address = \"tcp://localhost\"%address = \"tcp://0.0.0.0\"%; s%^address = \":8080\"%address = \":${port}80\"%; s%^address = \"localhost\"%address = \"0.0.0.0\"%" $HOME/.0gchain/config/app.toml
 sed -i \
   -e 's|^node *=.*|node = "tcp://localhost:10157"|' \
   $HOME/.0gchain/config/client.toml
