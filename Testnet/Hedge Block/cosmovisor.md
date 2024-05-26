@@ -102,6 +102,12 @@ s%:6060%:${hedge}60%g;
 s%:26656%:${hedge}56%g;
 s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):${hedge}56\"%;
 s%:26660%:${hedge}60%g" $HOME/.hedge/config/config.toml
+sed -i -e "s%^proxy_app = \"tcp://127.0.0.1\"%proxy_app = \"tcp://0.0.0.0\"%; s%^laddr = \"tcp://127.0.0.1\"%laddr = \"tcp://0.0.0.0\"%" $HOME/.hedge/config/config.toml
+sed -i -e "s%^address = \"tcp://localhost\"%address = \"tcp://0.0.0.0\"%; s%^address = \":8080\"%address = \":${hedge}80\"%; s%^address = \"localhost\"%address = \"0.0.0.0\"%" $HOME/.hedge/config/app.toml
+sed -i \
+  -e 's|^node *=.*|node = "tcp://localhost:10157"|' \
+  $HOME/.0gchain/config/client.toml
+
 hedged config node tcp://localhost:${hedge}57
 ```
 
