@@ -81,7 +81,7 @@ junctiond tx staking edit-validator \
 
 ### Valoper-Address
 ```
-junctiond keys show Wallet_Name --bech val
+junctiond keys show wallet --bech val
 ```
 ### Validator-Info
 ```
@@ -94,20 +94,20 @@ junctiond query slashing signing-info $(junctiond tendermint show-validator)
 ```
 ### Unjail
 ```
-junctiond tx slashing unjail --from Wallet_name --chain-id junction --gas 350000 -y
+junctiond tx slashing unjail --from wallet --chain-id junction --gas 350000 -y
 ```
 ### Withdraw all rewards from all validators
 ```
-junctiond  tx distribution withdraw-all-rewards --from Wallet_Name --chain-id junction --gas 350000 -y
+junctiond  tx distribution withdraw-all-rewards --from wallet --chain-id junction --gas 350000 -y
 ```
 
 ### Withdraw and commission from your Validator
 ```
-junctiond tx distribution withdraw-rewards airvaloper1qmdeucu95ex0awrj7yd48j2x7qptk6tpszh6fx --from Wallet_Name --gas 350000 --chain-id=junction --commission -y
+junctiond tx distribution withdraw-rewards airvaloper1qmdeucu95ex0awrj7yd48j2x7qptk6tpszh6fx --from wallet --gas 350000 --chain-id=junction --commission -y
 ```
 ### Delegate tokens to your validator
 ```
-junctiond tx staking delegate valpoer........ "100000000"amf --from Wallet_Name --gas 350000 --chain-id=junction -y
+junctiond tx staking delegate valpoer........ "100000000"amf --from wallet --gas 350000 --chain-id=junction -y
 ```
 
 ## Governance
@@ -124,17 +124,17 @@ junctiond query gov proposal 1
 
 ### Vote yes
 ```
-junctiond tx gov vote 1 yes --from Wallet_Name --gas 350000  --chain-id=junction -y
+junctiond tx gov vote 1 yes --from wallet --gas 350000  --chain-id=junction -y
 ```
 
 ### Vote no
 ```
-junctiond tx gov vote 1 no --from Wallet_Name --gas 350000  --chain-id=junction -y
+junctiond tx gov vote 1 no --from wallet --gas 350000  --chain-id=junction -y
 ```
 
 ### Vote abstain
 ```
-junctiond tx gov vote 1 abstain --from Wallet_Name --gas 350000  --chain-id=junction -y
+junctiond tx gov vote 1 abstain --from wallet --gas 350000  --chain-id=junction -y
 ```
 
 ### Vote no_with_veto
