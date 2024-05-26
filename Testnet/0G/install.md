@@ -12,7 +12,7 @@ https://grpc-0g.vnbnode.com
 
 ## Explorer
 
-https://explorer.vnbnode.com/OG-Testnet
+https://explorer.vnbnode.com/0g-Testnet
 
 ## Chain ID: `zgtendermint_16600-1`
 
@@ -92,9 +92,9 @@ wget https://github.com/0glabs/0g-chain/releases/download/v0.1.0/genesis.json -O
 
 ### Configure
 ```
-seeds=$(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/OG/seeds.txt)
+seeds=$(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/0g/seeds.txt)
 sed -i.bak -e "s/^seeds *=.*/seeds = \"$seeds\"/" $HOME/.0gchain/config/config.toml
-peers=$(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/OG/peers.txt)
+peers=$(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/0g/peers.txt)
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.0gchain/config/config.toml
 sed -i.bak -e "s/^pruning *=.*/pruning = \"custom\"/" $HOME/.0gchain/config/app.toml
 sed -i.bak -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"100\"/" $HOME/.0gchain/config/app.toml
@@ -107,19 +107,8 @@ sed -i "s/^indexer *=.*/indexer = \"kv\"/" $HOME/.0gchain/config/config.toml
 ```
 echo 'export 0g="101"' >> ~/.bash_profile
 source $HOME/.bash_profile
-sed -i.bak -e "s%:1317%:${0g}17%g;
-s%:8080%:${0g}80%g;
-s%:9090%:${0g}90%g;
-s%:9091%:${0g}91%g;
-s%:8545%:${0g}45%g;
-s%:8546%:${0g}46%g;
-s%:6065%:${0g}65%g" $HOME/.0gchain/config/app.toml
-sed -i.bak -e "s%:26658%:${0g}58%g;
-s%:26657%:${0g}57%g;
-s%:6060%:${0g}60%g;
-s%:26656%:${0g}56%g;
-s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):${0g}56\"%;
-s%:26660%:${0g}60%g" $HOME/.0gchain/config/config.toml
+sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://0.0.0.0:${0g}58\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://0.0.0.0:${0g}57\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:${0g}60\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:${0g}56\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":${0g}60\"%" $HOME/.0gchain/config/config.toml
+sed -i -e "s%^address = \"tcp://localhost:1317\"%address = \"tcp://0.0.0.0:${0g}17\"%; s%^address = \":8080\"%address = \":${0g}80\"%; s%^address = \"localhost:9090\"%address = \"0.0.0.0:${0g}90\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:${0g}91\"%; s%:8545%:${0g}45%; s%:8546%:${0g}46%; s%:6065%:${0g}65%" $HOME/.0gchain/config/app.toml
 sed -i \
   -e 's|^node *=.*|node = "tcp://localhost:10157"|' \
   $HOME/.0gchain/config/client.toml
@@ -157,4 +146,4 @@ sudo rm -rf $HOME/.0gchain
 
 <img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/> <a href="https://t.me/Vnbnode" target="_blank">VNBnode News</a>
 
-<img src="https://github.com/vnbnode/binaries/blob/main/Logo/VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>
+<img src="https://github.com/vnbnode/binaries/blob/main/L0go/VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>
