@@ -107,7 +107,7 @@ junctiond tx distribution withdraw-rewards airvaloper1qmdeucu95ex0awrj7yd48j2x7q
 ```
 ### Delegate tokens to your validator
 ```
-junctiond tx staking delegate valpoer........ "100000000"amf --from wallet --gas 350000 --chain-id=junction -y
+junctiond tx staking delegate $(junctiond keys show wallet --bech val -a) 9990000amf --from wallet --chain-id junction --fees 200amf -y
 ```
 
 ## Governance
