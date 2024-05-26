@@ -85,7 +85,7 @@ junctiond keys show Wallet_Name --bech val
 ```
 ### Validator-Info
 ```
-junctiond query staking validator aloperaddress......
+junctiond query staking validator airvaloper1qmdeucu95ex0awrj7yd48j2x7qptk6tpszh6fx
 ```
 
 ### Jail Info
@@ -103,7 +103,7 @@ junctiond  tx distribution withdraw-all-rewards --from Wallet_Name --chain-id ju
 
 ### Withdraw and commission from your Validator
 ```
-junctiond tx distribution withdraw-rewards valoper1amxp0k0hg4edrxg85v07t9ka2tfuhamhldgf8e --from Wallet_Name --gas 350000 --chain-id=junction --commission -y
+junctiond tx distribution withdraw-rewards airvaloper1qmdeucu95ex0awrj7yd48j2x7qptk6tpszh6fx --from Wallet_Name --gas 350000 --chain-id=junction --commission -y
 ```
 ### Delegate tokens to your validator
 ```
