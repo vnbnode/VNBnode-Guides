@@ -117,7 +117,7 @@ journalctl -u initia -f
 sudo systemctl stop initia
 cp $HOME/.initia/data/priv_validator_state.json $HOME/.initia/priv_validator_state.json.backup
 rm -rf $HOME/.initia/data && mkdir -p $HOME/.initia/data
-curl -O initia_347598.tar.lz4 https://snapshots.polkachu.com/testnet-snapshots/initia/initia_347598.tar.lz4 --inet4-only
+wget -O initia_347598.tar.lz4 https://snapshots.polkachu.com/testnet-snapshots/initia/initia_347598.tar.lz4 --inet4-only
 initiad tendermint unsafe-reset-all --home $HOME/.initia --keep-addr-book
 lz4 -c -d initia_347598.tar.lz4  | tar -x -C $HOME/.initia
 rm initia_347598.tar.lz4
