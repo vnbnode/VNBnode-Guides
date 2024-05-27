@@ -165,6 +165,7 @@ sudo systemctl disable initia
 sudo rm /etc/systemd/system/initia.service
 sudo systemctl daemon-reload
 sudo rm -f $(which initiad)
+sudo rm -r initia
 sudo rm -rf $HOME/.initia
 ```
 
