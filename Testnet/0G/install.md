@@ -129,7 +129,7 @@ sed -i \
 
 ### Start Node
 ```
-sudo systemctl start 0g
+sudo systemctl restart 0g
 journalctl -u 0g -f
 ```
 
