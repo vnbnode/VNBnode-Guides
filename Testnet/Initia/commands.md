@@ -50,7 +50,9 @@ initiad status 2>&1 | jq
 ```
 echo $(initiad tendermint show-node-id)'
 ```
-## Create validator
+## Manage Validator
+
+Create validator
 ```
 initiad tx mstaking create-validator \
   --amount=1000000uinit \
