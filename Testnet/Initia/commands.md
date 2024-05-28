@@ -19,12 +19,14 @@ initiad q bank balances $(initiad keys show wallet -a) --node https://rpc-initia
 ```
 Check Balance
 
-Copy
-initiad q bank balances $WALLET_ADDRESS 
+```
+initiad q bank balances $WALLET_ADDRESS
+```
 Export Key (save to wallet.backup)
 
-Copy
+```
 initiad keys export $WALLET
+```
 
 View EVM Prived Key
 
