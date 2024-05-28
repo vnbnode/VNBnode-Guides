@@ -84,11 +84,6 @@ Check validator info
 ```
 initiad q mstaking validator $(initiad keys show wallet --bech val -a) --node https://rpc-initia-testnet.trusted-point.com:443
 ```
-Validator Details
-
-```
-initiad q staking validator $(initiad keys show $WALLET --bech val -a)
-```
 Jailing info
 
 ```
