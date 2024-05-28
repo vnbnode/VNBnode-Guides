@@ -132,4 +132,30 @@ Withdraw reward and commission
 ```
 initiad tx distribution withdraw-rewards $(initiad keys show wallet --bech val -a) --commission --from wallet --chain-id initiation-1 --gas-adjustment 1.4 --gas auto -y
 ```
+## Governance
+Create New Text Proposal
 
+```
+initiad  tx gov submit-proposal \
+--title "" \
+--description "" \
+--deposit 1000000uinit \
+--type Text \
+--from $WALLET \
+--gas auto --fees 80000uinit \
+-y
+```
+Proposals List
+```
+initiad query gov proposals
+```
+View proposal
+
+```
+initiad query gov proposal 1
+```
+Vote
+
+```
+initiad tx gov vote 1 yes --from $WALLET --chain-id initiation-1  --gas auto --fees 80000uinit -y 
+```
