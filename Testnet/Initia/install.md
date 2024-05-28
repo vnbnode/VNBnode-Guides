@@ -118,6 +118,7 @@ sudo systemctl stop initia
 cp $HOME/.initia/data/priv_validator_state.json $HOME/.initia/priv_validator_state.json.backup
 rm -rf $HOME/.initia/data && mkdir -p $HOME/.initia/data
 curl -o - -L http://snapshots.staking4all.org/testnet-snapshots/initia/latest/initia.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.initia
+rm initia.tar.lz4
 mv $HOME/.initia/priv_validator_state.json.backup $HOME/.initia/data/priv_validator_state.json
 sudo systemctl restart initia
 journalctl -u initia -f
