@@ -17,9 +17,38 @@ Query wallet balances
 ```
 initiad q bank balances $(initiad keys show wallet -a) --node https://rpc-initia-testnet.trusted-point.com:443
 ```
+Check Balance
+
+Copy
+initiad q bank balances $WALLET_ADDRESS 
+Export Key (save to wallet.backup)
+
+Copy
+initiad keys export $WALLET
+
+View EVM Prived Key
+
+```
+initiad keys unsafe-export-eth-key $WALLET
+```
+Import Key (restore from wallet.backup)
+
+```
+initiad keys import $WALLET wallet.backup
+```
 ## Synch check
 ```
 initiad status 2>&1 | jq .sync_info
+```
+## Node info
+
+```
+initiad status 2>&1 | jq
+```
+## Your node peer
+
+```
+echo $(initiad tendermint show-node-id)'
 ```
 ## Create validator
 ```
@@ -51,6 +80,42 @@ Check validator info
 ```
 initiad q mstaking validator $(initiad keys show wallet --bech val -a) --node https://rpc-initia-testnet.trusted-point.com:443
 ```
+Validator Details
+
+```
+initiad q staking validator $(initiad keys show $WALLET --bech val -a)
+```
+Jailing info
+
+```
+initiad q slashing signing-info $(initiad tendermint show-validator)
+```
+Slashing parameters
+
+```
+initiad q slashing params
+```
+Unjail validator
+
+```
+initiad tx slashing unjail --from $WALLET --chain-id initiation-1 --gas auto --fees 80000uinit -y
+```
+Active Validators List
+
+```
+initiad q staking validators -oj --limit=2000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " 	 " + .description.moniker' | sort -gr | nl
+```
+Check Validator key
+
+```
+[[ $(initiad q staking validator $VALOPER_ADDRESS -oj | jq -r .consensus_pubkey.key) = $(initiad status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "Your key status is ok" || echo -e "Your key status is error"
+```
+Signing info
+
+```
+initiad q slashing signing-info $(initiad tendermint show-validator) 
+```
+
 ## Managing Tokens
 Delegate tokens to your validator
 ```
