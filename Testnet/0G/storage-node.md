@@ -11,7 +11,7 @@
 
 ### Update and install packages for compiling
 ```bash
-cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/update-binary.sh)
+cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/update-binary.sh) && source <(https://raw.githubusercontent.com/vnbnode/binaries/main/rust-install.sh)
 ```
 
 ### Build binary
