@@ -33,7 +33,7 @@ Create validator
   --security-contact "" \
   --identity "06F5F34BD54AA6C7" \
   --website "https://vnbnode.com" \
-  --details "VNBnode is a group of professional validators / researchers in blockchain" \
+  --details "VNBnode is a group of professional validators / researchers in blockchain. These validators are users of the VNBnode community" \
   --from=<key_name> \
   --gas-adjustment=1.4 \
   --fees 800ua0gi
@@ -44,7 +44,7 @@ Edit validator
 --new-moniker "NewName-VNBnode" \
 --identity "06F5F34BD54AA6C7" \
 --website "https://vnbnode.com" \
---details "VNBnode is a group of professional validators / researchers in blockchain" \
+--details "VNBnode is a group of professional validators / researchers in blockchain. These validators are users of the VNBnode community" \
 --security-contact "" \
 --commission-rate 0.05 \
 --from wallet \
