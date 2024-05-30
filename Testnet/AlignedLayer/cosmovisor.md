@@ -96,6 +96,19 @@ echo 'export aligned="100"' >> ~/.bash_profile
 source $HOME/.bash_profile
 sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://0.0.0.0:${aligned}58\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://0.0.0.0:${aligned}57\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:${aligned}60\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:${aligned}56\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":${aligned}60\"%" $HOME/.alignedlayer/config/config.toml
 sed -i -e "s%^address = \"tcp://localhost:1317\"%address = \"tcp://0.0.0.0:${aligned}17\"%; s%^address = \":8080\"%address = \":${aligned}80\"%; s%^address = \"localhost:9090\"%address = \"0.0.0.0:${aligned}90\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:${aligned}91\"%; s%:8545%:${aligned}45%; s%:8546%:${aligned}46%; s%:6065%:${aligned}65%" $HOME/.alignedlayer/config/app.toml
+sed -i.bak -e "s%:1317%:${aligned}17%g;
+s%:8080%:${aligned}80%g;
+s%:9090%:${aligned}90%g;
+s%:9091%:${aligned}91%g;
+s%:8545%:${aligned}45%g;
+s%:8546%:${aligned}46%g;
+s%:6065%:${aligned}65%g" $HOME/.alignedlayer/config/app.toml
+sed -i.bak -e "s%:26658%:${aligned}58%g;
+s%:26657%:${aligned}57%g;
+s%:6060%:${aligned}60%g;
+s%:26656%:${aligned}56%g;
+s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):${aligned}56\"%;
+s%:26660%:${aligned}60%g" $HOME/.alignedlayer/config/config.toml
 sed -i \
   -e 's|^chain-id *=.*|chain-id = "alignedlayer"|' \
   -e 's|^keyring-backend *=.*|keyring-backend = "test"|' \
