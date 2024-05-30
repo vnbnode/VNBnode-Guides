@@ -91,11 +91,6 @@ sed -i.bak -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"100\"/" $HOME
 sed -i.bak -e "s/^pruning-interval *=.*/pruning-interval = \"10\"/" $HOME/.initia/config/app.toml
 sed -i "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0uinit\"/" $HOME/.initia/config/app.toml
 sed -i "s/^indexer *=.*/indexer = \"kv\"/" $HOME/.initia/config/config.toml
-sed -i \
-  -e 's|^chain-id *=.*|chain-id = "initation-1"|' \
-  -e 's|^keyring-backend *=.*|keyring-backend = "test"|' \
-  -e 's|^node *=.*|node = "tcp://localhost:10657"|' \
-  $HOME/.initia/config/client.toml
 ```
 
 ### Custom Port
@@ -104,6 +99,24 @@ echo 'export initia="106"' >> ~/.bash_profile
 source $HOME/.bash_profile
 sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://0.0.0.0:${initia}58\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://0.0.0.0:${initia}57\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:${initia}60\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:${initia}56\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":${initia}60\"%" $HOME/.initia/config/config.toml
 sed -i -e "s%^address = \"tcp://localhost:1317\"%address = \"tcp://0.0.0.0:${initia}17\"%; s%^address = \":8080\"%address = \":${initia}80\"%; s%^address = \"localhost:9090\"%address = \"0.0.0.0:${initia}90\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:${initia}91\"%; s%:8545%:${initia}45%; s%:8546%:${initia}46%; s%:6065%:${initia}65%" $HOME/.initia/config/app.toml
+sed -i.bak -e "s%:1317%:${initia}17%g;
+s%:8080%:${initia}80%g;
+s%:9090%:${initia}90%g;
+s%:9091%:${initia}91%g;
+s%:8545%:${initia}45%g;
+s%:8546%:${initia}46%g;
+s%:6065%:${initia}65%g" $HOME/.0gchain/config/app.toml
+sed -i.bak -e "s%:26658%:${initia}58%g;
+s%:26657%:${initia}57%g;
+s%:6060%:${initia}60%g;
+s%:26656%:${initia}56%g;
+s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):${initia}56\"%;
+s%:26660%:${initia}60%g" $HOME/.0gchain/config/config.toml
+sed -i \
+  -e 's|^chain-id *=.*|chain-id = "initation-1"|' \
+  -e 's|^keyring-backend *=.*|keyring-backend = "test"|' \
+  -e 's|^node *=.*|node = "tcp://localhost:10657"|' \
+  $HOME/.initia/config/client.toml
 ```
 
 ### Start Node
