@@ -35,7 +35,8 @@ Create validator
   --website "https://vnbnode.com" \
   --details "VNBnode is a group of professional validators / researchers in blockchain" \
   --from=<key_name> \
-  --gas-adjustment=1.4
+  --gas-adjustment=1.4 \
+  --fees 800ua0gi
 ```
 Edit validator
 ```
