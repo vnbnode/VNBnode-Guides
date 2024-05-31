@@ -19,5 +19,5 @@ journalctl -u availd -f
 ```
 ### Remove snapshot
 ```
-turing_snapshot_latest.tar.lz4
+rm turing_snapshot_latest.tar.lz4
 ```
