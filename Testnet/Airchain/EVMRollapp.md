@@ -108,6 +108,8 @@ go run cmd/main.go prover v1EVM
 ```
 nano /root/.tracks/config/sequencer.toml
 ```
+<img width="334" alt="image" src="https://github.com/vnbnode/VNBnode-Guides/assets/128967122/02b096e8-8fe1-49bf-b328-d3d990624c23">
+
 ```
 go run cmd/main.go create-station --accountName "YOUR-NAME-VNBnode" --accountPath $HOME/.tracks/junction-accounts/keys --jsonRPC "https://airchains-testnet-rpc.cosmonautstakes.com/" --info "EVM Track" --tracks your-airchain-address --bootstrapNode "/ip4/your-server-ip4/tcp/2300/p2p/your-node-ID"
 ```
