@@ -1,4 +1,4 @@
-## Recommended Hardware Requirements
+### Recommended Hardware Requirements
 
 |   SPEC      |       Recommend          |
 | :---------: | :-----------------------:|
