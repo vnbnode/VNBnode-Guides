@@ -1,3 +1,11 @@
+## Recommended Hardware Requirements
+
+|   SPEC      |       Recommend          |
+| :---------: | :-----------------------:|
+|   **CPU**   |        4 Cores           |
+|   **RAM**   |        8 GB              |
+| **Storage** |        200 GB            |
+
 ### Update and install packages for compiling
 ```
 cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/update-binary.sh)
