@@ -33,19 +33,8 @@ source ~/.bash_profile
 ```
 
 ### Get wallet private key
-`From MetaMask:` If you already have a wallet configured in MetaMask, you can use the private key associated with the MetaMask account.
-
-`Generate a New Wallet Using CLI:` If you prefer to create a new wallet, you can use the `0gchaind` command-line interface.
-
-After creating the wallet, you can use the following command to export the private key:
-
 ```bash
 0gchaind keys unsafe-export-eth-key wallet
-```
-
-Store your private key in variable:
-```bash
-read -sp "Enter your private key: " PRIVATE_KEY && echo
 ```
 
 ### Update node configuration
@@ -69,10 +58,10 @@ Description=0G Storage Node
 After=network.target
 
 [Service]
-User=xxxx
+User=$USER
 Type=simple
 WorkingDirectory=/$HOME/0g-storage-node/run
-ExecStart=/$HOME./target/release/zgs_node --config $ZGS_CONFIG_FILE
+ExecStart=/$HOME/0g-storage-node/target/release/zgs_node --config $ZGS_CONFIG_FILE
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=65535
@@ -95,17 +84,17 @@ sudo systemctl status zgs
 grep 'miner_key' $ZGS_CONFIG_FILE
 ```
 
+### View the latest log file
+```bash
+tail -f 0g-storage-node/run/log/*
+```
+
 ### Delete the node from the server
 ```bash
 sudo systemctl stop zgs
 sudo systemctl disable zgs
 sudo rm /etc/systemd/system/zgs.service
 rm -rf $HOME/0g-storage-node
-```
-
-### View the latest log file
-```bash
-tail -f 0g-storage-node/run/log/*
 ```
 
 ## Thank to support VNBnode.
