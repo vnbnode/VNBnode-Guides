@@ -33,6 +33,7 @@ go mod tidy
 ```
 nano ./scripts/local-setup.sh
 ```
+#### Setup and start
 ```
 /bin/bash ./scripts/local-setup.sh
 ```
@@ -75,11 +76,11 @@ cd availup
 /bin/bash availup.sh --network "turing" --app_id 36
 ```
 ctrl + a + d to escape
+#### Check Avail address and Seed Phrase
 ```
-# Check avail identity
 nano /root/.avail/identity/identity.toml
 ```
-
+Faucet Avail on discord
 ## Tracking
 ```
 screen -S track
