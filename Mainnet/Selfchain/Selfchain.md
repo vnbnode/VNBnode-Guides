@@ -32,7 +32,7 @@ sudo apt -q update
 sudo apt -qy install curl git jq lz4 build-essential
 sudo apt -qy upgrade
 ```
-- Install Go 1.20.1
+- Install Go
 ```
 sudo rm -rf /usr/local/go
 curl -Ls https://go.dev/dl/go1.20.8.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
