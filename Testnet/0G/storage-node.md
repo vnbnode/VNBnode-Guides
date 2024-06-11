@@ -17,7 +17,7 @@ cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/
 ### Build binary
 ```bash
 cd $HOME
-git clone -b v0.2.0 https://github.com/0glabs/0g-storage-node.git
+git clone -b v0.3.0 https://github.com/0glabs/0g-storage-node.git
 cd 0g-storage-node
 git submodule update --init
 cargo build --release
