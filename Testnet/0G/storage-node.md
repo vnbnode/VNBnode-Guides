@@ -43,14 +43,10 @@ cd $HOME
 0gchaind keys unsafe-export-eth-key wallet
 ```
 
-### Set up variables
+### Update node configuration
 ```bash
 echo 'export BLOCKCHAIN_RPC_ENDPOINT="https://evm-rpc-0g.mflow.tech"' >> ~/.bash_profile
 source ~/.bash_profile
-```
-
-### Update node configuration
-```bash
 sed -i '
 s|# network_dir = "network"|network_dir = "network"|
 s|# network_enr_tcp_port = 1234|network_enr_tcp_port = 1234|
