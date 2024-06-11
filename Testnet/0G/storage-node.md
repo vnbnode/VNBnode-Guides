@@ -14,23 +14,7 @@
 cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/update-binary.sh) && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/rust-install.sh)
 ```
 
-### Build binary 0g-storage
-```bash
-cd $HOME
-git clone -b v0.3.0 https://github.com/0glabs/0g-storage-node.git
-cd 0g-storage-node
-git submodule update --init
-cargo build --release
-sudo cp $HOME/0g-storage-node/target/release/zgs_node /usr/local/bin
-```
-
-### Set up variables
-```bash
-echo 'export BLOCKCHAIN_RPC_ENDPOINT="https://evm-rpc-0g.mflow.tech"' >> ~/.bash_profile
-source ~/.bash_profile
-```
-
-### Build binary 0g-testnet
+### Build binary
 ```bash
 git clone -b v0.1.0 https://github.com/0glabs/0g-chain.git
 git checkout v1.0.0-testnet
@@ -41,7 +25,14 @@ cp $HOME/go/bin/0gchaind $HOME/.0gchain/cosmovisor/genesis/bin/
 sudo ln -s $HOME/.0gchain/cosmovisor/genesis $HOME/.0gchain/cosmovisor/current -f
 sudo ln -s $HOME/.0gchain/cosmovisor/current/bin/0gchaind /usr/local/bin/0gchaind -f
 cd $HOME
+git clone -b v0.3.0 https://github.com/0glabs/0g-storage-node.git
+cd 0g-storage-node
+git submodule update --init
+cargo build --release
+sudo cp $HOME/0g-storage-node/target/release/zgs_node /usr/local/bin
+cd $HOME
 ```
+
 ### Create wallet
 ```
 0gchaind keys add wallet --eth
@@ -49,6 +40,12 @@ cd $HOME
 ### Get wallet private key
 ```bash
 0gchaind keys unsafe-export-eth-key wallet
+```
+
+### Set up variables
+```bash
+echo 'export BLOCKCHAIN_RPC_ENDPOINT="https://evm-rpc-0g.mflow.tech"' >> ~/.bash_profile
+source ~/.bash_profile
 ```
 
 ### Update node configuration
