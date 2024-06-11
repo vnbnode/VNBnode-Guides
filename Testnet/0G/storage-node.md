@@ -98,9 +98,10 @@ sudo systemctl restart zgs && \
 sudo systemctl status zgs
 ```
 
-### Check miner_key
+### Check miner_key | miner_id
 ```bash
 grep 'miner_key' $PRIVATE_KEY
+grep 'miner_id' $MINER_ID
 ```
 
 ### View the latest log file
