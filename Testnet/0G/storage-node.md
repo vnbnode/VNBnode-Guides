@@ -63,8 +63,8 @@ After=network.target
 [Service]
 User=$USER
 Type=simple
-WorkingDirectory=/$HOME/0g-storage-node/run
-ExecStart=/$HOME/0g-storage-node/target/release/zgs_node --config $ZGS_CONFIG_FILE
+WorkingDirectory=$HOME/0g-storage-node/run
+ExecStart=$HOME/0g-storage-node/target/release/zgs_node --config $HOME/0g-storage-node/run/config.toml
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=65535
@@ -82,9 +82,9 @@ sudo systemctl restart zgs && \
 sudo systemctl status zgs
 ```
 
-### Backup
+### Check miner_key
 ```bash
-grep 'miner_key' $ZGS_CONFIG_FILE
+grep 'miner_key' $PRIVATE_KEY
 ```
 
 ### View the latest log file
