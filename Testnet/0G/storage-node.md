@@ -53,8 +53,6 @@ echo 'export BLOCKCHAIN_RPC_ENDPOINT="https://evm-rpc-0g.mflow.tech"' >> ~/.bash
 source ~/.bash_profile
 sed -i '
 s|# network_dir = "network"|network_dir = "network"|
-s|# network_enr_tcp_port = 1234|network_enr_tcp_port = 1234|
-s|# network_enr_udp_port = 1234|network_enr_udp_port = 1234|
 s|# network_libp2p_port = 1234|network_libp2p_port = 1234|
 s|# network_discovery_port = 1234|network_discovery_port = 1234|
 s|# rpc_enabled = true|rpc_enabled = true|
