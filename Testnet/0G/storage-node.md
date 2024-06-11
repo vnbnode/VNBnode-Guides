@@ -47,7 +47,8 @@ s|# rpc_enabled = true|rpc_enabled = true|
 s|# db_dir = "db"|db_dir = "db"|
 s|# log_config_file = "log_config"|log_config_file = "log_config"|
 s|# log_directory = "log"|log_directory = "log"|
-' $HOME/0g-storage-node/run/config.tom
+s|^blockchain_rpc_endpoint = \".*|blockchain_rpc_endpoint = "'"$BLOCKCHAIN_RPC_ENDPOINT"'"|
+' $HOME/0g-storage-node/run/config.toml
 read -sp "Enter your private key: " PRIVATE_KEY && echo
 sed -i 's|^miner_key = ""|miner_key = "'"$PRIVATE_KEY"'"|' $HOME/0g-storage-node/run/config.toml
 ```
