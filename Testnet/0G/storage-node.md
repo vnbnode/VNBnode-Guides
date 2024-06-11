@@ -38,9 +38,13 @@ cd $HOME
 ```
 0gchaind keys add wallet --eth
 ```
-### Get wallet private key
+### Get wallet private key (miner_key)
 ```bash
 0gchaind keys unsafe-export-eth-key wallet
+```
+### Get wallet miner id
+```bash
+echo -n wallet | sha256sum
 ```
 
 ### Update node configuration
@@ -61,6 +65,8 @@ s|^blockchain_rpc_endpoint = \".*|blockchain_rpc_endpoint = "'"$BLOCKCHAIN_RPC_E
 ' $HOME/0g-storage-node/run/config.toml
 read -sp "Enter your private key: " PRIVATE_KEY && echo
 sed -i 's|^miner_key = ""|miner_key = "'"$PRIVATE_KEY"'"|' $HOME/0g-storage-node/run/config.toml
+read -sp "Enter your miner_id: " MINER_ID && echo
+sed -i 's|^miner_id = ""|miner_id = "'"$MINER_ID"'"|' $HOME/0g-storage-node/run/config.toml
 ```
 
 ### Create a service file
