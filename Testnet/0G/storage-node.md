@@ -14,7 +14,7 @@
 cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/update-binary.sh) && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/rust-install.sh)
 ```
 
-### Build binary
+### Build binary 0g-storage
 ```bash
 cd $HOME
 git clone -b v0.3.0 https://github.com/0glabs/0g-storage-node.git
@@ -30,6 +30,22 @@ echo 'export BLOCKCHAIN_RPC_ENDPOINT="https://evm-rpc-0g.mflow.tech"' >> ~/.bash
 source ~/.bash_profile
 ```
 
+### Build binary 0g-testnet
+```bash
+git clone -b v0.1.0 https://github.com/0glabs/0g-chain.git
+git checkout v1.0.0-testnet
+cd 0g-chain
+make install
+mkdir -p $HOME/.0gchain/cosmovisor/genesis/bin
+cp $HOME/go/bin/0gchaind $HOME/.0gchain/cosmovisor/genesis/bin/
+sudo ln -s $HOME/.0gchain/cosmovisor/genesis $HOME/.0gchain/cosmovisor/current -f
+sudo ln -s $HOME/.0gchain/cosmovisor/current/bin/0gchaind /usr/local/bin/0gchaind -f
+cd $HOME
+```
+### Create wallet
+```
+0gchaind keys add wallet --eth
+```
 ### Get wallet private key
 ```bash
 0gchaind keys unsafe-export-eth-key wallet
