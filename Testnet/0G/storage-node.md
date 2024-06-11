@@ -26,9 +26,7 @@ sudo cp $HOME/0g-storage-node/target/release/zgs_node /usr/local/bin
 
 ### Set up variables
 ```bash
-echo 'export ZGS_CONFIG_FILE="$HOME/0g-storage-node/run/config.toml"' >> ~/.bash_profile
-echo 'export ZGS_LOG_DIR="$HOME/0g-storage-node/run/log"' >> ~/.bash_profile
-echo 'export ZGS_LOG_CONFIG_FILE="$HOME/0g-storage-node/run/log_config"' >> ~/.bash_profile
+echo 'export BLOCKCHAIN_RPC_ENDPOINT="https://evm-rpc-0g.mflow.tech"' >> ~/.bash_profile
 source ~/.bash_profile
 ```
 
@@ -39,15 +37,19 @@ source ~/.bash_profile
 
 ### Update node configuration
 ```bash
-if grep -q '# miner_key' $ZGS_CONFIG_FILE; then
-    sed -i "/# miner_key/c\miner_key = \"$PRIVATE_KEY\"" $ZGS_CONFIG_FILE
-fi
-
-sed -i "s|^log_config_file =.*$|log_config_file = \"$ZGS_LOG_CONFIG_FILE\"|" $ZGS_CONFIG_FILE
-
-if ! grep -q "^log_directory =" "$ZGS_CONFIG_FILE"; then
-    echo "log_directory = \"$ZGS_LOG_DIR\"" >> "$ZGS_CONFIG_FILE"
-fi
+sed -i '
+s|# network_dir = "network"|network_dir = "network"|
+s|# network_enr_tcp_port = 1234|network_enr_tcp_port = 1234|
+s|# network_enr_udp_port = 1234|network_enr_udp_port = 1234|
+s|# network_libp2p_port = 1234|network_libp2p_port = 1234|
+s|# network_discovery_port = 1234|network_discovery_port = 1234|
+s|# rpc_enabled = true|rpc_enabled = true|
+s|# db_dir = "db"|db_dir = "db"|
+s|# log_config_file = "log_config"|log_config_file = "log_config"|
+s|# log_directory = "log"|log_directory = "log"|
+' $HOME/0g-storage-node/run/config.tom
+read -sp "Enter your private key: " PRIVATE_KEY && echo
+sed -i 's|^miner_key = ""|miner_key = "'"$PRIVATE_KEY"'"|' $HOME/0g-storage-node/run/config.toml
 ```
 
 ### Create a service file
