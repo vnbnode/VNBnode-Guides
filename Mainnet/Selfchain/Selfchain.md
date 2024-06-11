@@ -1,7 +1,7 @@
 # Selfchain
 |  Chain ID  |  Port  |  Version  |
 |------------|--------|-----------|
-|    self-1  |  113   |   0.2.2   |
+|    self-1  |  113   |   v1.0.1   |
 
 <img src="https://github.com/vnbnode/VNBnode-Guides/assets/76662222/7724db8a-a28e-452b-8431-ed5a748ba9bd" width="30"/> <a href="https://discord.com/invite/selfchainxyz" target="_blank">Discord</a>
 ## RPC, API, gRPC and Snapshot
