@@ -69,6 +69,7 @@ s%:26660%:${G_PORT}660%g" $HOME/.evmosd/config/config.toml
 nano $HOME/.evmosd/config/app.toml
 ```
 change 127.0.0.1 to 0.0.0.0
+
 <img width="577" alt="image" src="https://github.com/vnbnode/VNBnode-Guides/assets/91002010/7bdcd541-45ee-4694-abd1-3f4c5bf328a7">
 
 ## Avail DA
