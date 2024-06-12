@@ -249,8 +249,9 @@ client_timeout = "500ms"
 # the oracle and the app.
 metrics_enabled = "false"
 ```
+
+# Update Oracle config.toml _(restart your initia node after change config)_
 ```
-# Update Oracle config.toml
 sed -i.bak \
     -e 's/^timeout_propose *=.*/timeout_propose = "3s"/' \
     -e 's/^timeout_propose_delta *=.*/timeout_propose_delta = "500ms"/' \
