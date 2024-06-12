@@ -220,28 +220,6 @@ EOF
 sudo systemctl daemon-reload
 sudo systemctl enable slinky.service
 ```
-### Creat systemd service
-```
-sudo tee /etc/systemd/system/slinky.service > /dev/null <<EOF
-[Unit]
-Description=Initia Slinky Oracle
-After=network-online.target
-
-[Service]
-User=$USER
-ExecStart=$(which slinky) --oracle-config-path $HOME/slinky/config/core/oracle.json --market-map-endpoint 0.0.0.0:11790
-Restart=on-failure
-RestartSec=30
-LimitNOFILE=65535
-
-[Install]
-WantedBy=multi-user.target
-EOF
-```
-```
-sudo systemctl daemon-reload
-sudo systemctl enable slinky.service
-```
 ### Enable Oracle Vote Extension
 ```
 # Update Oracle app.toml
