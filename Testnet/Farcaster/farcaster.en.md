@@ -50,11 +50,9 @@ Get API keys information for both Ethereum and Optimism.
 curl -sSL https://download.thehubble.xyz/bootstrap.sh | bash
 ```
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/76662222/21dcae06-997c-4733-b645-9da0912eed5b)
-## Auto Restart
+## Update
 ```
-docker update --restart=unless-stopped hubble-hubble-1
-docker update --restart=unless-stopped hubble-statsd-1
-docker update --restart=unless-stopped hubble-grafana-1
+cd ~/hubble && ./hubble.sh upgrade
 ```
 ## Visit Hubble Dashboard
 - `https://IP VPS:3000`
