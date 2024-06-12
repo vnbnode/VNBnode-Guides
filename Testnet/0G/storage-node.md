@@ -42,10 +42,6 @@ cd $HOME
 ```bash
 0gchaind keys unsafe-export-eth-key wallet
 ```
-### Get wallet miner id
-```bash
-echo -n wallet | sha256sum
-```
 
 ### Update node configuration
 ```bash
@@ -63,8 +59,6 @@ s|^blockchain_rpc_endpoint = \".*|blockchain_rpc_endpoint = "'"$BLOCKCHAIN_RPC_E
 ' $HOME/0g-storage-node/run/config.toml
 read -sp "Enter your private key: " PRIVATE_KEY && echo
 sed -i 's|^miner_key = ""|miner_key = "'"$PRIVATE_KEY"'"|' $HOME/0g-storage-node/run/config.toml
-read -sp "Enter your miner_id: " MINER_ID && echo
-sed -i 's|^miner_id = ""|miner_id = "'"$MINER_ID"'"|' $HOME/0g-storage-node/run/config.toml
 ```
 
 ### Create a service file
@@ -96,10 +90,9 @@ sudo systemctl restart zgs && \
 sudo systemctl status zgs
 ```
 
-### Check miner_key | miner_id
+### Check miner_key
 ```bash
 grep 'miner_key' $PRIVATE_KEY
-grep 'miner_id' $MINER_ID
 ```
 
 ### View the latest log file
