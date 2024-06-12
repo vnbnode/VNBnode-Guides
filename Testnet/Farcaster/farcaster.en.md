@@ -4,9 +4,9 @@
 
 |   Thông số  |        Khuyến nghị        |
 | :---------: | :-----------------------: |
-|   **CPU**   |        ≥ 2 Cores          |
-|   **RAM**   |        ≥ 8 GB             |
-|   **SSD**   |        ≥ 20 GB            |
+|   **CPU**   |        ≥ 8 Cores          |
+|   **RAM**   |        ≥ 16 GB             |
+|   **SSD**   |        ≥ 200 GB            |
 
 ## Download App Warpcast
 ### 1. [Down Here](https://warpcast.com/~/download)
