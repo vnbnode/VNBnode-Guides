@@ -115,7 +115,7 @@ sed -i \
 
 ### Start Node
 ```
-sudo systemctl start junction
+sudo systemctl restart junction
 journalctl -u junction -f
 ```
 
