@@ -238,7 +238,7 @@ enabled = "true"
 # can be modified at any point, but will only take effect after the application is
 # restarted. This can be the address of an oracle container running on the same
 # machine or a remote machine.
-oracle_address = "127.0.0.1:10680"
+oracle_address = "127.0.0.1:8080"
 
 # Client Timeout is the time that the client is willing to wait for responses from 
 # the oracle before timing out.
