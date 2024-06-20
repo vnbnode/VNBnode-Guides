@@ -1,5 +1,6 @@
 # Guide for Avail turning node 
-**wss://rpc-avail.vnbnode.com**
+
+**wss://rpc-avail.vnbnode.com/**
 
 **https://rpc-avail.vnbnode.com/**
 
