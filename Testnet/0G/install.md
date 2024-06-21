@@ -87,7 +87,7 @@ source $HOME/.bash_profile
 ### Download Genesis & Addrbook
 ```
 rm $HOME/.0gchain/config/genesis.json
-wget https://github.com/0glabs/0g-chain/releases/download/v0.1.0/genesis.json -O $HOME/.0gchain/config/genesis.json
+wget https://github.com/0glabs/0g-chain/releases/download/v0.2.3/genesis.json -O $HOME/.0gchain/config/genesis.json
 ```
 
 ### Configure
