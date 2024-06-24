@@ -13,6 +13,7 @@ https://grpc-0g.vnbnode.com
 ## Explorer
 
 https://explorer.vnbnode.com/0g-Testnet
+https://explorer.mflow.tech/OG-Testnet
 
 ## Chain ID: `zgtendermint_16600-1`
 
@@ -34,8 +35,8 @@ cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/
 
 ### Build binary
 ```
-git clone -b v0.1.0 https://github.com/0glabs/0g-chain.git
-git checkout v1.0.0-testnet
+git clone -b v0.2.3 https://github.com/0glabs/0g-chain.git
+git checkout v0.2.3-testnet
 cd 0g-chain
 make install
 mkdir -p $HOME/.0gchain/cosmovisor/genesis/bin
