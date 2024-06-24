@@ -15,7 +15,7 @@ https://grpc-0g.vnbnode.com
 https://explorer.vnbnode.com/0g-Testnet
 https://explorer.mflow.tech/OG-Testnet
 
-## Chain ID: `zgtendermint_16600-1`
+## Chain ID: `zgtendermint_16600-2`
 
 ## Recommended Hardware Requirements
 
@@ -77,7 +77,7 @@ Replace `Name` with your own moniker
 MONIKER="Name-VNBnode"
 ```
 ```
-echo 'export CHAIN_ID="zgtendermint_16600-1"' >> ~/.bash_profile
+echo 'export CHAIN_ID="zgtendermint_16600-2"' >> ~/.bash_profile
 echo 'export WALLET_NAME="wallet"' >> ~/.bash_profile
 source $HOME/.bash_profile
 0gchaind init $MONIKER --chain-id $CHAIN_ID
