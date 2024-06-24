@@ -26,7 +26,7 @@ sudo ln -s $HOME/.0gchain/cosmovisor/genesis $HOME/.0gchain/cosmovisor/current -
 sudo ln -s $HOME/.0gchain/cosmovisor/current/bin/0gchaind /usr/local/bin/0gchaind -f
 0gchaind config keyring-backend os
 cd $HOME
-git clone -b v0.3.0 https://github.com/0glabs/0g-storage-node.git
+git clone -b v0.3.1 https://github.com/0glabs/0g-storage-node.git
 cd 0g-storage-node
 git submodule update --init
 cargo build --release
