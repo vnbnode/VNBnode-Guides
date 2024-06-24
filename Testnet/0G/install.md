@@ -84,7 +84,7 @@ echo 'export WALLET_NAME="wallet"' >> ~/.bash_profile
 source $HOME/.bash_profile
 0gchaind init $MONIKER --chain-id $CHAIN_ID
 0gchaind config chain-id $CHAIN_ID
-0gchaind config keyring-backend test
+0gchaind config keyring-backend os
 ```
 
 ### Download Genesis & Addrbook
