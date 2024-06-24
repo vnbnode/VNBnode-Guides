@@ -37,6 +37,8 @@ cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/
 ```
 git clone -b v0.2.3 https://github.com/0glabs/0g-chain.git
 git checkout v0.2.3-testnet
+./0g-chain/networks/testnet/install.sh
+source ~/.profile
 cd 0g-chain
 make install
 mkdir -p $HOME/.0gchain/cosmovisor/genesis/bin
