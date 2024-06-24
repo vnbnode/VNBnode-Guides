@@ -1,6 +1,6 @@
 # 0G
 
-### Snapshot: https://github.com/vnbnode/VNBnode-Guides/blob/main/Testnet/0G/Snapshot.md
+### OLD: Snapshot: https://github.com/vnbnode/VNBnode-Guides/blob/main/Testnet/0G/Snapshot.md
 
 ## End Points
 
