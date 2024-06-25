@@ -6,7 +6,7 @@
 |   **RAM**   |        500 Mb Ram        |
 | **Storage** |        40 GB SSD         |
 
-## You can choose to run it using either tmux or systemd.
+## Choose Tmux or Systemd.
 ### Run with Tmux
 ```
 sudo apt install tmux
@@ -44,11 +44,11 @@ sudo systemctl start nubitlight.service && journalctl -u nubitlight.service -f
 ```
 - Please save MNEMONIC, PUBKEY and AUTHKEY after run service
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/40466326/5cb06916-aea0-4e1a-be84-2a9e186f067b)
-#### Export Keys
+### Export Keys
 ```
 cat $HOME/nubit-node/mnemonic.txt
 ```
-#### List all keys:
+### List all keys:
 ```
 $HOME/nubit-node/bin/nkey list --p2p.network nubit-alphatestnet-1 --node.type light
 ```
