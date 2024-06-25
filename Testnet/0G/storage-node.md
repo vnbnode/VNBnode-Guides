@@ -55,7 +55,6 @@ cd $HOME
   --from=wallet \
   --gas=auto \
   --gas-adjustment=1.4 \
-  --fees 800ua0gi
   --node https://rpc-0g.mflow.tech
 ```
 
