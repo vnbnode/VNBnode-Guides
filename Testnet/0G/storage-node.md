@@ -38,6 +38,27 @@ cd $HOME
 ```
 0gchaind keys add wallet --eth
 ```
+### Create Validator
+```
+0gchaind tx staking create-validator \
+  --amount=1000000ua0gi \
+  --pubkey=$(0gchaind tendermint show-validator) \
+  --moniker="Name" \
+  --identity "" \
+  --website "" \
+  --details "" \
+  --chain-id=zgtendermint_16600-2 \
+  --commission-rate="0.10" \
+  --commission-max-rate="0.20" \
+  --commission-max-change-rate="0.01" \
+  --min-self-delegation="1" \
+  --from=wallet \
+  --gas=auto \
+  --gas-adjustment=1.4 \
+  --fees 800ua0gi
+  --node https://rpc-0g.mflow.tech
+```
+
 ### Get wallet private key (miner_key)
 ```bash
 0gchaind keys unsafe-export-eth-key wallet
