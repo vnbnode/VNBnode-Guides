@@ -77,6 +77,7 @@ KillSignal=SIGHUP
 ExecStart=/var/lib/tanssi-data/tanssi-node \
 --chain=dancebox \
 --name=INSERT_YOUR_TANSSI_NODE_NAME \
+--unsafe-force-node-key-generation \
 --sync=warp \
 --base-path=/var/lib/tanssi-data/para \
 --state-pruning=2000 \
@@ -91,6 +92,7 @@ ExecStart=/var/lib/tanssi-data/tanssi-node \
 -- \
 --chain=westend_moonbase_relay_testnet \
 --name=INSERT_YOUR_TANSSI_NODE_NAME \
+--unsafe-force-node-key-generation \
 --sync=fast \
 --base-path=/var/lib/tanssi-data/relay \
 --state-pruning=2000 \
