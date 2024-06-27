@@ -50,6 +50,7 @@ moondancelabs/tanssi \
 --name=TANSSI_NAME \
 --sync=warp \
 --base-path=/data/para \
+--unsafe-force-node-key-generation \
 --state-pruning=2000 \
 --blocks-pruning=2000 \
 --collator \
@@ -62,6 +63,7 @@ moondancelabs/tanssi \
 -- \
 --chain=westend_moonbase_relay_testnet \
 --name=TANSSI_NAME \
+--unsafe-force-node-key-generation \
 --sync=fast \
 --base-path=/data/relay \
 --state-pruning=2000 \
