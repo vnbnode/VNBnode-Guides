@@ -44,7 +44,7 @@ sudo systemctl start nubitlight.service && journalctl -u nubitlight.service -f
 ```
 - Please save MNEMONIC, PUBKEY and AUTHKEY after run service
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/40466326/5cb06916-aea0-4e1a-be84-2a9e186f067b)
-### Export Keys
+### Export seed phrase
 ```
 cat $HOME/nubit-node/mnemonic.txt
 ```
