@@ -1,0 +1,32 @@
+## Snapshot _(sync=warp)_
+**### For systemd**
+### Stop Node
+```
+sudo systemctl stop tanssi.service
+```
+### Remove data  & download snapshot _(replace your data directory)_
+```
+sudo apt-get install aria2
+sudo apt-get install lz4
+aria2c -x 16 -s 16 -o dancebox_snapshot_latest.tar.lz4 https://snapshot.tanssi.johnvnb.com/dancebox_snapshot_latest.tar.lz4
+aria2c -x 16 -s 16 -o westend_moonbase_relay_testnet_snapshot_latest.tar.lz4 https://snapshot.tanssi.johnvnb.com/westend_moonbase_relay_testnet_snapshot_latest.tar.lz4
+```
+```
+rm -rf $Home/var/lib/tanssi-data/para/chains/dancebox/paritydb/*
+rm -rf $Home/var/lib/tanssi-data/relay/chains/westend_moonbase_relay_testnet/paritydb/*
+```
+```
+lz4 -dc dancebox_snapshot_latest.tar.lz4 | tar -xf - -C $Home/var/lib/tanssi-data/para/chains/dancebox/paritydb
+lz4 -dc westend_moonbase_relay_testnet_snapshot_latest.tar.lz4 | tar -xf - -C $Home/var/lib/tanssi-data/relay/chains/westend_moonbase_relay_testnet/paritydb
+
+```
+### Restart node
+```
+sudo systemctl restart tanssi.service
+journalctl -u tanssi.service -f
+```
+### Remove snapshot file
+```
+rm dancebox_snapshot_latest.tar.lz4
+rm westend_moonbase_relay_testnet_snapshot_latest.tar.lz4
+```
