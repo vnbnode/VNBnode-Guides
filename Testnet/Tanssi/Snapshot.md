@@ -19,7 +19,6 @@ rm -rf $Home/var/lib/tanssi-data/relay/chains/westend_moonbase_relay_testnet/par
 ```
 lz4 -dc dancebox_snapshot_latest.tar.lz4 | tar -xf - -C $Home/var/lib/tanssi-data/para/chains/dancebox/paritydb
 lz4 -dc westend_moonbase_relay_testnet_snapshot_latest.tar.lz4 | tar -xf - -C $Home/var/lib/tanssi-data/relay/chains/westend_moonbase_relay_testnet/paritydb
-
 ```
 ### Restart node
 ```
