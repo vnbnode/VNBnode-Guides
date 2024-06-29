@@ -4,7 +4,8 @@
 ```
 sudo systemctl stop tanssi.service
 ```
-### Remove data  & download snapshot _(replace your data directory)_
+### Remove data  & download snapshot 
+_(Replace the path if you have it in a different location)_
 ```
 sudo apt-get install aria2
 sudo apt-get install lz4
