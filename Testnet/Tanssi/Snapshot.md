@@ -1,5 +1,5 @@
-## Snapshot _(sync=warp)_
-**### For systemd**
+# Snapshot _(sync=warp)_
+## For systemd
 ### Stop Node
 ```
 sudo systemctl stop tanssi.service
