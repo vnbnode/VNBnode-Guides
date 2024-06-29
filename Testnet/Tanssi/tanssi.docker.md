@@ -48,7 +48,6 @@ docker run --name tanssi --network="host" -d -v "$HOME/dancebox:/data" \
 moondancelabs/tanssi \
 --chain=dancebox \
 --name=TANSSI_NAME \
---unsafe-force-node-key-generation \
 --sync=warp \
 --base-path=/data/para \
 --unsafe-force-node-key-generation \
