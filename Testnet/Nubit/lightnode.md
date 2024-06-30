@@ -52,3 +52,18 @@ cat $HOME/nubit-node/mnemonic.txt
 ```
 $HOME/nubit-node/bin/nkey list --p2p.network nubit-alphatestnet-1 --node.type light
 ```
+### Import the new key
+```
+$HOME/nubit-node/bin/nkey add my_nubit_key --recover --keyring-backend test --node.type light --p2p.network nubit-alphatestnet-1
+```
+### Delete the selected key
+```
+$HOME/nubit-node/bin/nkey delete my_nubit_key -f --node.type light --p2p.network nubit-alphatestnet-1
+```
+### Uninstall nubit-node
+```
+rm -rf $HOME/nubit-node
+rm -rf $HOME/.nubit-light-nubit-alphatestnet-1
+```
+### Link claim point
+https://alpha.nubit.org/
