@@ -101,7 +101,7 @@ junctiond tx slashing unjail --from wallet --chain-id junction --gas 350000 -y
 junctiond  tx distribution withdraw-all-rewards --from wallet --chain-id junction --gas 350000 -y
 ```
 
-### Withdraw and commission from your Validator
+### Withdraw rewards and commission from your Validator
 ```
 junctiond tx distribution withdraw-rewards airvaloper1qmdeucu95ex0awrj7yd48j2x7qptk6tpszh6fx --from wallet --gas 350000 --chain-id=junction --commission -y
 ```
