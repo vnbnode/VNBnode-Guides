@@ -28,6 +28,10 @@ https://explorer.mflow.tech/OG-Testnet
 |   **OS**    |        Ubuntu 22.04      |
 |   **Port**  |        10156             | 
 
+## aUTO Installation
+```
+cd $HOME && curl -o 0gvalidator-auto.sh https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/0g/0gvalidator-auto.sh && bash 0gvalidator-auto.sh
+```
 ### Check logs
 ```
 journalctl -u 0g -f
