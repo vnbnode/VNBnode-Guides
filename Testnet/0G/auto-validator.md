@@ -28,6 +28,16 @@ https://explorer.mflow.tech/OG-Testnet
 |   **OS**    |        Ubuntu 22.04      |
 |   **Port**  |        10156             | 
 
+### Check logs
+```
+journalctl -u 0g -f
+```
+
+### Backup Validator
+```
+mkdir -p $HOME/backup/.0gchain
+cp $HOME/.0gchain/config/priv_validator_key.json $HOME/backup/.0gchain
+```
 
 ### Remove Node
 ```
