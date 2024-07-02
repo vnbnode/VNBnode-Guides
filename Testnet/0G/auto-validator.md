@@ -21,11 +21,11 @@ https://explorer.mflow.tech/OG-Testnet
 
 |   SPEC      |       Recommend          |
 | :---------: | :-----------------------:|
-|   **CPU**   |        4 Cores           |
+|   **CPU**   |        16 Cores           |
 |   **RAM**   |        64 GB             |
 | **Storage** |        1 TB Nvme         |
 | **NETWORK** |        1 Gbps            |
-|   **OS**    |        Ubuntu 24.04      |
+|   **OS**    |        Ubuntu 22.04      |
 |   **Port**  |        10156             | 
 
 
