@@ -15,7 +15,7 @@ https://faucet.0g.ai (faucet before setup)
 - https://0gevmrpc.nodebrand.xyz
 - https://0g-testnet-rpc.tech-coha05.xyz
 - https://og-testnet-jsonrpc.blockhub.id
-## Check RPC still working before install
+### Check RPC still working before install
 ```
 curl -X POST <YOUR_RPC_END_POINT> -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'
 ```
