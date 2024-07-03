@@ -43,7 +43,7 @@ Description=junction node service
 After=network-online.target
  
 [Service]
-User=$USER
+User=root
 ExecStart=$(which cosmovisor) run start
 Restart=on-failure
 RestartSec=10
