@@ -43,13 +43,14 @@ Description=junction node service
 After=network-online.target
  
 [Service]
-User=root
+User=$USER
 ExecStart=$(which cosmovisor) run start
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=65535
-Environment="DAEMON_HOME=$HOME/.junction"
+Environment="DAEMON_HOME=.junction"
 Environment="DAEMON_NAME=junctiond"
+Environment="DAEMON_DATA_BACKUP_DIR=.junction/data/backup"
 Environment="UNSAFE_SKIP_BACKUP=true"
  
 [Install]
