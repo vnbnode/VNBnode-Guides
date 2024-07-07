@@ -1,4 +1,9 @@
 # Commands for Airchains
+## check node
+### Status check
+```
+junctiond status 2>&1 | jq
+```
 
 ## Managing keys
 ### Generate new key
