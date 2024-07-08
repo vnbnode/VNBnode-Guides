@@ -113,7 +113,11 @@ sed -i \
   -e 's|^node *=.*|node = "tcp://localhost:10557"|' \
   $HOME/.junction/config/client.toml
 ```
-
+### Indexer (optional)
+```
+indexer="null" &&
+sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.junction/config/config.toml
+```
 ### Start Node
 ```
 sudo systemctl restart junction
