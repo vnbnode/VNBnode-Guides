@@ -8,7 +8,18 @@
 | **NETWORK** |        1 Gbps            |       1 Gbps             |
 |   **OS**    |        Ubuntu 22.04      |       Ubuntu 22.04       |
 
-## Faucet: 
+### End Points
+https://rpc-0g.vnbnode.com
+
+https://api-0g.vnbnode.com
+
+https://grpc-0g.vnbnode.com
+
+### Explorer
+https://explorer.vnbnode.com/0g-Testnet 
+https://explorer.mflow.tech/OG-Testnet
+
+### Faucet: 
 https://faucet.0g.ai (faucet before setup)
 ### EVM RPC list:
 - https://evm-rpc-0g.mflow.tech
