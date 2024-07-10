@@ -1,12 +1,13 @@
 # OG Node
 ## Hardware requirements
-|   SPEC      |       0G Validator       |       0G storage         |
+|   SPEC      |       0G Validator       |       0G Storage         |
 | :---------: | :-----------------------:|  :-----------------------:
 |   **CPU**   |        16 Cores          |       4 Cores            |
 |   **RAM**   |        64 GB             |       16 GB              |
 | **Storage** |        2 TB Nvme         |       1 TB Nvme          |
 | **NETWORK** |        1 Gbps            |       1 Gbps             |
 |   **OS**    |        Ubuntu 22.04      |       Ubuntu 22.04       |
+
 ## Faucet: 
 https://faucet.0g.ai (faucet before setup)
 ### EVM RPC list:
