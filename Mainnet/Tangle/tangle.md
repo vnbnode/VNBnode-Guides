@@ -9,8 +9,9 @@
 |             |9615 - Prometh  |
 | OS          |Ubuntu 22.04    |
 ### 2. Update & install the necessary utilities
+
+- Change YOUR-MONIKER
 ```
-# Change YOUR-MONIKER
 MONIKER=YOUR-MONIKER
 ```
 ```
