@@ -65,7 +65,7 @@ systemctl daemon-reload
 systemctl enable tangle
 ```
 ### 5. Add key 
-_(Replace your seed phrase)_
+_(Replace "Your seed phrase")_
 - 4.1. Account Key
 ```
 tangle key insert --base-path $HOME/.tangle/data/ \
