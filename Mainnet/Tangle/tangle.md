@@ -33,8 +33,8 @@ tangle --version
 wget -O $HOME/.tangle/tangle-standalone.json "https://raw.githubusercontent.com/webb-tools/tangle/main/chainspecs/mainnet/tangle-mainnet.json"
 chmod 744 ~/.tangle/tangle-standalone.json
 ```
+- Check json file
 ```
-# Check json file
 sha256sum ~/.tangle/tangle-standalone.json
 ```
 ```
