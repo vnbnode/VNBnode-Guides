@@ -19,17 +19,21 @@
 
 ## Setup Steps
 
-### 1. Download Light Validator Binary
+### 1. Update and install packages for compiling
+```
+cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/update-binary.sh)
+```
+### 2. Download Light Validator Binary
 - For Linux-like systems: [Download Link](https://dill-release.s3.ap-southeast-1.amazonaws.com/linux/dill.tar.gz)
 - For macOS: [Download Link](https://dill-release.s3.ap-southeast-1.amazonaws.com/macos/dill.tar.gz)
 ```bash
 curl -O https://dill-release.s3.ap-southeast-1.amazonaws.com/linux/dill.tar.gz
 ```
-### 2. Extract the package:
+### 3. Extract the package:
 ```bash
 tar -xzvf dill.tar.gz && cd dill
 ```
-### 3. Generate Validator Keys
+### 4. Generate Validator Keys
 _This command will generate validator keys in the `./validator_keys` directory._
 ```bash
 ./dill_validators_gen new-mnemonic --num_validators=1 --chain=andes --folder=./
@@ -59,21 +63,21 @@ Your keys can be found at: ./validator_keys
 
 Press any key.
 ```
-### 4. Import Validator Keys
+### 5. Import Validator Keys
 _During this process, set and save your keystore password._
 ```bash
 ./dill-node accounts import --andes --wallet-dir ./keystore --keys-dir validator_keys/ --accept-terms-of-use
 ```
-### 5. Save Password to a File
+### 6. Save Password to a File
 _Replace `<your-password>` with your actual password._
 ```bash
 echo <your-password> > walletPw.txt
 ```
-### 6. Start Light Validator Node
+### 7. Start Light Validator Node
 ```bash
 ./start_light.sh -p walletPw.txt
 ```
-### 7. Verify Node is Running
+### 8. Verify Node is Running
 _Run the following command to check if the node is up and running:_
 ```bash
 tail -f $HOME/dill/light_node/logs/dill.log
@@ -87,7 +91,7 @@ ps -ef | grep dill
 ```bash
 ./health_check.sh -v
 ```
-### 8. Staking
+### 9. Staking
 
 1. Visit [Dill Staking](https://staking.dill.xyz/)
 2. Upload `deposit_data-*.json` file.
