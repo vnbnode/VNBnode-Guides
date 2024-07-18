@@ -1,4 +1,4 @@
-# Setting Up Your Validator on Dill Testnet Andes
+# Setting Validator on Dill Testnet Andes
 
 ## Network Details & Hardware Requirements
 
