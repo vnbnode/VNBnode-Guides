@@ -84,6 +84,9 @@ curl -s localhost:3500/eth/v1/beacon/headers | jq
 ```bash
 ps -ef | grep dill
 ```
+```bash
+./health_check.sh -v
+```
 ### 8. Staking
 
 1. Visit [Dill Staking](https://staking.dill.xyz/)
