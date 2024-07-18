@@ -84,12 +84,7 @@ curl -s localhost:3500/eth/v1/beacon/headers | jq
 ```bash
 ps -ef | grep dill
 ```
-### 8. Check Port Usage
-```bash
-lsof -i:8080 -i:3500 -i:4000 -i:8082 -i:13000 -i:8551 -i:8545 -i:30303
-```
-
-### 9. Staking
+### 8. Staking
 
 1. Visit [Dill Staking](https://staking.dill.xyz/)
 2. Upload `deposit_data-*.json` file.
@@ -97,4 +92,4 @@ Use Termius,scp... to dowload the file locally or:
 ```bash
 cat ./validator_keys/deposit_data-xxxx.json
 ```
-Copy the content to your local machine for uploading.
+_Copy to your local machine for uploading._
