@@ -2,7 +2,7 @@
 1. Save old mnemonic 
 2. Backup the folder validator_keys to your local or any other desired location.
 
-You can use [Termius]([url](https://termius.com/download/windows) to easily backup the folder validator_keys, or use another method if you prefer.
+You can use [Termius](https://termius.com/download/windows) to easily backup the folder validator_keys, or use another method if you prefer.
 ![image](https://github.com/user-attachments/assets/2c4262cf-fdd2-4779-b0ac-f3c08e693c5a)
 
 ## Run node on new vps
