@@ -29,9 +29,12 @@ cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/
 ```
 ### 2. Download Light Validator Binary
 - For Linux-like systems: [Download Link](https://dill-release.s3.ap-southeast-1.amazonaws.com/linux/dill.tar.gz)
-- For macOS: [Download Link](https://dill-release.s3.ap-southeast-1.amazonaws.com/macos/dill.tar.gz)
 ```bash
 curl -O https://dill-release.s3.ap-southeast-1.amazonaws.com/linux/dill.tar.gz
+```
+- For macOS: [Download Link](https://dill-release.s3.ap-southeast-1.amazonaws.com/macos/dill.tar.gz)
+```bash
+curl -O ttps://dill-release.s3.ap-southeast-1.amazonaws.com/macos/dill.tar.gz
 ```
 ### 3. Extract the package:
 ```bash
