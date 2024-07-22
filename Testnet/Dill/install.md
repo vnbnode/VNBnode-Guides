@@ -17,7 +17,11 @@
 | Network | 1MB/s |
 | OS | Ubuntu 22.04 or macOS |
 
-## Setup Steps
+## Option 1: Automatic
+```
+curl -O https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Dill/light_auto.sh && chmod +x light_auto.sh && ./light_auto.sh
+```
+## Option 2: Manual Steps
 
 ### 1. Update and install packages for compiling
 ```
