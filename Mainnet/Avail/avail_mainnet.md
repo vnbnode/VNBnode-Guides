@@ -7,7 +7,7 @@ cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/
 curl https://sh.rustup.rs -sSf | sh
 ```
 
-**Select 1 and enter**
+Select 1 and enter
 
 **Step 3: Go to home**
 ```php
