@@ -20,7 +20,7 @@ curl -O https://dill-release.s3.ap-southeast-1.amazonaws.com/linux/dill.tar.gz
 ```bash
 curl -O ttps://dill-release.s3.ap-southeast-1.amazonaws.com/macos/dill.tar.gz
 ```
-### 3. Extract the package:
+### 3. Extract the package
 ```bash
 tar -xzvf dill.tar.gz && cd dill
 ```
@@ -29,21 +29,24 @@ _This command will generate validator keys with existing mnemonic in the `./vali
 ```bash
 ./dill_validators_gen existing-mnemonic --num_validators=1 --chain=andes --folder=./
 ```
-### 5. Import Validator Keys
+### 5. Update deposit data & old keystore
+- Delete the two files, deposit data and keystore, in the folder validator_key.
+- Copy the two old files, deposit data and keystore, saved during the backup step back into the folder validator_key, you can use termius.
+### 6. Import Validator Keys
 _During this process, set and save your keystore password._
 ```bash
 ./dill-node accounts import --andes --wallet-dir ./keystore --keys-dir validator_keys/ --accept-terms-of-use
 ```
-### 6. Save Password to a File
+### 7. Save Password to a File
 _Replace `<your-password>` with your actual password._
 ```bash
 echo <your-password> > walletPw.txt
 ```
-### 7. Start Light Validator Node
+### 8. Start Light Validator Node
 ```bash
 ./start_light.sh -p walletPw.txt
 ```
-### 8. Verify Node is Running
+### 9. Verify Node is Running
 _Run the following command to check if the node is up and running:_
 ```bash
 tail -f $HOME/dill/light_node/logs/dill.log
