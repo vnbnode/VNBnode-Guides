@@ -30,7 +30,7 @@ cd avail
 ```
 **Step 7: Download Binary**
 ```
-wget https://github.com/availproject/avail/releases/download/v2.2.4.1/x86_64-ubuntu-2204-avail-node.tar.gz
+wget https://github.com/availproject/avail/releases/download/v2.2.4.2/x86_64-ubuntu-2204-avail-node.tar.gz
 ```
 **Step 8: Extract**
 ```
@@ -94,7 +94,7 @@ rm -rf /node-data
 rm x86_64-ubuntu-2204-avail-node.tar.gz
 ```
 ```php
-wget https://github.com/availproject/avail/releases/download/v2.2.4.2-rc1/x86_64-ubuntu-2204-avail-node.tar.gz
+wget https://github.com/availproject/avail/releases/download/v2.2.4.2/x86_64-ubuntu-2204-avail-node.tar.gz
 ```
 ```php
 tar -xf x86_64-ubuntu-2204-avail-node.tar.gz
