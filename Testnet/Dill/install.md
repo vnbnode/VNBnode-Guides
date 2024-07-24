@@ -108,6 +108,14 @@ cat ./validator_keys/deposit_data-xxxx.json
 ```
 _Copy to your local machine for uploading._
 
+### Shutdown & remove node
+```bash
+ps -ef | grep dill-node | grep -v grep | awk '{print $2}' | xargs kill
+```
+```bash
+cd $Home
+rm -rf dill
+```
 ## Thank to support VNBnode.
 ### Visit us at:
 
