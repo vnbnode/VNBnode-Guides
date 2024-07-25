@@ -5,7 +5,7 @@
 | :---------: | :-----------------------:|
 |   **CPU**   |        4 Cores           |
 |   **RAM**   |        8 GB              |
-| **Storage** |        500 GB            |
+| **Storage** |       2TB            |
 | **NETWORK** |        1 Gbps            |
 |   **OS**    |        Ubuntu 22.04      |
 |   **Port**  |        10556             | 
