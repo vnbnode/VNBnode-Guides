@@ -31,7 +31,7 @@ _This command will generate validator keys with existing mnemonic in the `./vali
 ```
 ### 5. Update deposit data & old keystore
 - Delete the two files, deposit data and keystore, in the folder validator_key.
-- Copy the two old files, deposit data and keystore, saved during the backup step back into the folder validator_key, you can use termius.
+- Copy the two old files, deposit data and keystore, saved during the backup step back into the folder validator_key, you can use [Termius](https://termius.com/download/windows).
 ### 6. Import Validator Keys
 _During this process, set and save your keystore password._
 ```bash
