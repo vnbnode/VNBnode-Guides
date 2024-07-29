@@ -6,7 +6,11 @@ You can use [Termius](https://termius.com/download/windows) to easily backup the
 ![image](https://github.com/user-attachments/assets/2c4262cf-fdd2-4779-b0ac-f3c08e693c5a)
 
 ## Run node on new vps
-
+_Reminder: If you want to use the **same VPS** to run the old node again, you need to stop the node and back up the dill folder using the following command:_
+```
+ps -ef | grep dill-node | grep -v grep | awk '{print $2}' | xargs kill
+mv dill dillbackup
+```
 ### 1. Update and install packages for compiling
 ```
 cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/update-binary.sh)
