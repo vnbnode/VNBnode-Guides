@@ -86,7 +86,8 @@ wget https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/LAVA/addrb
 ```
 ### Add seeds
 ```
-sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@lava.rpc.kjnodes.com:14459\"|" $HOME/.lava/config/config.toml
+seeds=$(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/LAVA/seeds.txt)
+sed -i.bak -e "s/^seeds *=.*/seeds = \"$seeds\"/" $HOME/.lava/config/config.toml
 ```
 ### Set minimum gas price
 ```
