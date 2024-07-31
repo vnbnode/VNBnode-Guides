@@ -8,7 +8,7 @@ You can use [Termius](https://termius.com/download/windows) to easily backup the
 ## Run node on new vps
 _Reminder: If you want to use the **same VPS** to run the old node again, you need to stop the node and back up the dill folder using the following command:_
 ```
-ps -ef | grep dill-node | grep -v grep | awk '{print $2}' | xargs kill
+pkill dill-node
 mv dill dillbackup
 ```
 ### 1. Update and install packages for compiling
