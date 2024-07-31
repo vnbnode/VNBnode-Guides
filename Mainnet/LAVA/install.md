@@ -1,4 +1,4 @@
-# LAVA Validator
+# LAVA Mainnet Validator
 ## Recommended Hardware Requirements
 
 |   SPEC      |       Recommend          |
