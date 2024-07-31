@@ -81,8 +81,8 @@ lavad init $MONIKER --chain-id lava-mainnet-1
 
 ### Download genesis and addrbook
 ```
-curl -Ls https://snapshots.kjnodes.com/lava/genesis.json > $HOME/.lava/config/genesis.json
-curl -Ls https://snapshots.kjnodes.com/lava/addrbook.json > $HOME/.lava/config/addrbook.json
+wget https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/LAVA/genesis.json > $HOME/.lava/config/genesis.json
+wget https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/LAVA/addrbook.json > $HOME/.lava/config/addrbook.json
 ```
 ### Add seeds
 ```
