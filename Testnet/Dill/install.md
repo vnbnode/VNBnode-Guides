@@ -110,7 +110,7 @@ _Copy to your local machine for uploading._
 
 ### Shutdown & remove node
 ```bash
-ps -ef | grep dill-node | grep -v grep | awk '{print $2}' | xargs kill
+pkill dill-node
 ```
 ```bash
 cd $Home
