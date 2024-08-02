@@ -29,6 +29,7 @@ git checkout v2.2.0
 ### Build binaries
 ```
 make install-all
+lavad version && lavap version
 ```
 ### Prepare binaries for Cosmovisor
 ```
