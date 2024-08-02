@@ -103,17 +103,33 @@ endpoints:
     node-urls:
       url: http://127.0.0.1:$API
 ```
-#### Step 10: Create reward storage
+#### Step 11: Create reward storage
 ```php
 mkdir /root/.lava/config/reward/ 
 ```
-### Step 10: Run Docker
+### Step 12: Create Service file
 ```php
-screen -S lava-provider
+tee /etc/systemd/system/lavap.service > /dev/null << EOF
+[Unit]
+Description=Lava provider
+After=network-online.target
+
+[Service]
+User=$USER
+WorkingDirectory=$HOME/config
+ExecStart=$(which lavap) rpcprovider lavaprovider.yml --geolocation 2 --from wallet --chain-id lava-mainnet-1  --keyring-backend test
+Restart=on-failure
+RestartSec=3
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+sudo systemctl daemon-reload
+systemctl enable lavap
 ```
-```php
-lavap rpcprovider lava-provider.yml --from Adam_VNBnode  --geolocation 1 --chain-id lava-testnet-2 --reward-server-storage /root/.lava/config/reward/ --log_level debug
-```
+
 ***Expected result***
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/128967122/8f853a72-4520-41ff-829c-692c47731c81)
 #### Step 11: Test RPC provider
