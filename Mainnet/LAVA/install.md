@@ -28,8 +28,7 @@ git checkout v2.2.0
 ```
 ### Build binaries
 ```
-export LAVA_BINARY=lavad
-make build
+make install-all
 ```
 ### Prepare binaries for Cosmovisor
 ```
