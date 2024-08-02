@@ -131,7 +131,7 @@ systemctl enable lavap
 ```
 #### Step 13: Start service and check the logs
 ```
-sudo systemctl start lavap && sudo journalctl -u lavap -f --no-hostname -o cat
+sudo systemctl restart lavap && sudo journalctl -u lavap -f --no-hostname -o cat
 ```
 ***Expected result***
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/128967122/8f853a72-4520-41ff-829c-692c47731c81)
