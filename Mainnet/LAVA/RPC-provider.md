@@ -129,21 +129,24 @@ EOF
 sudo systemctl daemon-reload
 systemctl enable lavap
 ```
-
+#### Step 13: Start service and check the logs
+```
+sudo systemctl start lavap && sudo journalctl -u lavap -f --no-hostname -o cat
+```
 ***Expected result***
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/128967122/8f853a72-4520-41ff-829c-692c47731c81)
-#### Step 11: Test RPC provider
+#### Step 14: Test RPC provider
 ```php
-lavap test rpcprovider --from $MONIKER  --endpoints "lava.your-domain.com:443,LAV1"
+lavap test rpcprovider --from $MONIKER  --endpoints "lava.your-domain.com:443,LAVA"
 ```
 ***Expected result***
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/128967122/756bfec8-d9ca-43f2-8ba3-3e518478c49a)
-#### Step 12: Stake the Provider on Chain
+#### Step 15: Stake the Provider on Chain
 ***Make sure your wallet have enough token lava***
 ```php
 lavap tx pairing stake-provider LAV1 "50000000000ulava" "lava.your-domain.com:443,1" 1 --from $MONIKER --provider-moniker $MONIKER --keyring-backend "test" --chain-id "lava-testnet-2" --gas="auto" --gas-adjustment "1.5" --gas "auto" --gas-prices "0.0001ulava"
 ```
-#### Step 13: Test RPC provider again
+#### Step 16: Test RPC provider again
 ```php
 lavap test rpcprovider --from $MONIKER  --endpoints "lava.your-domain.com:443,LAV1"
 ```
