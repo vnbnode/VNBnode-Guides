@@ -74,7 +74,7 @@ echo "RPC:"$RPC "GRPC:"$GRPC "API:"$API
 ```
 #### Step 10: Create Docker file
 ```php
-cd ~/lava/config
+cd ~/config
 nano lavaprovider.yml
 ```
 ***Copy & Paste***
