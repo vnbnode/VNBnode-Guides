@@ -18,29 +18,27 @@
 | OS | Ubuntu 22.04 or macOS |
 
 ## Option 1: Automatic
-```
+```bash
 curl -O https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Dill/light_auto.sh && chmod +x light_auto.sh && ./light_auto.sh
 ```
 ## Option 2: Manual Steps
 
 ### 1. Update and install packages for compiling
-```
+```bash
 cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/update-binary.sh)
 ```
-### 2. Download Light Validator Binary
-- For Linux-like systems: [Download Link](https://dill-release.s3.ap-southeast-1.amazonaws.com/linux/dill.tar.gz)
+### 2. Download Light Validator Binary & Extract the package:
+- For LINUX AMD systems: [Download Link](https://dill-release.s3.ap-southeast-1.amazonaws.com/v1.0.1/dill-v1.0.1-linux-amd64.tar.gz)
 ```bash
-curl -O https://dill-release.s3.ap-southeast-1.amazonaws.com/linux/dill.tar.gz
+curl -O https://dill-release.s3.ap-southeast-1.amazonaws.com/v1.0.1/dill-v1.0.1-linux-amd64.tar.gz
+tar -zxvf dill-v1.0.1-linux-amd64.tar.gz && cd dill
 ```
-- For macOS: [Download Link](https://dill-release.s3.ap-southeast-1.amazonaws.com/macos/dill.tar.gz)
+- For DARWIN ARM systems: [Download Link](https://dill-release.s3.ap-southeast-1.amazonaws.com/v1.0.1/dill-v1.0.1-darwin-arm64.tar.gz)
 ```bash
-curl -O ttps://dill-release.s3.ap-southeast-1.amazonaws.com/macos/dill.tar.gz
+curl -O https://dill-release.s3.ap-southeast-1.amazonaws.com/v1.0.1/dill-v1.0.1-darwin-arm64.tar.gz
+tar -zxvf dill-v1.0.1-darwin-arm64.tar.gz && cd dill
 ```
-### 3. Extract the package:
-```bash
-tar -xzvf dill.tar.gz && cd dill
-```
-### 4. Generate Validator Keys
+### 3. Generate Validator Keys
 _This command will generate validator keys in the `./validator_keys` directory._
 ```bash
 ./dill_validators_gen new-mnemonic --num_validators=1 --chain=andes --folder=./
@@ -49,15 +47,12 @@ _Sample Output_
 ```bash
 ubuntu@ip-xxxx:~/dill$ ./dill_validators_gen new-mnemonic --num_validators=1 --chain=andes --folder=./
 
-***Using the tool on an offline and secure device is highly recommended to keep your mnemonic safe.***
-
-Please choose your language ['1. العربية', '2. ελληνικά', '3. English', '4. Français', '5. Bahasa melayu', '6. Italiano', '7. 日本語', '8. 한국어', '9. Português do Brasil', '10. român', '11. Türkçe', '12. 简体中文']:  [English]: 3
-Please choose the language of the mnemonic word list ['1. 简体中文', '2. 繁體中文', '3. čeština', '4. English', '5. Italiano', '6. 한국어', '7. Português', '8. Español']:  [english]: 4
 Create a password that secures your validator keystore(s). You will need to re-enter this to decrypt them when you setup your Dill validators.:
-Repeat your keystore password for confirmation:
 The amount of DILL token to be deposited(2500 by default). [2500]:
 This is your mnemonic (seed phrase). Write it down and store it safely. It is the ONLY way to retrieve your deposit.
-
+Press any key when you have written down your mnemonic.
+Please type your mnemonic (separated by spaces) to confirm you have written it down. Note: you only need to enter the first 4 letters of each word if you'd prefer.
+: _"fill your mnemoic"_
 
 Creating your keys.
 Creating your keystores:	  [####################################]  1/1
