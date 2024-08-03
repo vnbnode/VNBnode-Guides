@@ -117,7 +117,7 @@ After=network-online.target
 [Service]
 User=$USER
 WorkingDirectory=$HOME/config
-ExecStart=$(which lavap) rpcprovider lavaprovider.yml --geolocation 2 --from wallet --chain-id lava-mainnet-1  --keyring-backend test
+ExecStart=$(which lavap) rpcprovider lavaprovider.yml --geolocation 1 --from wallet --chain-id lava-mainnet-1  --keyring-backend test
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
