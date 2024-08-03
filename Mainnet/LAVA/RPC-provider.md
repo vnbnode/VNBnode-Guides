@@ -42,8 +42,8 @@ server {
     error_log /var/log/nginx/debug.log debug;
 
     location / {
-        proxy_pass http://127.0.0.1:2224;
-        grpc_pass 127.0.0.1:2224;
+        proxy_pass http://127.0.0.1:29667;
+        grpc_pass 127.0.0.1:29667;
     }
 }
 ```
