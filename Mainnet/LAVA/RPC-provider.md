@@ -164,9 +164,9 @@ make install
 lavad version && lavap version
 ```
 ```php
-sudo systemctl restart cosmovisor
+sudo systemctl restart lavad
 sudo systemctl restart lavap
-sudo systemctl status cosmovisor
+sudo systemctl status lavad
 
 ```
 ## Thank to support VNBnode.
