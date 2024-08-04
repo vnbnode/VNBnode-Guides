@@ -107,31 +107,11 @@ endpoints:
 ```php
 mkdir /root/.lava/config/reward/ 
 ```
-### Step 12: Create Service file
 ```php
-tee /etc/systemd/system/lavap.service > /dev/null << EOF
-[Unit]
-Description=Lava provider
-After=network-online.target
-
-[Service]
-User=$USER
-WorkingDirectory=$HOME/config
-ExecStart=$(which lavap) rpcprovider lavaprovider.yml --geolocation 1 --from wallet --chain-id lava-mainnet-1  --keyring-backend test
-Restart=on-failure
-RestartSec=3
-LimitNOFILE=65535
-
-[Install]
-WantedBy=multi-user.target
-EOF
-
-sudo systemctl daemon-reload
-systemctl enable lavap
+screen -S lavaprovider
 ```
-#### Step 13: Start service and check the logs
-```
-sudo systemctl restart lavap && sudo journalctl -u lavap -f --no-hostname -o cat
+```php
+lavap rpcprovider lavaprovider.yml --from wallet  --geolocation 1 --chain-id lava-mainnet-1 --reward-server-storage /root/.lava/config/reward/ --log_level debug
 ```
 ***Expected result***
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/128967122/8f853a72-4520-41ff-829c-692c47731c81)
