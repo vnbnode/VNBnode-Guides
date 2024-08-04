@@ -14,7 +14,7 @@ sudo apt install certbot net-tools nginx python3-certbot-nginx -y
 ```
 #### Step 3: Generate Certificate
 ```php
-sudo certbot certonly -d yourdomain.com -d LAVA.yourdomain.com
+sudo certbot certonly -d vnbnode.site -d lava.vnbnode.site
 ```
 ***Select 1 for Nginx Web Server Plugin***
 
