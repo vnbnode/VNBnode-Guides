@@ -37,8 +37,8 @@ server {
     listen 443 ssl http2;
     server_name lava.your-domain.com;
 
-    ssl_certificate /etc/letsencrypt/live/your-domain.com/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/your-domain.com/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/vnbnode.site/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/vnbnode.site/privkey.pem;
     error_log /var/log/nginx/debug.log debug;
 
     location / {
