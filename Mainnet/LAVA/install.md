@@ -49,7 +49,7 @@ go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
 
 ### Create service
 ```
-sudo tee /etc/systemd/system/lava.service > /dev/null << EOF
+sudo tee /etc/systemd/system/lavad.service > /dev/null << EOF
 [Unit]
 Description=lava node service
 After=network-online.target
@@ -68,7 +68,7 @@ Environment="UNSAFE_SKIP_BACKUP=true"
 WantedBy=multi-user.target
 EOF
 sudo systemctl daemon-reload
-sudo systemctl enable lava.service
+sudo systemctl enable lavad.service
 ```
 ### Initialize node
 ```
@@ -108,7 +108,10 @@ CUSTOM_PORT=177
 ```
 ```
 sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:${CUSTOM_PORT}58\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:${CUSTOM_PORT}57\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:${CUSTOM_PORT}60\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:${CUSTOM_PORT}56\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":${CUSTOM_PORT}66\"%" $HOME/.lava/config/config.toml
-sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:${CUSTOM_PORT}17\"%; s%^address = \":8080\"%address = \":${CUSTOM_PORT}80\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:${CUSTOM_PORT}90\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:${CUSTOM_PORT}91\"%; s%:8545%:14445%; s%:8546%:${CUSTOM_PORT}46%; s%:6065%:14465%" $HOME/.lava/config/app.toml
+sed -i -e "s%^address = \"tcp://localhost:1317\"%address = \"tcp://localhost:${CUSTOM_PORT}17\"%; s%^address = \":8080\"%address = \":${CUSTOM_PORT}80\"%; s%^address = \"localhost:9090\"%address = \"localhost:${CUSTOM_PORT}90\"%; s%^address = \"localhost:9091\"%address = \"localhost:${CUSTOM_PORT}91\"%; s%^address = \"0.0.0.0:8545\"%address = \"0.0.0.0:${CUSTOM_PORT}45\"%; s%^ws-address = \"0.0.0.0:8546\"%ws-address = \"0.0.0.0:${CUSTOM_PORT}46\"%" $HOME/.lava/config/app.toml
+
+#Set config with new custom port
+lavad config node tcp://localhost:${CUSTOM_PORT}57
 ```
 ### Update chain configuration
 ```
@@ -126,7 +129,7 @@ sed -i \
 
 ### Start service and check the logs
 ```
-sudo systemctl restart lava.service && sudo journalctl -u lava.service -f --no-hostname -o cat
+sudo systemctl restart lavad.service && sudo journalctl -u lava.service -f --no-hostname -o cat
 ```
 ## Thank to support VNBnode.
 ### Visit us at:
