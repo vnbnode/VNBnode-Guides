@@ -129,7 +129,7 @@ sed -i \
 
 ### Start service and check the logs
 ```
-sudo systemctl restart lavad.service && sudo journalctl -u lava.service -f --no-hostname -o cat
+sudo systemctl restart lavad && sudo journalctl -u lavad -f --no-hostname -o cat
 ```
 ## Thank to support VNBnode.
 ### Visit us at:
