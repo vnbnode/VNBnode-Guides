@@ -135,7 +135,7 @@ lavad tx pairing stake-provider LAVA "50000000000ulava" "$DOMAIN:$PORT,1" 1 "$VA
 ```
 #### Step 16: Test RPC provider again
 ```php
-lavap test rpcprovider --from $MONIKER  --endpoints "lava.your-domain.com:443,LAV1"
+lavap test rpcprovider --from wallet --endpoints "lava.vnbnode.site:443,LAVA"
 ```
 #### Step 14: Check the status of RPC provider
 [https://info.lavanet.xyz/provider/](https://info.lavanet.xyz/provider/)
@@ -153,7 +153,7 @@ cd lava
 ```
 ```php
 # This is just sample command, Please change to the correct version
-git checkout v1.0.0
+git checkout v2.2.2
 ```
 ```php
 export LAVA_BINARY=lavap
