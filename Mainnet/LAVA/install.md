@@ -24,7 +24,7 @@ cd $HOME
 rm -rf lava
 git clone https://github.com/lavanet/lava.git
 cd lava
-git checkout v2.2.0
+git checkout v2.2.2
 ```
 ### Build binaries
 ```
