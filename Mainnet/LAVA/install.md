@@ -74,7 +74,7 @@ sudo systemctl enable lavad.service
 ```
 lavad config chain-id lava-mainnet-1
 lavad config keyring-backend file
-lavad config node tcp://localhost:14457
+lavad config node tcp://localhost:17757
 
 lavad init $MONIKER --chain-id lava-mainnet-1
 ```
