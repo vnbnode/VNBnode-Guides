@@ -117,7 +117,7 @@ lavap rpcprovider lavaprovider.yml --from wallet  --geolocation 1 --chain-id lav
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/128967122/8f853a72-4520-41ff-829c-692c47731c81)
 #### Step 14: Test RPC provider
 ```php
-lavap test rpcprovider --from wallet  --endpoints "lava.vndnode.site:443,LAVA"
+lavap test rpcprovider --from wallet  --endpoints "lava.vnbdnode.com:443,LAVA"
 ```
 ***Expected result***
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/128967122/756bfec8-d9ca-43f2-8ba3-3e518478c49a)
