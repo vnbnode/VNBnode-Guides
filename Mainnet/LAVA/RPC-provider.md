@@ -125,13 +125,13 @@ lavap test rpcprovider --from wallet  --endpoints "lava.vnbdnode.com:443,LAVA"
 ***Make sure your wallet have enough token lava***
 ```php
 MONIKER="VNBnode"
-DOMEN="lava.vnbnode.site"
+DOMAIN="lava.vnbnode.site"
 PORT="443"
 VALI="lava@valoper1mfan7gazv43593pz8esmgy8vahcpf6636sprvx"
-echo $MONIKER $DOMEN $PORT $VALI
+echo $MONIKER $DOMAIN $PORT $VALI
 ```
 ```php
-lavad tx pairing stake-provider LAVA "50000000000ulava" "$DOMAIN:$PORT,1" 1 "$VALI" --from wallet --provider-moniker "$MONIKER" --keyring-backend "test" --chain-id "lava-mainnet-1" --delegate-limit "0ulava" --gas="auto" --gas-adjustment "1.5" --gas "auto" --gas-prices "0.0001ulava"
+lavad tx pairing stake-provider LAVA "50000000000ulava" "$DOMEN:$PORT,1" 1 $VALI --from wallet --provider-moniker "$MONIKER"  --delegate-limit "0ulava" --gas-prices 0.1ulava --gas-adjustment 1.5 --gas auto -y
 ```
 #### Step 16: Test RPC provider again
 ```php
