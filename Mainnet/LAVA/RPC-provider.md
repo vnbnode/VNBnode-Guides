@@ -14,7 +14,7 @@ sudo apt install certbot net-tools nginx python3-certbot-nginx -y
 ```
 #### Step 3: Generate Certificate
 ```php
-sudo certbot certonly -d vnbnode.site -d lava.vnbnode.site
+sudo certbot certonly -d lava.vnbnode.com
 ```
 ***Select 1 for Nginx Web Server Plugin***
 
@@ -35,10 +35,10 @@ sudo nano lava_server
 ```php
 server {
     listen 443 ssl http2;
-    server_name lava.your-domain.com;
+    server_name lava.vnbnode.com;
 
-    ssl_certificate /etc/letsencrypt/live/vnbnode.site/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/vnbnode.site/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/vnbnode.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/vnbnode.com/privkey.pem;
     error_log /var/log/nginx/debug.log debug;
 
     location / {
