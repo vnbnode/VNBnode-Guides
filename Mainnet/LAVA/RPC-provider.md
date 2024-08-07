@@ -115,13 +115,13 @@ lavap rpcprovider lavaprovider.yml --from wallet  --geolocation 1 --chain-id lav
 ```
 ***Expected result***
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/128967122/8f853a72-4520-41ff-829c-692c47731c81)
-#### Step 14: Test RPC provider
+#### Step 12: Test RPC provider
 ```php
 lavap test rpcprovider --from wallet  --endpoints "lava.vnbnode.com:443,LAVA"
 ```
 ***Expected result***
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/128967122/756bfec8-d9ca-43f2-8ba3-3e518478c49a)
-#### Step 15: Stake the Provider on Chain
+#### Step 13: Stake the Provider on Chain
 ***Make sure your wallet have enough token lava***
 ```php
 MONIKER="VNBnode"
@@ -133,11 +133,24 @@ echo $MONIKER $DOMAIN $PORT $VALI
 ```php
 lavad tx pairing stake-provider LAVA "50000000000ulava" "$DOMAIN:$PORT,1" 1 $VALI --from wallet --provider-moniker "$MONIKER"  --delegate-limit "0ulava" --gas-prices 0.1ulava --gas-adjustment 1.5 --gas auto -y
 ```
-#### Step 16: Test RPC provider again
+#### Step 14: Test RPC provider again
 ```php
 lavap test rpcprovider --from wallet --endpoints "lava.vnbnode.com:443,LAVA"
 ```
-#### Step 14: Check the status of RPC provider
+## Usefull Commands
+#### Unfreeze Provider
+```
+lavad tx pairing unfreeze LAVA --from wallet --chain-id lava-mainnet-1 --gas-prices 0.1ulava --gas-adjustment 1.5 --gas auto -y
+```
+#### Check Account Info
+```
+lavap query pairing account-info $(lavad keys show wallet -a) -oe | jq
+```
+#### Claim Rewards
+```
+lavad tx dualstaking claim-rewards --from $(lavad keys show wallet -a)
+```
+#### Step 16: Check the status of RPC provider
 [https://info.lavanet.xyz/provider/](https://info.lavanet.xyz/provider/)
 ***Enter your wallet address & Enjoy***
 ### Upgradable Lavap binaries
