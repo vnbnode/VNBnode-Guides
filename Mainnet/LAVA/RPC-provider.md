@@ -125,24 +125,24 @@ lavap test rpcprovider --from wallet  --endpoints "lava.vnbnode.com:443,LAVA"
 ***Make sure your wallet have enough token lava***
 ```php
 MONIKER="VNBnode"
-DOMAIN="lava.vnbnode.site"
+DOMAIN="lava.vnbnode.com"
 PORT="443"
 VALI="lava@valoper1mfan7gazv43593pz8esmgy8vahcpf6636sprvx"
 echo $MONIKER $DOMAIN $PORT $VALI
 ```
 ```php
-lavad tx pairing stake-provider LAVA "50000000000ulava" "$DOMEN:$PORT,1" 1 $VALI --from wallet --provider-moniker "$MONIKER"  --delegate-limit "0ulava" --gas-prices 0.1ulava --gas-adjustment 1.5 --gas auto -y
+lavad tx pairing stake-provider LAVA "50000000000ulava" "$DOMAIN:$PORT,1" 1 $VALI --from wallet --provider-moniker "$MONIKER"  --delegate-limit "0ulava" --gas-prices 0.1ulava --gas-adjustment 1.5 --gas auto -y
 ```
 #### Step 16: Test RPC provider again
 ```php
-lavap test rpcprovider --from wallet --endpoints "lava.vnbnode.site:443,LAVA"
+lavap test rpcprovider --from wallet --endpoints "lava.vnbnode.com:443,LAVA"
 ```
 #### Step 14: Check the status of RPC provider
 [https://info.lavanet.xyz/provider/](https://info.lavanet.xyz/provider/)
 ***Enter your wallet address & Enjoy***
 ### Upgradable Lavap binaries
 ```php
-sudo systemctl stop cosmovisor
+sudo systemctl stop lavad
 sudo systemctl stop lavap
 ```
 ```php
