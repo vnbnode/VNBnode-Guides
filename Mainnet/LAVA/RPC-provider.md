@@ -140,7 +140,7 @@ lavap test rpcprovider --from wallet --endpoints "lava.vnbnode.site:443,LAVA"
 #### Step 14: Check the status of RPC provider
 [https://info.lavanet.xyz/provider/](https://info.lavanet.xyz/provider/)
 ***Enter your wallet address & Enjoy***
-### Upgradable Lava binaries
+### Upgradable Lavap binaries
 ```php
 sudo systemctl stop cosmovisor
 sudo systemctl stop lavap
