@@ -11,6 +11,7 @@ _Reminder: If you want to use the **same VPS** to run the old node again, you ne
 pkill dill-node
 mv dill dillbackup
 ```
+```
 curl -sO https://raw.githubusercontent.com/DillLabs/launch-dill-node/main/launch_dill_node.sh  && chmod +x launch_dill_node.sh && ./launch_dill_node.sh
 ```
 - When "choose an option for mnemonic source", enter 2 to choose "Use existing mnemonic", and input your mnemonic
