@@ -21,7 +21,7 @@ curl -O https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Dill/li
 cd dill
 rm -rf validator_keys
 ```
-- Copy the two old folder **validator_keys** to folder dill, you can use [Termius](https://termius.com/download/windows).
+- Copy the old folder **validator_keys** to folder dill, you can use [Termius](https://termius.com/download/windows).
 ### 2. Start Light Validator Node
 ```bash
 pkill dill-node
