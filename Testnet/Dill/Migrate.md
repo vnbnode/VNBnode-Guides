@@ -16,10 +16,6 @@ curl -O https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Dill/li
 ```
 - When "choose an option for mnemonic source", enter 2 to choose "Use existing mnemonic", and input your mnemonic
 ### 1. Replace the old **validator_keys** folder.
-- Stop dill node
-```
-pkill dill-node
-```
 - Delete the **validator_keys** folder inside the dill folder.
 ```
 cd dill
@@ -28,6 +24,7 @@ rm -rf validator_keys
 - Copy the two old folder **validator_keys** to folder dill, you can use [Termius](https://termius.com/download/windows).
 ### 2. Start Light Validator Node
 ```bash
+pkill dill-node
 ./restart_light.sh
 ```
 ### 9. Verify Node is Running
