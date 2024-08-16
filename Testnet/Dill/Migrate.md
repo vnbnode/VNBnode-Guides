@@ -28,7 +28,7 @@ rm -rf validator_keys
 - Copy the two old folder **validator_keys** to folder dill, you can use [Termius](https://termius.com/download/windows).
 ### 2. Start Light Validator Node
 ```bash
-./start_light.sh
+./restart_light.sh
 ```
 ### 9. Verify Node is Running
 _Run the following command to check if the node is up and running:_
