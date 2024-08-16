@@ -11,44 +11,23 @@ _Reminder: If you want to use the **same VPS** to run the old node again, you ne
 pkill dill-node
 mv dill dillbackup
 ```
-### 1. Update and install packages for compiling
+curl -sO https://raw.githubusercontent.com/DillLabs/launch-dill-node/main/launch_dill_node.sh  && chmod +x launch_dill_node.sh && ./launch_dill_node.sh
 ```
-cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/update-binary.sh)
+- When "choose an option for mnemonic source", enter 2 to choose "Use existing mnemonic", and input your mnemonic
+### 1. Replace the old **validator_keys** folder.
+- Stop dill node
 ```
-### 2. Download Light Validator Binary
-- For Linux-like systems: [Download Link](https://dill-release.s3.ap-southeast-1.amazonaws.com/linux/dill.tar.gz)
+pkill dill-node
+```
+- Delete the **validator_keys** folder inside the dill folder.
+```
+cd dill
+rm -rf validator_keys
+```
+- Copy the two old folder **validator_keys** to folder dill, you can use [Termius](https://termius.com/download/windows).
+### 2. Start Light Validator Node
 ```bash
-curl -O https://dill-release.s3.ap-southeast-1.amazonaws.com/linux/dill.tar.gz
-```
-- For macOS: [Download Link](https://dill-release.s3.ap-southeast-1.amazonaws.com/macos/dill.tar.gz)
-```bash
-curl -O ttps://dill-release.s3.ap-southeast-1.amazonaws.com/macos/dill.tar.gz
-```
-### 3. Extract the package
-```bash
-tar -xzvf dill.tar.gz && cd dill
-```
-### 4. Generate Validator Keys with existing mnemonic (fill your old mnemonic)
-_This command will generate validator keys with existing mnemonic in the `./validator_keys` directory._
-```bash
-./dill_validators_gen existing-mnemonic --num_validators=1 --chain=andes --folder=./
-```
-### 5. Update deposit data & old keystore
-- Delete the two files, deposit data and keystore, in the folder validator_key.
-- Copy the two old files, deposit data and keystore, saved during the backup step back into the folder validator_key, you can use [Termius](https://termius.com/download/windows).
-### 6. Import Validator Keys
-_During this process, set and save your keystore password._
-```bash
-./dill-node accounts import --andes --wallet-dir ./keystore --keys-dir validator_keys/ --accept-terms-of-use
-```
-### 7. Save Password to a File
-_Replace `<your-password>` with your actual password._
-```bash
-echo <your-password> > walletPw.txt
-```
-### 8. Start Light Validator Node
-```bash
-./start_light.sh -p walletPw.txt
+./start_light.sh
 ```
 ### 9. Verify Node is Running
 _Run the following command to check if the node is up and running:_
