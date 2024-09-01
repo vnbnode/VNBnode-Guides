@@ -16,14 +16,23 @@ cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/
 ```
 ### Check log
 ```
-sudo docker logs -f ev
+sudo docker logs -f elixir
 ```
+### Upgrade
+```
+docker kill elixir
+docker rm elixir
+docker pull elixirprotocol/validator:v3
+```
+
 ### Stop and Remove Node
 ```
-sudo docker stop ev
-sudo docker rm ev
-rm -r $HOME/ev
+sudo docker stop elixir
+sudo docker rm elixir
+rm -r $HOME/elixir
 ```
+
+
 
 ### Dashboard: https://dashboard.elixir.finance/
 
