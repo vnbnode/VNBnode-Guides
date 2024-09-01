@@ -34,7 +34,7 @@ rm -r $HOME/elixir
 
 
 
-### Dashboard: https://dashboard.elixir.finance/
+### Dashboard: https://testnet-3.elixir.xyz/
 
 ## Thank to support VNBnode.
 ### Visit us at:
