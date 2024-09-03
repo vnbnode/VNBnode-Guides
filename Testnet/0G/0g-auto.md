@@ -18,12 +18,9 @@ https://grpc-0g.vnbnode.com
 ### Explorer
 https://explorer.vnbnode.com/0g-Testnet 
 
-https://explorer.mflow.tech/OG-Testnet
-
 ### Faucet: 
 https://faucet.0g.ai (faucet before setup)
 ### EVM RPC list:
-- https://evm-rpc-0g.mflow.tech
 - https://rpc-testnet.0g.ai
 - https://0gevmrpc.nodebrand.xyz
 - https://0g-testnet-rpc.tech-coha05.xyz
