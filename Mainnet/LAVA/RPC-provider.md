@@ -131,7 +131,7 @@ VALI="lava@valoper1mfan7gazv43593pz8esmgy8vahcpf6636sprvx"
 echo $MONIKER $DOMAIN $PORT $VALI
 ```
 ```php
-lavad tx pairing stake-provider LAVA "50000000000ulava" "$DOMAIN:$PORT,1" 1 $VALI --from wallet --provider-moniker "$MONIKER"  --delegate-limit "0ulava" --gas-prices 0.1ulava --gas-adjustment 1.5 --gas auto -y
+lavad tx pairing stake-provider LAVA "50000000000ulava" "$DOMAIN:$PORT,1" 1 $VALI --from wallet --provider-moniker "$MONIKER"  --delegate-limit "100ulava" --gas-prices 0.1ulava --gas-adjustment 1.5 --gas auto -y
 ```
 #### Step 14: Test RPC provider again
 ```php
