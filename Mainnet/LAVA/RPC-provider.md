@@ -166,7 +166,7 @@ cd lava
 ```
 ```php
 # This is just sample command, Please change to the correct version
-git checkout v2.2.2
+git checkout v3.1.0
 ```
 ```php
 export LAVA_BINARY=lavap
