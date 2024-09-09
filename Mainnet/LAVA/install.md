@@ -131,6 +131,32 @@ sed -i \
 ```
 sudo systemctl restart lavad && sudo journalctl -u lavad -f --no-hostname -o cat
 ```
+## Upgrade validator
+
+### Download new binaries
+```
+cd $HOME
+rm -rf lava
+git clone https://github.com/lavanet/lava.git
+cd lava
+git checkout v3.1.0
+```
+### Install
+```
+export LAVA_BINARY=lavad
+make build
+lavad version && lavap version
+```
+### Cosmovisor
+```
+mkdir -p $HOME/.lava/cosmovisor/upgrades/v3.1.0/bin
+mv build/lavad $HOME/.lava/cosmovisor/upgrades/v3.1.0/bin/
+rm -rf build
+```
+### Start service and check the logs
+```
+sudo systemctl restart lavad && sudo journalctl -u lavad -f --no-hostname -o cat
+```
 ## Thank to support VNBnode.
 ### Visit us at:
 
