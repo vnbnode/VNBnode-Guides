@@ -176,12 +176,7 @@ make install
 # check version
 lavad version && lavap version
 ```
-```php
-sudo systemctl restart lavad
-sudo systemctl restart lavap
-sudo systemctl status lavad
 
-```
 ## Thank to support VNBnode.
 ### Visit us at:
 
