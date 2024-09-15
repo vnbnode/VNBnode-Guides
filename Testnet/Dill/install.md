@@ -73,7 +73,7 @@ ps -ef | grep dill
 
 1. Visit [Dill Staking](https://staking.dill.xyz/)
 2. Upload `deposit_data-*.json` file.
-Use [Termius](https://termius.com/download/windows),scp... to download the **validator_keys** folder to your local machine." or:
+Use [Termius](https://termius.com/download/windows), scp... to download the **validator_keys** folder to your local machine." or:
 ```bash
 cat ./validator_keys/deposit_data-xxxx.json
 ```
