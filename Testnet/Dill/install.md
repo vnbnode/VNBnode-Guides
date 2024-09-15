@@ -23,24 +23,26 @@ curl -sO https://raw.githubusercontent.com/DillLabs/launch-dill-node/main/dill.s
 **1. Launch a new dill node:** Start a new Dill node. Choose this option if you want to create and run a new node from scratch.
 **2. Add a validator to existing node:** Add a validator to an existing node. Choose this option if you want to add a new validator to an existing node.
 - Fill 1 or 2 and press any key to continue...
+
 ![image](https://github.com/user-attachments/assets/a2b9b444-617c-4e2e-bea1-6176b2aa79d1)
-
-
 ### 2. Validator Keys are generated from a mnemonic:
 **1. From a new mnemonic:** Choose this option if you want to generate a new mnemonic.
 **2. Use existing mnemonic:** Choose this option if you want to use a mnemonic that you already have.
 _Option 1: The mnemonic will be automatically saved to /root/dill/validator_keys/.... Please back up the validator_keys folder to your local machine after you have successfully run the node._
 _Option 2: You will need to back up your existing mnemonic yourself.
 - Fill 1 or 2 and press any key to continue...
+
 ![image](https://github.com/user-attachments/assets/9cfdde73-988c-43f4-a08b-797dc3484b3a)
 ### 3. Please choose an option for deposit token amount [1, 3600, 2, 36000]:
 **1. 3600 for light node**
 **2. 36000 for full node**
+
 ![image](https://github.com/user-attachments/assets/3776cd41-26e6-43e7-9e2d-a7ffd49027e7)
 ### 3. Please enter your withdrawal address:
 - You can use any wallet as long as you have the mnemonic for it. Suggestion: you can use a staking wallet.
 - Fill evm wallet & click enter.
 - If you have completed all the steps correctly, you will see an output like this:
+
 ![image](https://github.com/user-attachments/assets/00e3ace0-d2e3-4adf-99c3-8d79c4ec7169)
 
 ### 4. Verify Node is Running
