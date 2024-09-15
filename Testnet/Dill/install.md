@@ -1,13 +1,13 @@
-# Setting Validator on Dill Testnet Andes
+# Setting Validator on Dill Testnet Alps
 
 ## Network Details & Hardware Requirements
 
-| Network Name | Dill Testnet Andes |
+| Network Name | Dill Testnet Alps |
 | --- | --- |
-| RPC URL | [https://rpc-andes.dill.xyz/](https://rpc-andes.dill.xyz/) |
-| Chain ID | 558329 |
+| RPC URL | [https://rpc-alps.dill.xyz](https://rpc-alps.dill.xyz) |
+| Chain ID | 102125 |
 | Currency Symbol | DILL |
-| Explorer URL | [https://andes.dill.xyz/](https://andes.dill.xyz/) |
+| Explorer URL | [https://alps.dill.xyz/](https://alps.dill.xyz/) |
 
 | Component | Minimum Requirement |
 | --- | --- |
@@ -16,6 +16,11 @@
 | Disk | 20GB |
 | Network | 1MB/s |
 | OS | Ubuntu 22.04 or macOS |
+
+| Node type	| CPU	| Memory	| Disk	| Bandwidth	| OS type |
+| --- | --- |--- |--- |--- |--- |
+| Light validator	| 2 cores	| 2G	| 20GB	| 8Mb/s	| Ubuntu LTS 20.04+/MacOS |
+| Full validator	| 4 cores	| 8G	| 256GB	| 64Mb/s	| Ubuntu LTS 20.04+/MacOS |
 
 ## Option 1: Automatic
 ```bash
@@ -41,11 +46,11 @@ tar -zxvf dill-v1.0.1-darwin-arm64.tar.gz && cd dill
 ### 3. Generate Validator Keys
 _This command will generate validator keys in the `./validator_keys` directory._
 ```bash
-./dill_validators_gen new-mnemonic --num_validators=1 --chain=andes --folder=./
+./dill_validators_gen new-mnemonic --num_validators=1 --chain=Alps --folder=./
 ```
 _Sample Output_
 ```bash
-ubuntu@ip-xxxx:~/dill$ ./dill_validators_gen new-mnemonic --num_validators=1 --chain=andes --folder=./
+ubuntu@ip-xxxx:~/dill$ ./dill_validators_gen new-mnemonic --num_validators=1 --chain=Alps --folder=./
 
 Create a password that secures your validator keystore(s). You will need to re-enter this to decrypt them when you setup your Dill validators.:
 The amount of DILL token to be deposited(2500 by default). [2500]:
@@ -68,7 +73,7 @@ Press any key.
 ### 5. Import Validator Keys
 _During this process, set and save your keystore password._
 ```bash
-./dill-node accounts import --andes --wallet-dir ./keystore --keys-dir validator_keys/ --accept-terms-of-use
+./dill-node accounts import --Alps --wallet-dir ./keystore --keys-dir validator_keys/ --accept-terms-of-use
 ```
 ### 6. Save Password to a File
 _Replace `<your-password>` with your actual password._
