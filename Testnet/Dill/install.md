@@ -47,14 +47,14 @@ __Option 2: You will need to back up your existing mnemonic yourself._
 - Fill 1 or 2 and press any key to continue...
 - 
 ![image](https://github.com/user-attachments/assets/3776cd41-26e6-43e7-9e2d-a7ffd49027e7)
-### 3. Please enter your withdrawal address:
+### 4. Please enter your withdrawal address:
 - You can use any wallet as long as you have the mnemonic for it. Suggestion: you can use a staking wallet.
 - Fill evm wallet & click enter.
 - If you have completed all the steps correctly, you will see an output like this:
 
 ![image](https://github.com/user-attachments/assets/00e3ace0-d2e3-4adf-99c3-8d79c4ec7169)
 
-### 4. Verify Node is Running
+### 5. Verify Node is Running
 _Run the following command to check if the node is up and running:_
 ```bash
 tail -f $HOME/dill/light_node/logs/dill.log
@@ -68,7 +68,7 @@ ps -ef | grep dill
 ```bash
 ./health_check.sh -v
 ```
-### 9. Staking
+### 6. Staking
 
 1. Visit [Dill Staking](https://staking.dill.xyz/)
 2. Upload `deposit_data-*.json` file.
