@@ -21,12 +21,16 @@ curl -sO https://raw.githubusercontent.com/DillLabs/launch-dill-node/main/dill.s
 ```
 ### 1. There are two options:
 **1. Launch a new dill node:** Start a new Dill node. Choose this option if you want to create and run a new node from scratch.
+
 **2. Add a validator to existing node:** Add a validator to an existing node. Choose this option if you want to add a new validator to an existing node.
+
 - Fill 1 or 2 and press any key to continue...
 
 ![image](https://github.com/user-attachments/assets/a2b9b444-617c-4e2e-bea1-6176b2aa79d1)
 ### 2. Validator Keys are generated from a mnemonic:
+
 **1. From a new mnemonic:** Choose this option if you want to generate a new mnemonic.
+
 **2. Use existing mnemonic:** Choose this option if you want to use a mnemonic that you already have.
 _Option 1: The mnemonic will be automatically saved to /root/dill/validator_keys/.... Please back up the validator_keys folder to your local machine after you have successfully run the node._
 _Option 2: You will need to back up your existing mnemonic yourself.
