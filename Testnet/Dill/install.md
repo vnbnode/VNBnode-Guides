@@ -48,7 +48,9 @@ _Option 2: 36000 for full node_
 ![image](https://github.com/user-attachments/assets/3776cd41-26e6-43e7-9e2d-a7ffd49027e7)
 ### 4. Please enter your withdrawal address:
 _You can use any wallet as long as you have the mnemonic for it. Suggestion: you can use a staking wallet._
+
 - Fill evm wallet & click enter.
+
 _If you have completed all the steps correctly, you will see an output like this:_
 
 ![image](https://github.com/user-attachments/assets/00e3ace0-d2e3-4adf-99c3-8d79c4ec7169)
