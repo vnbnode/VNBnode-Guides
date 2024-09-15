@@ -41,16 +41,15 @@ __Option 2: You will need to back up your existing mnemonic yourself._
 ![image](https://github.com/user-attachments/assets/9cfdde73-988c-43f4-a08b-797dc3484b3a)
 ### 3. Please choose an option for deposit token amount [1, 3600, 2, 36000]:
 
-**1. 3600 for light node**
-
-**2. 36000 for full node**
+_Option 1: 3600 for light node_
+_Option 2: 36000 for full node_
 - Fill 1 or 2 and press any key to continue...
-- 
+
 ![image](https://github.com/user-attachments/assets/3776cd41-26e6-43e7-9e2d-a7ffd49027e7)
 ### 4. Please enter your withdrawal address:
-- You can use any wallet as long as you have the mnemonic for it. Suggestion: you can use a staking wallet.
+_You can use any wallet as long as you have the mnemonic for it. Suggestion: you can use a staking wallet._
 - Fill evm wallet & click enter.
-- If you have completed all the steps correctly, you will see an output like this:
+_If you have completed all the steps correctly, you will see an output like this:_
 
 ![image](https://github.com/user-attachments/assets/00e3ace0-d2e3-4adf-99c3-8d79c4ec7169)
 
