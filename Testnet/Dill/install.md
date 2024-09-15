@@ -44,7 +44,8 @@ __Option 2: You will need to back up your existing mnemonic yourself._
 **1. 3600 for light node**
 
 **2. 36000 for full node**
-
+- Fill 1 or 2 and press any key to continue...
+- 
 ![image](https://github.com/user-attachments/assets/3776cd41-26e6-43e7-9e2d-a7ffd49027e7)
 ### 3. Please enter your withdrawal address:
 - You can use any wallet as long as you have the mnemonic for it. Suggestion: you can use a staking wallet.
