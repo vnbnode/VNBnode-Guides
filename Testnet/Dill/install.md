@@ -14,7 +14,7 @@
 | Light validator	| 2 cores	| 2G	| 20GB	| 8Mb/s	| Ubuntu LTS 20.04+/MacOS |
 | Full validator	| 4 cores	| 8G	| 256GB	| 64Mb/s	| Ubuntu LTS 20.04+/MacOS |
 
-## Setting up your dill node
+## Set up the node (auto)
 ```bash
 curl -sO https://raw.githubusercontent.com/DillLabs/launch-dill-node/main/dill.sh  && chmod +x dill.sh && ./dill.sh
 
