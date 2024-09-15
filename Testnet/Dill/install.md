@@ -9,82 +9,41 @@
 | Currency Symbol | DILL |
 | Explorer URL | [https://alps.dill.xyz/](https://alps.dill.xyz/) |
 
-| Component | Minimum Requirement |
-| --- | --- |
-| CPU | 2 cores |
-| Memory | 2GB |
-| Disk | 20GB |
-| Network | 1MB/s |
-| OS | Ubuntu 22.04 or macOS |
-
 | Node type	| CPU	| Memory	| Disk	| Bandwidth	| OS type |
 | --- | --- |--- |--- |--- |--- |
 | Light validator	| 2 cores	| 2G	| 20GB	| 8Mb/s	| Ubuntu LTS 20.04+/MacOS |
 | Full validator	| 4 cores	| 8G	| 256GB	| 64Mb/s	| Ubuntu LTS 20.04+/MacOS |
 
-## Option 1: Automatic
+## Setting up your dill node
 ```bash
-curl -O https://raw.githubusercontent.com/vnbnode/binaries/main/Projects/Dill/light_auto.sh && chmod +x light_auto.sh && ./light_auto.sh
-```
-## Option 2: Manual Steps
+curl -sO https://raw.githubusercontent.com/DillLabs/launch-dill-node/main/dill.sh  && chmod +x dill.sh && ./dill.sh
 
-### 1. Update and install packages for compiling
-```bash
-cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/update-binary.sh)
 ```
-### 2. Download Light Validator Binary & Extract the package:
-- For LINUX AMD systems: [Download Link](https://dill-release.s3.ap-southeast-1.amazonaws.com/v1.0.1/dill-v1.0.1-linux-amd64.tar.gz)
-```bash
-curl -O https://dill-release.s3.ap-southeast-1.amazonaws.com/v1.0.1/dill-v1.0.1-linux-amd64.tar.gz
-tar -zxvf dill-v1.0.1-linux-amd64.tar.gz && cd dill
-```
-- For DARWIN ARM systems: [Download Link](https://dill-release.s3.ap-southeast-1.amazonaws.com/v1.0.1/dill-v1.0.1-darwin-arm64.tar.gz)
-```bash
-curl -O https://dill-release.s3.ap-southeast-1.amazonaws.com/v1.0.1/dill-v1.0.1-darwin-arm64.tar.gz
-tar -zxvf dill-v1.0.1-darwin-arm64.tar.gz && cd dill
-```
-### 3. Generate Validator Keys
-_This command will generate validator keys in the `./validator_keys` directory._
-```bash
-./dill_validators_gen new-mnemonic --num_validators=1 --chain=Alps --folder=./
-```
-_Sample Output_
-```bash
-ubuntu@ip-xxxx:~/dill$ ./dill_validators_gen new-mnemonic --num_validators=1 --chain=Alps --folder=./
-
-Create a password that secures your validator keystore(s). You will need to re-enter this to decrypt them when you setup your Dill validators.:
-The amount of DILL token to be deposited(2500 by default). [2500]:
-This is your mnemonic (seed phrase). Write it down and store it safely. It is the ONLY way to retrieve your deposit.
-Press any key when you have written down your mnemonic.
-Please type your mnemonic (separated by spaces) to confirm you have written it down. Note: you only need to enter the first 4 letters of each word if you'd prefer.
-: _"fill your mnemoic"_
-
-Creating your keys.
-Creating your keystores:	  [####################################]  1/1
-Verifying your keystores:	  [####################################]  1/1
-Verifying your deposits:	  [####################################]  1/1
-
-Success!
-Your keys can be found at: ./validator_keys
+### 1. There are two options:
+**1. Launch a new dill node:** Start a new Dill node. Choose this option if you want to create and run a new node from scratch.
+**2. Add a validator to existing node:** Add a validator to an existing node. Choose this option if you want to add a new validator to an existing node.
+- Fill 1 or 2 and press any key to continue...
+![image](https://github.com/user-attachments/assets/a2b9b444-617c-4e2e-bea1-6176b2aa79d1)
 
 
-Press any key.
-```
-### 5. Import Validator Keys
-_During this process, set and save your keystore password._
-```bash
-./dill-node accounts import --Alps --wallet-dir ./keystore --keys-dir validator_keys/ --accept-terms-of-use
-```
-### 6. Save Password to a File
-_Replace `<your-password>` with your actual password._
-```bash
-echo <your-password> > walletPw.txt
-```
-### 7. Start Light Validator Node
-```bash
-./start_light.sh -p walletPw.txt
-```
-### 8. Verify Node is Running
+### 2. Validator Keys are generated from a mnemonic:
+**1. From a new mnemonic:** Choose this option if you want to generate a new mnemonic.
+**2. Use existing mnemonic:** Choose this option if you want to use a mnemonic that you already have.
+_Option 1: The mnemonic will be automatically saved to /root/dill/validator_keys/.... Please back up the validator_keys folder to your local machine after you have successfully run the node._
+_Option 2: You will need to back up your existing mnemonic yourself.
+- Fill 1 or 2 and press any key to continue...
+![image](https://github.com/user-attachments/assets/9cfdde73-988c-43f4-a08b-797dc3484b3a)
+### 3. Please choose an option for deposit token amount [1, 3600, 2, 36000]:
+**1. 3600 for light node**
+**2. 36000 for full node**
+![image](https://github.com/user-attachments/assets/3776cd41-26e6-43e7-9e2d-a7ffd49027e7)
+### 3. Please enter your withdrawal address:
+- You can use any wallet as long as you have the mnemonic for it. Suggestion: you can use a staking wallet.
+- Fill evm wallet & click enter.
+- If you have completed all the steps correctly, you will see an output like this:
+![image](https://github.com/user-attachments/assets/00e3ace0-d2e3-4adf-99c3-8d79c4ec7169)
+
+### 4. Verify Node is Running
 _Run the following command to check if the node is up and running:_
 ```bash
 tail -f $HOME/dill/light_node/logs/dill.log
@@ -102,7 +61,7 @@ ps -ef | grep dill
 
 1. Visit [Dill Staking](https://staking.dill.xyz/)
 2. Upload `deposit_data-*.json` file.
-Use Termius,scp... to dowload the file locally or:
+Use [Termius](https://termius.com/download/windows),scp... to download the **validator_keys** folder to your local machine." or:
 ```bash
 cat ./validator_keys/deposit_data-xxxx.json
 ```
