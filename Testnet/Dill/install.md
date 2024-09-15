@@ -35,7 +35,7 @@ curl -sO https://raw.githubusercontent.com/DillLabs/launch-dill-node/main/dill.s
 
 _Option 1: The mnemonic will be automatically saved to /root/dill/validator_keys/.... Please back up the validator_keys folder to your local machine after you have successfully run the node._
 
-_Option 2: You will need to back up your existing mnemonic yourself.
+__Option 2: You will need to back up your existing mnemonic yourself._
 - Fill 1 or 2 and press any key to continue...
 
 ![image](https://github.com/user-attachments/assets/9cfdde73-988c-43f4-a08b-797dc3484b3a)
