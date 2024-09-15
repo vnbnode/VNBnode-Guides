@@ -32,7 +32,9 @@ curl -sO https://raw.githubusercontent.com/DillLabs/launch-dill-node/main/dill.s
 **1. From a new mnemonic:** Choose this option if you want to generate a new mnemonic.
 
 **2. Use existing mnemonic:** Choose this option if you want to use a mnemonic that you already have.
+
 _Option 1: The mnemonic will be automatically saved to /root/dill/validator_keys/.... Please back up the validator_keys folder to your local machine after you have successfully run the node._
+
 _Option 2: You will need to back up your existing mnemonic yourself.
 - Fill 1 or 2 and press any key to continue...
 
