@@ -20,7 +20,7 @@ curl -sO https://raw.githubusercontent.com/DillLabs/launch-dill-node/main/dill.s
 
 ```
 ### 1. There are two options:
-**1. Launch a new dill node:** Start a new Dill node. Choose this option if you want to create and run a new node from scratch.
+-**1. Launch a new dill node:** Start a new Dill node. Choose this option if you want to create and run a new node from scratch.
 
 **2. Add a validator to existing node:** Add a validator to an existing node. Choose this option if you want to add a new validator to an existing node.
 
@@ -38,7 +38,9 @@ _Option 2: You will need to back up your existing mnemonic yourself.
 
 ![image](https://github.com/user-attachments/assets/9cfdde73-988c-43f4-a08b-797dc3484b3a)
 ### 3. Please choose an option for deposit token amount [1, 3600, 2, 36000]:
+
 **1. 3600 for light node**
+
 **2. 36000 for full node**
 
 ![image](https://github.com/user-attachments/assets/3776cd41-26e6-43e7-9e2d-a7ffd49027e7)
