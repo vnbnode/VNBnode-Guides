@@ -55,7 +55,8 @@ _If you have completed all the steps correctly, you will see an output like this
 
 ![image](https://github.com/user-attachments/assets/00e3ace0-d2e3-4adf-99c3-8d79c4ec7169)
 
-### 5. Verify Node is Running
+### 5. Commands
+- Verify Node is Running
 _Run the following command to check if the node is up and running:_
 ```bash
 tail -f $HOME/dill/light_node/logs/dill.log
@@ -70,6 +71,10 @@ ps -ef | grep dill
 cd $Home/dill
 ./health_check.sh -v
 ```
+- Restart node
+```bash
+./start_dill_node.sh
+```
 ### 6. Staking
 
 1. Visit [Dill Staking](https://staking.dill.xyz/)
@@ -82,7 +87,7 @@ _Copy to your local machine for uploading._
 
 ### Shutdown & remove node
 ```bash
-pkill dill-node
+stop_dill_node.sh
 ```
 ```bash
 cd $Home
