@@ -67,7 +67,7 @@ curl -s localhost:3500/eth/v1/beacon/headers | jq
 ps -ef | grep dill
 ```
 ```bash
-cd dill
+cd $Home/dill
 ./health_check.sh -v
 ```
 ### 6. Staking
