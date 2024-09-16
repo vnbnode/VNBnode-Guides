@@ -23,6 +23,7 @@ sudo docker logs -f elixir
 docker kill elixir
 docker rm elixir
 docker pull elixirprotocol/validator:v3
+docker run -d --env-file $HOME/ev/Dockerfile --name elixir --restart unless-stopped elixirprotocol/validator:v3
 ```
 
 ### Stop and Remove Node
