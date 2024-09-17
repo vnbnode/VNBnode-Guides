@@ -87,7 +87,7 @@ _Copy to your local machine for uploading._
 
 ### Shutdown & remove node
 ```bash
-stop_dill_node.sh
+./stop_dill_node.sh
 ```
 ```bash
 cd $Home
