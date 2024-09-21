@@ -87,8 +87,6 @@ sudo systemctl restart pactusd
 ```
 ### Check node ID.
 http://***your_ip_node***:80/node
-# 7. Update bootstrap. Create a new Fork and pull request to Pactus Github
-[Link github](https://github.com/pactus-project/pactus)
 
 ## Thank to support VNBnode.
 ### Visit us at:
