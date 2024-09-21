@@ -6,6 +6,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y build-essential clang curl aria2 wget tar jq libssl-dev pkg-config make
 ```
 <img width="532" alt="image" src="https://github.com/user-attachments/assets/908b8f83-e7f9-4558-a3ea-ae9ee6158984">
+
 ```
 export DOCKER_API_VERSION=1.41
 ```
