@@ -2,6 +2,7 @@
 sudo apt update && sudo apt upgrade -y
 ```
 <img width="879" alt="image" src="https://github.com/user-attachments/assets/90d863c5-b63f-4199-8a95-3e009da61e55">
+
 ```
 sudo apt install -y build-essential clang curl aria2 wget tar jq libssl-dev pkg-config make
 ```
