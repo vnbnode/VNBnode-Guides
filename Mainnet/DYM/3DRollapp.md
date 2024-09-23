@@ -1,3 +1,12 @@
+# 3D Rollapp - Sequencer
+
+# Minimum hardware
+|   Spec  |        Requirements      |
+| :---------: | :-----------------------: |
+|   **CPU**   |          4 Cores (Intel / AMD)        |
+|   **RAM**   |          16 GB            |
+|   **SSD/NVME**   |          300 GB            | 
+
 ```
 sudo apt update && sudo apt upgrade -y
 ```
