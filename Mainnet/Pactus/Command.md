@@ -1,59 +1,70 @@
 ### Wallet Commands
 - Create a Wallet
 ```
-./pactus-wallet --path <PATH-To-NEW-WALLET> create
+pactus-wallet --path <PATH-To-NEW-WALLET> create
 ```
 - Recover Wallet
 ```
-./pactus-wallet --path <PATH-To-NEW-WALLET> recover
+pactus-wallet --path <PATH-To-NEW-WALLET> recover
 ```
 - Wallet Password
 ```
-./pactus-wallet password
+pactus-wallet password
 ```
 - Wallet Seed
 ```
-./pactus-wallet seed
+pactus-wallet seed
 ```
 ### Address Commands
 - Creating New Address
 ```
-./pactus-wallet address new
+pactus-wallet address new
 ```
 - List of Addresses
 ```
-./pactus-wallet address all
+pactus-wallet address all
 ```
 - Get Public Key
 ```
-./pactus-wallet address pub <ADDRESS>
+pactus-wallet address pub <ADDRESS>
 ```
 - Get Private Key
 ```
-./pactus-wallet address priv <ADDRESS>
+pactus-wallet address priv <ADDRESS>
 ```
 - Get Address Balance
 ```
-./pactus-wallet address balance <ADDRESS>
+pactus-wallet address balance <ADDRESS>
 ```
 ### Transaction Commands
 - Sending Transfer Transaction
 ```
-./pactus-wallet tx transfer <FROM> <TO> <AMOUNT>
+pactus-wallet tx transfer <FROM> <TO> <AMOUNT>
 ```
 - Sending Bond Transaction
 ```
-./pactus-wallet tx bond <FROM> <TO> <AMOUNT>
+pactus-wallet tx bond <FROM> <TO> <AMOUNT>
 ```
 - Sending Bond Transaction
 ```
-./pactus-wallet tx bond --pub <PUBLIC_KEY> <FROM> <TO> <AMOUNT>
+pactus-wallet tx bond --pub <PUBLIC_KEY> <FROM> <TO> <AMOUNT>
 ```
 - Sending Unbond Transaction
 ```
-./pactus-wallet tx unbond <ADDRESS>
+pactus-wallet tx unbond <ADDRESS>
 ```
 - Sending Withdraw Transaction
 ```
-./pactus-wallet tx unbond <FROM> <TO> <AMOUNT>
+pactus-wallet tx unbond <FROM> <TO> <AMOUNT>
+```
+### Remove node
+```
+cd $Home
+sudo systemctl stop pactus
+sudo systemctl disable pactus
+sudo systemctl daemon-reload
+rm -rf $HOME/.pactus
+rm -rf $HOME/pactus
+rm -rf usr/local/bin/pactus-daemon
+rm -rf usr/local/bin/pactus-wallet
 ```
