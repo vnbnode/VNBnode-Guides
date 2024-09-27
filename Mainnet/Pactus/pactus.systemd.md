@@ -43,6 +43,7 @@ For recover wallet
 pactus-daemon init --restore "Your seed phrase"
 ```
 # 5. Create & start service
+_Replace "**Your password**"_
 ```
 sudo tee /etc/systemd/system/pactusd.service > /dev/null << EOF
 [Unit]
