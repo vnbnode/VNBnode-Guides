@@ -21,47 +21,50 @@ sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential gi
 # 3. Install go
 ```
 sudo rm -rf /usr/local/go
-curl -Ls https://go.dev/dl/go1.21.7.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
+curl -Ls https://go.dev/dl/go1.22.2.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
 eval $(echo 'export PATH=$PATH:/usr/local/go/bin' | sudo tee /etc/profile.d/golang.sh)
 eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 ```
 # 4. Install binary & build binary
 ```
-cd $Home
+cd $HOME
 git clone https://github.com/pactus-project/pactus.git .pactus
 cd .pactus
 make build
-cd build
+sudo cp $HOME/.pactus/build/pactus-daemon /usr/local/bin/
+sudo cp $HOME/.pactus/build/pactus-wallet /usr/local/bin/
 ```
 For new wallet
 ```
-./pactus-daemon init
+pactus-daemon init
 ```
 For recover wallet
 ```
-./pactus-daemon init --restore "Your seed phrase"
+pactus-daemon init --restore "Your seed phrase"
 ```
 # 5. Create & start service
 ```
 sudo tee /etc/systemd/system/pactusd.service > /dev/null << EOF
 [Unit]
-Description=pactus Node
+Description=Pactus Node
 After=network-online.target
 StartLimitIntervalSec=0
+
 [Service]
 User=root
-ExecStart= /root/.pactus/build/pactus-daemon start -w /root/pactus --password "Your pass"
+ExecStart=/usr/local/bin/pactus-daemon start -w /root/pactus --password "Your password"
 Restart=always
 RestartSec=120
+
 [Install]
 WantedBy=multi-user.target
 EOF
 
 sudo systemctl daemon-reload
-sudo systemctl enable pactusd
+sudo systemctl enable pactus
 ```
 ```
-sudo systemctl restart pactusd && journalctl -f -u pactusd
+sudo systemctl restart pactus && journalctl -f -u pactus
 ```
 # 6. Change Config.toml
 ```
@@ -82,8 +85,8 @@ nano $HOME/pactus/config.toml
 > listen = "0.0.0.0:80"
 > 
 ```
-sudo systemctl stop pactusd
-sudo systemctl restart pactusd
+sudo systemctl stop pactus
+sudo systemctl restart pactus
 ```
 ### Check node ID.
 http://***your_ip_node***:80/node
