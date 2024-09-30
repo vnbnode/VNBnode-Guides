@@ -10,11 +10,11 @@ Pactus is a decentralized blockchain platform, emphasizing fairness and transpar
 |   **RAM**   |        4GB  Ram           |
 |   **SSD**   |        64GB SSD           | 
 
-## Auto:
+# Auto:
 ```
 curl -sO https://raw.githubusercontent.com/vnbnode/binaries/refs/heads/main/Projects/Pactus/pactus.sh  && chmod +x pactus.sh && ./pactus.sh
 ```
-## Manual:
+# Manual:
 ## 1. Update system and install build tools
 ```
 sudo apt update && sudo apt list --upgradable && sudo apt upgrade -y
