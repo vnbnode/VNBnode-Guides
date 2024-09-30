@@ -10,22 +10,27 @@ Pactus is a decentralized blockchain platform, emphasizing fairness and transpar
 |   **RAM**   |        4GB  Ram           |
 |   **SSD**   |        64GB SSD           | 
 
-# 1. Update system and install build tools
+## Auto:
+```
+curl -sO https://raw.githubusercontent.com/vnbnode/binaries/refs/heads/main/Projects/Pactus/pactus.sh  && chmod +x pactus.sh && ./pactus.sh
+```
+## Manual:
+## 1. Update system and install build tools
 ```
 sudo apt update && sudo apt list --upgradable && sudo apt upgrade -y
 ```
-# 2. Additional package:
+## 2. Additional package:
 ```
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu net-tools -y
 ```
-# 3. Install go
+## 3. Install go
 ```
 sudo rm -rf /usr/local/go
 curl -Ls https://go.dev/dl/go1.22.2.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
 eval $(echo 'export PATH=$PATH:/usr/local/go/bin' | sudo tee /etc/profile.d/golang.sh)
 eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 ```
-# 4. Install binary & build binary
+## 4. Install binary & build binary
 ```
 cd $HOME
 git clone https://github.com/pactus-project/pactus.git .pactus
@@ -42,7 +47,7 @@ For recover wallet
 ```
 pactus-daemon init --restore "Your seed phrase"
 ```
-# 5. Create & start service
+## 5. Create & start service
 _Replace "**Your password**"_
 ```
 sudo tee /etc/systemd/system/pactus.service > /dev/null << EOF
@@ -67,7 +72,7 @@ sudo systemctl enable pactus
 ```
 sudo systemctl restart pactus && journalctl -f -u pactus
 ```
-# 6. Change Config.toml
+## 6. Change Config.toml
 ```
 nano $HOME/pactus/config.toml
 ```
