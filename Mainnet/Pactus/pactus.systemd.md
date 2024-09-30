@@ -45,7 +45,7 @@ pactus-daemon init --restore "Your seed phrase"
 # 5. Create & start service
 _Replace "**Your password**"_
 ```
-sudo tee /etc/systemd/system/pactusd.service > /dev/null << EOF
+sudo tee /etc/systemd/system/pactus.service > /dev/null << EOF
 [Unit]
 Description=Pactus Node
 After=network-online.target
