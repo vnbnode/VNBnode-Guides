@@ -36,3 +36,7 @@ echo \
 sudo apt-get update
 ```
 <img width="852" alt="image" src="https://github.com/user-attachments/assets/42b63b1f-92d0-4224-9785-8c488fbf5765">
+
+
+<img width="956" alt="image" src="https://github.com/user-attachments/assets/e71808db-0817-4663-bcc2-df4d88c3f9d4">
+
