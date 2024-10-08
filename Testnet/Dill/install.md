@@ -68,7 +68,7 @@ curl -s localhost:3500/eth/v1/beacon/headers | jq
 ps -ef | grep dill
 ```
 ```bash
-cd $Home/dill
+cd $HOME/dill
 ./health_check.sh -v
 ```
 - Restart node
