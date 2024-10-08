@@ -38,6 +38,7 @@ cd .pactus
 make build
 sudo cp $HOME/.pactus/build/pactus-daemon /usr/local/bin/
 sudo cp $HOME/.pactus/build/pactus-wallet /usr/local/bin/
+sudo cp $HOME/.pactus/build/pactus-shell /usr/local/bin/
 ```
 For new wallet
 ```
