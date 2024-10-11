@@ -97,7 +97,7 @@ sudo systemctl restart pactus
 ```
 ### Check node ID.
 http://***your_ip_node***:80/node
-## 7. Stake to your validator wallet
+## 7. Stake into your validator's wallet
 ```
 pactus-wallet tx bond <FROM> <TO> <AMOUNT>
 ```
