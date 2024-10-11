@@ -73,7 +73,7 @@ sudo systemctl enable pactus
 ```
 sudo systemctl restart pactus && journalctl -f -u pactus
 ```
-## 6. Change Config.toml
+## 6. Change Config.toml (optional)
 ```
 nano $HOME/pactus/config.toml
 ```
@@ -97,7 +97,10 @@ sudo systemctl restart pactus
 ```
 ### Check node ID.
 http://***your_ip_node***:80/node
-
+## 7. Stake to your validator wallet
+```
+pactus-wallet tx bond <FROM> <TO> <AMOUNT>
+```
 ## Thank to support VNBnode.
 ### Visit us at:
 
