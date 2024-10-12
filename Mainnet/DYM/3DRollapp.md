@@ -40,3 +40,17 @@ sudo apt-get update
 
 <img width="956" alt="image" src="https://github.com/user-attachments/assets/e71808db-0817-4663-bcc2-df4d88c3f9d4">
 
+
+# commands
+```
+roller rollapp services stop
+```
+```
+roller rollapp services start
+```
+```
+roller relayer services stop
+```
+```
+roller relayer services start
+```
