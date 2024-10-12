@@ -17,6 +17,7 @@ sudo apt install -y build-essential clang curl aria2 wget tar jq libssl-dev pkg-
 ```
 <img width="532" alt="image" src="https://github.com/user-attachments/assets/908b8f83-e7f9-4558-a3ea-ae9ee6158984">
 
+
 ```
 export DOCKER_API_VERSION=1.41
 ```
@@ -39,6 +40,7 @@ sudo apt-get update
 
 
 <img width="956" alt="image" src="https://github.com/user-attachments/assets/e71808db-0817-4663-bcc2-df4d88c3f9d4">
+
 ## Install docker packages:
 ```
 sudo apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
