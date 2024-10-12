@@ -81,16 +81,18 @@ roller version
 roller rollapp init
 ```
 #faucet wallets, DYM and TIA
-### setup endpoints: rpc - 26657; api - 1317; json-rpc (evm) - 8545
+### --> setup endpoints: rpc - 26657; api - 1317; json-rpc (evm) - 8545
 ```
 roller rollapp setup
 ```
+#Run Roller
 ```
 roller da-light-client start
 ```
 ```
 roller rollapp start
 ```
+#Check status
 ```
 roller rollapp status
 ```
