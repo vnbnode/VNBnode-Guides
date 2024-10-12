@@ -39,7 +39,59 @@ sudo apt-get update
 
 
 <img width="956" alt="image" src="https://github.com/user-attachments/assets/e71808db-0817-4663-bcc2-df4d88c3f9d4">
-
+## Install docker packages:
+```
+sudo apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+```
+sudo usermod -aG docker ${USER}
+```
+```
+newgrp docker
+```
+```
+ver="1.23.0"
+```
+```
+cd $HOME
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+```
+```
+echo 'export GOPATH=$HOME/go' >> ~/.bashrc
+echo 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin' >> ~/.bashrc
+source ~/.bashrc
+```
+```
+go version
+```
+## Install Roller:
+```
+curl https://raw.githubusercontent.com/dymensionxyz/roller/main/install.sh | bash
+```
+```
+roller version
+```
+## Setup Roller Squencer:
+```
+roller rollapp init
+```
+#faucet wallets, DYM and TIA
+### setup endpoints: rpc - 26657; api - 1317; json-rpc (evm) - 8545
+```
+roller rollapp setup
+```
+```
+roller da-light-client start
+```
+```
+roller rollapp start
+```
+```
+roller rollapp status
+```
 
 # commands
 ```
