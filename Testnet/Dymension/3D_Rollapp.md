@@ -71,7 +71,7 @@ curl https://raw.githubusercontent.com/dymensionxyz/roller/main/install.sh | bas
 ```
 roller version
 ```
-### Cài đặt Sequencer
+### Khởi tạo Sequencer
 ```
 roller rollapp init
 ```
@@ -91,4 +91,19 @@ enter your email and check the code send to your email.
 ```
 ```
 ~/telebit save
+```
+### Cài đặt RollApp Sequencer
+```
+roller rollapp setup
+```
+### Khởi chạy RollApp Sequencer
+```
+roller da-light-client start
+```
+```
+roller rollapp start
+```
+#check status
+```
+roller rollapp status
 ```
