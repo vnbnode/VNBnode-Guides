@@ -1,4 +1,5 @@
-<img width="953" alt="image" src="https://github.com/user-attachments/assets/edfec401-852b-4774-8cb6-28b105282e76"># 3D Rollapp - Sequencer
+<img width="953" alt="image" src="https://github.com/user-attachments/assets/edfec401-852b-4774-8cb6-28b105282e76">
+# 3D Rollapp - Sequencer
 
 # Minimum hardware
 |   Spec  |        Requirements      |
