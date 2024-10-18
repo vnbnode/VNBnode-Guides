@@ -98,6 +98,9 @@ roller rollapp setup
 ```
 ### Khởi chạy RollApp Sequencer
 ```
+roller rollapp services load
+```
+```
 roller da-light-client start
 ```
 ```
