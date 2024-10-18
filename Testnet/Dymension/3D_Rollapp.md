@@ -1,24 +1,23 @@
 # 3D Rollapp - Playground
-## Cấu hình tối thiểu
+## Minimum Hardware Requirements
 
 |   SPEC      |       Recommend          |
 | :---------: | :-----------------------:|
 |   **CPU**   |        4 Cores           |
 |   **RAM**   |        16 GB              |
 | **Storage** |       200GB            |
-| **NETWORK** |        1 Gbps            |
 |   **OS**    |        Ubuntu 22.04      |
 |   **Port**  |       26657, 1317, 8545           | 
 
-### Nâng cấp hệ thống
+### Update & Upgrade system
 ```
 sudo apt update && sudo apt upgrade -y
 ```
-### Cài đặt các cấu hình cần thiết
+### Install essential packages
 ```
 sudo apt install -y build-essential clang curl aria2 wget tar jq libssl-dev pkg-config make
 ```
-### Cài đặt Docker
+### Install Docker
 ```
 export DOCKER_API_VERSION=1.41
 ```
@@ -44,7 +43,7 @@ sudo usermod -aG docker ${USER}
 ```
 newgrp docker
 ```
-### Cài đặt GO
+### Install GO
 ```
 ver="1.23.0"
 ```
@@ -63,23 +62,23 @@ source ~/.bashrc
 ```
 go version
 ```
-### Tải Roller
+### Load Roller
 ```
 curl https://raw.githubusercontent.com/dymensionxyz/roller/main/install.sh | bash
 ```
-#Kiểm tra version xem mới nhất chưa
+#check latest version or not
 ```
 roller version
 ```
-### Khởi tạo Sequencer
+### Initiate Sequencer
 ```
 roller rollapp init
 ```
-#Chọn playground và cung cấp thông tin Rollapp ID
-#Sau khi hoàn thành bạn sẽ nhận được địa chỉ ví dym của sequencer và ví Celestia Mocha 4, hãy faucet các ví này trước khi làm bước tiếp theo.
-#Nhập địa chỉ Sequencer vào phần cài đặt Rollapp: https://playground.dymension.xyz/
+#Chose playground and information to Rollapp ID
+#Once complete there will be address for dym (sequencer) and Celestia Mocha 4, faucet these wallets.
+#input Sequencer address into Rollapp setting: https://playground.dymension.xyz/
 
-### Cài đặt Endpoints dùng telebit hoặc bạn tự tạo bằng nginx
+### Install Endpoints using telebit or using nginx
 ```
 curl https://get.telebit.io/ | bash
 ```
@@ -92,7 +91,7 @@ enter your email and check the code send to your email.
 ```
 ~/telebit save
 ```
-### Cài đặt RollApp Sequencer
+### Install RollApp Sequencer
 ```
 roller rollapp setup
 ```
