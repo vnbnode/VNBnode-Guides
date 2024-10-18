@@ -79,7 +79,7 @@ roller rollapp init
 #Sau khi hoàn thành bạn sẽ nhận được địa chỉ ví dym của sequencer và ví Celestia Mocha 4, hãy faucet các ví này trước khi làm bước tiếp theo.
 #Nhập địa chỉ Sequencer vào phần cài đặt Rollapp: https://playground.dymension.xyz/
 
-### Cài đặt Endpoints
+### Cài đặt Endpoints dùng telebit hoặc bạn tự tạo bằng nginx
 ```
 curl https://get.telebit.io/ | bash
 ```
@@ -107,3 +107,5 @@ roller rollapp start
 ```
 roller rollapp status
 ```
+<img width="496" alt="image" src="https://github.com/user-attachments/assets/81b0a46c-d1ca-4aa6-8761-0094a4145fec">
+
