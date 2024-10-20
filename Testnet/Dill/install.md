@@ -71,6 +71,10 @@ ps -ef | grep dill
 cd $HOME/dill
 ./health_check.sh -v
 ```
+- Stop node
+```bash
+./stop_dill_node.sh
+```
 - Restart node
 ```bash
 ./start_dill_node.sh
