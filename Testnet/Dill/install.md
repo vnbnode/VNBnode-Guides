@@ -71,6 +71,10 @@ ps -ef | grep dill
 cd $HOME/dill
 ./health_check.sh -v
 ```
+- View the public key of the validators
+```bash
+./show_pubkey.sh
+```
 - Stop node
 ```bash
 ./stop_dill_node.sh
@@ -79,7 +83,7 @@ cd $HOME/dill
 ```bash
 ./start_dill_node.sh
 ```
-- Add more validator:
+- Add more validators:
 ```bash
 ./2_add_validator.sh
 ```
