@@ -75,8 +75,8 @@ cd $HOME/dill
 ```bash
 ./start_dill_node.sh
 ```
-```bash
 - Add more validator:
+```bash
 ./2_add_validator.sh
 ```
 ### 6. Staking
