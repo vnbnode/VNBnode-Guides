@@ -83,6 +83,10 @@ cd $HOME/dill
 ```bash
 ./2_add_validator.sh
 ```
+- Exit the validator(s) Use the Exit script to signal your intentions to permanently stop your duties as a validator.
+```bash
+./exit_validator.sh
+```
 ### 6. Staking
 
 1. Visit [Dill Staking](https://staking.dill.xyz/)
