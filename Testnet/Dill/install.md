@@ -57,16 +57,6 @@ _If you have completed all the steps correctly, you will see an output like this
 
 ### 5. Commands
 - Verify Node is Running
-_Run the following command to check if the node is up and running:_
-```bash
-tail -f $HOME/dill/light_node/logs/dill.log
-```
-```bash
-curl -s localhost:3500/eth/v1/beacon/headers | jq
-```
-```bash
-ps -ef | grep dill
-```
 ```bash
 cd $HOME/dill
 ./health_check.sh -v
