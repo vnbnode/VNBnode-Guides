@@ -58,28 +58,27 @@ _If you have completed all the steps correctly, you will see an output like this
 ### 5. Commands
 - Verify Node is Running
 ```bash
-cd $HOME/dill
-./health_check.sh -v
+cd $HOME/dill && ./health_check.sh -v
 ```
 - View the public key of the validators
 ```bash
-./show_pubkey.sh
+cd $HOME/dill && ./show_pubkey.sh
 ```
 - Stop node
 ```bash
-./stop_dill_node.sh
+cd $HOME/dill && ./stop_dill_node.sh
 ```
 - Restart node
 ```bash
-./start_dill_node.sh
+cd $HOME/dill && ./start_dill_node.sh
 ```
 - Add more validators:
 ```bash
-./2_add_validator.sh
+cd $HOME/dill && ./2_add_validator.sh
 ```
 - Exit the validator(s) Use the Exit script to signal your intentions to permanently stop your duties as a validator.
 ```bash
-./exit_validator.sh
+cd $HOME/dill && ./exit_validator.sh
 ```
 ### 6. Staking
 
@@ -93,10 +92,10 @@ _Copy to your local machine for uploading._
 
 ### Shutdown & remove node
 ```bash
-./stop_dill_node.sh
+cd $HOME/dill && ./stop_dill_node.sh
 ```
 ```bash
-cd $Home
+cd $HOME
 rm -rf dill
 ```
 ## Thank to support VNBnode.
