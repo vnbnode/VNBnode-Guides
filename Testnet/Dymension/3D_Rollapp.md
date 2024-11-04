@@ -111,3 +111,33 @@ roller rollapp status
 ```
 <img width="496" alt="image" src="https://github.com/user-attachments/assets/81b0a46c-d1ca-4aa6-8761-0094a4145fec">
 
+### Upgrade Latest Version
+1. Stop service
+```
+roller rollapp services stop
+```
+2. Download Latest version:
+```
+curl https://raw.githubusercontent.com/dymensionxyz/roller/main/install.sh | bash
+```
+3. Check version
+```
+roller version
+```
+4. Restart service
+```
+roller rollapp services start
+```
+Check Status & Logs:
+```
+roller rollapp status
+```
+```
+journalctl -fu relayer
+```
+```
+journalctl -fu rollapp
+```
+```
+journalctl -fu eibc
+```
