@@ -34,5 +34,5 @@ sudo docker stop nillion
 ```
 sudo docker rm nillion
 ```
-### Backup your verifier credentials
+#### Backup your verifier credentials
 _Your credentials are in **nillion/verifier/credentials.json**. Backup is essential as only you have access to them._
