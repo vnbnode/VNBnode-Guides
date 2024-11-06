@@ -3,7 +3,7 @@
 ```
 curl -O https://raw.githubusercontent.com/vnbnode/binaries/refs/heads/main/Projects/Nillion/verifier.sh && chmod +x verifier.sh && ./verifier.sh
 ```
-### 2. Go to the [link](https://verifier.nillion.com/) to add nillion-chain-testnet-1 network, get the wallet address, and visit [this link](https://faucet.testnet.nillion.com/) for the faucet.
+### 2. Go to the [link](https://verifier.nillion.com/) to add "nillion-chain-testnet-1" network, get the wallet address, and visit [this link](https://faucet.testnet.nillion.com/) for the faucet.
 ### 3. Return to the [verifier.nillion.com](https://verifier.nillion.com/) page, select Verifier — Setup for Linux, and choose step 5: Initialising the verifier.
 ![image](https://github.com/user-attachments/assets/88215c1c-ebba-47d9-80f1-5e1760be3869)
 ![image](https://github.com/user-attachments/assets/a97e4996-af48-468f-9e35-492844c02dda)
