@@ -7,8 +7,7 @@ curl -O https://raw.githubusercontent.com/vnbnode/binaries/refs/heads/main/Proje
 ### 3. Return to the [verifier.nillion.com](https://verifier.nillion.com/) page, select Verifier — Setup for Linux, and choose step 5: Initialising the verifier.
 ![image](https://github.com/user-attachments/assets/88215c1c-ebba-47d9-80f1-5e1760be3869)
 ![image](https://github.com/user-attachments/assets/a97e4996-af48-468f-9e35-492844c02dda)
-![image](https://github.com/user-attachments/assets/86a3a17a-153c-4a77-8bc0-a83a4825124e)
-### 4.Here, you will need the **AccountId** and **PublicKey** that you received during the first setup step, fill in the corresponding fields and sign the transaction.
+### 4. Here, you will need the **AccountId** and **PublicKey** that you received during the first setup step, fill in the corresponding fields and sign the transaction.
 ![image](https://github.com/user-attachments/assets/9da00dd4-4278-4a21-86d9-a7c853909a43)
 ![image](https://github.com/user-attachments/assets/e3944f5a-bc28-4a5f-acbd-3165b76dca37)
 ### 5. Go to the [faucet link](https://faucet.testnet.nillion.com/) and request tokens for the **AccountId** address you obtained during the initial setup.
