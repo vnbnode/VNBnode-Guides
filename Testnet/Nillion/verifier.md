@@ -18,21 +18,21 @@ curl -O https://raw.githubusercontent.com/vnbnode/binaries/refs/heads/main/Proje
 docker run -d --name nillion -v $HOME/nillion/verifier:/var/tmp nillion/verifier:v1.0.1 verify --rpc-endpoint "https://testnet-nillion-rpc.lavenderfive.com"
 ```
 ### Commands
-#### Check the node logs:
+#### - Check the node logs:
 ```
 sudo docker logs -f nillion --tail=100
 ```
-#### Restart the node:
+#### - Restart the node:
 ```
 sudo docker restart nillion
 ```
-#### Stop the node:
+#### - Stop the node:
 ```
 sudo docker stop nillion
 ```
-#### Remove the node:
+#### - Remove the node:
 ```
 sudo docker rm nillion
 ```
-#### Backup your verifier credentials
+#### - Backup your verifier credentials
 _Your credentials are in **nillion/verifier/credentials.json**. Backup is essential as only you have access to them._
