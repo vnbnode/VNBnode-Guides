@@ -141,3 +141,47 @@ journalctl -fu rollapp
 ```
 journalctl -fu eibc
 ```
+### Check and Trouble Shooting
+### Rollapp
+#### 1. Check status
+```
+roller rollapp status
+```
+#### 2. Stop
+```
+roller rollapp services stop
+```
+#### 3. Restart
+```
+roller rollapp services start
+```
+#### 4. Check logs
+```
+cat /root/.roller/rollapp/rollapp.log
+```
+### Relayer
+#### 1. Check status
+```
+roller relayer status
+```
+#### 2. Stop
+```
+roller relayer services stop
+```
+#### 3. Restart
+```
+roller relayer services start
+```
+#### 4. Check logs
+```
+cat /root/.roller/relayer/relayer.log
+```
+### Relayer
+#### 1. Check logs
+```
+journalctl -u eibc > /root/.eibc-client/eibc.log
+```
+#### 2. Check logs
+```
+cat /root/.eibc-client/eibc.log
+```
