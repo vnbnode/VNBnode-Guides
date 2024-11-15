@@ -124,7 +124,11 @@ curl https://raw.githubusercontent.com/dymensionxyz/roller/main/install.sh | bas
 ```
 roller version
 ```
-4. Restart service
+4. Update
+```   
+roller da-light-client update
+```
+6. Restart service
 ```
 roller rollapp services start
 ```
