@@ -128,7 +128,7 @@ roller version
 ```   
 roller da-light-client update
 ```
-6. Restart service
+5. Restart service
 ```
 roller rollapp services start
 ```
