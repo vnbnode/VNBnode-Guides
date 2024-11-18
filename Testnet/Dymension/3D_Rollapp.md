@@ -216,3 +216,7 @@ keyring_backend = "test"
 ```
 <img width="940" alt="image" src="https://github.com/user-attachments/assets/ed2b7aae-c60c-41a9-b9ca-81dde78b55d9">
 
+#Restart
+```
+roller relayer services start
+```
