@@ -180,7 +180,7 @@ roller relayer services start
 ```
 cat /root/.roller/relayer/relayer.log
 ```
-### Relayer
+### eIBC
 #### 1. Check logs
 ```
 journalctl -u eibc > /root/.eibc-client/eibc.log
