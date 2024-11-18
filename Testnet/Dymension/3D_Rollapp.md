@@ -95,7 +95,7 @@ enter your email and check the code send to your email.
 ```
 roller rollapp setup
 ```
-### Khởi chạy RollApp Sequencer
+### Start RollApp Sequencer
 ```
 roller rollapp services load
 ```
