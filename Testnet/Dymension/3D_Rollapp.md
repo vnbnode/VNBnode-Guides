@@ -189,3 +189,20 @@ journalctl -u eibc > /root/.eibc-client/eibc.log
 ```
 cat /root/.eibc-client/eibc.log
 ```
+### DA-light-client
+#### 1. Stop service
+```
+stop da-light-client.service
+```
+#### 2. Start service
+```
+roller da-light-client start
+```
+#### 3. Check Status
+```
+systemctl status da-light-client.service
+```
+#### 4. Check logs
+```
+journalctl -u da-light-client.service -f -o cat
+```
