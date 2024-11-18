@@ -206,3 +206,13 @@ systemctl status da-light-client.service
 ```
 journalctl -u da-light-client.service -f -o cat
 ```
+#### 5. Error with my_celes_key is not a valid name or address
+```
+nano ~/.roller/roller.toml
+```
+Adding:
+```
+keyring_backend = "test"
+```
+<img width="940" alt="image" src="https://github.com/user-attachments/assets/ed2b7aae-c60c-41a9-b9ca-81dde78b55d9">
+
