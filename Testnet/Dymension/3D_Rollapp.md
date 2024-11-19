@@ -111,7 +111,7 @@ roller rollapp status
 ```
 <img width="496" alt="image" src="https://github.com/user-attachments/assets/81b0a46c-d1ca-4aa6-8761-0094a4145fec">
 
-### Upgrade Latest Version
+## Upgrade Latest Version
 1. Stop service
 ```
 roller rollapp services stop
@@ -145,7 +145,7 @@ journalctl -fu rollapp
 ```
 journalctl -fu eibc
 ```
-### Check and Trouble Shooting
+## Check and Trouble Shooting
 ### Rollapp
 #### 1. Check status
 ```
