@@ -148,7 +148,7 @@ lavap query pairing account-info $(lavad keys show wallet -a) -oe | jq
 ```
 #### Claim Rewards
 ```
-lavad tx dualstaking claim-rewards --from $(lavad keys show wallet -a)
+lavad tx dualstaking claim-rewards --from $(lavad keys show wallet -a) --gas-prices 0.1ulava --gas-adjustment 1.5 --gas auto -y
 ```
 #### Step 16: Check the status of RPC provider
 [https://info.lavanet.xyz/provider/](https://info.lavanet.xyz/provider/)
