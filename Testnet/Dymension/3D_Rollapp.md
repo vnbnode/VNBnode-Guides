@@ -157,7 +157,7 @@ roller rollapp services stop
 ```
 #### 3. Restart
 ```
-roller rollapp services start
+roller rollapp services restart
 ```
 #### 4. Check logs
 ```
@@ -174,7 +174,7 @@ roller relayer services stop
 ```
 #### 3. Restart
 ```
-roller relayer services start
+roller relayer services restart
 ```
 #### 4. Check logs
 ```
@@ -188,6 +188,9 @@ journalctl -u eibc > /root/.eibc-client/eibc.log
 #### 2. Check logs
 ```
 cat /root/.eibc-client/eibc.log
+```
+```
+roller eibc services restart
 ```
 ### DA-light-client
 #### 1. Stop service
