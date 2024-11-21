@@ -35,3 +35,13 @@ netstat -an | grep 80
 ```
 THIS STEP IS ONLY FOR AUTHORIZED VALIDATORS - WHO RECEIVED EMAIL
 ```
+## 4. Firewall setup
+```
+sudo ufw enable
+sudo ufw allow 80
+sudo ufw allow 22
+sudo ufw allow 1888
+sudo ufw allow 1111
+sudo ufw allow 8545
+sudo ufw allow 8546
+```
