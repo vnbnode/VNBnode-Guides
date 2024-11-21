@@ -1,3 +1,5 @@
+# Part 1: Installation
+
 ## Recommended Hardware Requirements 
 
 |   SPEC	    |         Node              |   
@@ -45,3 +47,52 @@ sudo ufw allow 1111
 sudo ufw allow 8545
 sudo ufw allow 8546
 ```
+## 5. Make files executable
+```
+chmod +x rbn-installer.run
+```
+## 6. Install node
+```
+sudo ./rbn-installer.run
+```
+### You need to have:
+DNS without https://
+Email
+Node ID
+
+Once success, you will see the service file installed:
+<img width="952" alt="image" src="https://github.com/user-attachments/assets/db147b69-ecd6-4c64-8f93-088cddcfc83d">
+
+# Part 2: Usefull commands
+
+### Check the status of node
+```
+pgrep rbbc
+# result should be a number
+```
+
+### Check the status of the process
+```
+journalctl -u redbelly.service
+```
+
+### Check the status of the Redbelly service
+```
+sudo systemctl status redbelly.service
+```
+### Check logs
+```
+Check the Redbelly logs
+```
+### Check the error logs
+```
+tail -f  /var/log/redbelly/rbn_logs/rbbc_logs_error.log
+```
+## Thank to support VNBnode.
+### Visit us at:
+
+<img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/> <a href="https://t.me/VNBnodegroup" target="_blank">VNBnodegroup</a>
+
+<img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/> <a href="https://t.me/Vnbnode" target="_blank">VNBnode News</a>
+
+<img src="https://github.com/vnbnode/binaries/blob/main/Logo/VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>
