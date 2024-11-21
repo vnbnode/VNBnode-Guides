@@ -62,7 +62,9 @@ sudo ./rbn-installer.run
 ```
 ### You need to have:
 DNS without https://
+
 Email
+
 Node ID
 
 Once success, you will see the service file installed:
