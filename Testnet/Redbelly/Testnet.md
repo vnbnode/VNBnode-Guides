@@ -84,6 +84,8 @@ sudo systemctl status redbelly.service
 ```
 tail -f /var/log/redbelly/rbn_logs/rbbc_logs.log
 ```
+<img width="956" alt="image" src="https://github.com/user-attachments/assets/c344a4c2-a0a7-4fb3-b38e-262c57a16ceb">
+
 ### Check the error logs
 ```
 tail -f  /var/log/redbelly/rbn_logs/rbbc_logs_error.log
