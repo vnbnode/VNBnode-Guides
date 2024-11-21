@@ -31,3 +31,7 @@ sudo snap install --classic certbot
 sudo ln -s /snap/bin/certbot /usr/bin/certbot
 netstat -an | grep 80
 ```
+## 3. Download "rbn-installer.run" file and copy to $HOME/root/
+```
+THIS STEP IS ONLY FOR AUTHORIZED VALIDATORS - WHO RECEIVED EMAIL
+```
