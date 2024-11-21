@@ -6,6 +6,9 @@
 |   **RAM**   |        ≥ 16 GB            |
 | **Storage** |        ≥ 1 TB SSD         |  
 | **NETWORK** |        ≥ 100 Mbps         |  
+| **OS** |        Ubuntu 24.04.1 LTS         |  
+| **PORTS** |        8545, 8546, 1111, and 1888         |  
+
 
 ## WARNING:
 ### This guide is just used for testnet purpose.
