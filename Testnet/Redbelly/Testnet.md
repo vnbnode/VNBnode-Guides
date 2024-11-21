@@ -24,6 +24,7 @@
 ```
 nslookup <YOUR_DNS_NAME_WITHOUT_HTTPS>
 ```
+![image](https://github.com/user-attachments/assets/885e817f-6d70-4378-8d0b-4f9d4e58c2fe)
 
 ## BEFORE START, MAKE SURE YOU GOT EMAIL FROM REDBELLY TEAM & USING YOUR REGISTERED EMAIL TO ACCESS TO:
 https://vine.redbelly.network/nds-node-register
