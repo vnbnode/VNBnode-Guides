@@ -20,6 +20,9 @@
 ### 1st Step buy a domain & setting DNS follow this example:
 ![image](https://github.com/vnbnode/VNBnode-Guides/assets/128967122/c71485f4-4dfc-4873-b390-ba48ca2f7045)
 
+## BEFORE START, MAKE SURE YOU GOT EMAIL FROM REDBELLY TEAM & USING YOUR REGISTERED EMAIL TO ACCESS TO:
+https://vine.redbelly.network/nds-node-register
+
 ## 1. Update system and install build tools
 ```
 sudo apt update
