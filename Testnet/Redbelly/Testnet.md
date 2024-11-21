@@ -82,7 +82,7 @@ sudo systemctl status redbelly.service
 ```
 ### Check logs
 ```
-Check the Redbelly logs
+tail -f /var/log/redbelly/rbn_logs/rbbc_logs.log
 ```
 ### Check the error logs
 ```
