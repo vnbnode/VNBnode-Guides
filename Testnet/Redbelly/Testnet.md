@@ -1,4 +1,4 @@
-# Part 1: Installation
+# Preparation
 
 ## Recommended Hardware Requirements 
 
@@ -22,6 +22,8 @@
 
 ## BEFORE START, MAKE SURE YOU GOT EMAIL FROM REDBELLY TEAM & USING YOUR REGISTERED EMAIL TO ACCESS TO:
 https://vine.redbelly.network/nds-node-register
+
+# Part 1: Installation
 
 ## 1. Update system and install build tools
 ```
