@@ -1,5 +1,8 @@
-# Preparation
+# REDBELLY TESTNET
+## Website: https://www.redbelly.network/
+## X.com: https://x.com/RedbellyNetwork
 
+# Preparation
 ## Recommended Hardware Requirements 
 
 |   SPEC	    |         Node              |   
