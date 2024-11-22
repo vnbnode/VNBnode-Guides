@@ -106,6 +106,21 @@ tail -f /var/log/redbelly/rbn_logs/rbbc_logs.log
 ```
 tail -f  /var/log/redbelly/rbn_logs/rbbc_logs_error.log
 ```
+# Part 3: Trouble Shooting
+
+### Stop
+```
+sudo systemctl stop redbelly.service
+```
+### Restart
+```
+sudo systemctl restart redbelly.service
+```
+### Clear the installation
+```
+sudo ./rbn-installer.run -- --uninstall
+```
+
 ## Thank to support VNBnode.
 ### Visit us at:
 
