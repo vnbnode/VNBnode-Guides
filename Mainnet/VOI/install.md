@@ -36,6 +36,52 @@ rm -rf ~/voi/
 ```
 rm -rf /var/lib/voi
 ```
+## Useful commands
+### Creating a Node Wallet
+```
+~/voi/bin/create-wallet <wallet_name>
+```
+
+### Creating a account
+```
+~/voi/bin/create-account
+```
+### Retrieve the mnemonic of an existing account
+```
+~/voi/bin/get-account-mnemonic 
+```
+### Import an Account
+```
+~/voi/bin/import-account
+```
+
+### Checking Participation Status
+```
+~/voi/bin/get-participation-status <account_address>
+```
+### Going Online
+```
+~/voi/bin/go-online <account_address>
+```
+### Going Offline
+```
+~/voi/bin/go-offline <account_address>
+```
+### Getting Node Health
+```
+~/voi/bin/get-node-status
+```
+### Set Telemetry Name and GUID
+```
+~/voi/bin/set-telemetry-name
+```
+```
+~/voi/bin/set-telemetry-name <telemetry_name> <telemetry_guid>
+```
+### Get Telemetry Status
+```
+~/voi/bin/get-telemetry-status
+```
 ## Renew keys
 ```
 getaddress() {
