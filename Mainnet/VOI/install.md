@@ -23,25 +23,11 @@ export VOINETWORK_IMPORT_ACCOUNT=1
 
 <img width="708" alt="image" src="https://github.com/user-attachments/assets/89526d3d-0137-4852-91b5-7bb56091e5d2">
 
-## Remove your node
-### Leave the Swarm
-```
-docker swarm leave --force
-```
-### Remove the ~/voi directory
-```
-rm -rf ~/voi/
-```
-### Remove the /var/lib/voi directory
-```
-rm -rf /var/lib/voi
-```
-## Useful commands
+# Useful commands
 ### Creating a Node Wallet
 ```
 ~/voi/bin/create-wallet <wallet_name>
 ```
-
 ### Creating a account
 ```
 ~/voi/bin/create-account
@@ -54,7 +40,6 @@ rm -rf /var/lib/voi
 ```
 ~/voi/bin/import-account
 ```
-
 ### Checking Participation Status
 ```
 ~/voi/bin/get-participation-status <account_address>
@@ -81,6 +66,19 @@ rm -rf /var/lib/voi
 ### Get Telemetry Status
 ```
 ~/voi/bin/get-telemetry-status
+```
+## Remove your node
+### Leave the Swarm
+```
+docker swarm leave --force
+```
+### Remove the ~/voi directory
+```
+rm -rf ~/voi/
+```
+### Remove the /var/lib/voi directory
+```
+rm -rf /var/lib/voi
 ```
 ## Renew keys
 ```
