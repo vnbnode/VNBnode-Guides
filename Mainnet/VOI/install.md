@@ -40,6 +40,10 @@ export VOINETWORK_IMPORT_ACCOUNT=1
 ```
 ~/voi/bin/import-account
 ```
+### Check list of account
+```
+~/voi/bin/goal account list
+```
 ### Checking Participation Status
 ```
 ~/voi/bin/get-participation-status <account_address>
