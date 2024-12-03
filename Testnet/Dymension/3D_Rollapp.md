@@ -15,7 +15,7 @@ sudo apt update && sudo apt upgrade -y
 ```
 ### Install essential packages
 ```
-sudo apt install -y build-essential clang curl aria2 wget tar jq libssl-dev pkg-config make
+sudo apt install -y build-essential clang curl aria2 wget tar jq libssl-dev pkg-config make git
 ```
 ### Install Docker
 ```
