@@ -163,6 +163,9 @@ roller rollapp services restart
 ```
 journalctl -fu rollapp
 ```
+```
+journalctl -fu rollapp > /root/.roller/rollapp/rollapp.log
+```
 ### Relayer
 #### 1. Check status
 ```
