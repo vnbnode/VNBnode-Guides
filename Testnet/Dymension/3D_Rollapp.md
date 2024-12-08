@@ -198,7 +198,11 @@ journalctl -u eibc > /root/.eibc-client/eibc.log
 ```
 cat /root/.eibc-client/eibc.log
 ```
-#### 3. Restart
+#### 3. Stop
+```
+roller eibc services stop
+```
+#### 4. Restart
 ```
 roller eibc services restart
 ```
