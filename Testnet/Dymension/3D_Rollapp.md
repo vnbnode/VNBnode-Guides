@@ -137,6 +137,8 @@ roller da-light-client update
 6. Restart service
 ```
 roller rollapp services start
+roller relayer services restart
+roller eibc services restart
 ```
 Check Status & Logs:
 ```
