@@ -124,11 +124,17 @@ curl https://raw.githubusercontent.com/dymensionxyz/roller/main/install.sh | bas
 ```
 roller version
 ```
-4. Update
+4. Or Downgrade to specific version
+``` 
+export ROLLER_RELEASE_TAG="v1.10.0-alpha-rc03"
+curl https://raw.githubusercontent.com/dymensionxyz/roller/main/install.sh | bash
+roller version
+```
+5. Update
 ```   
 roller da-light-client update
 ```
-5. Restart service
+6. Restart service
 ```
 roller rollapp services start
 ```
