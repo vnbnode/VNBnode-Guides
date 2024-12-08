@@ -101,6 +101,18 @@ http://***your_ip_node***:80/node
 ```
 pactus-wallet tx bond <FROM> <TO> <AMOUNT>
 ```
+## 5. Update
+```
+sudo systemctl stop pactus
+cd $HOME/.pactus
+git fetch origin
+git checkout v1.6.3
+make build
+sudo cp $HOME/.pactus/build/pactus-daemon /usr/local/bin/
+sudo cp $HOME/.pactus/build/pactus-wallet /usr/local/bin/
+sudo cp $HOME/.pactus/build/pactus-shell /usr/local/bin/
+sudo systemctl restart pactus && journalctl -f -u pactus
+```
 ## Thank to support VNBnode.
 ### Visit us at:
 
