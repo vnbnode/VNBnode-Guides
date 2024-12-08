@@ -184,7 +184,7 @@ roller relayer services restart
 cat /root/.roller/relayer/relayer.log
 ```
 ### eIBC
-#### 1. Check logs
+#### 1. Create logs file
 ```
 journalctl -u eibc > /root/.eibc-client/eibc.log
 ```
