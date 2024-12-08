@@ -132,7 +132,7 @@ roller version
 ```
 5. Update
 ```   
-roller da-light-client update
+roller rollapp services load
 ```
 6. Restart service
 ```
