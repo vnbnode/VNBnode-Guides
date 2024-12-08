@@ -114,7 +114,7 @@ roller rollapp status
 ## Upgrade Latest Version
 1. Stop service
 ```
-roller rollapp services stop
+roller rollapp services stop && roller relayer services stop && roller eibc services stop
 ```
 2. Download Latest version:
 ```
