@@ -146,6 +146,7 @@ roller rollapp status
 ```
 ```
 journalctl -fu relayer
+cat /root/.roller/relayer/relayer.log
 ```
 ```
 journalctl -fu rollapp
