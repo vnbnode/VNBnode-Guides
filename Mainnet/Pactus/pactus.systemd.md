@@ -101,7 +101,7 @@ http://***your_ip_node***:80/node
 ```
 pactus-wallet tx bond <FROM> <TO> <AMOUNT>
 ```
-## 5. Update
+## Update new version
 ```
 sudo systemctl stop pactus
 cd $HOME/.pactus
