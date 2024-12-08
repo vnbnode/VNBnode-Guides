@@ -112,35 +112,35 @@ roller rollapp status
 <img width="496" alt="image" src="https://github.com/user-attachments/assets/81b0a46c-d1ca-4aa6-8761-0094a4145fec">
 
 ## Upgrade Latest Version
-1. Stop service
+### 1. Stop service
 ```
 roller rollapp services stop && roller relayer services stop && roller eibc services stop
 ```
-2. Download Latest version:
+### 2. Download Latest version:
 ```
 curl https://raw.githubusercontent.com/dymensionxyz/roller/main/install.sh | bash
 ```
-3. Check version
+### 3. Check version
 ```
 roller version
 ```
-4. Or Downgrade to specific version
+### 4. Or Downgrade to specific version
 ``` 
 export ROLLER_RELEASE_TAG="v1.10.0-alpha-rc03"
 curl https://raw.githubusercontent.com/dymensionxyz/roller/main/install.sh | bash
 roller version
 ```
-5. Update
+### 5. Load Services
 ```   
 roller rollapp services load
 ```
-6. Restart service
+### 6. Restart service
 ```
 roller rollapp services start
 roller relayer services restart
 roller eibc services restart
 ```
-Check Status & Logs:
+### 7.Check Status & Logs:
 ```
 roller rollapp status
 ```
