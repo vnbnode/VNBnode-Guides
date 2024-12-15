@@ -249,4 +249,4 @@ roller relayer services start
 
 <img src="https://github.com/vnbnode/binaries/blob/main/Logo/VNBnode.jpg" width="30"/> <a href="https://VNBnode.com" target="_blank">VNBnode.com</a>
 
-<img src="https://github.com/vnbnode/binaries/blob/main/Logo/twitter_icon.png" width="30"/> <a href="https://x.com/vnbnode" target="_blank">VNBnode Twitter</a>
+<img src="https://github.com/vnbnode/binaries/blob/main/Logo/twitter_icon.png" width="30" height="30"/> <a href="https://x.com/vnbnode" target="_blank">VNBnode Twitter</a>
