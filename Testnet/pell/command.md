@@ -89,31 +89,31 @@ pellcored q staking validator $(pellcored keys show wallet --bech val -a)
 ### 💲 Token management
 - Withdraw rewards from all validators
 ```
-pellcored tx distribution withdraw-all-rewards --from wallet --chain-id ignite_186-1 --gas=1000000 --fees 0.000001pell --from wallet
+pellcored tx distribution withdraw-all-rewards --chain-id ignite_186-1 --gas=1000000 --fees 0.000001pell --from wallet
 ```
 - Withdraw commission and rewards from your validator
 ```
-pellcored tx distribution withdraw-rewards $(pellcored keys show wallet --bech val -a) --commission --from wallet --chain-id ignite_186-1 --gas=1000000 --fees 0.000001pell --from wallet
+pellcored tx distribution withdraw-rewards $(pellcored keys show wallet --bech val -a) --commission --chain-id ignite_186-1 --gas=1000000 --fees 0.000001pell --from wallet
 ```
 - Delegate tokens to yourself
 ```
-pellcored tx staking delegate $(pellcored keys show wallet --bech val -a) 1000000apell --from wallet --chain-id ignite_186-1 --gas=1000000 --fees 0.000001pell --from wallet
+pellcored tx staking delegate $(pellcored keys show wallet --bech val -a) 1000000apell --chain-id ignite_186-1 --gas=1000000 --fees 0.000001pell --from wallet
 ```
 - Delegate tokens to validator
 ```
-pellcored tx staking delegate <TO_VALOPER_ADDRESS> 1000000apell --from wallet --chain-id ignite_186-1 --gas=1000000 --fees 0.000001pell --from wallet
+pellcored tx staking delegate <TO_VALOPER_ADDRESS> 1000000apell --chain-id ignite_186-1 --gas=1000000 --fees 0.000001pell --from wallet
 ```
 - Redelegate tokens to another validator
 ```
-pellcored tx staking redelegate $(pellcored keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000apell --from wallet --chain-id ignite_186-1 --gas=1000000 --fees 0.000001pell --from wallet
+pellcored tx staking redelegate $(pellcored keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000apell  --chain-id ignite_186-1 --gas=1000000 --fees 0.000001pell --from wallet
 ```
 - Unbond tokens from your validator
 ```
-pellcored tx staking unbond $(pellcored keys show wallet --bech val -a) 1000000apell --from wallet --chain-id ignite_186-1 --gas=1000000 --fees 0.000001pell --from wallet
+pellcored tx staking unbond $(pellcored keys show wallet --bech val -a) 1000000apell --chain-id ignite_186-1 --gas=1000000 --fees 0.000001pell --from wallet
 ```
 - Send tokens to the wallet
 ```
-pellcored tx bank send wallet <TO_WALLET_ADDRESS> 1000000apell --from wallet --chain-id ignite_186-1 --gas=1000000 --fees 0.000001pell --from wallet
+pellcored tx bank send wallet <TO_WALLET_ADDRESS> 1000000apell --chain-id ignite_186-1 --gas=1000000 --fees 0.000001pell --from wallet
 ```
 ### 🗳 Governance
 - List all proposals
@@ -126,19 +126,19 @@ pellcored query gov proposal 1
 ```
 - Vote ‘Yes’
 ```
-pellcored tx gov vote 1 yes --from wallet --chain-id ignite_186-1 --gas=1000000 --fees 0.000001pell --from wallet
+pellcored tx gov vote 1 yes --chain-id ignite_186-1 --gas=1000000 --fees 0.000001pell --from wallet
 ```
 - Vote ‘No’
 ```
-pellcored tx gov vote 1 no --from wallet --chain-id ignite_186-1 --gas=1000000 --fees 0.000001pell --from wallet
+pellcored tx gov vote 1 no --chain-id ignite_186-1 --gas=1000000 --fees 0.000001pell --from wallet
 ```
 - Vote ‘Abstain’
 ```
-pellcored tx gov vote 1 abstain --from wallet --chain-id ignite_186-1 --gas=1000000 --fees 0.000001pell --from wallet
+pellcored tx gov vote 1 abstain --chain-id ignite_186-1 --gas=1000000 --fees 0.000001pell --from wallet
 ```
 - Vote ‘NoWithVeto’
 ```
-pellcored tx gov vote 1 NoWithVeto --from wallet --chain-id ignite_186-1 --gas=1000000 --fees 0.000001pell --from wallet
+pellcored tx gov vote 1 NoWithVeto --chain-id ignite_186-1 --gas=1000000 --fees 0.000001pell --from wallet
 ```
 ### ⚡️ Utility
 - Update ports
@@ -205,7 +205,7 @@ _Please, before proceeding with the next step! All chain data will be lost! Make
 cd $HOME
 docker stop pell-validator
 docker rm pell-validator
-docker rmi pellnetwork/pellnode-devnet:v0.1.0
+docker rmi pellnetwork/pellnode:v1.0.23-ignite-testnet
 rm -rf $HOME/.pellcored
 ```
 ## Thank to support VNBnode.
