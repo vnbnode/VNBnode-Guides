@@ -123,6 +123,20 @@ docker logs pell-validator
 ```
 curl http://localhost:26657/status | jq .result.sync_info
 ```
+# Upgrade Version
+```
+docker stop pell-validator
+```
+```
+UPGRADE_NAME=v1.1.1
+BINARY_URL=https://github.com/0xPellNetwork/network-config/releases/download/${UPGRADE_NAME}-ignite/pellcored-${UPGRADE_NAME}-linux-amd64
+wget $BINARY_URL -O /usr/local/bin/pellcored
+chmod +x /usr/local/bin/pellcored
+pellcored version
+```
+```
+docker start pell-validator
+```
 ## Get validator info
 ```
 curl http://localhost:26657/status | jq .result.validator_info
