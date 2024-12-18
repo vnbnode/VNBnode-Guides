@@ -128,11 +128,18 @@ curl http://localhost:26657/status | jq .result.sync_info
 docker stop pell-validator
 ```
 ```
+rm /root/.pellcored/cosmovisor/genesis/bin/pellcored
+```
+```
 UPGRADE_NAME=v1.1.1
 BINARY_URL=https://github.com/0xPellNetwork/network-config/releases/download/${UPGRADE_NAME}-ignite/pellcored-${UPGRADE_NAME}-linux-amd64
-wget $BINARY_URL -O /usr/local/bin/pellcored
-chmod +x /usr/local/bin/pellcored
-pellcored version
+wget $BINARY_URL -O /root/.pellcored/cosmovisor/genesis/bin/pellcored
+chmod +x /root/.pellcored/cosmovisor/genesis/bin/pellcored
+```
+```
+mkdir -p /root/.pellcored/cosmovisor/upgrades/$UPGRADE_NAME/bin
+wget $BINARY_URL -O /root/.pellcored/cosmovisor/upgrades/$UPGRADE_NAME/bin/pellcored
+chmod +x /root/.pellcored/cosmovisor/upgrades/$UPGRADE_NAME/bin/pellcored
 ```
 ```
 docker start pell-validator
