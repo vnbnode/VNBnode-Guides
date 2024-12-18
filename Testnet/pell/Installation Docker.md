@@ -117,7 +117,7 @@ pellcored query staking validator $(pellcored keys show wallet --bech val -a)
 ```
 ## Check logs
 ```
-docker logs pell-validator
+docker logs -f --tail 100 pell-validator
 ```
 ## Check synchs
 ```
