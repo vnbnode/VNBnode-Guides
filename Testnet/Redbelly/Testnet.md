@@ -1,6 +1,7 @@
 # REDBELLY TESTNET
 ## Website: https://www.redbelly.network/
 ## X.com: https://x.com/RedbellyNetwork
+## Explorer: https://redbelly.testnet.routescan.io/
 
 # Preparation
 ## Recommended Hardware Requirements 
