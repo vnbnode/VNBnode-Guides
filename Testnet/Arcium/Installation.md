@@ -114,7 +114,7 @@ solana-keygen new
 SAVE THE PUBKEY AND SEED PHRASE
 ## Installing using the Arcium version manager (arcup)
 ```
-Contact the Arcium team to get guide
+CONTACT ARCIUM TEAM TO GET CLIs
 ```
 ## Thank to support VNBnode.
 ### Visit us at:
