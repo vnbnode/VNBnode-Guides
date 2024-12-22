@@ -114,15 +114,7 @@ solana-keygen new
 SAVE THE PUBKEY AND SEED PHRASE
 ## Installing using the Arcium version manager (arcup)
 ```
-TARGET="x86_64_linux" && curl -u testnet_user_20842437:ZTi9igBU6icam0y2 "https://bin.arcium.com/download/arcup_${TARGET}_0.1.30" -o ~/.cargo/bin/arcup && chmod +x ~/.cargo/bin/arcup
-```
-Install the latest version of the CLI using arcup:
-```
-arcup install
-```
-Verify the installation.
-```
-arcium --version
+Contact the Arcium team to get guide
 ```
 ## Thank to support VNBnode.
 ### Visit us at:
