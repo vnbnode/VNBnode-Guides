@@ -1,4 +1,4 @@
-# GUIDE TO CREATE GORVERNOR OF ROLLAPPS
+# GUIDE TO CREATE GORVERNOR PROPOSAL OF ROLLAPP
 ## Version: DYM-Playground-DRS4
 ## I. Create Validator
 👉 wallet is the name of validator key
