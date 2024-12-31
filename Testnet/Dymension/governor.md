@@ -29,6 +29,10 @@ rollappd init VNBnode --chain-id=$network
 ```
 rollappd q bank balances $(rollappd keys show wallet -a)
 ```
+IF THIS COMMAND NOT WORK, ADD WALLET AGAIN WITH SEED PHRASE
+```
+rollappd keys add wallet --recover
+```
 ### Create Validator
 👉❗change token symbol and "Rollapp Network ID"
 ```
