@@ -20,6 +20,7 @@ rollappd init VNBnode --chain-id=<Rollapp Network ID>
 rollappd q bank balances $(rollappd keys show wallet -a)
 ```
 ### Create Validator
+👉❗change token symbol and "Rollapp Network ID"
 ```
 rollappd tx staking create-validator \
     --amount=1000000000000000000aftbx \
