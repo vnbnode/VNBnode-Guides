@@ -89,7 +89,7 @@ sudo tee proposal.json > /dev/null << EOF
       "upgrade_time": "2024-09-06T18:10:00Z"
     }
   ],
-  "deposit": "500a$token",
+  "deposit": "10000000a$token",
   "expedited": true
 }
 EOF
