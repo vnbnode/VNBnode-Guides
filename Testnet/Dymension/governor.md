@@ -17,7 +17,7 @@ rollappd init VNBnode --chain-id=<Rollapp Network ID>
 
 ### Check Fund balance in the wallet
 ```
-
+rollappd q bank balances $(rollappd keys show wallet -a)
 ```
 ### Create Validator
 ```
@@ -44,6 +44,37 @@ rollappd q rollappparams params
 <img width="341" alt="image" src="https://github.com/user-attachments/assets/f715f04b-aaa1-4bb2-9078-34f2f19d283c" />
 
 ### Governance Proposal (GOV)
+👉❗NOTE: Take the address outputted above and use it as <authority-address> below.
 ```
 rollappd q auth module-account gov
+```
+### Check current block height
+```
+rollappd q block | jq -r '.block.header.height'
+```
+
+```
+{
+  "title": "Update rollapp to DRS-4",
+  "description": "Upgrade Dymension rollapp to version DRS-4 scheduled upgrade time",
+  "summary": "This proposal aims to upgrade the Dymension rollapp to version DRS-4, implementing new features and improvements, with a scheduled upgrade time.",
+  "messages": [
+    {
+      "@type": "/rollapp.timeupgrade.types.MsgSoftwareUpgrade",
+      "original_upgrade": {
+        "authority": "<authority-address>",
+        "plan": {
+          "name": "drs-4",
+          "time": "0001-01-01T00:00:00Z",
+          "height": "1800",
+          "info": "{}",
+          "upgraded_client_state": null
+        }
+      },
+      "upgrade_time": "2024-09-06T18:10:00Z"
+    }
+  ],
+  "deposit": "500arax",
+  "expedited": true
+}
 ```
