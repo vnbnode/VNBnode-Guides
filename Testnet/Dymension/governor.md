@@ -37,6 +37,7 @@ rollappd tx staking create-validator \
 ```
 <img width="590" alt="image" src="https://github.com/user-attachments/assets/45e8f97c-b2fe-4465-8954-e28088369b50" />
 
+## Create GOV proposal
 ### Check existing version
 ```
 rollappd q rollappparams params
@@ -89,4 +90,36 @@ rollappd tx gov submit-proposal proposal.json --from wallet --keyring-backend te
 👉❗change token symbol and "Rollapp Network ID"
 ```
 rollappd tx gov vote 1 yes --from wallet --keyring-backend test --fees 2000000000000aftbx --chain-id <Rollapp Network ID>
+```
+### Check Proposal Status
+```
+rollappd query gov proposals
+```
+## Upgrade Implementation
+👉❗NOTE: Once the vote passes, you'll see a log warning like:
+panic: UPGRADE "drs-4" NEEDED at height: 100: {}
+At this point, the rollapp will stop, and you can proceed with the update.
+### 1. Stop rollapp service
+```
+roller rollapp services stop
+```
+### 2. Clone the repository and build:
+👉❗NOTE: Replce "aftbx" with your rollapp coin symbol.
+```
+git clone -b v3.0.0-rc07-drs-4 https://github.com/dymensionxyz/rollapp-evm.git
+cd rollapp-evm
+export BECH32_PREFIX=aftbx && make build BECH32_PREFIX=$BECH32_PREFIX
+sudo cp ./build/rollapp-evm $(which rollappd)
+```
+### 3. Migrate the rollapp:
+```
+roller rollapp migrate
+```
+### 4. Restart the rollapp service::
+```
+roller rollapp services start
+```
+### 5. Verify the upgrade:
+```
+rollappd q rollappparams params
 ```
