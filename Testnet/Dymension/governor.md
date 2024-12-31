@@ -15,6 +15,10 @@ rollappd init VNBnode --chain-id=<Rollapp Network ID>
 ### Fund the wallet
 👉❗https://playground.dymension.xyz/rollapps/fingamex_886342-1/dashboard
 
+### Check Fund balance in the wallet
+```
+
+```
 ### Create Validator
 ```
 rollappd tx staking create-validator \
@@ -30,4 +34,16 @@ rollappd tx staking create-validator \
     --pubkey=$(rollappd dymint show-sequencer) \
     --node=http://localhost:26657 \
     --fees 4000000000000aftbx --gas auto --gas-adjustment 1.3 -y
+```
+<img width="590" alt="image" src="https://github.com/user-attachments/assets/45e8f97c-b2fe-4465-8954-e28088369b50" />
+
+### Check existing version
+```
+rollappd q rollappparams params
+```
+<img width="341" alt="image" src="https://github.com/user-attachments/assets/f715f04b-aaa1-4bb2-9078-34f2f19d283c" />
+
+### Governance Proposal (GOV)
+```
+rollappd q auth module-account gov
 ```
