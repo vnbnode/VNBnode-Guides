@@ -99,14 +99,12 @@ EOF
 rollappd q auth module-account gov -o json | jq -r '.account.base_account.address' | xargs -I {} sed -i 's/<authority-address>/{}/' proposal.json
 ```
 ### Submit Proposal
-👉❗change token symbol and "Rollapp Network ID"
 ```
-rollappd tx gov submit-proposal proposal.json --from wallet --keyring-backend test --fees 2000000000000aftbx --chain-id <Rollapp Network ID>
+rollappd tx gov submit-proposal proposal.json --from wallet --keyring-backend test --fees 2000000000000a$token --chain-id $network
 ```
 ### GOV Vote
-👉❗change token symbol and "Rollapp Network ID"
 ```
-rollappd tx gov vote 1 yes --from wallet --keyring-backend test --fees 2000000000000aftbx --chain-id <Rollapp Network ID>
+rollappd tx gov vote 1 yes --from wallet --keyring-backend test --fees 2000000000000a$token --chain-id $network
 ```
 ### Check Proposal Status
 ```
@@ -121,11 +119,10 @@ At this point, the rollapp will stop, and you can proceed with the update.
 roller rollapp services stop
 ```
 ### 2. Clone the repository and build:
-👉❗NOTE: Replce "aftbx" with your rollapp coin symbol.
 ```
 git clone -b v3.0.0-rc07-drs-4 https://github.com/dymensionxyz/rollapp-evm.git
 cd rollapp-evm
-export BECH32_PREFIX=aftbx && make build BECH32_PREFIX=$BECH32_PREFIX
+export BECH32_PREFIX=a$token && make build BECH32_PREFIX=$BECH32_PREFIX
 sudo cp ./build/rollapp-evm $(which rollappd)
 ```
 ### 3. Migrate the rollapp:
