@@ -40,7 +40,7 @@ rollappd tx staking create-validator \
     --amount=1000000000000000000a$token \
     --moniker=VNBnode \
     --chain-id=$network \
-    --from=wallet \
+    --from=$(rollappd keys show wallet -a) \
     --keyring-backend test \
     --commission-rate=0.05 \
     --commission-max-rate=0.20 \
