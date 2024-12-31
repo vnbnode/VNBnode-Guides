@@ -114,7 +114,7 @@ rollappd query gov proposals
 
 ## III. Upgrade Implementation
 👉❗NOTE: Once the vote passes, you'll see a log warning like:
-panic: UPGRADE "drs-4" NEEDED at height: 100: {}
+panic: UPGRADE "drs-4" NEEDED at height: xxxx : {}
 At this point, the rollapp will stop, and you can proceed with the update.
 ### 1. Stop rollapp service
 ```
