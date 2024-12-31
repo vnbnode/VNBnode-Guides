@@ -81,7 +81,7 @@ sudo tee proposal.json > /dev/null << EOF
         "plan": {
           "name": "drs-4",
           "time": "0001-01-01T00:00:00Z",
-          "height": "1000",
+          "height": "1200",
           "info": "{}",
           "upgraded_client_state": null
         }
