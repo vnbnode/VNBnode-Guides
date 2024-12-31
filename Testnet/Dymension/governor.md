@@ -1,6 +1,6 @@
 # GUIDE TO CREATE GORVERNOR OF ROLLAPPS
 ## Version: DYM-Playground-DRS4
-## Create Validator
+## I. Create Validator
 👉 wallet is the name of validator key
 ```
 rollappd keys add wallet --keyring-backend test
@@ -37,7 +37,7 @@ rollappd tx staking create-validator \
 ```
 <img width="590" alt="image" src="https://github.com/user-attachments/assets/45e8f97c-b2fe-4465-8954-e28088369b50" />
 
-## Create GOV proposal
+## II. Create GOV proposal
 ### Check existing version
 ```
 rollappd q rollappparams params
@@ -95,7 +95,7 @@ rollappd tx gov vote 1 yes --from wallet --keyring-backend test --fees 200000000
 ```
 rollappd query gov proposals
 ```
-## Upgrade Implementation
+## III. Upgrade Implementation
 👉❗NOTE: Once the vote passes, you'll see a log warning like:
 panic: UPGRADE "drs-4" NEEDED at height: 100: {}
 At this point, the rollapp will stop, and you can proceed with the update.
