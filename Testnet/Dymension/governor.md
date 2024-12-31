@@ -98,6 +98,12 @@ EOF
 ```
 rollappd q auth module-account gov -o json | jq -r '.account.base_account.address' | xargs -I {} sed -i 's/<authority-address>/{}/' proposal.json
 ```
+```
+ rollappd q auth module-account gov
+```
+```
+ rollappd q gov params
+```
 ### Submit Proposal
 ```
 rollappd tx gov submit-proposal proposal.json --from wallet --keyring-backend test --fees 2000000000000a$token --chain-id $network
