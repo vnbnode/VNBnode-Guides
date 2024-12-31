@@ -88,5 +88,5 @@ rollappd tx gov submit-proposal proposal.json --from wallet --keyring-backend te
 ### GOV Vote
 👉❗change token symbol and "Rollapp Network ID"
 ```
-rollappd tx gov vote 1 yes --from wallet --keyring-backend test --fees 4000000000000aftbx --gas auto --gas-adjustment 1.3 --chain-id <Rollapp Network ID> -b block
+rollappd tx gov vote 1 yes --from wallet --keyring-backend test --fees 2000000000000aftbx --chain-id <Rollapp Network ID>
 ```
