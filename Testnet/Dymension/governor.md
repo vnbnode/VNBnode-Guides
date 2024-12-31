@@ -86,7 +86,7 @@ sudo tee proposal.json > /dev/null << EOF
           "upgraded_client_state": null
         }
       },
-      "upgrade_time": "2024-09-06T18:10:00Z"
+      "upgrade_time": "2025-01-01T03:10:00Z"
     }
   ],
   "deposit": "10000000a$token",
