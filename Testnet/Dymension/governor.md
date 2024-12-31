@@ -78,7 +78,7 @@ sudo tee proposal.json > /dev/null << EOF
 }
 EOF
 ```
-### Change authority address
+### Import authority address
 ```
 rollappd q auth module-account gov -o json | jq -r '.account.base_account.address' | xargs -I {} sed -i 's/<authority-address>/{}/' proposal.json
 ```
