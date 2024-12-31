@@ -5,7 +5,7 @@
 ### Define network & token symbol
 👉❗Change to your Rollapp Network ID
 ```
-network="sgamexx_1006886-1"
+network="fingamex_886342-1"
 ```
 👉❗Change to your Token Symbol
 ```
@@ -35,7 +35,7 @@ rollappd q bank balances $(rollappd keys show wallet -a)
 rollappd tx staking create-validator \
     --amount=1000000000000000000aftbx \
     --moniker=VNBnode \
-    --chain-id=fingamex_886342-1 \
+    --chain-id=$network \
     --from=wallet \
     --keyring-backend test \
     --commission-rate=0.05 \
@@ -44,7 +44,7 @@ rollappd tx staking create-validator \
     --min-self-delegation=1 \
     --pubkey=$(rollappd dymint show-sequencer) \
     --node=http://localhost:26657 \
-    --fees 2000000000000aftbx
+    --fees 2000000000000a$token
     --gas auto
     --gas-adjustment 1.3 -y
 ```
