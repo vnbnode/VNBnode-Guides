@@ -89,7 +89,7 @@ sudo tee proposal.json > /dev/null << EOF
       "upgrade_time": "2025-01-01T03:10:00Z"
     }
   ],
-  "deposit": "10000000a$token",
+  "deposit": "11000000a$token",
   "expedited": true
 }
 EOF
@@ -110,6 +110,8 @@ rollappd tx gov vote 1 yes --from wallet --keyring-backend test --fees 200000000
 ```
 rollappd query gov proposals
 ```
+<img width="470" alt="image" src="https://github.com/user-attachments/assets/59cbb446-f3b5-495c-adff-d5a5d09fe090" />
+
 ## III. Upgrade Implementation
 👉❗NOTE: Once the vote passes, you'll see a log warning like:
 panic: UPGRADE "drs-4" NEEDED at height: 100: {}
