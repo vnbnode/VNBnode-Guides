@@ -1,6 +1,16 @@
 # GUIDE TO CREATE GORVERNOR PROPOSAL OF ROLLAPP
 ## Version: DYM-Playground-DRS4
+
 ## I. Create Validator
+### Define network & token symbol
+👉❗Change to your Rollapp Network ID
+```
+network="sgamexx_1006886-1"
+```
+👉❗Change to your Token Symbol
+```
+token="ftbx"
+```
 👉 wallet is the name of validator key
 ```
 rollappd keys add wallet --keyring-backend test
@@ -10,7 +20,7 @@ rollappd keys add wallet --keyring-backend test
 
 ### Initiate Validator
 ```
-rollappd init VNBnode --chain-id=<Rollapp Network ID>
+rollappd init VNBnode --chain-id=$network
 ```
 ### Fund the wallet
 👉❗https://playground.dymension.xyz/rollapps/fingamex_886342-1/dashboard
