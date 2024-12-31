@@ -33,7 +33,7 @@ rollappd q bank balances $(rollappd keys show wallet -a)
 👉❗change token symbol and "Rollapp Network ID"
 ```
 rollappd tx staking create-validator \
-    --amount=1000000000000000000aftbx \
+    --amount=1000000000000000000a$token \
     --moniker=VNBnode \
     --chain-id=$network \
     --from=wallet \
@@ -44,8 +44,8 @@ rollappd tx staking create-validator \
     --min-self-delegation=1 \
     --pubkey=$(rollappd dymint show-sequencer) \
     --node=http://localhost:26657 \
-    --fees 2000000000000a$token
-    --gas auto
+    --fees 2000000000000a$token \
+    --gas auto \
     --gas-adjustment 1.3 -y
 ```
 <img width="590" alt="image" src="https://github.com/user-attachments/assets/45e8f97c-b2fe-4465-8954-e28088369b50" />
