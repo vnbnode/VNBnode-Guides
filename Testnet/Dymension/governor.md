@@ -43,17 +43,14 @@ rollappd q rollappparams params
 ```
 <img width="341" alt="image" src="https://github.com/user-attachments/assets/f715f04b-aaa1-4bb2-9078-34f2f19d283c" />
 
-### Governance Proposal (GOV)
-👉❗NOTE: Take the address outputted above and use it as <authority-address> below.
-```
-rollappd q auth module-account gov
-```
 ### Check current block height
 ```
 rollappd q block | jq -r '.block.header.height'
 ```
-
+### Create proposal
+👉❗change token symbol in "deposit"
 ```
+sudo tee proposal.json > /dev/null << EOF
 {
   "title": "Update rollapp to DRS-4",
   "description": "Upgrade Dymension rollapp to version DRS-4 scheduled upgrade time",
@@ -74,7 +71,12 @@ rollappd q block | jq -r '.block.header.height'
       "upgrade_time": "2024-09-06T18:10:00Z"
     }
   ],
-  "deposit": "500arax",
+  "deposit": "500aftbx",
   "expedited": true
 }
+EOF
+```
+### Change authority address
+```
+rollappd q auth module-account gov -o json | jq -r '.account.base_account.address' | xargs -I {} sed -i 's/<authority-address>/{}/' proposal.json
 ```
