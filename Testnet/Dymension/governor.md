@@ -48,7 +48,7 @@ rollappd tx staking create-validator \
     --min-self-delegation=1 \
     --pubkey=$(rollappd dymint show-sequencer) \
     --node=http://localhost:26657 \
-    --fees 2000000000000a$token \
+    --fees 3000000000000a$token \
     --gas auto \
     --gas-adjustment 1.3 -y
 ```
