@@ -52,9 +52,7 @@ rollappd q auth module-account gov
 ```
 rollappd q block | jq -r '.block.header.height'
 ```
-```
-nano proposal.json
-```
+
 ```
 {
   "title": "Update rollapp to DRS-4",
