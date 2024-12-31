@@ -86,6 +86,7 @@ rollappd q auth module-account gov -o json | jq -r '.account.base_account.addres
 rollappd tx gov submit-proposal proposal.json --from wallet --keyring-backend test --fees 4000000000000aftbx --gas auto --gas-adjustment 1.3 --chain-id <Rollapp Network ID> -b block
 ```
 ### GOV Vote
+👉❗change token symbol and "Rollapp Network ID"
 ```
 rollappd tx gov vote 1 yes --from wallet --keyring-backend test --fees 4000000000000aftbx --gas auto --gas-adjustment 1.3 --chain-id <Rollapp Network ID> -b block
 ```
