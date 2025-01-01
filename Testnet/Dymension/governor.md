@@ -143,6 +143,10 @@ roller rollapp services start
 ```
 rollappd q rollappparams params
 ```
+### 6. Check status:
+```
+roller rollapp status
+```
 ## IV. Roll back to old version
 👉❗IF THE MIGRATION IS FAIL, YOU NEED TO ROLL BACK BINARY VERSION
 ![image](https://github.com/user-attachments/assets/c6e15447-1219-4c2e-8ee0-f55f98cf3119)
