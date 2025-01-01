@@ -143,7 +143,7 @@ roller rollapp services start
 ```
 rollappd q rollappparams params
 ```
-## Roll back to old version
+## IV. Roll back to old version
 ### 1. Stop rollapp service
 ```
 roller rollapp services stop
@@ -157,11 +157,20 @@ cd rollapp-evm
 export BECH32_PREFIX=a$token && make build BECH32_PREFIX=$BECH32_PREFIX
 sudo cp ./build/rollapp-evm $(which rollappd)
 ```
-### 3. Migrate the rollapp:
+### 4. Restart the rollapp service:
 ```
-roller rollapp migrate
+roller rollapp services start
 ```
-### 4. Restart the rollapp service::
+👉❗YOU MAY SEE THE THE ERROR AS BELOW.
+<img width="910" alt="image" src="https://github.com/user-attachments/assets/5b5d473f-c4ca-4c69-86e1-b6b82bb34ca5" />
+
+### 5. Change Binary Version
+```
+nano /root/.roller/roller.toml
+```
+<img width="476" alt="image" src="https://github.com/user-attachments/assets/f632bf2f-3a35-4452-85a9-f02321d9d9c0" />
+
+### 6. Restart the rollapp service::
 ```
 roller rollapp services start
 ```
