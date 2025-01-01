@@ -143,6 +143,28 @@ roller rollapp services start
 ```
 rollappd q rollappparams params
 ```
+## Roll back to old version
+### 1. Stop rollapp service
+```
+roller rollapp services stop
+```
+### 2. Clone the repository and build:
+```
+cd
+mv rollapp-evm rollapp-evmydk1
+git clone -b v3.0.0-rc01-drs-1 https://github.com/dymensionxyz/rollapp-evm.git
+cd rollapp-evm
+export BECH32_PREFIX=a$token && make build BECH32_PREFIX=$BECH32_PREFIX
+sudo cp ./build/rollapp-evm $(which rollappd)
+```
+### 3. Migrate the rollapp:
+```
+roller rollapp migrate
+```
+### 4. Restart the rollapp service::
+```
+roller rollapp services start
+```
 ## Thank to support VNBnode.
 ### Visit us at:
 
