@@ -128,7 +128,7 @@ roller rollapp services stop
 ```
 git clone -b v3.0.0-rc07-drs-4 https://github.com/dymensionxyz/rollapp-evm.git
 cd rollapp-evm
-export BECH32_PREFIX=a$token && make build BECH32_PREFIX=$BECH32_PREFIX
+export BECH32_PREFIX=$token && make build BECH32_PREFIX=$BECH32_PREFIX
 sudo cp ./build/rollapp-evm $(which rollappd)
 ```
 ### 3. Migrate the rollapp:
@@ -157,7 +157,7 @@ cd
 mv rollapp-evm rollapp-evmbackup
 git clone -b v3.0.0-rc01-drs-1 https://github.com/dymensionxyz/rollapp-evm.git
 cd rollapp-evm
-export BECH32_PREFIX=a$token && make build BECH32_PREFIX=$BECH32_PREFIX
+export BECH32_PREFIX=$token && make build BECH32_PREFIX=$BECH32_PREFIX
 sudo cp ./build/rollapp-evm $(which rollappd)
 ```
 ### 4. Restart the rollapp service:
