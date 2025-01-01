@@ -113,7 +113,8 @@ rollappd query gov proposals
 <img width="470" alt="image" src="https://github.com/user-attachments/assets/59cbb446-f3b5-495c-adff-d5a5d09fe090" />
 
 ## III. Upgrade Implementation
-👉❗NOTE: Once the vote passes, you'll see a log warning like:
+👉❗IMPORTANT YOU MUST WAIT UNTIL THE BLOCK HEIGHT REACHES TO VOTING BLOCK.
+NOTE: Once the vote passes, you'll see a log warning like:
 wait for the upgrade to be executed. Once it is,  the rollapp will panic with the following message:
 
 panic: UPGRADE "drs-4" NEEDED at height: 100: {}
