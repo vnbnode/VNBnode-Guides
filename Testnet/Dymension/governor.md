@@ -143,6 +143,8 @@ roller rollapp services start
 ```
 rollappd q rollappparams params
 ```
+![image](https://github.com/user-attachments/assets/78f25a19-6c58-4c9b-8542-999c43cf7a2f)
+
 ### 6. Check status:
 ```
 roller rollapp status
