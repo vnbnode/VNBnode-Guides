@@ -160,7 +160,7 @@ roller rollapp services stop
 ### 2. Clone the repository and build:
 ```
 cd
-mv rollapp-evm rollapp-evmbackup
+rm -rf rollapp-evm
 git clone -b v3.0.0-rc01-drs-1 https://github.com/dymensionxyz/rollapp-evm.git
 cd rollapp-evm
 export BECH32_PREFIX=$token && make build BECH32_PREFIX=$BECH32_PREFIX
