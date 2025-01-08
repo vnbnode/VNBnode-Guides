@@ -54,7 +54,7 @@ Paste The private password here
 ```
 Pull the latest Pell Node image:
 ```
-docker pull docker.io/pellnetwork/pellnode:v1.1.6-ignite-testnet
+docker pull docker.io/pellnetwork/pellnode:v1.1.6
 ```
 ## Run node
 change "Yournode"
@@ -144,15 +144,20 @@ chmod +x /root/.pellcored/cosmovisor/upgrades/$UPGRADE_NAME/bin/pellcored
 ```
 ## Version v1.1.6
 ```
-UPGRADE_NAME=v1.1.6
-BINARY_URL=https://github.com/0xPellNetwork/network-config/releases/download/${UPGRADE_NAME}/pellcored-${UPGRADE_NAME}-linux-amd64
-wget $BINARY_URL -O /root/.pellcored/cosmovisor/genesis/bin/pellcored
-chmod +x /root/.pellcored/cosmovisor/genesis/bin/pellcored
+docker rmi <image_name_or_id>
 ```
 ```
-mkdir -p /root/.pellcored/cosmovisor/upgrades/$UPGRADE_NAME/bin
-wget $BINARY_URL -O /root/.pellcored/cosmovisor/upgrades/$UPGRADE_NAME/bin/pellcored
-chmod +x /root/.pellcored/cosmovisor/upgrades/$UPGRADE_NAME/bin/pellcored
+docker pull docker.io/pellnetwork/pellnode:v1.1.6
+```
+```
+docker run -d --name=pell-validator \
+    -v /root/.pellcored:/root/.pellcored \
+    -e MONIKER="Yournode" \
+    -p 26656:26656 \
+    -p 26660:26660 \
+    -d \
+    --entrypoint /usr/local/bin/start-pellcored.sh \
+    docker.io/pellnetwork/pellnode:v1.1.6
 ```
 ```
 docker start pell-validator
