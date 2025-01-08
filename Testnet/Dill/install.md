@@ -55,30 +55,19 @@ _If you have completed all the steps correctly, you will see an output like this
 
 ![image](https://github.com/user-attachments/assets/00e3ace0-d2e3-4adf-99c3-8d79c4ec7169)
 
-### 5. Commands
-- Verify Node is Running
+### 5. Verify Node is Running
+_Run the following command to check if the node is up and running:_
 ```bash
-cd $HOME/dill && ./health_check.sh -v
+tail -f $HOME/dill/light_node/logs/dill.log
 ```
-- View the public key of the validators
 ```bash
-cd $HOME/dill && ./show_pubkey.sh
+curl -s localhost:3500/eth/v1/beacon/headers | jq
 ```
-- Stop node
 ```bash
-cd $HOME/dill && ./stop_dill_node.sh
+ps -ef | grep dill
 ```
-- Restart node
 ```bash
-cd $HOME/dill && ./start_dill_node.sh
-```
-- Add more validators:
-```bash
-cd $HOME/dill && ./2_add_validator.sh
-```
-- Exit the validator(s) Use the Exit script to signal your intentions to permanently stop your duties as a validator.
-```bash
-cd $HOME/dill && ./exit_validator.sh
+./health_check.sh -v
 ```
 ### 6. Staking
 
@@ -92,10 +81,10 @@ _Copy to your local machine for uploading._
 
 ### Shutdown & remove node
 ```bash
-cd $HOME/dill && ./stop_dill_node.sh
+pkill dill-node
 ```
 ```bash
-cd $HOME
+cd $Home
 rm -rf dill
 ```
 ## Thank to support VNBnode.
