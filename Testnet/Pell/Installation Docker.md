@@ -131,7 +131,7 @@ docker stop pell-validator
 rm /root/.pellcored/cosmovisor/genesis/bin/pellcored
 ```
 ```
-UPGRADE_NAME=v1.1.1
+UPGRADE_NAME=v1.1.6
 BINARY_URL=https://github.com/0xPellNetwork/network-config/releases/download/${UPGRADE_NAME}-ignite/pellcored-${UPGRADE_NAME}-linux-amd64
 wget $BINARY_URL -O /root/.pellcored/cosmovisor/genesis/bin/pellcored
 chmod +x /root/.pellcored/cosmovisor/genesis/bin/pellcored
