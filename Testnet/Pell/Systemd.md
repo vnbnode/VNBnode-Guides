@@ -36,7 +36,7 @@ go version
 ## Download and build binaries
 ```
 cd $HOME
-wget -O pellcored https://github.com/0xPellNetwork/network-config/releases/download/v1.0.20-ignite/pellcored-v1.0.20-linux-amd64
+wget -O pellcored https://github.com/0xPellNetwork/network-config/releases/download/v1.1.6/pellcored-v1.1.6-linux-amd64
 chmod +x $HOME/pellcored
 mv $HOME/pellcored $HOME/go/bin/pellcored
 WASMVM_VERSION="v2.1.2"
