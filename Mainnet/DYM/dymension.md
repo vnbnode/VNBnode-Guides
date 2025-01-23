@@ -94,12 +94,13 @@ sudo systemctl enable dymension.service
 
 ## Initialize the node
 ```
+# Initialize the node
+dymd init $MONIKER --chain-id dymension_1100-1
+
 # Set node configuration
 dymd config chain-id dymension_1100-1
 dymd config keyring-backend file
 dymd config node tcp://localhost:15057
-# Initialize the node
-dymd init $MONIKER --chain-id dymension_1100-1
 ```
 ```
 # Download genesis and addrbook
