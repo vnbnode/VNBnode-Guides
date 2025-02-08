@@ -79,7 +79,10 @@ Use [Termius](https://termius.com/download/windows), scp... to download the **va
 cat ./validator_keys/deposit_data-xxxx.json
 ```
 _Copy to your local machine for uploading._
-
+### Add new node into existing machine
+```
+./2_add_validator.sh
+```
 ### Shutdown & remove node
 ```bash
 pkill dill-node
