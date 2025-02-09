@@ -54,7 +54,7 @@ Paste The private password here
 ```
 Pull the latest Pell Node image:
 ```
-docker pull docker.io/pellnetwork/pellnode:v1.1.6
+docker pull docker.io/pellnetwork/pellnode:v1.2.1
 ```
 ## Run node
 change "Yournode"
@@ -66,7 +66,7 @@ docker run -d --name=pell-validator \
     -p 26660:26660 \
     -d \
     --entrypoint /usr/local/bin/start-pellcored.sh \
-    docker.io/pellnetwork/pellnode:v1.1.6
+    docker.io/pellnetwork/pellnode:v1.2.1
 ```
 ## Enter the Docker container environment
 ```
