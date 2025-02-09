@@ -147,7 +147,7 @@ chmod +x /root/.pellcored/cosmovisor/upgrades/$UPGRADE_NAME/bin/pellcored
 docker rmi <image_name_or_id>
 ```
 ```
-docker pull docker.io/pellnetwork/pellnode:v1.1.6
+docker pull docker.io/pellnetwork/pellnode:v1.2.1
 ```
 ```
 docker run -d --name=pell-validator \
@@ -157,7 +157,7 @@ docker run -d --name=pell-validator \
     -p 26660:26660 \
     -d \
     --entrypoint /usr/local/bin/start-pellcored.sh \
-    docker.io/pellnetwork/pellnode:v1.1.6
+    docker.io/pellnetwork/pellnode:v1.2.1
 ```
 ```
 docker start pell-validator
