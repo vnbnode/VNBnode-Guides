@@ -57,11 +57,11 @@ Pull the latest Pell Node image:
 docker pull docker.io/pellnetwork/pellnode:v1.2.1
 ```
 ## Run node
-change "Yournode"
+change "VNBnode"
 ```
 docker run -d --name=pell-validator \
     -v /root/.pellcored:/root/.pellcored \
-    -e MONIKER="Yournode" \
+    -e MONIKER="VNBnode" \
     -p 26656:26656 \
     -p 26660:26660 \
     -d \
