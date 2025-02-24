@@ -16,8 +16,7 @@
 
 ## Set up the node (auto)
 ```bash
-curl -sO https://raw.githubusercontent.com/DillLabs/launch-dill-node/main/dill.sh  && chmod +x dill.sh && ./dill.sh
-
+curl -sO https://raw.githubusercontent.com/DillLabs/launch-dill-node/main/dill.sh && chmod +x dill.sh && ./dill.sh
 ```
 ### 1. There are two options:
 **1. Launch a new dill node:** Start a new Dill node. Choose this option if you want to create and run a new node from scratch.
@@ -58,17 +57,11 @@ _If you have completed all the steps correctly, you will see an output like this
 ### 5. Verify Node is Running
 _Run the following command to check if the node is up and running:_
 ```bash
-tail -f $HOME/dill/light_node/logs/dill.log
-```
-```bash
-curl -s localhost:3500/eth/v1/beacon/headers | jq
+cd $HOME/dill
+./health_check.sh -v
 ```
 ```bash
 ps -ef | grep dill
-```
-```bash
-cd $HOME/dill
-./health_check.sh -v
 ```
 ### 6. Staking
 
