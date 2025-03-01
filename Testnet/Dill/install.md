@@ -78,10 +78,14 @@ _Copy to your local machine for uploading._
 ```
 ### Shutdown & remove node
 ```bash
+cd $HOME/dill
+./stop_dill_node.sh
+```
+```bash
 pkill dill-node
 ```
 ```bash
-cd $Home
+cd $HOME
 rm -rf dill
 ```
 ## Thank to support VNBnode.
