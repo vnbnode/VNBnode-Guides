@@ -1,4 +1,4 @@
-# T3rn v2
+# T3RN v2
 
 # Download latest release
 ```
