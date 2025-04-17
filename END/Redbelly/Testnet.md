@@ -107,7 +107,25 @@ tail -f /var/log/redbelly/rbn_logs/rbbc_logs.log
 ```
 tail -f  /var/log/redbelly/rbn_logs/rbbc_logs_error.log
 ```
-# Part 3: Trouble Shooting
+# Part 3: Upgrade
+### Copy new binary file rbn-installer.run
+### Allow access
+```
+chmod +x rbn-installer.run
+```
+### Confirm Installer Version
+```
+sudo ./rbn-installer.run -- --version  
+```
+### Install new version
+```
+sudo ./rbn-installer.run
+```
+### Check version
+```
+sudo /opt/redbelly/rbbc --version 
+```
+# Part 4: Trouble Shooting
 
 ### Stop
 ```
