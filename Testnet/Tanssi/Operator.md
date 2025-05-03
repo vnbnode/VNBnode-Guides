@@ -108,6 +108,7 @@ https://sepolia.etherscan.io/address/0x6F75a4ffF97326A00e52662d82EA4FdE86a2C548#
 3. Connect Wallet
 * Click **“Connect to Web3”**
 * Select **MetaMask** (make sure MetaMask is on **Sepolia network**)
+
 ✅ Confirm connection.
 3. Register Operator
 ![image](https://github.com/user-attachments/assets/13f7c621-3802-44be-b805-0cfedee022c3)
@@ -126,6 +127,7 @@ https://sepolia.etherscan.io/address/0x6F75a4ffF97326A00e52662d82EA4FdE86a2C548#
 ### **8. Opt In to Tanssi (via MetaMask & Etherscan)**
 1. Opt In to Vault
 👉 Open contract:
+
 https://sepolia.etherscan.io/address/0x95CC0a052ae33941877c9619835A233D21D57351#writeContract
 ![image](https://github.com/user-attachments/assets/44d564d7-6fb6-41a2-9772-87f62f8010a4)
 
@@ -139,6 +141,7 @@ https://sepolia.etherscan.io/address/0x95CC0a052ae33941877c9619835A233D21D57351#
 Done ✅
 3. Check Opt In Status
 👉 Open contract:
+
 https://sepolia.etherscan.io/address/0x95CC0a052ae33941877c9619835A233D21D57351#readContract
 ![image](https://github.com/user-attachments/assets/6622c367-eff5-4a3d-aa2a-d8f3cae3680a)
 
@@ -151,6 +154,7 @@ https://sepolia.etherscan.io/address/0x95CC0a052ae33941877c9619835A233D21D57351#
 
 4. Opt In to Tanssi Network
 👉 Open contract:
+
 https://sepolia.etherscan.io/address/0x58973d16FFA900D11fC22e5e2B6840d9f7e13401#writeContract
 
 ✅ **Connect Web3** (MetaMask, Sepolia)
@@ -164,6 +168,7 @@ Done ✅
 6. Check the Registration Status:
 
 👉 Open contract:
+
 https://sepolia.etherscan.io/address/0x58973d16FFA900D11fC22e5e2B6840d9f7e13401#readContract
 ![image](https://github.com/user-attachments/assets/7b147a76-4aa4-4c25-ae8b-c68ba1bb7af4)
 
@@ -183,6 +188,7 @@ https://stake-sepolia.testnet.fi/
 ✅ Confirm transaction in MetaMask
 3. Approve Vault to Spend stETH
 👉 Open Collateral contract on Etherscan:
+
 https://sepolia.etherscan.io/address/0x3e3FE7dBc6B4C189E7128855dD526361c49b40Af#writeContract
 ![image](https://github.com/user-attachments/assets/0b6274d4-14df-4af0-8e69-d00bde67599a)
 
@@ -196,6 +202,7 @@ https://sepolia.etherscan.io/address/0x3e3FE7dBc6B4C189E7128855dD526361c49b40Af#
 
 4. Deposit to Vault
 👉 Open Vault contract on Etherscan:
+
 https://sepolia.etherscan.io/address/0xB94f8852443FB4faB18363D22a45cA64a8CF4482#writeProxyContract
 ![Screenshot 2025-05-03 142151](https://github.com/user-attachments/assets/d9120ee7-8201-4f8c-9730-147850d9db57)
 
