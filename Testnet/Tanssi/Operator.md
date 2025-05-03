@@ -92,6 +92,7 @@ Copy the **"result"** hex string.
 6. Keys: paste the session keys
 7. Proof: `0x`
 8. Submit the transaction → sign with wallet
+
 ✅ **Verify mapping:**
 1. Go to **Developer → Chain state**
 2. Module: **session**
