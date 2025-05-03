@@ -84,7 +84,7 @@ curl http://127.0.0.1:9944 -H "Content-Type:application/json" -d '{"jsonrpc":"2.
 Copy the **"result"** hex string.
 ✅ **Map keys to your account:**
 ![image](https://github.com/user-attachments/assets/26b2fcee-53f9-40d0-9a97-5c9b5489c99d)
-1. Go to **[https://polkadot.js.org/apps](https://polkadot.js.org/apps/?rpc=wss://dancelight.tanssi-api.network#/extrinsics**
+1. Go to https://polkadot.js.org/apps/?rpc=wss://dancelight.tanssi-api.network#/extrinsics
 2. Navigate to **Developer → Extrinsics**
 3. Select your validator account
 4. Module: **session**
