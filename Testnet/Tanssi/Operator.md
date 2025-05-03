@@ -128,6 +128,7 @@ https://sepolia.etherscan.io/address/0x6F75a4ffF97326A00e52662d82EA4FdE86a2C548#
 → Returns **true** = registration successful.
 ### **8. Opt In to Tanssi (via MetaMask & Etherscan)**
 1. Opt In to Vault
+2. 
 👉 Open contract:
 
 https://sepolia.etherscan.io/address/0x95CC0a052ae33941877c9619835A233D21D57351#writeContract
@@ -143,7 +144,9 @@ https://sepolia.etherscan.io/address/0x95CC0a052ae33941877c9619835A233D21D57351#
 ✅ Click **“Write”** → confirm transaction in MetaMask
 
 Done ✅
+
 3. Check Opt In Status
+
 👉 Open contract:
 
 https://sepolia.etherscan.io/address/0x95CC0a052ae33941877c9619835A233D21D57351#readContract
@@ -158,6 +161,7 @@ https://sepolia.etherscan.io/address/0x95CC0a052ae33941877c9619835A233D21D57351#
 ✅ Result **true** = Opted in
 
 4. Opt In to Tanssi Network
+
 👉 Open contract:
 
 https://sepolia.etherscan.io/address/0x58973d16FFA900D11fC22e5e2B6840d9f7e13401#writeContract
@@ -172,6 +176,7 @@ https://sepolia.etherscan.io/address/0x58973d16FFA900D11fC22e5e2B6840d9f7e13401#
 ✅ Click **“Write”** → confirm transaction in MetaMask
 
 Done ✅
+
 6. Check the Registration Status:
 
 👉 Open contract:
@@ -190,6 +195,7 @@ https://sepolia.etherscan.io/address/0x58973d16FFA900D11fC22e5e2B6840d9f7e13401#
 ### **9. Deposit**
 1. Wrap ETH to stETH
 👉 Go to Lido Sepolia (testnet):
+
 https://stake-sepolia.testnet.fi/
 
 ✅ Swap desired amount of Sepolia ETH → stETH
@@ -205,6 +211,7 @@ https://sepolia.etherscan.io/address/0x3e3FE7dBc6B4C189E7128855dD526361c49b40Af#
 ✅ Connect Web3
 
 ✅ Find approve(address spender, uint256 amount)
+
 → spender:
 `0xB94f8852443FB4faB18363D22a45cA64a8CF4482`
 → amount: (your deposit amount in wei)
