@@ -102,6 +102,7 @@ Copy the **"result"** hex string.
 6. Click **+** → your validator account should be displayed.
 ### **7. Register in Symbiotic (via MetaMask & Etherscan)**
 1. Go to Contract (Sepolia)
+
 https://sepolia.etherscan.io/address/0x6F75a4ffF97326A00e52662d82EA4FdE86a2C548#writeContract
 ![image](https://github.com/user-attachments/assets/67970c09-03c6-4ffd-b8a9-feb4b074a44e)
 3. Connect Wallet
