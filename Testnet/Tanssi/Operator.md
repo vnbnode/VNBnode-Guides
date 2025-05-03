@@ -128,7 +128,7 @@ https://sepolia.etherscan.io/address/0x6F75a4ffF97326A00e52662d82EA4FdE86a2C548#
 → Returns **true** = registration successful.
 ### **8. Opt In to Tanssi (via MetaMask & Etherscan)**
 1. Opt In to Vault
-2. 
+
 👉 Open contract:
 
 https://sepolia.etherscan.io/address/0x95CC0a052ae33941877c9619835A233D21D57351#writeContract
@@ -145,7 +145,7 @@ https://sepolia.etherscan.io/address/0x95CC0a052ae33941877c9619835A233D21D57351#
 
 Done ✅
 
-3. Check Opt In Status
+2. Check Opt In Status
 
 👉 Open contract:
 
@@ -160,7 +160,7 @@ https://sepolia.etherscan.io/address/0x95CC0a052ae33941877c9619835A233D21D57351#
 
 ✅ Result **true** = Opted in
 
-4. Opt In to Tanssi Network
+3. Opt In to Tanssi Network
 
 👉 Open contract:
 
@@ -177,7 +177,7 @@ https://sepolia.etherscan.io/address/0x58973d16FFA900D11fC22e5e2B6840d9f7e13401#
 
 Done ✅
 
-6. Check the Registration Status:
+4. Check the Registration Status:
 
 👉 Open contract:
 
@@ -202,7 +202,7 @@ https://stake-sepolia.testnet.fi/
 
 ✅ Confirm transaction in MetaMask
 
-3. Approve Vault to Spend stETH
+2. Approve Vault to Spend stETH
 👉 Open Collateral contract on Etherscan:
 
 https://sepolia.etherscan.io/address/0x3e3FE7dBc6B4C189E7128855dD526361c49b40Af#writeContract
@@ -218,7 +218,7 @@ https://sepolia.etherscan.io/address/0x3e3FE7dBc6B4C189E7128855dD526361c49b40Af#
 
 ✅ Click “Write”, confirm in MetaMask
 
-4. Deposit to Vault
+3. Deposit to Vault
 👉 Open Vault contract on Etherscan:
 
 https://sepolia.etherscan.io/address/0xB94f8852443FB4faB18363D22a45cA64a8CF4482#writeProxyContract
