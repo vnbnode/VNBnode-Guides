@@ -9,8 +9,6 @@
 | Network   | 1 Gbps                                         |
 | Open Port | TCP 30333                                      |
 
-✅ Disable Hyperthreading/SMT.
-
 ### **2. Install & Prepare**
 
 ```bash
