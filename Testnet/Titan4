@@ -1,0 +1,1 @@
+cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/refs/heads/main/Testnet/Titan4/setup.sh)
