@@ -293,7 +293,7 @@ install_prover() {
   load_env_or_prompt || return 1
   generate_compose
 
-  cd "$DATA_DIR"
+  cd "$DATA_DIR" || { echo "❌ Không thể cd vào $DATA_DIR"; return 1; }
 
   echo "🧱 Dừng các container cũ (nếu có)..."
   $(compose_cmd) down
@@ -307,7 +307,12 @@ install_prover() {
 view_logs() {
   echo "📜 Running Aztec Prover Logs..."
 
-  [ -f "$DEFAULT_DATA_DIR/.env" ] && source "$DEFAULT_DATA_DIR/.env"
+  # Load đúng từ .env
+  ENV_PATH="${DEFAULT_DATA_DIR}/.env"
+  [ -f "$ENV_PATH" ] && source "$ENV_PATH"
+
+  DATA_DIR="${PROVER_DIR:-$DEFAULT_DATA_DIR}"
+
   if [ -z "$DATA_DIR" ] || [ ! -d "$DATA_DIR" ]; then
     echo "❌ Không tìm thấy thư mục DATA_DIR: $DATA_DIR"
     return
@@ -324,7 +329,8 @@ view_logs() {
     return
   fi
 
-  if command -v docker-compose &>/dev/null; then CMD="docker-compose"; else CMD="docker compose"; fi
+  # Xác định docker compose command
+  CMD=$(compose_cmd)
 
   while true; do
     OPTIONS=""
@@ -353,7 +359,6 @@ view_logs() {
           wait
         )
         ;;
-
       "🧑‍🚀 Logs của các agent_*")
         (
           colors=(31 32 33 34 35 36 91 92 93 94)
@@ -370,13 +375,10 @@ view_logs() {
           wait
         )
         ;;
-
       "🧾 View all logs")
         $CMD -f "$DATA_DIR/docker-compose.yml" logs --tail=100 -f
         ;;
     esac
-
-    # Sau mỗi lần xem logs xong (Ctrl+C), quay lại menu chọn kiểu logs
   done
 }
 
@@ -385,8 +387,12 @@ delete_prover() {
   CHOICE=$(printf "✅ Có\n❌ Không" | fzf --prompt="👉 Chọn: " --height=6 --border --reverse)
 
   if [[ "$CHOICE" == "✅ Có" ]]; then
-    source "$DEFAULT_DATA_DIR/.env" 2>/dev/null
-    DATA_DIR=${DATA_DIR:-$DEFAULT_DATA_DIR}
+    # Ưu tiên PROVER_DIR từ .env nếu có, ngược lại dùng DEFAULT_DATA_DIR
+    ENV_PATH="${DEFAULT_DATA_DIR}/.env"
+    [ -f "$ENV_PATH" ] && source "$ENV_PATH"
+
+    DATA_DIR="${PROVER_DIR:-$DEFAULT_DATA_DIR}"
+
     if [ -d "$DATA_DIR" ]; then
       cd "$DATA_DIR" && $(compose_cmd) down -v
       echo "🧹 Đã xoá container Prover."
@@ -405,17 +411,19 @@ reset_prover() {
   if [[ "$CHOICE" == "✅ Có, reset toàn bộ" ]]; then
     delete_prover
 
-    source "$DEFAULT_DATA_DIR/.env" 2>/dev/null
-    DATA_DIR=${DATA_DIR:-$DEFAULT_DATA_DIR}
+    ENV_PATH="${DEFAULT_DATA_DIR}/.env"
+    [ -f "$ENV_PATH" ] && source "$ENV_PATH"
 
-if [ -d "$DATA_DIR" ]; then
-  echo "🧹 Đang xoá thư mục /node và /broker trong $DATA_DIR"
-  rm -rf "$DATA_DIR/node"
-  rm -rf "$DATA_DIR/broker"
+    DATA_DIR="${PROVER_DIR:-$DEFAULT_DATA_DIR}"
 
-      echo "✅ Reset hoàn tất. Đã giữ lại các file .env và docker-compose.yml trong $DEFAULT_DATA_DIR"
+    if [ -d "$DATA_DIR" ]; then
+      echo "🧹 Đang xoá thư mục /node và /broker trong $DATA_DIR"
+      rm -rf "$DATA_DIR/node"
+      rm -rf "$DATA_DIR/broker"
+
+      echo "✅ Reset hoàn tất. Đã giữ lại các file .env và docker-compose.yml trong $DATA_DIR"
     else
-      echo "⚠️ Thư mục dữ liệu không tồn tại: $DEFAULT_DATA_DIR (bỏ qua xoá)"
+      echo "⚠️ Thư mục dữ liệu không tồn tại: $DATA_DIR (bỏ qua xoá)"
     fi
   else
     echo "❎ Đã huỷ thao tác reset."
