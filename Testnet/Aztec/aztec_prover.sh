@@ -10,7 +10,8 @@ DEFAULT_DATA_DIR="/root/aztec-prover"
 DEFAULT_P2P_PORT="40400"
 DEFAULT_API_PORT="8080"
 
-sleep 1 && curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/Logo/logo.sh | bash && sleep 3
+# Logo
+curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/Logo/logo.sh | bash && sleep 3
 
 install_dependencies() {
   echo "🔧 Đang cài đặt các gói cần thiết..."
