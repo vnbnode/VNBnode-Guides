@@ -13,6 +13,10 @@ DEFAULT_API_PORT="8080"
 # Logo
 curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/Logo/logo.sh | bash && sleep 3
 
+# 🚀 Cài đặt các gói cần thiết
+install_dependencies
+check_and_install_docker
+
 install_dependencies() {
   echo "🔧 Đang cài đặt các gói cần thiết..."
   apt-get update && apt-get upgrade -y
@@ -48,10 +52,6 @@ check_and_install_docker() {
     echo "✅ Docker Compose đã sẵn sàng."
   fi
 }
-
-# 🚀 Tự động cài sau khi hiển thị logo
-install_dependencies
-check_and_install_docker
 
 load_env_or_prompt() {
 
@@ -293,8 +293,7 @@ EOF
 }
 
 install_prover() {
-  load_env_or_prompt || return
-  generate_compose
+  generate_compose # ✅ Gọi sau khi đã có .env
 
   echo ""
   echo "🚀 Khởi động container..."
