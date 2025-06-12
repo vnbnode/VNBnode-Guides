@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Logo
-sleep 1 && curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/Logo/logo.sh | bash && sleep 3
+curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/Logo/logo.sh | bash && sleep 3
 
 DEFAULT_LISTEN_PORT=1234
 
