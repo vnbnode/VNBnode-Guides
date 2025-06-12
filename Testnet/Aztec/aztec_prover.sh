@@ -54,7 +54,6 @@ check_and_install_docker() {
 }
 
 load_env_or_prompt() {
-
   ENV_FILE="$DEFAULT_DATA_DIR/.env"
   WAN_IP=$(curl -s ifconfig.me)
 
@@ -123,7 +122,6 @@ load_env_or_prompt() {
         elif [[ -n "$selected" ]]; then
           key=$(echo "$selected" | awk -F '[ =]' '{print $2}')
 
-          # Tìm giá trị cũ
           old_val=""
           for i in "${!env_lines[@]}"; do
             if [[ "${env_lines[$i]%%=*}" == "$key" ]]; then
@@ -178,6 +176,7 @@ load_env_or_prompt() {
     read -p "📂 Nhập thư mục lưu dữ liệu [mặc định: $DEFAULT_DATA_DIR]: " INPUT_DIR
     DATA_DIR="${INPUT_DIR:-$DEFAULT_DATA_DIR}"
     mkdir -p "$DATA_DIR"
+    ENV_FILE="$DATA_DIR/.env"   # 🔧 SỬA TẠI ĐÂY: Cập nhật lại ENV_FILE
 
     env_lines=(
       "IMAGE=$IMAGE"
