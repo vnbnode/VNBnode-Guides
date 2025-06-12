@@ -409,7 +409,7 @@ reset_prover() {
     DATA_DIR=${DATA_DIR:-$DEFAULT_DATA_DIR}
 
 if [ -d "$DATA_DIR" ]; then
-  echo "🧹 Đang xoá thư mục node/ và broker/ trong $DATA_DIR"
+  echo "🧹 Đang xoá thư mục /node và /broker trong $DATA_DIR"
   rm -rf "$DATA_DIR/node"
   rm -rf "$DATA_DIR/broker"
 
