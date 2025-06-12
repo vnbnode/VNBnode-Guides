@@ -11,7 +11,7 @@ DEFAULT_P2P_PORT="40400"
 DEFAULT_API_PORT="8080"
 
 # Logo
-sleep 1 && curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/Logo/logo.sh | bash && sleep 3
+(sleep 1 && curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/Logo/logo.sh | bash; sleep 3)
 
 install_dependencies() {
   echo "🔧 Đang cài đặt các gói cần thiết..."
