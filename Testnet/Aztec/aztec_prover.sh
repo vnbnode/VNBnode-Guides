@@ -215,6 +215,7 @@ load_env_or_prompt() {
 }
 
 generate_compose() {
+  mkdir -p "$DATA_DIR"  # 🛠️ Đảm bảo thư mục tồn tại trước
   COMPOSE_FILE="$DATA_DIR/docker-compose.yml"
 
   cat > "$COMPOSE_FILE" <<EOF
@@ -297,7 +298,12 @@ install_prover() {
 
   echo ""
   echo "🚀 Khởi động container..."
-  cd "$DATA_DIR"
+
+  if ! cd "$DATA_DIR"; then
+    echo "❌ Không thể truy cập thư mục $DATA_DIR"
+    return 1
+  fi
+
   $(compose_cmd) up -d
 
   echo ""
