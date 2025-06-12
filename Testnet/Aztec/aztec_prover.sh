@@ -67,7 +67,7 @@ load_env_or_prompt() {
     ["API_PORT"]="🧩"
     ["RPC_SEPOLIA"]="🛰️ "
     ["BEACON_SEPOLIA"]="📡"
-    ["PRIVATE_KEY"]="🔐"
+    ["PRIVATE_KEY_BASE64"]="🔐"
     ["PROVER_ID"]="🪪 "
     ["AGENT_COUNT"]="👷"
     ["DATA_DIR"]="📂"
@@ -102,11 +102,7 @@ load_env_or_prompt() {
 
     echo ""
     CHOICE=$(printf "✅ Có\n❌ Không" | fzf --prompt="🔁 Bạn có muốn chỉnh sửa các biến môi trường? " --height=10 --reverse)
-    fzf_status=$?
-    if [[ $fzf_status -ne 0 ]]; then
-      echo "🔙 Bạn đã huỷ. Quay lại menu chính..."
-      return 1
-    fi
+    [[ $? -ne 0 ]] && echo "🔙 Bạn đã huỷ. Quay lại menu chính..." && return 1
 
     if [[ "$CHOICE" == "✅ Có" ]]; then
       while true; do
@@ -121,16 +117,12 @@ load_env_or_prompt() {
         done
 
         selected=$(printf "%s\n" "${display_lines[@]}" "💾 Lưu và tiếp tục" | fzf --prompt="🔧 Chọn biến: " --height=40% --reverse)
-        fzf_status=$?
-        if [[ $fzf_status -ne 0 ]]; then
-          echo "🔙 Bạn đã huỷ chọn biến, quay lại menu chính..."
-          return 1
-        fi
+        [[ $? -ne 0 ]] && echo "🔙 Bạn đã huỷ chọn biến, quay lại menu chính..." && return 1
 
         if [[ "$selected" == "💾 Lưu và tiếp tục" ]]; then
           break
         elif [[ -n "$selected" ]]; then
-          key=$(echo "$selected" | awk '{print $2}' | cut -d'=' -f1)
+          key=$(echo "$selected" | awk -F '[ =]' '{print $2}')
 
           # Tìm giá trị cũ
           old_val=""
@@ -141,20 +133,13 @@ load_env_or_prompt() {
             fi
           done
 
-          prompt_val="********"
-          [[ "$key" != "PRIVATE_KEY_BASE64" ]] && prompt_val="$old_val"
-
-          new_val=$(printf "" | fzf --prompt="🔧 Nhập giá trị mới cho $key (hiện tại: $prompt_val): " --print-query --height=10 --border --reverse)
-          fzf_status=$?
-          if [[ $fzf_status -ne 0 ]]; then
-            echo "🔙 Bạn đã huỷ nhập giá trị, quay lại chọn biến..."
-            continue
-          fi
-
-          new_val="${new_val:-$old_val}"
-
           if [[ "$key" == "PRIVATE_KEY_BASE64" ]]; then
-            new_val=$(echo -n "$new_val" | base64)
+            read -s -p "🔐 Nhập giá trị mới cho $key (sẽ mã hóa base64): " new_input
+            echo ""
+            new_val=$(echo -n "$new_input" | base64)
+          else
+            read -p "🔧 Nhập giá trị mới cho $key (hiện tại: $old_val): " new_val
+            new_val="${new_val:-$old_val}"
           fi
 
           for i in "${!env_lines[@]}"; do
@@ -210,24 +195,24 @@ load_env_or_prompt() {
     )
   fi
 
-echo ""
+  echo ""
 
-# Xoá các bản sao lưu cũ, giữ lại bản mới nhất sau khi sao lưu
-latest_backup() {
-  ls -1t "$ENV_FILE".bak_* 2>/dev/null | tail -n +2 | xargs -r rm -f
-}
+  # Xoá các bản sao lưu cũ, giữ lại bản mới nhất
+  latest_backup() {
+    ls -1t "$ENV_FILE".bak_* 2>/dev/null | tail -n +2 | xargs -r rm -f
+  }
 
-# Sao lưu .env nếu tồn tại
-if [ -f "$ENV_FILE" ]; then
-  BACKUP_NAME="$ENV_FILE.bak_$(date +%Y%m%d_%H%M%S)"
-  cp "$ENV_FILE" "$BACKUP_NAME"
-  echo "🛡️ Đã sao lưu .env thành: $BACKUP_NAME"
-  latest_backup
-fi
+  # Sao lưu nếu .env đã tồn tại
+  if [ -f "$ENV_FILE" ]; then
+    BACKUP_NAME="$ENV_FILE.bak_$(date +%Y%m%d_%H%M%S)"
+    cp "$ENV_FILE" "$BACKUP_NAME"
+    echo "🛡️ Đã sao lưu .env thành: $BACKUP_NAME"
+    latest_backup
+  fi
 
-echo "💾 Đang ghi tệp .env..."
-printf "%s\n" "${env_lines[@]}" > "$ENV_FILE"
-source "$ENV_FILE"
+  echo "💾 Đang ghi tệp .env..."
+  printf "%s\n" "${env_lines[@]}" > "$ENV_FILE"
+  source "$ENV_FILE"
 }
 
 generate_compose() {
