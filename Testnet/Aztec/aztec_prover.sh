@@ -404,10 +404,16 @@ reset_prover() {
 
   if [[ "$CHOICE" == "✅ Có, reset toàn bộ" ]]; then
     delete_prover
-    if [ -d "$DEFAULT_DATA_DIR" ]; then
-      echo "🗑️ Đang xoá dữ liệu tại: $DEFAULT_DATA_DIR"
-      rm -rf "$DEFAULT_DATA_DIR"
-      echo "✅ Reset hoàn tất."
+
+    source "$DEFAULT_DATA_DIR/.env" 2>/dev/null
+    DATA_DIR=${DATA_DIR:-$DEFAULT_DATA_DIR}
+
+if [ -d "$DATA_DIR" ]; then
+  echo "🧹 Đang xoá thư mục node/ và broker/ trong $DATA_DIR"
+  rm -rf "$DATA_DIR/node"
+  rm -rf "$DATA_DIR/broker"
+
+      echo "✅ Reset hoàn tất. Đã giữ lại các file .env và docker-compose.yml trong $DEFAULT_DATA_DIR"
     else
       echo "⚠️ Thư mục dữ liệu không tồn tại: $DEFAULT_DATA_DIR (bỏ qua xoá)"
     fi
