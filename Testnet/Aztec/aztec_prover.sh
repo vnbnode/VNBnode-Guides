@@ -57,6 +57,7 @@ load_env_or_prompt() {
   ENV_FILE="$DEFAULT_DATA_DIR/.env"
   WAN_IP=$(curl -s ifconfig.me)
 
+  # Icon hiển thị cho từng biến
   declare -A ICONS=(
     ["IMAGE"]="🖼️ "
     ["NETWORK"]="🪐"
@@ -70,6 +71,42 @@ load_env_or_prompt() {
     ["AGENT_COUNT"]="👷"
     ["DATA_DIR"]="📂"
   )
+
+  # Hàm kiểm tra chuỗi ASCII
+  is_ascii() {
+    LC_ALL=C grep -q '^[[:print:]]*$' <<< "$1"
+  }
+
+  prompt_ascii() {
+    local prompt="$1"
+    local default="$2"
+    local input=""
+    while true; do
+      read -p "$prompt" input
+      input="${input:-$default}"
+      if is_ascii "$input"; then
+        echo "$input"
+        break
+      else
+        echo "❌ Giá trị chứa ký tự không hợp lệ (có thể là dấu tiếng Việt hoặc ký tự đặc biệt). Vui lòng nhập lại!"
+      fi
+    done
+  }
+
+  prompt_hidden_ascii() {
+    local prompt="$1"
+    local input=""
+    while true; do
+      read -s -p "$prompt" input
+      echo ""
+      if is_ascii "$input"; then
+        echo "$input"
+        break
+      else
+        echo "❌ Giá trị chứa ký tự không hợp lệ (có thể là dấu tiếng Việt hoặc ký tự đặc biệt). Vui lòng nhập lại!"
+      fi
+    done
+  }
 
   if [ -f "$ENV_FILE" ]; then
     source "$ENV_FILE"
@@ -131,12 +168,9 @@ load_env_or_prompt() {
           done
 
           if [[ "$key" == "PRIVATE_KEY" ]]; then
-            read -s -p "🔐 Nhập giá trị mới cho $key: " new_input
-            echo ""
-            new_val="$new_input"
+            new_val=$(prompt_hidden_ascii "🔐 Nhập giá trị mới cho $key: ")
           else
-            read -p "🔧 Nhập giá trị mới cho $key (hiện tại: $old_val): " new_val
-            new_val="${new_val:-$old_val}"
+            new_val=$(prompt_ascii "🔧 Nhập giá trị mới cho $key (hiện tại: $old_val): " "$old_val")
           fi
 
           for i in "${!env_lines[@]}"; do
@@ -151,28 +185,17 @@ load_env_or_prompt() {
   else
     echo "📄 Tạo file .env mới..."
 
-    read -p "🖼️ Nhập Docker image (mặc định: aztecprotocol/aztec:0.87.8): " IMAGE
-    IMAGE="${IMAGE:-aztecprotocol/aztec:0.87.8}"
-
-    read -p "🪐 Nhập network (mặc định: alpha-testnet): " NETWORK
-    NETWORK="${NETWORK:-alpha-testnet}"
-
-    read -p "🔍 Nhập Sepolia RPC URL: " RPC_SEPOLIA
-    read -p "🔍 Nhập Beacon API URL: " BEACON_SEPOLIA
-    read -s -p "🔐 Nhập Publisher Private Key: " PRIVATE_KEY
-    echo ""
-    read -p "💼 Nhập Prover ID: " PROVER_ID
-    read -p "🔢 Nhập số agent (mặc định: 1): " AGENT_COUNT
-    AGENT_COUNT="${AGENT_COUNT:-1}"
-
-    read -p "🏠 Nhập P2P Port [mặc định: $DEFAULT_P2P_PORT]: " P2P_PORT
-    P2P_PORT="${P2P_PORT:-$DEFAULT_P2P_PORT}"
-
-    read -p "🏠 Nhập API Port [mặc định: $DEFAULT_API_PORT]: " API_PORT
-    API_PORT="${API_PORT:-$DEFAULT_API_PORT}"
-
-    read -p "📂 Nhập thư mục lưu dữ liệu [mặc định: $DEFAULT_DATA_DIR]: " INPUT_DIR
-    DATA_DIR="${INPUT_DIR:-$DEFAULT_DATA_DIR}"
+    IMAGE=$(prompt_ascii "🖼️ Nhập Docker image (mặc định: aztecprotocol/aztec:0.87.8): " "aztecprotocol/aztec:0.87.8")
+    NETWORK=$(prompt_ascii "🪐 Nhập network (mặc định: alpha-testnet): " "alpha-testnet")
+    RPC_SEPOLIA=$(prompt_ascii "🔍 Nhập Sepolia RPC URL: " "")
+    BEACON_SEPOLIA=$(prompt_ascii "🔍 Nhập Beacon API URL: " "")
+    PRIVATE_KEY=$(prompt_hidden_ascii "🔐 Nhập Publisher Private Key: ")
+    PROVER_ID=$(prompt_ascii "💼 Nhập Prover ID: " "")
+    AGENT_COUNT=$(prompt_ascii "🔢 Nhập số agent (mặc định: 1): " "1")
+    P2P_PORT=$(prompt_ascii "🏠 Nhập P2P Port [mặc định: $DEFAULT_P2P_PORT]: " "$DEFAULT_P2P_PORT")
+    API_PORT=$(prompt_ascii "🏠 Nhập API Port [mặc định: $DEFAULT_API_PORT]: " "$DEFAULT_API_PORT")
+    INPUT_DIR=$(prompt_ascii "📂 Nhập thư mục lưu dữ liệu [mặc định: $DEFAULT_DATA_DIR]: " "$DEFAULT_DATA_DIR")
+    DATA_DIR="$INPUT_DIR"
     mkdir -p "$DATA_DIR"
     ENV_FILE="$DATA_DIR/.env"
 
