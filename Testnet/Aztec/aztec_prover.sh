@@ -225,6 +225,7 @@ services:
   prover_node:
     image: $IMAGE
     container_name: prover_node
+    restart: unless-stopped
     entrypoint: >
       sh -c 'node --no-warnings /usr/src/yarn-project/aztec/dest/bin/index.js start
       --prover-node --archiver --network $NETWORK'
@@ -256,6 +257,7 @@ services:
   broker:
     image: $IMAGE
     container_name: broker
+    restart: unless-stopped
     entrypoint: >
       sh -c 'node --no-warnings /usr/src/yarn-project/aztec/dest/bin/index.js start
       --prover-broker --network $NETWORK'
@@ -275,6 +277,7 @@ EOF
   agent_$i:
     image: $IMAGE
     container_name: agent_$i
+    restart: unless-stopped
     entrypoint: >
       sh -c 'node --no-warnings /usr/src/yarn-project/aztec/dest/bin/index.js start
       --prover-agent --network $NETWORK'
@@ -286,7 +289,6 @@ EOF
       PROVER_AGENT_POLL_INTERVAL_MS: "10000"
     depends_on:
       - broker
-    restart: unless-stopped
 EOF
   done
 }
