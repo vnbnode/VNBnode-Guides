@@ -13,10 +13,6 @@ DEFAULT_API_PORT="8080"
 # Logo
 curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/Logo/logo.sh | bash && sleep 3
 
-# 🚀 Cài đặt các gói cần thiết
-install_dependencies
-check_and_install_docker
-
 install_dependencies() {
   echo "🔧 Đang cài đặt các gói cần thiết..."
   apt-get update && apt-get upgrade -y
@@ -41,7 +37,7 @@ compose_cmd() {
 check_and_install_docker() {
   if ! compose_cmd &>/dev/null; then
     echo "🔧 Docker Compose chưa có. Đang cài đặt..."
-    source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/docker-install.sh)
+    bash <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/docker-install.sh)
 
     # Kiểm tra lại sau khi cài
     if ! compose_cmd &>/dev/null; then
@@ -52,6 +48,10 @@ check_and_install_docker() {
     echo "✅ Docker Compose đã sẵn sàng."
   fi
 }
+
+# 🚀 Cài đặt các gói cần thiết
+install_dependencies
+check_and_install_docker
 
 load_env_or_prompt() {
   ENV_FILE="$DEFAULT_DATA_DIR/.env"
@@ -65,7 +65,7 @@ load_env_or_prompt() {
     ["API_PORT"]="🧩"
     ["RPC_SEPOLIA"]="🛰️ "
     ["BEACON_SEPOLIA"]="📡"
-    ["PRIVATE_KEY_BASE64"]="🔐"
+    ["PRIVATE_KEY"]="🔐"
     ["PROVER_ID"]="🪪 "
     ["AGENT_COUNT"]="👷"
     ["DATA_DIR"]="📂"
@@ -84,7 +84,7 @@ load_env_or_prompt() {
       "API_PORT=$API_PORT"
       "RPC_SEPOLIA=$RPC_SEPOLIA"
       "BEACON_SEPOLIA=$BEACON_SEPOLIA"
-      "PRIVATE_KEY_BASE64=$PRIVATE_KEY_BASE64"
+      "PRIVATE_KEY=$PRIVATE_KEY"
       "PROVER_ID=$PROVER_ID"
       "AGENT_COUNT=$AGENT_COUNT"
       "DATA_DIR=$DATA_DIR"
@@ -94,7 +94,7 @@ load_env_or_prompt() {
     for i in "${!env_lines[@]}"; do
       key="${env_lines[$i]%%=*}"
       val="${env_lines[$i]#*=}"
-      [[ "$key" == "PRIVATE_KEY_BASE64" ]] && val="********"
+      [[ "$key" == "PRIVATE_KEY" ]] && val="********"
       printf "%2d. %-3s %-20s = %s\n" "$((i+1))" "${ICONS[$key]}" "$key" "$val"
     done
 
@@ -110,7 +110,7 @@ load_env_or_prompt() {
         for line in "${env_lines[@]}"; do
           key="${line%%=*}"
           val="${line#*=}"
-          [[ "$key" == "PRIVATE_KEY_BASE64" ]] && val="********"
+          [[ "$key" == "PRIVATE_KEY" ]] && val="********"
           display_lines+=("${ICONS[$key]} $key=$val")
         done
 
@@ -130,10 +130,10 @@ load_env_or_prompt() {
             fi
           done
 
-          if [[ "$key" == "PRIVATE_KEY_BASE64" ]]; then
-            read -s -p "🔐 Nhập giá trị mới cho $key (sẽ mã hóa base64): " new_input
+          if [[ "$key" == "PRIVATE_KEY" ]]; then
+            read -s -p "🔐 Nhập giá trị mới cho $key: " new_input
             echo ""
-            new_val=$(echo -n "$new_input" | base64)
+            new_val="$new_input"
           else
             read -p "🔧 Nhập giá trị mới cho $key (hiện tại: $old_val): " new_val
             new_val="${new_val:-$old_val}"
@@ -160,8 +160,6 @@ load_env_or_prompt() {
     read -p "🔍 Nhập Sepolia RPC URL: " RPC_SEPOLIA
     read -p "🔍 Nhập Beacon API URL: " BEACON_SEPOLIA
     read -s -p "🔐 Nhập Publisher Private Key: " PRIVATE_KEY
-    ENCODED_KEY=$(echo -n "$PRIVATE_KEY" | base64)
-    PRIVATE_KEY_BASE64="$ENCODED_KEY"
     echo ""
     read -p "💼 Nhập Prover ID: " PROVER_ID
     read -p "🔢 Nhập số agent (mặc định: 1): " AGENT_COUNT
@@ -176,7 +174,7 @@ load_env_or_prompt() {
     read -p "📂 Nhập thư mục lưu dữ liệu [mặc định: $DEFAULT_DATA_DIR]: " INPUT_DIR
     DATA_DIR="${INPUT_DIR:-$DEFAULT_DATA_DIR}"
     mkdir -p "$DATA_DIR"
-    ENV_FILE="$DATA_DIR/.env"   # 🔧 SỬA TẠI ĐÂY: Cập nhật lại ENV_FILE
+    ENV_FILE="$DATA_DIR/.env"
 
     env_lines=(
       "IMAGE=$IMAGE"
@@ -186,7 +184,7 @@ load_env_or_prompt() {
       "API_PORT=$API_PORT"
       "RPC_SEPOLIA=$RPC_SEPOLIA"
       "BEACON_SEPOLIA=$BEACON_SEPOLIA"
-      "PRIVATE_KEY_BASE64=$PRIVATE_KEY_BASE64"
+      "PRIVATE_KEY=$PRIVATE_KEY"
       "PROVER_ID=$PROVER_ID"
       "AGENT_COUNT=$AGENT_COUNT"
       "DATA_DIR=$DATA_DIR"
@@ -195,12 +193,10 @@ load_env_or_prompt() {
 
   echo ""
 
-  # Xoá các bản sao lưu cũ, giữ lại bản mới nhất
   latest_backup() {
     ls -1t "$ENV_FILE".bak_* 2>/dev/null | tail -n +2 | xargs -r rm -f
   }
 
-  # Sao lưu nếu .env đã tồn tại
   if [ -f "$ENV_FILE" ]; then
     BACKUP_NAME="$ENV_FILE.bak_$(date +%Y%m%d_%H%M%S)"
     cp "$ENV_FILE" "$BACKUP_NAME"
@@ -305,8 +301,7 @@ install_prover() {
   echo "🚀 Khởi động Aztec Prover..."
   $(compose_cmd) up -d
 
-  echo "✅ Đã khởi động các container. Sử dụng lệnh sau để xem logs:"
-  echo "$(compose_cmd) logs -f"
+  echo "✅ Đã khởi động các container thành công"
 }
 
 view_logs() {
