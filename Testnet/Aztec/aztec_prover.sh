@@ -67,7 +67,7 @@ load_env_or_prompt() {
     ["API_PORT"]="🧩"
     ["RPC_SEPOLIA"]="🛰️ "
     ["BEACON_SEPOLIA"]="📡"
-    ["PRIVATE_KEY_BASE64"]="🔐"
+    ["PRIVATE_KEY"]="🔐"
     ["PROVER_ID"]="🪪 "
     ["AGENT_COUNT"]="👷"
     ["DATA_DIR"]="📂"
