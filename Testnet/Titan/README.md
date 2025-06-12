@@ -1,7 +1,7 @@
 # Titan Edge
 # Auto Script
 ```
-cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/refs/heads/main/Testnet/Titan/setup.sh)
+cd $HOME && bash <(curl -s https://raw.githubusercontent.com/vnbnode/VNBnode-Guides/refs/heads/main/Testnet/Titan/setup.sh)
 ```
 # Manual
 ## I. Install Docker
