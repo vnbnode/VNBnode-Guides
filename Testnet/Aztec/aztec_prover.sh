@@ -210,10 +210,24 @@ load_env_or_prompt() {
     )
   fi
 
-  echo ""
-  echo "💾 Đang ghi tệp .env..."
-  printf "%s\n" "${env_lines[@]}" > "$ENV_FILE"
-  source "$ENV_FILE"
+echo ""
+
+# Xoá các bản sao lưu cũ, giữ lại bản mới nhất sau khi sao lưu
+latest_backup() {
+  ls -1t "$ENV_FILE".bak_* 2>/dev/null | tail -n +2 | xargs -r rm -f
+}
+
+# Sao lưu .env nếu tồn tại
+if [ -f "$ENV_FILE" ]; then
+  BACKUP_NAME="$ENV_FILE.bak_$(date +%Y%m%d_%H%M%S)"
+  cp "$ENV_FILE" "$BACKUP_NAME"
+  echo "🛡️ Đã sao lưu .env thành: $BACKUP_NAME"
+  latest_backup
+fi
+
+echo "💾 Đang ghi tệp .env..."
+printf "%s\n" "${env_lines[@]}" > "$ENV_FILE"
+source "$ENV_FILE"
 }
 
 generate_compose() {
