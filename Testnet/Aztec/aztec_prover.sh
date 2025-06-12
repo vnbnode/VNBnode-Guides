@@ -49,12 +49,11 @@ check_and_install_docker() {
   fi
 }
 
+# 🚀 Tự động cài sau khi hiển thị logo
+install_dependencies
+check_and_install_docker
+
 load_env_or_prompt() {
-  # Tự động cài fzf nếu chưa có
-  command -v fzf >/dev/null 2>&1 || {
-    echo "📦 Đang cài đặt fzf..."
-    apt update -y && apt install fzf -y
-  }
 
   ENV_FILE="$DEFAULT_DATA_DIR/.env"
   WAN_IP=$(curl -s ifconfig.me)
