@@ -6,7 +6,7 @@ cd $HOME && bash <(curl -s https://raw.githubusercontent.com/vnbnode/VNBnode-Gui
 # Manual
 ## I. Install Docker
 ```
-cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/docker-install.sh)
+cd $HOME && bash <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/docker-install.sh)
 ```
 ## 1. Single Node
 ```
