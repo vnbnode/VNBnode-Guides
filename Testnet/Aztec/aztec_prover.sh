@@ -293,20 +293,21 @@ EOF
 }
 
 install_prover() {
-  generate_compose # ✅ Gọi sau khi đã có .env
+  echo "🚀 Đang cài đặt Aztec Prover..."
 
-  echo ""
-  echo "🚀 Khởi động container..."
+  load_env_or_prompt || return 1
+  generate_compose
 
-  if ! cd "$DATA_DIR"; then
-    echo "❌ Không thể truy cập thư mục $DATA_DIR"
-    return 1
-  fi
+  cd "$DATA_DIR"
 
+  echo "🧱 Dừng các container cũ (nếu có)..."
+  $(compose_cmd) down
+
+  echo "🚀 Khởi động Aztec Prover..."
   $(compose_cmd) up -d
 
-  echo ""
-  echo "🎉 Hoàn tất triển khai tại: $DATA_DIR"
+  echo "✅ Đã khởi động các container. Sử dụng lệnh sau để xem logs:"
+  echo "$(compose_cmd) logs -f"
 }
 
 view_logs() {
