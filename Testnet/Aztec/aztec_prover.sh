@@ -293,9 +293,6 @@ EOF
 
 install_prover() {
   load_env_or_prompt || return
-
-  install_dependencies
-  check_and_install_docker
   generate_compose
 
   echo ""
