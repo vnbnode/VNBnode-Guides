@@ -67,7 +67,7 @@ load_env_or_prompt() {
     ["API_PORT"]="🧩"
     ["RPC_SEPOLIA"]="🛰️ "
     ["BEACON_SEPOLIA"]="📡"
-    ["PRIVATE_KEY"]="🔐"
+    ["PRIVATE_KEY_BASE64"]="🔐"
     ["PROVER_ID"]="🪪 "
     ["AGENT_COUNT"]="👷"
     ["DATA_DIR"]="📂"
@@ -86,7 +86,7 @@ load_env_or_prompt() {
       "API_PORT=$API_PORT"
       "RPC_SEPOLIA=$RPC_SEPOLIA"
       "BEACON_SEPOLIA=$BEACON_SEPOLIA"
-      "PRIVATE_KEY=$PRIVATE_KEY"
+      "PRIVATE_KEY_BASE64=$PRIVATE_KEY_BASE64"
       "PROVER_ID=$PROVER_ID"
       "AGENT_COUNT=$AGENT_COUNT"
       "DATA_DIR=$DATA_DIR"
@@ -96,8 +96,8 @@ load_env_or_prompt() {
     for i in "${!env_lines[@]}"; do
       key="${env_lines[$i]%%=*}"
       val="${env_lines[$i]#*=}"
-      [[ "$key" == "PRIVATE_KEY" ]] && val="********"
-      printf "%2d. %-3s %-15s = %s\n" "$((i+1))" "${ICONS[$key]}" "$key" "$val"
+      [[ "$key" == "PRIVATE_KEY_BASE64" ]] && val="********"
+      printf "%2d. %-3s %-20s = %s\n" "$((i+1))" "${ICONS[$key]}" "$key" "$val"
     done
 
     echo ""
@@ -116,13 +116,12 @@ load_env_or_prompt() {
         for line in "${env_lines[@]}"; do
           key="${line%%=*}"
           val="${line#*=}"
-          [[ "$key" == "PRIVATE_KEY" ]] && val="********"
+          [[ "$key" == "PRIVATE_KEY_BASE64" ]] && val="********"
           display_lines+=("${ICONS[$key]} $key=$val")
         done
 
         selected=$(printf "%s\n" "${display_lines[@]}" "💾 Lưu và tiếp tục" | fzf --prompt="🔧 Chọn biến: " --height=40% --reverse)
         fzf_status=$?
-
         if [[ $fzf_status -ne 0 ]]; then
           echo "🔙 Bạn đã huỷ chọn biến, quay lại menu chính..."
           return 1
@@ -143,9 +142,8 @@ load_env_or_prompt() {
           done
 
           prompt_val="********"
-          [[ "$key" != "PRIVATE_KEY" ]] && prompt_val="$old_val"
+          [[ "$key" != "PRIVATE_KEY_BASE64" ]] && prompt_val="$old_val"
 
-          # Dùng fzf để nhập giá trị mới với print-query
           new_val=$(printf "" | fzf --prompt="🔧 Nhập giá trị mới cho $key (hiện tại: $prompt_val): " --print-query --height=10 --border --reverse)
           fzf_status=$?
           if [[ $fzf_status -ne 0 ]]; then
@@ -155,7 +153,10 @@ load_env_or_prompt() {
 
           new_val="${new_val:-$old_val}"
 
-          # Cập nhật lại giá trị trong env_lines
+          if [[ "$key" == "PRIVATE_KEY_BASE64" ]]; then
+            new_val=$(echo -n "$new_val" | base64)
+          fi
+
           for i in "${!env_lines[@]}"; do
             if [[ "${env_lines[$i]%%=*}" == "$key" ]]; then
               env_lines[$i]="$key=$new_val"
@@ -177,6 +178,8 @@ load_env_or_prompt() {
     read -p "🔍 Nhập Sepolia RPC URL: " RPC_SEPOLIA
     read -p "🔍 Nhập Beacon API URL: " BEACON_SEPOLIA
     read -s -p "🔐 Nhập Publisher Private Key: " PRIVATE_KEY
+    ENCODED_KEY=$(echo -n "$PRIVATE_KEY" | base64)
+    PRIVATE_KEY_BASE64="$ENCODED_KEY"
     echo ""
     read -p "💼 Nhập Prover ID: " PROVER_ID
     read -p "🔢 Nhập số agent (mặc định: 1): " AGENT_COUNT
@@ -200,7 +203,7 @@ load_env_or_prompt() {
       "API_PORT=$API_PORT"
       "RPC_SEPOLIA=$RPC_SEPOLIA"
       "BEACON_SEPOLIA=$BEACON_SEPOLIA"
-      "PRIVATE_KEY=$PRIVATE_KEY"
+      "PRIVATE_KEY_BASE64=$PRIVATE_KEY_BASE64"
       "PROVER_ID=$PROVER_ID"
       "AGENT_COUNT=$AGENT_COUNT"
       "DATA_DIR=$DATA_DIR"
