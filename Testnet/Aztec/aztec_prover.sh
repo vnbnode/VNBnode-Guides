@@ -12,7 +12,7 @@ DEFAULT_P2P_PORT="40400"
 DEFAULT_API_PORT="8080"
 
 # Logo
-curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/Logo/logo.sh | bash && sleep 3
+curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/Logo/logo.sh | bash && sleep 1
 
 install_dependencies() {
   local MARKER="/usr/local/bin/.aztec_deps_installed"
@@ -85,42 +85,38 @@ load_env_or_prompt() {
   )
 
   is_valid_input() {
-    input="$1"
+    local input="$1"
     echo "$input" | iconv -f UTF-8 -t ASCII//TRANSLIT &>/dev/null
   }
 
   prompt_input() {
-    local key="$1" prompt="$2" default="$3" secret="$4" input=""
+    local key="$1" prompt="$2" default="$3" secret="$4" input rc
     while true; do
       if [[ "$secret" == "true" ]]; then
         read -s -p "$prompt" input
-        printf "\n"
+        rc=$?
+        echo
       else
         read -p "$prompt" input
+        rc=$?
       fi
-
-      if [[ -z "$input" && -n "$default" ]]; then
-        input="$default"
+      if [[ $rc -ne 0 ]]; then
+        return 130  # Ctrl+C or ESC → return special
       fi
-
+      input="${input:-$default}"
       input="$(echo -n "$input" | tr -d '\r\n')"
-
-      if [[ -z "$input" && -z "$default" ]]; then
-        echo "⚠️ Trường này bắt buộc phải nhập. Vui lòng không để trống."
-        continue
-      fi
-
+      [[ -z "$input" ]] && echo "⚠️ Không được để trống." && continue
       if is_valid_input "$input" || [[ "$key" == "PRIVATE_KEY" || "$key" == "PROVER_ID" ]]; then
         echo "$input"
-        return
+        return 0
       else
-        echo "❌ Lỗi: giá trị chứa ký tự không hợp lệ. Vui lòng nhập không dấu."
+        echo "❌ Giá trị không hợp lệ (chỉ dùng ký tự không dấu)."
       fi
     done
   }
 
   find_env_file() {
-    local SEARCH_DIRS=(/ /mnt /opt)
+    local SEARCH_DIRS=(/)
     for base in "${SEARCH_DIRS[@]}"; do
       while IFS= read -r path; do
         if [[ -f "$path/.env" ]]; then
@@ -137,20 +133,27 @@ load_env_or_prompt() {
   }
 
   edit_env_variables() {
-  echo ""
-  echo "🔄 .env hiện tại:"
+  echo -e "\n🔄 .env hiện tại:"
   for i in "${!env_lines[@]}"; do
     key="${env_lines[$i]%%=*}"
     val="${env_lines[$i]#*=}"
     [[ "$key" == "PRIVATE_KEY" ]] && val="********"
-    printf "%2d. %-3s %-20s = %s\n" "$((i+1))" "${ICONS[$key]}" "$key" "$val"
+    icon="${ICONS[$key]}"
+    printf "%2d. %-20s %s  = %s\n" "$((i+1))" "$key" "$icon" "$val"
   done
 
   echo ""
-  if ! printf "✅ Có\n❌ Không" | fzf --prompt="🔁 Bạn có muốn chỉnh sửa các biến môi trường? " --height=10 --reverse | grep -q "✅"; then
+  CHOICE=$(printf "✅ Có\n❌ Không" | fzf --prompt="🔁 Bạn có muốn chỉnh sửa các biến môi trường? " --height=10 --reverse)
+  rc=$?
+  if [[ $rc -eq 130 ]]; then
+    echo "⏪ Huỷ chọn. Quay lại menu chính..."
+    return 130
+  elif [[ $rc -ne 0 || "$CHOICE" != "✅ Có" ]]; then
     echo "🔙 Không chỉnh sửa biến môi trường. Tiếp tục..."
     return 0
   fi
+
+  trap 'echo -e "\n⏪ Đã huỷ thao tác. Quay lại menu chính..."; return 130' SIGINT
 
   while true; do
     echo ""
@@ -159,47 +162,64 @@ load_env_or_prompt() {
       key="${line%%=*}"
       val="${line#*=}"
       [[ "$key" == "PRIVATE_KEY" ]] && val="********"
-      display_lines+=("${ICONS[$key]} $key=$val")
+      icon="${ICONS[$key]}"
+      display_lines+=("$(printf "%-4s %-20s = %s" "$icon" "$key" "$val")")
     done
 
     selected=$(printf "%s\n" "${display_lines[@]}" "💾 Lưu và tiếp tục" | fzf --prompt="🔧 Chọn biến: " --height=40% --reverse)
-    [[ $? -ne 0 || "$selected" == "💾 Lưu và tiếp tục" ]] && break
+    rc=$?
 
-    key="${selected%%=*}"
-    key="${key##* }"
-
-    old_val=$(grep "^$key=" "$ENV_FILE" | cut -d= -f2-)
-    if [[ "$key" == "PRIVATE_KEY" ]]; then
-      new_val=$(prompt_input "$key" "🔐 Nhập giá trị mới cho $key: " "$old_val" true)
-    else
-      new_val=$(prompt_input "$key" "🔧 Nhập giá trị mới cho $key (hiện tại: $old_val): " "$old_val")
+    if [[ $rc -ne 0 ]]; then
+      echo "⏪ Huỷ chỉnh sửa. Quay lại menu chính..."
+      trap - SIGINT
+      return 130
+    elif [[ "$selected" == "💾 Lưu và tiếp tục" ]]; then
+      break
     fi
+
+    key=$(echo "$selected" | sed -E 's/^[^ ]+ +([^ ]+).*/\1/')
 
     for i in "${!env_lines[@]}"; do
       if [[ "${env_lines[$i]%%=*}" == "$key" ]]; then
+        old_val="${env_lines[$i]#*=}"
+        if [[ "$key" == "PRIVATE_KEY" ]]; then
+          if ! new_val=$(prompt_input "$key" "🔐 Nhập giá trị mới cho $key (hiện tại: $old_val): " "$old_val" true); then
+            echo "↩️ Huỷ nhập. Quay lại menu chọn biến..."
+            continue 2  # Quay lại menu chọn biến
+          fi
+        else
+          if ! new_val=$(prompt_input "$key" "🔧 Nhập giá trị mới cho $key (hiện tại: $old_val): " "$old_val"); then
+            echo "↩️ Huỷ nhập. Quay lại menu chọn biến..."
+            continue 2  # Quay lại menu chọn biến
+          fi
+        fi
         env_lines[$i]="$key=$new_val"
         break
       fi
     done
   done
+
+  trap - SIGINT
+  return 0
 }
 
   backup_and_save_env() {
     echo ""
-    if [ -f "$ENV_FILE" ]; then
+    if [[ -f "$ENV_FILE" ]]; then
       BACKUP_NAME="$ENV_FILE.bak_$(date +%Y%m%d_%H%M%S)"
       cp "$ENV_FILE" "$BACKUP_NAME"
       echo "🛡️ Đã sao lưu .env thành: $BACKUP_NAME"
+      export ENV_BACKUP_FILE="$BACKUP_NAME"
       ls -1t "$ENV_FILE".bak_* 2>/dev/null | tail -n +2 | xargs -r rm -f
+    else
+      unset ENV_BACKUP_FILE
     fi
 
     echo "💾 Đang ghi tệp .env..."
     {
       for line in "${env_lines[@]}"; do
-        key="${line%%=*}"
-        val="${line#*=}"
-        val="$(echo -n "$val" | tr -d '\r\n')"
-        echo "${key}=${val}"
+        key="${line%%=*}"; val="${line#*=}"
+        echo "${key}=$(echo -n "$val" | tr -d '\r\n')"
       done
     } > "$ENV_FILE"
 
@@ -208,35 +228,44 @@ load_env_or_prompt() {
     export DATA_DIR
   }
 
-  ### Bắt đầu xử lý ###
+  ### --- MAIN --- ###
   if ! find_env_file; then
     DEFAULT_DATA_DIR="/root/aztec-prover"
-    INPUT_DIR=$(prompt_input "DATA_DIR" "📂 Nhập thư mục lưu dữ liệu [mặc định: $DEFAULT_DATA_DIR]: " "$DEFAULT_DATA_DIR")
+    INPUT_DIR=$(prompt_input "DATA_DIR" "📂 Nhập thư mục lưu dữ liệu [mặc định: $DEFAULT_DATA_DIR]: " "$DEFAULT_DATA_DIR") || return 130
     DATA_DIR="$INPUT_DIR"
     mkdir -p "$DATA_DIR"
     ENV_FILE="$DATA_DIR/.env"
   fi
 
   if [[ -f "$ENV_FILE" ]]; then
+    source "$ENV_FILE"
     env_lines=(
-      "IMAGE=$IMAGE" "NETWORK=$NETWORK" "WAN_IP=$WAN_IP"
-      "P2P_PORT=$P2P_PORT" "API_PORT=$API_PORT"
-      "RPC_SEPOLIA=$RPC_SEPOLIA" "BEACON_SEPOLIA=$BEACON_SEPOLIA"
-      "PRIVATE_KEY=$PRIVATE_KEY" "PROVER_ID=$PROVER_ID"
-      "AGENT_COUNT=$AGENT_COUNT" "DATA_DIR=$DATA_DIR"
+      "IMAGE=${IMAGE:-aztecprotocol/aztec:0.87.8}"
+      "NETWORK=${NETWORK:-alpha-testnet}"
+      "WAN_IP=${WAN_IP:-$WAN_IP}"
+      "P2P_PORT=${P2P_PORT:-40400}"
+      "API_PORT=${API_PORT:-8080}"
+      "RPC_SEPOLIA=${RPC_SEPOLIA:-}"
+      "BEACON_SEPOLIA=${BEACON_SEPOLIA:-}"
+      "PRIVATE_KEY=${PRIVATE_KEY:-}"
+      "PROVER_ID=${PROVER_ID:-}"
+      "AGENT_COUNT=${AGENT_COUNT:-1}"
+      "DATA_DIR=${DATA_DIR}"
     )
-    edit_env_variables || return 1
+    if ! edit_env_variables; then
+      return 130  # Quay lại menu chính
+    fi
   else
     echo "📄 Tạo file .env mới..."
-    IMAGE=$(prompt_input "IMAGE" "🖼️  Nhập Docker image [mặc định: aztecprotocol/aztec:0.87.8]: " "aztecprotocol/aztec:0.87.8")
-    NETWORK=$(prompt_input "NETWORK" "🪐 Nhập network [mặc định: alpha-testnet]: " "alpha-testnet")
-    RPC_SEPOLIA=$(prompt_input "RPC_SEPOLIA" "🛰️  Nhập Sepolia RPC URL: " "")
-    BEACON_SEPOLIA=$(prompt_input "BEACON_SEPOLIA" "📡 Nhập Beacon API URL: " "")
-    PRIVATE_KEY=$(prompt_input "PRIVATE_KEY" "🔐 Nhập Publisher Private Key: "  true)
-    PROVER_ID=$(prompt_input "PROVER_ID" "💼 Nhập Prover ID: ")
-    AGENT_COUNT=$(prompt_input "AGENT_COUNT" "👷 Nhập số agent [mặc định: 1]: " "1")
-    P2P_PORT=$(prompt_input "P2P_PORT" "🔌 Nhập P2P Port [mặc định: 40400]: " "40400")
-    API_PORT=$(prompt_input "API_PORT" "🧩 Nhập API Port [mặc định: 8080]: " "8080")
+    IMAGE=$(prompt_input "IMAGE" "🖼️  Nhập Docker image [mặc định: aztecprotocol/aztec:0.87.8]: " "aztecprotocol/aztec:0.87.8") || return 130
+    NETWORK=$(prompt_input "NETWORK" "🪐 Nhập network [mặc định: alpha-testnet]: " "alpha-testnet") || return 130
+    RPC_SEPOLIA=$(prompt_input "RPC_SEPOLIA" "🛰️  Nhập Sepolia RPC URL: " "") || return 130
+    BEACON_SEPOLIA=$(prompt_input "BEACON_SEPOLIA" "📡 Nhập Beacon API URL: " "") || return 130
+    PRIVATE_KEY=$(prompt_input "PRIVATE_KEY" "🔐 Nhập Publisher Private Key: " "" true) || return 130
+    PROVER_ID=$(prompt_input "PROVER_ID" "💼 Nhập Prover ID: ") || return 130
+    AGENT_COUNT=$(prompt_input "AGENT_COUNT" "👷 Nhập số agent [mặc định: 1]: " "1") || return 130
+    P2P_PORT=$(prompt_input "P2P_PORT" "🔌 Nhập P2P Port [mặc định: 40400]: " "40400") || return 130
+    API_PORT=$(prompt_input "API_PORT" "🧩 Nhập API Port [mặc định: 8080]: " "8080") || return 130
 
     env_lines=(
       "IMAGE=$IMAGE" "NETWORK=$NETWORK" "WAN_IP=$WAN_IP"
@@ -250,8 +279,29 @@ load_env_or_prompt() {
   backup_and_save_env
 
   [[ ! -d "$DATA_DIR" ]] && echo "⚠️ Không tìm thấy thư mục dữ liệu: $DATA_DIR" && return 1
+  return 0
+}
 
-  return 0  # ✅ Kết thúc hàm và cho phép phần sau tiếp tục chạy
+cleanup_old_agents() {
+  if [[ -z "$ENV_BACKUP_FILE" || ! -f "$ENV_BACKUP_FILE" ]]; then
+    echo "ℹ️ Không có file backup .env để kiểm tra agent cũ."
+    return
+  fi
+
+  OLD_AGENT_COUNT=$(grep "^AGENT_COUNT=" "$ENV_BACKUP_FILE" | cut -d= -f2)
+  if [[ -z "$OLD_AGENT_COUNT" || "$OLD_AGENT_COUNT" -le 0 ]]; then
+    echo "ℹ️ AGENT_COUNT cũ không hợp lệ trong $ENV_BACKUP_FILE."
+    return
+  fi
+
+  echo "♻️ Đang dừng và xoá $OLD_AGENT_COUNT agent cũ từ file backup..."
+
+  for i in $(seq 1 "$OLD_AGENT_COUNT"); do
+    container_name="agent_$i"
+    echo "🛑 Dừng và xoá container: $container_name"
+    docker stop "$container_name" 2>/dev/null
+    docker rm "$container_name" 2>/dev/null
+  done
 }
 
 generate_compose() {
@@ -336,6 +386,8 @@ install_prover() {
   echo "🚀 Đang cài đặt Aztec Prover..."
 
   load_env_or_prompt || return 1
+  cleanup_old_agents  # ✅ GỌI SAU KHI .env ĐƯỢC BACKUP
+
   generate_compose
 
   cd "$DATA_DIR" || { echo "❌ Không thể cd vào $DATA_DIR"; return 1; }
@@ -352,8 +404,8 @@ install_prover() {
 view_logs() {
   echo "📜 Running Aztec Prover Logs..."
 
-  # Tìm thư mục aztec-prover có chứa .env trong /, /mnt, /opt
-  for path in / /mnt /opt; do
+  # Tìm thư mục aztec-prover có chứa .env trong /
+  for path in /; do
     match=$(find "$path" -type d -name "aztec-prover" -exec test -f "{}/.env" \; -print 2>/dev/null | head -n 1)
     if [[ -n "$match" ]]; then
       DATA_DIR="$match"
@@ -362,7 +414,7 @@ view_logs() {
   done
 
   if [[ -z "$DATA_DIR" ]]; then
-    echo "❌ Không tìm thấy thư mục aztec-prover chứa .env trong /, /mnt hoặc /opt"
+    echo "❌ Không tìm thấy thư mục aztec-prover chứa .env trong /"
     return
   fi
 
@@ -440,7 +492,7 @@ view_logs() {
 }
 
 find_compose_dir() {
-  local SEARCH_DIRS=(/ /mnt /opt)
+  local SEARCH_DIRS=(/)
   local MODE="${1:-compose}"  # "compose" hoặc "data"
 
   for base in "${SEARCH_DIRS[@]}"; do
@@ -474,6 +526,10 @@ delete_prover() {
   echo "📂 Phát hiện thư mục Aztec Prover tại: $DATA_DIR"
 
   cd "$DATA_DIR" || { echo "❌ Không thể truy cập $DATA_DIR"; return 1; }
+
+  ENV_FILE="$DATA_DIR/.env"
+  cleanup_old_agents  # ✅ GỌI HÀM NÀY TRƯỚC KHI XOÁ TOÀN BỘ
+
   $(compose_cmd) down -v
   echo "🧹 Đã xoá container Prover."
 }
