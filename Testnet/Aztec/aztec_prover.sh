@@ -137,46 +137,52 @@ load_env_or_prompt() {
   }
 
   edit_env_variables() {
+  echo ""
+  echo "🔄 .env hiện tại:"
+  for i in "${!env_lines[@]}"; do
+    key="${env_lines[$i]%%=*}"
+    val="${env_lines[$i]#*=}"
+    [[ "$key" == "PRIVATE_KEY" ]] && val="********"
+    printf "%2d. %-3s %-20s = %s\n" "$((i+1))" "${ICONS[$key]}" "$key" "$val"
+  done
+
+  echo ""
+  if ! printf "✅ Có\n❌ Không" | fzf --prompt="🔁 Bạn có muốn chỉnh sửa các biến môi trường? " --height=10 --reverse | grep -q "✅"; then
+    echo "🔙 Không chỉnh sửa biến môi trường. Tiếp tục..."
+    return 0
+  fi
+
+  while true; do
     echo ""
-    echo "🔄 .env hiện tại:"
-    for i in "${!env_lines[@]}"; do
-      key="${env_lines[$i]%%=*}"
-      val="${env_lines[$i]#*=}"
+    display_lines=()
+    for line in "${env_lines[@]}"; do
+      key="${line%%=*}"
+      val="${line#*=}"
       [[ "$key" == "PRIVATE_KEY" ]] && val="********"
-      printf "%2d. %-3s %-20s = %s\n" "$((i+1))" "${ICONS[$key]}" "$key" "$val"
+      display_lines+=("${ICONS[$key]} $key=$val")
     done
 
-    echo ""
-    if ! printf "✅ Có\n❌ Không" | fzf --prompt="🔁 Bạn có muốn chỉnh sửa các biến môi trường? " --height=10 --reverse | grep -q "✅"; then
-      echo "🔙 Không chỉnh sửa biến môi trường. Tiếp tục..."
-      return 0
+    selected=$(printf "%s\n" "${display_lines[@]}" "💾 Lưu và tiếp tục" | fzf --prompt="🔧 Chọn biến: " --height=40% --reverse)
+    [[ $? -ne 0 || "$selected" == "💾 Lưu và tiếp tục" ]] && break
+
+    key="${selected%%=*}"
+    key="${key##* }"
+
+    old_val=$(grep "^$key=" "$ENV_FILE" | cut -d= -f2-)
+    if [[ "$key" == "PRIVATE_KEY" ]]; then
+      new_val=$(prompt_input "$key" "🔐 Nhập giá trị mới cho $key: " "$old_val" true)
+    else
+      new_val=$(prompt_input "$key" "🔧 Nhập giá trị mới cho $key (hiện tại: $old_val): " "$old_val")
     fi
 
-    while true; do
-      echo ""
-      display_lines=()
-      for line in "${env_lines[@]}"; do
-        key="${line%%=*}"
-        val="${line#*=}"
-        [[ "$key" == "PRIVATE_KEY" ]] && val="********"
-        display_lines+=("${ICONS[$key]} $key=$val")
-      done
-
-      selected=$(printf "%s\n" "${display_lines[@]}" "💾 Lưu và tiếp tục" | fzf --prompt="🔧 Chọn biến: " --height=40% --reverse)
-      [[ $? -ne 0 || "$selected" == "💾 Lưu và tiếp tục" ]] && break
-
-      key=$(echo "$selected" | awk -F '[ =]' '{print $2}')
-      old_val=$(grep "^$key=" "$ENV_FILE" | cut -d= -f2-)
-      if [[ "$key" == "PRIVATE_KEY" ]]; then
-        new_val=$(prompt_input "$key" "🔐 Nhập giá trị mới cho $key: " "$old_val" true)
-      else
-        new_val=$(prompt_input "$key" "🔧 Nhập giá trị mới cho $key (hiện tại: $old_val): " "$old_val")
+    for i in "${!env_lines[@]}"; do
+      if [[ "${env_lines[$i]%%=*}" == "$key" ]]; then
+        env_lines[$i]="$key=$new_val"
+        break
       fi
-      for i in "${!env_lines[@]}"; do
-        [[ "${env_lines[$i]%%=*}" == "$key" ]] && env_lines[$i]="$key=$new_val"
-      done
     done
-  }
+  done
+}
 
   backup_and_save_env() {
     echo ""
