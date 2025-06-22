@@ -20,7 +20,7 @@ VNB offers a robust, enterprise-grade Node Management Service tailored for block
 
 As a product studio, we develop our products from scratch to market launch. With our modular systems, we can build customized products as per requirements. Here are samples of our products.
 
-Contact us to see more.
+a href="https://VNBnode.com" target="_blank"> Contact us to see more.
 
 ## 3. AI Solutions
 
