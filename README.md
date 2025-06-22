@@ -27,7 +27,7 @@ Empowering Support, Business, Gaming, and Web3—Smarter, Faster, Easier. At VNB
 
 We also provide hands-on training and complete solution handover, ensuring our clients can operate and scale with confidence.
 
-## 4. Contact
+## 4. Contact Us
 * Website: https://VNBnode.com
 * Telegram: https://t.me/Vnbnode
 * Substack: https://vnbnodes.substack.com/
