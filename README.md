@@ -7,14 +7,31 @@
   <img height="100" height="auto" src="https://github.com/vnbnode/binaries/blob/main/Logo/New%20LOGO%2040%20x%2040.png?raw=true">
 </p>
 
-# EN
-VNBnode is a group of professional validators / researchers in blockchain. We have members from different locations in the world.
-With the experience in IT technologies for more than 10 years, get involved in blockchain since 2019. We have our own data center with local servers and also strong cloud services to support for running nodes.
-VNBnode is willing to support projects through the stages (from dev-test, testnet through main-net). Our developers can build the dapps for support during test-net.
-VNBnode is a trusted partner of blockchain projects.
+# Welcome to VNB Solutions
+<p align="center">
+  <img height="100" height="auto" src="https://github.com/vnbnode/binaries/blob/main/Logo/New%20LOGO%2040%20x%2040.png?raw=true">
+</p>
 
-# VN
-VNBnode là nhóm các nhà xác thực và nhà nghiên cứu chuyên nghiệp trong lĩnh vực blockchain. Chúng tôi có các thành viên từ nhiều nước khác nhau trên thế giới.
-Với kinh nghiệm hơn 10 năm trong lĩnh vực công nghệ thông tin, tham gia vào blockchain từ năm 2019. Chúng tôi đã xây dựng trung tâm dữ liệu của riêng mình với các máy chủ và dịch vụ đám mây mạnh để hỗ trợ chạy nodes.
-VNBnode sẵn sàng hỗ trợ cho các dự án qua các giai đoạn (từ test dev nội bộ, mạng thử nghiệm và  mạng chính thức). Các lập trình viên của chúng tôi có thể tạo ra các dapps để hỗ trợ dự án trong quá trình thử nghiệm.
-VNBnode là đối tác đáng tin cậy cho các dự án blockchain.
+### We empower the decentralized future by delivering end-to-end solutions that blend Web3, AI, Gaming, and Data Infrastructure.
+
+## 1. Nodes - Validators
+
+VNB offers a robust, enterprise-grade Node Management Service tailored for blockchain networks, developers, and enterprises seeking secure, scalable, and fully automated validator or RPC node infrastructure.
+
+## 2. Unity Games developing
+
+As a product studio, we develop our products from scratch to market launch. With our modular systems, we can build customized products as per requirements. Here are samples of our products.
+
+Contact us to see more.
+
+## 3. AI Solutions
+
+Empowering Support, Business, Gaming, and Web3—Smarter, Faster, Easier. At VNB, we build practical, deployable AI solutions that unlock real-time intelligence and automation across multiple industries.
+
+We also provide hands-on training and complete solution handover, ensuring our clients can operate and scale with confidence.
+
+## 3. Contact
+* Website: https://VNBnode.com
+* Telegram: https://t.me/Vnbnode
+* Substack: https://vnbnodes.substack.com/
+* Twitter: https://twitter.com/vnbnode
