@@ -8,9 +8,6 @@
 </p>
 
 # Welcome to VNB Solutions
-<p align="center">
-  <img height="100" height="auto" src="https://github.com/vnbnode/binaries/blob/main/Logo/New%20LOGO%2040%20x%2040.png?raw=true">
-</p>
 
 ### We empower the decentralized future by delivering end-to-end solutions that blend Web3, AI, Gaming, and Data Infrastructure.
 
