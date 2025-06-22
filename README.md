@@ -10,6 +10,7 @@
 # Welcome to VNB Solutions
 
 ### We empower the decentralized future by delivering end-to-end solutions that blend Web3, AI, Gaming, and Data Infrastructure.
+### VNB Solutions is ready to support your project from early stage to after mainnet.
 
 ## 1. Nodes - Validators
 
