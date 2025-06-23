@@ -4,7 +4,7 @@
 <a href="https://VNBnode.com" target="_blank">Visit our website  <img src="https://github.com/vnbnode/binaries/blob/main/Logo/New%20LOGO%2040%20x%2040.png" width="30"/></a>
 </p>
 <p align="center">
-  <img height="100" height="auto" src="https://github.com/vnbnode/binaries/blob/main/Logo/New%20LOGO%2040%20x%2040.png?raw=true">
+  <img height="100" height="auto" src="https://github.com/vnbnode/binaries/blob/main/Logo/rotating%20logo.gif">
 </p>
 
 # Welcome to VNB Solutions
