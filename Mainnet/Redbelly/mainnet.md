@@ -104,24 +104,24 @@ tail -f /var/log/redbelly/rbn_logs/rbbc_logs.log
 ```
 tail -f  /var/log/redbelly/rbn_logs/rbbc_logs_error.log
 ```
-# Part 3: Upgrade from testnet
+# Part 3: Upgrade version v1.3.3
 ## Make sure only do this if your application is approved and you got the node ID for mainnet
 ## Uninstall the testnet version:
 ```
-sudo ./rbn-installer.run -- --uninstall
+sudo ./rbn-installer-mainnet-v1.2.0.run -- --uninstall
 ```
 ### Copy new binary file rbn-installer.run
 ### Allow access
 ```
-chmod +x rbn-installer-mainnet-v1.2.0.run
+chmod +x rbn-installer-mainnet-v1.3.3.run
 ```
 ### Confirm Installer Version
 ```
-sudo ./rbn-installer-mainnet-v1.2.0.run -- --version  
+sudo ./rbn-installer-mainnet-v1.3.3.run -- --version  
 ```
 ### Install new version
 ```
-sudo ./rbn-installer-mainnet-v1.2.0.run
+sudo ./rbn-installer-mainnet-v1.3.3.run
 ```
 ### Check version
 ```
@@ -139,7 +139,7 @@ sudo systemctl restart redbelly.service
 ```
 ### Clear the installation
 ```
-sudo ./rbn-installer-mainnet-v1.2.0.run -- --uninstall
+sudo ./rbn-installer-mainnet-v1.3.3.run -- --uninstall
 ```
 
 ## Thank to support VNBnode.
