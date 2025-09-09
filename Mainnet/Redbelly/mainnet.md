@@ -84,12 +84,6 @@ Once success, you will see the service file installed:
 pgrep rbbc
 # result should be a number
 ```
-
-### Check the status of the process
-```
-journalctl -u redbelly.service
-```
-
 ### Check the status of the Redbelly service
 ```
 sudo systemctl status redbelly.service
@@ -126,6 +120,14 @@ sudo ./rbn-installer-mainnet-v1.3.3.run
 ### Check version
 ```
 sudo /opt/redbelly/rbbc --version 
+```
+### Check the status of the Redbelly service
+```
+sudo systemctl status redbelly.service
+```
+### Check logs
+```
+tail -f /var/log/redbelly/rbn_logs/rbbc_logs.log
 ```
 # Part 4: Trouble Shooting
 
