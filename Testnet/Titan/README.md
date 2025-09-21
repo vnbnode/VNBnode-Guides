@@ -29,8 +29,8 @@ docker run --rm -it -v ~/.titan:/root/.titanedge nezha123/titan-edge:latest bind
 ### Node 1
 ```
 docker run --name titan1 --network=host -d -v ~/.titan1:/root/.titanedge nezha123/titan-edge:latest
-docker run --rm -it -v ~/.titan:/root/.titanedge nezha123/titan-edge:latest config set --storage-size=20GB
-docker run --rm -it -v ~/.titan:/root/.titanedge nezha123/titan-edge:latest config set --listen-address 0.0.0.0:1234
+docker run --rm -it -v ~/.titan1:/root/.titanedge nezha123/titan-edge:latest config set --storage-size=20GB
+docker run --rm -it -v ~/.titan1:/root/.titanedge nezha123/titan-edge:latest config set --listen-address 0.0.0.0:1234
 docker update --restart=unless-stopped titan1
 docker restart titan1
 ```
