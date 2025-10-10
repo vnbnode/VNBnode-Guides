@@ -42,7 +42,7 @@ while true; do
                 if [[ "$STORAGE_SIZE" =~ ^[0-9]+$ ]] && [ "$STORAGE_SIZE" -ge 5 ] && [ "$STORAGE_SIZE" -le 100 ]; then
                     break
                 else
-                    echo "❌ Invalid input! Please enter a number between 10 and 100."
+                    echo "❌ Invalid input! Please enter a number between 5 and 100."
                 fi
             done
             
