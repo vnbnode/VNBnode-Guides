@@ -77,7 +77,7 @@ Email
 Node ID
 
 Once success, you will see the service file installed:
-<img width="952" alt="image" src="https://github.com/user-attachments/assets/db147b69-ecd6-4c64-8f93-088cddcfc83d">
+<img width="652" height="230" alt="image" src="https://github.com/user-attachments/assets/73a1e44c-9bfa-4fb0-9de3-19248447cbc9" />
 
 # Part 2: Usefull commands
 
