@@ -58,6 +58,8 @@ sudo ufw allow 1888
 sudo ufw allow 1111
 sudo ufw allow 8545
 sudo ufw allow 8546
+sudo ufw allow 6540/udp
+sudo ufw reload
 ```
 ## 5. Make files executable
 ```
