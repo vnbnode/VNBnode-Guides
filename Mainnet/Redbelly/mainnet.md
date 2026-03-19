@@ -45,7 +45,7 @@ sudo snap install --classic certbot
 sudo ln -s /snap/bin/certbot /usr/bin/certbot
 netstat -an | grep 80
 ```
-## 3. Download "rbn-installer-mainnet-v1.2.0.run" file and copy to $HOME/root/
+## 3. Download "rbn-installer-mainnet-v1.3.5.run" file and copy to $HOME/root/
 ```
 THIS STEP IS ONLY FOR AUTHORIZED VALIDATORS - WHO RECEIVED EMAIL
 ```
