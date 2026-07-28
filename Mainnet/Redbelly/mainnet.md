@@ -45,7 +45,7 @@ sudo snap install --classic certbot
 sudo ln -s /snap/bin/certbot /usr/bin/certbot
 netstat -an | grep 80
 ```
-## 3. Download "rbn-installer-mainnet-v1.3.5.run" file and copy to $HOME/root/
+## 3. Download "rbn-installer-mainnet-v1.3.16.run" file and copy to $HOME/root/
 ```
 THIS STEP IS ONLY FOR AUTHORIZED VALIDATORS - WHO RECEIVED EMAIL
 ```
@@ -63,11 +63,11 @@ sudo ufw reload
 ```
 ## 5. Make files executable
 ```
-chmod +x rbn-installer-mainnet-v1.3.5.run
+chmod +x rbn-installer-mainnet-v1.3.16.run
 ```
 ## 6. Install node
 ```
-sudo ./rbn-installer-mainnet-v1.3.5.run
+sudo ./rbn-installer-mainnet-v1.3.16.run
 ```
 ### You need to have:
 DNS without https://
@@ -101,24 +101,24 @@ tail -f /var/log/redbelly/rbn_logs/rbbc_logs.log
 ```
 tail -f  /var/log/redbelly/rbn_logs/rbbc_logs_error.log
 ```
-# Part 3: Upgrade version v1.3.5
+# Part 3: Upgrade version v1.3.16
 ## Make sure only do this if your application is approved and you got the node ID for mainnet
 ## Uninstall the testnet version:
 ```
-sudo ./rbn-installer-mainnet-v1.3.3.run -- --uninstall
+sudo ./rbn-installer-mainnet-v1.3.5.run -- --uninstall
 ```
 ### Copy new binary file rbn-installer.run
 ### Allow access
 ```
-chmod +x rbn-installer-mainnet-v1.3.5.run
+chmod +x rbn-installer-mainnet-v1.3.16.run
 ```
 ### Confirm Installer Version
 ```
-sudo ./rbn-installer-mainnet-v1.3.5.run -- --version  
+sudo ./rbn-installer-mainnet-v1.3.16.run -- --version  
 ```
 ### Install new version
 ```
-sudo ./rbn-installer-mainnet-v1.3.5.run
+sudo ./rbn-installer-mainnet-v1.3.16.run
 ```
 ### Check version
 ```
@@ -144,7 +144,7 @@ sudo systemctl restart redbelly.service
 ```
 ### Clear the installation
 ```
-sudo ./rbn-installer-mainnet-v1.3.5.run -- --uninstall
+sudo ./rbn-installer-mainnet-v1.3.16.run -- --uninstall
 ```
 
 ## Thank to support VNBnode.
